@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<style 
+		name="Theme"
+		parent="android:Theme">
+	</style>
+	
+	<style 
+		name="Theme.Translucent">
+		<item name="android:windowBackground">@color/COLOR_BG</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:colorForeground">@color/COLOR_BG</item>
+	</style>
+</resources>
