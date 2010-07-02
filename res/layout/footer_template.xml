@@ -12,29 +12,38 @@
 		android:id="@+id/locationButton"
 		android:background="@drawable/locations"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="3px"
+		android:layout_marginBottom="3px" />
 	
 	<Button
 		android:id="@+id/restaurantButton"
 		android:background="@drawable/restaurant"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content" />
-		
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="3px"
+		android:layout_marginBottom="3px" />
 	<Button
 		android:id="@+id/cuisineButton"
 		android:background="@drawable/cuisine"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:layout_marginTop="3px"
+		android:layout_marginBottom="3px" />
 		
 	<Button
 		android:id="@+id/favoriteButton"
 		android:background="@drawable/favorite"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:layout_marginTop="3px"
+		android:layout_marginBottom="3px" />
 	
 	<Button
 		android:id="@+id/searchButton"
 		android:background="@drawable/searches"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content" />
+		android:layout_height="wrap_content"
+		android:layout_marginTop="3px"
+		android:layout_marginBottom="3px" />
 </LinearLayout>
