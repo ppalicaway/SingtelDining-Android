@@ -60,7 +60,9 @@
 					<EditText 
 						android:id="@+id/editText"
 						android:layout_height="wrap_content" 
-						android:layout_width="165px" />
+						android:layout_width="165px" 
+						android:maxLines="1"
+						android:singleLine="true" />
 						
 					<Button 
 						android:id="@+id/mapButton"
