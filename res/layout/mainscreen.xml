@@ -10,6 +10,14 @@
 		layout="@layout/header_template" 
 		android:layout_alignParentTop="true"
 		android:id="@+id/headerImageLayout" />
-	
-	
+		
+	<RelativeLayout
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:id="@+id/footerImageLayout"
+		android:layout_alignParentBottom="true">
+		
+		<include 
+			layout="@layout/footer_template" />
+	</RelativeLayout>
 </RelativeLayout>
