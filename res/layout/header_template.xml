@@ -54,20 +54,23 @@
 			android:layout_width="165px" 
 			android:maxLines="1"
 			android:singleLine="true" 
-			android:background="@drawable/roundededittext" android:layout_marginTop="2px"/>
+			android:background="@drawable/roundededittext"
+			android:layout_marginTop="2px"/>
 						
 		<Button 
 			android:id="@+id/mapButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/seg_map"
-			android:layout_marginLeft="3px" android:layout_marginTop="1px"/>
+			android:layout_marginLeft="3px"
+			android:layout_marginTop="1px"/>
 						
 		<Button 
 			android:id="@+id/arButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/seg_ar" 
-			android:layout_marginLeft="3px" android:layout_marginTop="1px"/>
+			android:layout_marginLeft="3px"
+			android:layout_marginTop="1px"/>
 	</LinearLayout>
 </LinearLayout>

@@ -19,7 +19,6 @@ public class SingtelDining extends Activity {
         setTheme(android.R.style.Theme_Black_NoTitleBar);
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.splash);
-        
         instance = this;
         splashThread.start();
     }
