@@ -34,7 +34,10 @@
 		<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent">
+			android:layout_height="fill_parent"
+			android:background="@drawable/roundededge" 
+			android:layout_marginLeft="5px" 
+			android:layout_marginRight="5px">
 			
 		</LinearLayout>
 	</RelativeLayout>
