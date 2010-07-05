@@ -54,7 +54,7 @@
 				android:lines="1" 
 				android:singleLine="true" 
 				android:layout_marginRight="10px" 
-				android:typeface="sans"/>
+				android:typeface="sans" />
 		</LinearLayout>
 		
 		<View
@@ -89,7 +89,7 @@
 				android:singleLine="true" 
 				android:password="true" 
 				android:layout_marginRight="10px" 
-				android:typeface="sans"/>
+				android:typeface="sans" />
 		</LinearLayout>
 		
 		<View
@@ -110,21 +110,21 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Tweet"
-				android:layout_marginRight="34px" 
 				android:layout_marginLeft="10px" 
 				android:textSize="17px" 
-				android:typeface="sans"/>
+				android:typeface="sans" 
+				android:layout_marginRight="43px"/>
 				
 			<EditText 
 				android:id="@+id/twitterTweetEditText"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:background="@drawable/roundededittext" 
-				android:layout_marginRight="10px"
 				android:height="100px" 
 				android:gravity="top" 
 				android:maxLength="119" 
-				android:typeface="sans"/>
+				android:typeface="sans" 
+				android:layout_marginRight="10px"/>
 		</LinearLayout>
 		
 		<View

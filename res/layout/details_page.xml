@@ -24,7 +24,8 @@
 				android:background="@drawable/header" 
 				android:gravity="center" 
 				android:layout_marginTop="5px"
-				android:layout_height="wrap_content" android:layout_marginLeft="-42px"/>
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="-42px"/>
 		</LinearLayout>
 		
 		<Button 
@@ -105,6 +106,7 @@
 							android:paddingTop="7px"
 							android:layout_width="fill_parent"
 							android:numStars="5"
+							android:stepSize="0.5"
 							android:layout_height="wrap_content" />
 					</LinearLayout>
 				</LinearLayout>

@@ -5,28 +5,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
+import android.widget.Button;
 
-public class SingtelDiningMainScreen extends SingtelDiningActivity {
+public class Description extends SingtelDiningActivity {
+
+	public static Description instance;
 	
-	public static SingtelDiningMainScreen instance;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setTheme(R.style.Theme_Translucent);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.mainscreen);
+		setContentView(R.layout.details_page);
 		
 		instance = this;
 		
-		ImageView merchantPic = (ImageView)findViewById(R.id.merchantPic);
-		merchantPic.setOnClickListener(new OnClickListener() {
+		Button twitter = (Button)findViewById(R.id.twitterButton);
+		twitter.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Intent details = new Intent(instance, Description.class);
-				startActivity(details);
+				Intent twitterPage = new Intent(instance, TwitterPage.class);
+				startActivity(twitterPage);
 			}
 		});
 	}
