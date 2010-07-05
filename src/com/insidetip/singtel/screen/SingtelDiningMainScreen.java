@@ -10,6 +10,6 @@ public class SingtelDiningMainScreen extends SingtelDiningActivity {
 		super.onCreate(savedInstanceState);
 		setTheme(R.style.Theme_Translucent);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.mainscreen);
+		setContentView(R.layout.twitter);
 	}
 }

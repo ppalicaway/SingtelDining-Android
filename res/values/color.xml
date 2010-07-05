@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
 	<color name="COLOR_BG">#b4030d</color>
+	<color name="COLOR_SUBTEXT">#4f5969</color>
+	<color name="COLOR_BLACK">#000000</color>
+	<color name="COLOR_WHITE">#ffffff</color>
+	<color name="COLOR_BUTTONTEXT">#cc7b6b</color>
+	<color name="COLOR_LINE">#a8abad</color>
+	<color name="COLOR_LIGHTBLUE">#67799f</color>
 </resources>

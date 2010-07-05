@@ -36,8 +36,15 @@
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:layout_marginLeft="5px" 
-			android:layout_marginRight="5px" android:background="@drawable/listbgrounded">
+			android:layout_marginRight="5px" 
+			android:background="@drawable/listbgrounded">
 			
+			<include layout="@layout/merchant_list" />
+			
+			<ImageView 
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:src="@drawable/list_line"/>
 		</LinearLayout>
 	</RelativeLayout>
 </RelativeLayout>

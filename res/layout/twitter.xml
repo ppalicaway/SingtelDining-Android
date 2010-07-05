@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@drawable/bg">
+	
+	<LinearLayout
+		android:id="@+id/twitterHeaderView"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_gravity="center_vertical|center_horizontal"
+		android:layout_marginTop="5px">
+		
+		<ImageView 
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/header" />
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/roundededge"
+		android:orientation="vertical"
+		android:layout_marginLeft="5px"
+		android:layout_marginRight="5px">
+		
+		<!-- Username -->
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" 
+			android:paddingBottom="15px" 
+			android:paddingTop="15px">
+			
+			<TextView 
+				android:id="@+id/twitterUsernameTextView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Username"
+				android:layout_marginRight="10px" 
+				android:layout_marginLeft="10px" 
+				android:textSize="17px" 
+				android:typeface="sans"/>
+				
+			<EditText 
+				android:id="@+id/twitterUsernameEditText"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/roundededittext" 
+				android:lines="1" 
+				android:singleLine="true" 
+				android:layout_marginRight="10px" 
+				android:typeface="sans"/>
+		</LinearLayout>
+		
+		<View
+			android:layout_width="fill_parent"
+			android:layout_height="1px"
+			android:background="@color/COLOR_LINE"/>
+		
+		<!-- Password -->
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" 
+			android:paddingTop="15px" 
+			android:paddingBottom="15px">
+			
+			<TextView 
+				android:id="@+id/twitterPasswordTextView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Password"
+				android:layout_marginRight="13px" 
+				android:layout_marginLeft="10px" 
+				android:textSize="17px" 
+				android:typeface="sans"/>
+				
+			<EditText 
+				android:id="@+id/twitterPasswordEditText"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/roundededittext" 
+				android:lines="1" 
+				android:singleLine="true" 
+				android:password="true" 
+				android:layout_marginRight="10px" 
+				android:typeface="sans"/>
+		</LinearLayout>
+		
+		<View
+			android:layout_width="fill_parent"
+			android:layout_height="1px"
+			android:background="@color/COLOR_LINE"/>
+		
+		<!-- Tweet -->
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" 
+			android:paddingBottom="15px" 
+			android:paddingTop="15px">
+			
+			<TextView 
+				android:id="@+id/twitterTweetTextView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Tweet"
+				android:layout_marginRight="34px" 
+				android:layout_marginLeft="10px" 
+				android:textSize="17px" 
+				android:typeface="sans"/>
+				
+			<EditText 
+				android:id="@+id/twitterTweetEditText"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/roundededittext" 
+				android:layout_marginRight="10px"
+				android:height="100px" 
+				android:gravity="top" 
+				android:maxLength="119" 
+				android:typeface="sans"/>
+		</LinearLayout>
+		
+		<View
+			android:layout_width="fill_parent"
+			android:layout_height="1px"
+			android:background="@color/COLOR_LINE"/>
+			
+		<!-- Best SG Deals -->
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" 
+			android:paddingBottom="15px" 
+			android:paddingTop="15px">
+			
+			<TextView 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textColor="@color/COLOR_SUBTEXT" 
+				android:layout_marginLeft="10px" 
+				android:layout_marginRight="10px" 
+				android:textSize="17px" 
+				android:typeface="sans" android:text="#Singtel #BestSGDeals"/>
+		</LinearLayout>
+		
+		<View
+			android:layout_width="fill_parent"
+			android:layout_height="1px"
+			android:background="@color/COLOR_LINE"/>
+		
+		<!-- Submit -->
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:paddingBottom="15px" 
+			android:paddingTop="15px">
+			
+			<Button
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:background="@drawable/roundededge"
+				android:text="Submit"
+				android:textColor="@color/COLOR_LIGHTBLUE" 
+				android:typeface="sans" 
+				android:textSize="17px" 
+				android:textStyle="bold" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
