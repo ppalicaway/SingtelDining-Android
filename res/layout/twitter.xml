@@ -164,6 +164,7 @@
 			android:paddingTop="15px">
 			
 			<Button
+			android:id="@+id/twitterSubmitButton"
 				android:layout_height="wrap_content"
 				android:layout_width="fill_parent"
 				android:background="@drawable/roundededge"

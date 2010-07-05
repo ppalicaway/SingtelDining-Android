@@ -7,4 +7,5 @@
 	<color name="COLOR_BUTTONTEXT">#cc7b6b</color>
 	<color name="COLOR_LINE">#a8abad</color>
 	<color name="COLOR_LIGHTBLUE">#67799f</color>
+	<color name="COLOR_GRAY">#C0C0C0</color>
 </resources>
