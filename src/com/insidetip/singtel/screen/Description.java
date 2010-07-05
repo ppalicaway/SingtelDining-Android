@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class Description extends SingtelDiningActivity {
 
@@ -27,6 +31,17 @@ public class Description extends SingtelDiningActivity {
 			public void onClick(View v) {
 				Intent twitterPage = new Intent(instance, TwitterPage.class);
 				startActivity(twitterPage);
+			}
+		});
+		
+		ImageView creditCards = (ImageView)findViewById(R.id.creditCardImageView);
+		creditCards.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.fade);
+				LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);
+				ll.startAnimation(animation);
 			}
 		});
 	}

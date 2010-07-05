@@ -59,6 +59,7 @@
 			
 			<!-- Details -->
 			<LinearLayout
+				android:id="@+id/detailFlipper"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
@@ -155,6 +156,7 @@
        			android:layout_marginBottom="5px">
         			
     			<ImageView 
+    				android:id="@+id/creditCardImageView"
        				android:src="@drawable/cc_image"
     	   			android:layout_width="wrap_content"
 		       		android:layout_height="wrap_content" 
