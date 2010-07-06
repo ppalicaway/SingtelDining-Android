@@ -9,7 +9,7 @@ package com.insidetip.singtel.screen;
 
 public final class R {
     public static final class anim {
-        public static final int fade=0x7f040000;
+        public static final int hyperspace_out=0x7f040000;
     }
     public static final class attr {
     }

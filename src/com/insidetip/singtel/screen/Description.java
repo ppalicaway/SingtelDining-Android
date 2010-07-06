@@ -39,7 +39,7 @@ public class Description extends SingtelDiningActivity {
 			
 			@Override
 			public void onClick(View v) {
-				Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.fade);
+				Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.hyperspace_out);
 				LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);
 				ll.startAnimation(animation);
 			}
