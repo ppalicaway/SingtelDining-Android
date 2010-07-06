@@ -1,6 +1,9 @@
 package com.insidetip.singtel.util;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.view.Display;
@@ -38,5 +41,32 @@ public class Util {
 			e.printStackTrace();
 		}
 		return resizedBitmap;
+	}
+	
+	public static void showAlert(Activity act, final String title, final String msg, final String buttontext, final boolean finishScreen) {
+		final Activity myact = act;
+		
+		try {
+			act.runOnUiThread(new Runnable() {
+				public void run() {
+					AlertDialog alertDialog = new AlertDialog.Builder(myact).create();
+					alertDialog.setTitle(title);
+					alertDialog.setMessage(msg);
+					alertDialog.setButton(buttontext,
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int which) {
+									if (finishScreen) {
+										myact.finish();
+									}
+									return;
+								}
+							});
+					alertDialog.show();
+				}
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

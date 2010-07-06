@@ -141,6 +141,7 @@
 			android:paddingTop="15px">
 			
 			<TextView 
+				android:id="@+id/twitterExtraText"
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:textColor="@color/COLOR_SUBTEXT" 

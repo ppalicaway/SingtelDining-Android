@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
     <string name="app_name">BestSGDeals</string>
+    <string name="input_all_data">Please input your Username and Password.</string>
+    <string name="wrong_info">Wrong Username and Password combination.</string>
+    <string name="twitter">Twitter</string>
+    <string name="ok">OK</string>
+    <string name="not_responding">Network Host not responding.</string>
 </resources>
