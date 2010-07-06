@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class SingtelDiningMainScreen extends SingtelDiningActivity {
@@ -27,6 +28,16 @@ public class SingtelDiningMainScreen extends SingtelDiningActivity {
 			public void onClick(View v) {
 				Intent details = new Intent(instance, Description.class);
 				startActivity(details);
+			}
+		});
+		
+		Button settingsButton = (Button)findViewById(R.id.settingsButton);
+		settingsButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent settings = new Intent(instance, SettingsPage.class);
+				startActivity(settings);
 			}
 		});
 	}

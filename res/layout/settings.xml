@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@drawable/bg">
+	
+	<!-- Header -->
+	<LinearLayout
+		android:layout_width="fill_parent" 
+		android:orientation="horizontal" 
+		android:layout_height="wrap_content">
+	
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:gravity="center_horizontal">
+		
+			<ImageView 
+				android:id="@+id/headerBannerImage"
+				android:layout_width="wrap_content" 
+				android:background="@drawable/header" 
+				android:gravity="center" 
+				android:layout_marginTop="5px"
+				android:layout_height="wrap_content"/>
+		</LinearLayout>
+		
+		<Button 
+			android:id="@+id/settingsDoneButton"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:background="@drawable/button_done"
+			android:layout_marginTop="5px" 
+			android:layout_marginLeft="-62px" />
+	</LinearLayout>
+	
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:scrollbars="none"
+		android:fadingEdge="none">
+		
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical">
+			
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content">
+				
+				<TextView
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal"
+					android:typeface="sans"
+					android:textStyle="bold"
+					android:textSize="17px"
+					android:textColor="@color/COLOR_BG"
+					android:paddingTop="8px"
+					android:paddingBottom="8px"
+					android:layout_marginLeft="5px"
+					android:layout_marginRight="5px"
+					android:background="@drawable/grayroundededge"
+					android:text="Select Credit Cards">
+				</TextView>
+			</LinearLayout>
+			
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:layout_marginLeft="5px"
+				android:layout_marginRight="5px"
+				android:background="@drawable/listbgrounded">
+				
+				<!-- Credit Card Buttons -->
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal">
+					
+					<Button 
+						android:id="@+id/allCreditCards"
+						android:text="All Credit Cards"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingTop="7px"
+						android:paddingBottom="7px"
+						android:layout_marginTop="7px"
+						android:layout_marginBottom="7px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:textSize="15px"
+						android:textStyle="bold"
+						android:background="@drawable/leftbutton"/>
+					
+					<Button 
+						android:id="@+id/myCreditCards"
+						android:text="My Credit Cards"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:paddingTop="7px"
+						android:paddingBottom="7px"
+						android:layout_marginTop="7px"
+						android:layout_marginBottom="7px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:textSize="15px"
+						android:textStyle="bold"
+						android:background="@drawable/rightbutton"/>
+				</LinearLayout>
+				
+				<!-- Credit Card Icons -->
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal">
+					
+					<Button 
+						android:id="@+id/citibankButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginRight="5px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/citibank"/>
+						
+					<Button 
+						android:id="@+id/dbsButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginRight="5px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/dbs"/>
+						
+					<Button 
+						android:id="@+id/ocbcButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginRight="5px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/ocbc"/>
+						
+					<Button 
+						android:id="@+id/uobButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/uob"/>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

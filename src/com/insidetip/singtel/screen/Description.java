@@ -10,10 +10,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class Description extends SingtelDiningActivity {
 
 	public static Description instance;
+	private static boolean isFlipped = true;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,16 @@ public class Description extends SingtelDiningActivity {
 			public void onClick(View v) {
 				Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.hyperspace_out);
 				LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);
+				TextView offer = (TextView)findViewById(R.id.offerTextView);
 				ll.startAnimation(animation);
+				if(isFlipped) {
+					offer.setText("Citibank Offer:\n1 for 1 Dinner promo\nValid till jun 2010");
+					isFlipped = false;
+				}
+				else {
+					offer.setText("Citibank Offer:\n1 for 1 Lunch promo\nValid till jun 2010");
+					isFlipped = true;
+				}
 			}
 		});
 	}

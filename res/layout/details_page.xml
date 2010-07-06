@@ -24,8 +24,7 @@
 				android:background="@drawable/header" 
 				android:gravity="center" 
 				android:layout_marginTop="5px"
-				android:layout_height="wrap_content"
-				android:layout_marginLeft="-42px"/>
+				android:layout_height="wrap_content"/>
 		</LinearLayout>
 		
 		<Button 
