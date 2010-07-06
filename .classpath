@@ -4,5 +4,6 @@
 	<classpathentry kind="lib" path="library/fbconnect.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="library/jtwitter.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
