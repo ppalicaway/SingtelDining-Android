@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -28,6 +29,7 @@ import com.codecarpet.fbconnect.FBRequest.FBRequestDelegate;
 import com.codecarpet.fbconnect.FBSession.FBSessionDelegate;
 import com.insidetip.singtel.info.MerchantInfo;
 import com.insidetip.singtel.util.Constants;
+import com.insidetip.singtel.util.Util;
 
 public class Description extends SingtelDiningActivity {
 
@@ -88,6 +90,28 @@ public class Description extends SingtelDiningActivity {
 				}
 			}
 		});
+		
+		TextView merchantName = (TextView)findViewById(R.id.merchantName);
+		merchantName.setText(merchantInfo.getRestaurantName());
+		
+		Bitmap bitmap;
+		ImageView merchantPic = (ImageView)findViewById(R.id.merchantPic);
+		if(!merchantInfo.getImage().equals(null) || !merchantInfo.getImage().equalsIgnoreCase("")) {
+			bitmap = Util.getBitmap(merchantInfo.getImage());
+			if(bitmap != null) {
+				bitmap = Util.resizeImage(bitmap, 90, 70);
+				merchantPic.setImageBitmap(bitmap);
+			}
+			else {
+				merchantPic.setImageResource(R.drawable.default_icon);
+			}
+		}
+		else {
+			merchantPic.setImageResource(R.drawable.default_icon);
+		}
+		
+		TextView merchantAddress = (TextView)findViewById(R.id.merchantAddress);
+		merchantAddress.setText(merchantInfo.getAddress());
 		
 		facebookButton = (FBLoginButton) findViewById(R.id.facebookButton);
 		facebookButton.setStyle(FBLoginButtonStyle.FBLoginButtonStyleWide);

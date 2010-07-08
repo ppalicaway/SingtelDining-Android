@@ -120,6 +120,7 @@
 					android:layout_marginBottom="5px">
 			
 					<ImageView 
+						android:id="@+id/merchantPic"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_marginRight="30px"
