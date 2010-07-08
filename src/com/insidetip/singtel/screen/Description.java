@@ -9,7 +9,6 @@ import org.json.JSONObject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -27,12 +26,14 @@ import com.codecarpet.fbconnect.FBSession;
 import com.codecarpet.fbconnect.FBLoginButton.FBLoginButtonStyle;
 import com.codecarpet.fbconnect.FBRequest.FBRequestDelegate;
 import com.codecarpet.fbconnect.FBSession.FBSessionDelegate;
+import com.insidetip.singtel.info.MerchantInfo;
 import com.insidetip.singtel.util.Constants;
 
-public class Description extends SingtelDiningListActivity {
+public class Description extends SingtelDiningActivity {
 
 	public static Description instance;
 	private static boolean isFlipped = true;
+	public static MerchantInfo merchantInfo;
 	
 	private FBSession fbSession;
 	private FBLoginButton facebookButton;

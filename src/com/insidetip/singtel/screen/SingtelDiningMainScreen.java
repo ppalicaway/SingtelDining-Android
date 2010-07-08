@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -45,6 +46,9 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 	
 	
 	private void settingLayout() {
+		
+		double latLong[] = Util.queryLatLong(instance);
+		
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
@@ -78,9 +82,7 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 			
 			try {
 				JSONObject jsonObject1 = new JSONObject(result);
-				JSONArray nameArray = jsonObject1.getJSONArray("data"); //items
-				
-				System.out.println("Petz::" + nameArray.getString(0));
+				JSONArray nameArray = jsonObject1.getJSONArray("data");
 				
 				try {
 					for(int i = 0; i < nameArray.length(); i++) {
@@ -145,6 +147,9 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		MerchantInfo mInfo = merchantList.get(position);
+		Description.merchantInfo = mInfo;
+		Intent details = new Intent(instance, Description.class);
+		startActivity(details);
 	}
 
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
@@ -165,7 +170,6 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 			}
 			
 			final MerchantInfo merchant = merchants.get(position);
-			System.out.println(merchant.getRestaurantName());
 			if(merchant != null) {
 				TextView merchantName = (TextView)view.findViewById(R.id.merchantName);
 				merchantName.setText(merchant.getRestaurantName());
