@@ -11,4 +11,6 @@ public interface Constants {
 	
 	public static final String ERROR_CODE_UNKNOW_HOST = "404";
 	public static final String ERROR_CODE_TIME_OUT = "408";
+	
+	public static final String GOOGLE_MAP_API = "http://www.google.com/glm/mmap";
 }

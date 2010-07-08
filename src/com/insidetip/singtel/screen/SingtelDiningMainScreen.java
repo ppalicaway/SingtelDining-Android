@@ -106,16 +106,6 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 						
 						MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
 						merchantList.add(mInfo);
-						
-						
-						//System.out.println("Petz::" + mInfo.getId());
-						//System.out.println("Petz::" + mInfo.getImage());
-						//System.out.println("Petz::" + mInfo.getRestaurantName());
-						//System.out.println("Petz::" + mInfo.getAddress());
-						//System.out.println("Petz::" + mInfo.getRating());
-						//System.out.println("Petz::" + mInfo.getReviews());
-						//System.out.println("Petz::" + mInfo.getLatitude());
-						//System.out.println("Petz::" + mInfo.getLongitude());
 					}
 				}
 				catch(Exception e) {
@@ -157,7 +147,6 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 		MerchantInfo mInfo = merchantList.get(position);
 	}
 
-	//Final
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
 		private ArrayList<MerchantInfo> merchants;
 		
