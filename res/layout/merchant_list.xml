@@ -13,7 +13,6 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:src="@drawable/default_icon" 
-		android:layout_marginLeft="5px" 
 		android:layout_marginRight="5px" 
 		android:layout_marginTop="5px"/>
 	
@@ -21,8 +20,7 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="vertical" 
-		android:layout_marginTop="5px" 
-		android:layout_marginRight="5px">
+		android:layout_marginTop="5px">
 		
 		<TextView
 			android:id="@+id/distance"
@@ -33,7 +31,7 @@
 			android:textStyle="bold" 
 			android:typeface="sans"
 			android:textColor="@color/COLOR_BLACK"
-			android:text="1.1 km" android:layout_marginRight="15px"/>
+			android:text="1.1 km" android:layout_marginRight="18px"/>
 		
 		<TextView
 			android:id="@+id/merchantName"
@@ -45,7 +43,9 @@
 			android:typeface="sans"
 			android:textColor="@color/COLOR_BLACK"
 			android:text="Shaw Cinema" 
-			android:ellipsize="marquee" android:layout_marginRight="15px"/>
+			android:ellipsize="marquee" 
+			android:singleLine="true" 
+			android:maxLines="1" android:layout_marginRight="18px"/>
 			
 		<TextView
 			android:id="@+id/merchantAddress"
@@ -58,6 +58,8 @@
 			android:textColor="@color/COLOR_SUBTEXT"
 			android:paddingBottom="1px"
 			android:text="360 Balistier Road, Shaw Plaza, #0..." 
-			android:ellipsize="marquee" android:layout_marginRight="15px"/>
+			android:ellipsize="marquee" 
+			android:singleLine="true" 
+			android:maxLines="1" android:layout_marginRight="18px"/>
 	</LinearLayout>
 </LinearLayout>

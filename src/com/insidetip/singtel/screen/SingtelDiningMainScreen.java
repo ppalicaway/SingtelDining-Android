@@ -1,17 +1,35 @@
 package com.insidetip.singtel.screen;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.ImageView;
+import java.util.ArrayList;
 
-public class SingtelDiningMainScreen extends SingtelDiningActivity {
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.insidetip.singtel.info.MerchantInfo;
+import com.insidetip.singtel.util.Constants;
+import com.insidetip.singtel.util.Util;
+
+public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 	
 	public static SingtelDiningMainScreen instance;
-
+	public static ArrayList<MerchantInfo> merchantList;
+	private ListViewAdapter m_adapter;
+	private Runnable queryThread;
+	private ProgressDialog progressDialog = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,25 +38,171 @@ public class SingtelDiningMainScreen extends SingtelDiningActivity {
 		setContentView(R.layout.mainscreen);
 		
 		instance = this;
+		initActivity(instance);
 		
-		ImageView merchantPic = (ImageView)findViewById(R.id.merchantPic);
-		merchantPic.setOnClickListener(new OnClickListener() {
+		settingLayout();
+	}
+	
+	
+	private void settingLayout() {
+		merchantList = new ArrayList<MerchantInfo>();
+		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
+		setListAdapter(m_adapter);
+		
+		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		
+		queryThread = new Runnable() {
 			
 			@Override
-			public void onClick(View v) {
-				Intent details = new Intent(instance, Description.class);
-				startActivity(details);
+			public void run() {
+				getData();
+				runOnUiThread(addToMerchantList);
 			}
-		});
+		};
 		
-		Button settingsButton = (Button)findViewById(R.id.settingsButton);
-		settingsButton.setOnClickListener(new OnClickListener() {
+		Thread thread = new Thread(null, queryThread, "queryThread");
+		thread.start();
+	}
+
+	protected void getData() {
+		String result = "";
+		
+		result = Util.getHttpData(Constants.RESTAURANT_LINK);
+		
+		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
+			//TODO:
+		}
+		else {
+			result = Util.toJSONString(result);
+			merchantList = new ArrayList<MerchantInfo>();
 			
-			@Override
-			public void onClick(View v) {
-				Intent settings = new Intent(instance, SettingsPage.class);
-				startActivity(settings);
+			try {
+				JSONObject jsonObject1 = new JSONObject(result);
+				JSONArray nameArray = jsonObject1.getJSONArray("data"); //items
+				
+				System.out.println("Petz::" + nameArray.getString(0));
+				
+				try {
+					for(int i = 0; i < nameArray.length(); i++) {
+						JSONObject jsonObject2 = nameArray.getJSONObject(i);
+						
+						int id = 0;
+						String image = "";
+						String restaurantName = "";
+						String address = "";
+						float rating = 0;
+						int reviews = 0;
+						double latitude = 0;
+						double longitude = 0;
+						
+						id = Integer.parseInt(jsonObject2.getString("ID"));
+						image = jsonObject2.getString("Image");
+						restaurantName = jsonObject2.getString("RestaurantName");
+						address = jsonObject2.getString("Address");
+						rating = Float.parseFloat(jsonObject2.getString("Rating"));
+						reviews = Integer.parseInt(jsonObject2.getString("Reviews"));
+						latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
+						longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
+						
+						MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
+						merchantList.add(mInfo);
+						
+						
+						//System.out.println("Petz::" + mInfo.getId());
+						//System.out.println("Petz::" + mInfo.getImage());
+						//System.out.println("Petz::" + mInfo.getRestaurantName());
+						//System.out.println("Petz::" + mInfo.getAddress());
+						//System.out.println("Petz::" + mInfo.getRating());
+						//System.out.println("Petz::" + mInfo.getReviews());
+						//System.out.println("Petz::" + mInfo.getLatitude());
+						//System.out.println("Petz::" + mInfo.getLongitude());
+					}
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		});
+		}
+	}
+	
+	private Runnable addToMerchantList = new Runnable() {
+		
+		@Override
+		public void run() {
+			if (merchantList != null && merchantList.size() > 0) {
+				m_adapter.notifyDataSetChanged();
+				for (int i = 0; i < merchantList.size(); i++) {
+					m_adapter.add(merchantList.get(i));
+				}
+			}
+			else {
+				//TODO:
+			}
+			
+			try {
+				if (progressDialog.isShowing()) {
+					progressDialog.dismiss();
+				}					
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	};
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		MerchantInfo mInfo = merchantList.get(position);
+	}
+
+	//Final
+	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
+		private ArrayList<MerchantInfo> merchants;
+		
+		public ListViewAdapter(Context context, int resourceLayoutId, ArrayList<MerchantInfo> merchants) {
+			super(context, resourceLayoutId, merchants);
+			this.merchants = merchants;
+		}
+		
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View view = convertView;
+			
+			if(view == null) {
+				LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+				view = layoutInflater.inflate(R.layout.merchant_list, null);
+			}
+			
+			final MerchantInfo merchant = merchants.get(position);
+			System.out.println(merchant.getRestaurantName());
+			if(merchant != null) {
+				TextView merchantName = (TextView)view.findViewById(R.id.merchantName);
+				merchantName.setText(merchant.getRestaurantName());
+				
+				TextView merchantAddress = (TextView)view.findViewById(R.id.merchantAddress);
+				merchantAddress.setText(merchant.getAddress());
+				
+				ImageView merchantPic = (ImageView)view.findViewById(R.id.merchantPic);
+				Bitmap bitmap;
+				
+				if(!merchant.getImage().equals(null) || !merchant.getImage().equalsIgnoreCase("")) {
+					bitmap = Util.getBitmap(merchant.getImage());
+					if(bitmap != null) {
+						bitmap = Util.resizeImage(bitmap, 55, 55);
+						merchantPic.setImageBitmap(bitmap);
+					}
+					else {
+						merchantPic.setImageResource(R.drawable.default_icon);
+					}
+				}
+				else {
+					merchantPic.setImageResource(R.drawable.default_icon);
+				}
+			}
+			
+			return view;
+		}
 	}
 }

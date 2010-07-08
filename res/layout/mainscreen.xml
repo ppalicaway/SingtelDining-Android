@@ -39,12 +39,16 @@
 			android:layout_marginRight="5px" 
 			android:background="@drawable/listbgrounded">
 			
-			<include layout="@layout/merchant_list" />
-			
-			<ImageView 
-				android:layout_height="wrap_content"
-				android:layout_width="fill_parent"
-				android:src="@drawable/list_line"/>
+			<ListView 
+				android:id="@+id/android:list"
+				android:padding="5px"
+				android:clipToPadding="true"
+				android:layout_width="fill_parent" 
+				android:layout_height="fill_parent"
+				android:layout_gravity="center_horizontal"
+				android:divider="@drawable/list_line"
+				android:fadingEdge="none"
+				android:scrollbars="none" />
 		</LinearLayout>
 	</RelativeLayout>
 </RelativeLayout>

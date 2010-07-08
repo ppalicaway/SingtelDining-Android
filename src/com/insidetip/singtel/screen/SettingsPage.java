@@ -6,7 +6,7 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class SettingsPage extends SingtelDiningActivity {
+public class SettingsPage extends SingtelDiningListActivity {
 
 	public static SettingsPage instance;
 	

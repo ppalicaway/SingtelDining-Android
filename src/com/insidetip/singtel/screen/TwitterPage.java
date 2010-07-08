@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class TwitterPage extends SingtelDiningActivity {
+public class TwitterPage extends SingtelDiningListActivity {
 	
 	public static TwitterPage instance;
 	private Twitter twitter;
