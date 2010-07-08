@@ -6,4 +6,5 @@
     <string name="twitter">Twitter</string>
     <string name="ok">OK</string>
     <string name="not_responding">Network Host not responding.</string>
+	<string name="successful_twitter">Posted Successfully.</string>
 </resources>

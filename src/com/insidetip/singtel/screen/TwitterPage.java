@@ -55,7 +55,7 @@ public class TwitterPage extends SingtelDiningActivity {
 					
 					try {
 						twitter.setStatus(status);
-						instance.finish();
+						Util.showAlert(instance, getResources().getString(R.string.twitter), getResources().getString(R.string.successful_twitter), getResources().getString(R.string.ok), true);
 					}
 					catch (TwitterException.E401 e) {
 						Util.showAlert(instance, getResources().getString(R.string.twitter), getResources().getString(R.string.wrong_info), getResources().getString(R.string.ok), false);
