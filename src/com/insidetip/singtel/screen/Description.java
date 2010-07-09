@@ -103,11 +103,11 @@ public class Description extends SingtelDiningActivity {
 				merchantPic.setImageBitmap(bitmap);
 			}
 			else {
-				merchantPic.setImageResource(R.drawable.default_icon);
+				merchantPic.setImageResource(R.drawable.default_icon1);
 			}
 		}
 		else {
-			merchantPic.setImageResource(R.drawable.default_icon);
+			merchantPic.setImageResource(R.drawable.default_icon1);
 		}
 		
 		TextView merchantAddress = (TextView)findViewById(R.id.merchantAddress);
@@ -126,16 +126,23 @@ public class Description extends SingtelDiningActivity {
 	}
 	
 	public void publishFeed() {
+		String nameMerchant = Constants.FACEBOOK_NAME + merchantInfo.getRestaurantName() + "\"";
+		String hrefMerchant = Constants.FACEBOOK_HREF + "http://www.singtel.com/\"";
+		String captionMerchant = Constants.FACEBOOK_CAPTION + merchantInfo.getAddress() + "\"";
+		String descriptionMerchant = Constants.FACEBOOK_DESCRIPTION + "\"";
+		String mediaMerchant = Constants.FACEBOOK_MEDIA + "" + merchantInfo.getImage() + "\"";
+		String hrefMedia = Constants.FACEBOOK_HREF + merchantInfo.getImage() +"\"";
+		String propertiesMerchant = Constants.FACEBOOK_PROPERTIES;
+		
 		Intent intent = new Intent(this, FBFeedActivity.class);
         intent.putExtra("userMessagePrompt", "Example prompt");
-        intent.putExtra("attachment", "{\"name\":\"Merchant Info\",\"href\":\"http://code.google.com/p/fbconnect-android/\",\"caption\":\"Caption\",\"description\":\"Description\",\"media\":[{\"type\":\"image\",\"src\":\"http://img40.yfrog.com/img40/5914/iphoneconnectbtn.jpg\",\"href\":\"http://developers.facebook.com/connect.php?tab=iphone/\"}],\"properties\":{\"another link\":{\"text\":\"Facebook home page\",\"href\":\"http://www.facebook.com\"}}}");
+        intent.putExtra("attachment", "{" + nameMerchant + "," + hrefMerchant + "," + captionMerchant + "," + descriptionMerchant + "," + mediaMerchant + "," + hrefMedia + "}]," + propertiesMerchant);
         this.startActivityForResult(intent, MESSAGE_PUBLISHED);
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		
 		if(requestCode == MESSAGE_PUBLISHED) {
 			fbSession.logout(instance);
 			return;

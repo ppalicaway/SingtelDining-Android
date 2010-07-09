@@ -226,8 +226,8 @@ public class Util {
 	            latLong[0] = lat;
 	            latLong[1] = lng;
 	            
-	            System.out.println("Petz::Latitude" + lat);
-	            System.out.println("Petz::Longitude" + lng);
+	            System.out.println("Latitude: " + lat);
+	            System.out.println("Longitude: " + lng);
 	        }
 		} catch (Exception e) {
 			e.printStackTrace();
