@@ -47,7 +47,14 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 	
 	private void settingLayout() {
 		
-		double latLong[] = Util.queryLatLong(instance);
+		Thread coords = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				double latLong[] = Util.queryLatLong(instance);
+			}
+		});
+		coords.start();
 		
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
