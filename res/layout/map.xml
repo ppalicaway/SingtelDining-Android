@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/bg"
+	android:padding="0px">
+	
+	<include 
+		layout="@layout/map_header" 
+		android:layout_alignParentTop="true"
+		android:id="@+id/mapHeader" /> 
+	
+	<RelativeLayout 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:id="@+id/mapView"
+		android:layout_below="@id/mapHeader">
+		
+		<com.insidetip.singtel.map.MapLocationViewer
+			android:id="@+id/mapLocationViewer" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" />
+	</RelativeLayout>
+</RelativeLayout>

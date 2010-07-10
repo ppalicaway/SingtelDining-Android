@@ -12,20 +12,23 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.insidetip.singtel.adapter.Controller;
 import com.insidetip.singtel.info.MerchantInfo;
 import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
 
-public class SingtelDiningMainScreen extends SingtelDiningListActivity {
+public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
-	public static SingtelDiningMainScreen instance;
+	public static SingtelDiningMainPage instance;
 	public static ArrayList<MerchantInfo> merchantList;
 	private ListViewAdapter m_adapter;
 	private Runnable queryThread;
@@ -73,6 +76,15 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 		
 		Thread thread = new Thread(null, queryThread, "queryThread");
 		thread.start();
+		
+		Button mapButton = (Button) findViewById(R.id.mapButton);
+		mapButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Controller.displayMapScreen(instance);
+			}
+		});
 	}
 
 	protected void getData() {
@@ -154,8 +166,8 @@ public class SingtelDiningMainScreen extends SingtelDiningListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		MerchantInfo mInfo = merchantList.get(position);
-		Description.merchantInfo = mInfo;
-		Intent details = new Intent(instance, Description.class);
+		DescriptionPage.merchantInfo = mInfo;
+		Intent details = new Intent(instance, DescriptionPage.class);
 		startActivity(details);
 	}
 

@@ -13,6 +13,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
+import java.util.Locale;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -31,6 +33,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.telephony.TelephonyManager;
 import android.telephony.gsm.GsmCellLocation;
@@ -349,5 +353,23 @@ public class Util {
 		distance = (float) (b * A * (sigma - deltaSigma)) / 1000;
 		
 		return distance;
+	}
+
+	public static String getGPSAddress(Activity activity, double latitude, double longitude) {
+		String addressName = "";
+		Geocoder geoCoder = new Geocoder(activity.getBaseContext(), Locale.getDefault());
+		try {
+			List<Address> addresses = geoCoder.getFromLocation(latitude, longitude, 1);
+			String add = "";
+			if (addresses.size() > 0) {
+				for (int i = 0; i < addresses.get(0).getMaxAddressLineIndex(); i++)
+					add += addresses.get(0).getAddressLine(i) + " ";
+			}
+			addressName = add;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return addressName;
 	}
 }

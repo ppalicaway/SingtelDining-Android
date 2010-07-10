@@ -1,8 +1,16 @@
 package com.insidetip.singtel.map;
 
+import java.text.DecimalFormat;
+
+import android.app.Activity;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+
+import com.google.android.maps.GeoPoint;
+import com.insidetip.singtel.screen.R;
+import com.insidetip.singtel.screen.SingtelDiningMainPage;
+import com.insidetip.singtel.util.Util;
 
 public class GPSLocationListener implements LocationListener {
 	
@@ -13,6 +21,22 @@ public class GPSLocationListener implements LocationListener {
 	public void onLocationChanged(Location location) {
 		latitude = location.getLatitude();
 		longitude = location.getLongitude();
+		
+		if(MapLocationViewer.useCurrentGPS) {
+			DecimalFormat twoDForm = new DecimalFormat("#.####");
+			String latStr = Double.valueOf(twoDForm.format(latitude)).toString();
+			String lngStr = Double.valueOf(twoDForm.format(longitude)).toString();
+			
+			Activity activity = (Activity) SingtelDiningMainPage.instance;
+			MapLocationInfo mLocation = new MapLocationInfo(Util.getGPSAddress(activity, latitude, longitude), "Latitude: " + latStr + " Longitude: " + lngStr, latitude, longitude, R.drawable.pin_red, null);
+			MapLocationViewer.setMapLocation(mLocation, 0, MapLocationViewer.useCurrentGPS);
+			GeoPoint point = new GeoPoint((int) (latitude * 1e6), (int) (longitude * 1e6));
+			MapLocationViewer.mapView.getController().setCenter(point);
+			
+		}
+		
+		System.out.println("Latitude Has Changed: " + location.getLatitude());
+		System.out.println("Longitude Has Changed: " + location.getLongitude());
 	}
 
 	@Override

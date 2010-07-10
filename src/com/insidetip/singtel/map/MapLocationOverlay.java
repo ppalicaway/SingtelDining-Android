@@ -21,9 +21,9 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.Projection;
-import com.insidetip.singtel.screen.Description;
+import com.insidetip.singtel.screen.DescriptionPage;
 import com.insidetip.singtel.screen.R;
-import com.insidetip.singtel.screen.SingtelDiningMainScreen;
+import com.insidetip.singtel.screen.SingtelDiningMainPage;
 import com.insidetip.singtel.util.Util;
 
 public class MapLocationOverlay extends Overlay {
@@ -53,7 +53,7 @@ public class MapLocationOverlay extends Overlay {
 		this.paddingTop = paddingTop;
 		
 		currentPin = BitmapFactory.decodeResource(mapLocationViewer.getResources(),R.drawable.pin_red);
-		defaultPin = BitmapFactory.decodeResource(mapLocationViewer.getResources(),R.drawable.pin_red);
+		defaultPin = BitmapFactory.decodeResource(mapLocationViewer.getResources(),R.drawable.pin_green);
 		
 		elemWidth = Util.getScreenWidth(context);
 		elemHeight = 20*4;
@@ -74,8 +74,8 @@ public class MapLocationOverlay extends Overlay {
     }
     
     private void nextScreen() {
-		Description.merchantInfo = selectedMapLocation.getMerchantInfo();
-		Intent intent = new Intent(context, Description.class);
+		DescriptionPage.merchantInfo = selectedMapLocation.getMerchantInfo();
+		Intent intent = new Intent(context, DescriptionPage.class);
 	    ((Activity) context).startActivityForResult(intent, 0);
 	}
     
@@ -110,7 +110,7 @@ public class MapLocationOverlay extends Overlay {
     private boolean getHitDescription(MapView mapView, GeoPoint	tapPoint) {
     	RectF hitTestRecr = new RectF();
     	Point screenCoords = new Point();
-    	int start_y = Util.getScreenHeight(SingtelDiningMainScreen.instance) - elemHeight-80 - paddingTop;
+    	int start_y = Util.getScreenHeight(SingtelDiningMainPage.instance) - elemHeight-80 - paddingTop;
     	
     	hitTestRecr.set(0, 0, elemWidth, elemHeight);
     	hitTestRecr.offset(infoWindowOffsetX-34, infoWindowOffsetY-20);
@@ -188,12 +188,12 @@ public class MapLocationOverlay extends Overlay {
 				RectF infoWindowRect = new RectF(0,0,INFO_WINDOW_WIDTH,INFO_WINDOW_HEIGHT);
 				infoWindowOffsetX = selDestinationOffset.x-INFO_WINDOW_WIDTH/2;
 				infoWindowOffsetY = selDestinationOffset.y-INFO_WINDOW_HEIGHT-defaultPin.getHeight();
-				int start_y = Util.getScreenHeight(SingtelDiningMainScreen.instance) - elemHeight-80 - paddingTop;
+				int start_y = Util.getScreenHeight(SingtelDiningMainPage.instance) - elemHeight-80 - paddingTop;
 				infoWindowRect.offset(infoWindowOffsetX, infoWindowOffsetY);
 				
 				int TEXT_OFFSET_X = -19;
 				int TEXT_OFFSET_Y = 2;
-				Bitmap bm = BitmapFactory.decodeResource(SingtelDiningMainScreen.instance.getResources(), R.drawable.bubble);
+				Bitmap bm = BitmapFactory.decodeResource(SingtelDiningMainPage.instance.getResources(), R.drawable.bubble);
 				canvas.drawBitmap(bm, infoWindowOffsetX-34, infoWindowOffsetY-20, null);
 				canvas.drawText(selectedMapLocation.getTitle(), infoWindowOffsetX+TEXT_OFFSET_X, infoWindowOffsetY+TEXT_OFFSET_Y, getTextPaint());
     		}

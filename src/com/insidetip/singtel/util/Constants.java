@@ -4,8 +4,8 @@ public interface Constants {
 
 	public static final int SPLASH_WAIT_MILLISEC = 2000;
 	
-	public static final String FACEBOOK_API_KEY = "6a7facfc90bf950d0fa11b12d825a5a1";
-	public static final String FACEBOOK_API_SECRETKEY = "79fb05fbfe942997950ff34bf0341aad";
+	public static final String FACEBOOK_API_KEY = "8a710cdf7a8f707fe3c4043428c00619";
+	public static final String FACEBOOK_API_SECRETKEY = "f687d73dbc545562fbf8d3ee893a28c4";
 	
 	public static final String RESTAURANT_LINK = "http://uob.dc2go.net/singtel/get_restaurant_list.php";
 	

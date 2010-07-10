@@ -211,16 +211,6 @@
 						android:layout_marginRight="5px"
 						android:layout_marginTop="5px"/>
 			
-					<!-- <Button
-						android:id="@+id/facebookButton"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:background="@drawable/facebook_icon"
-						android:layout_marginLeft="5px" 
-						android:layout_marginBottom="5px" 
-						android:layout_marginRight="5px"
-						android:layout_marginTop="5px"/> -->
-					
 					<com.codecarpet.fbconnect.FBLoginButton
 						android:id="@+id/facebookButton"
 						android:layout_width="wrap_content"

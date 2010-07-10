@@ -27,20 +27,21 @@ import com.codecarpet.fbconnect.FBSession;
 import com.codecarpet.fbconnect.FBLoginButton.FBLoginButtonStyle;
 import com.codecarpet.fbconnect.FBRequest.FBRequestDelegate;
 import com.codecarpet.fbconnect.FBSession.FBSessionDelegate;
+import com.insidetip.singtel.adapter.Controller;
 import com.insidetip.singtel.info.MerchantInfo;
 import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
 
-public class Description extends SingtelDiningActivity {
+public class DescriptionPage extends SingtelDiningActivity {
 
-	public static Description instance;
+	public static DescriptionPage instance;
 	private static boolean isFlipped = true;
 	public static MerchantInfo merchantInfo;
 	
 	private FBSession fbSession;
 	private FBLoginButton facebookButton;
 	private final String GET_SESSION_PROXY = null;
-	TextView offer;
+	private TextView offer;
 	
 	private static final int MESSAGE_PUBLISHED = 2;
 	
@@ -58,9 +59,11 @@ public class Description extends SingtelDiningActivity {
 		}
 		
 		setContentView(R.layout.details_page);
-		
 		instance = this;
-		
+		init();
+	}
+	
+	private void init() {
 		Button twitter = (Button)findViewById(R.id.twitterButton);
 		twitter.setOnClickListener(new OnClickListener() {
 			
@@ -113,12 +116,21 @@ public class Description extends SingtelDiningActivity {
 		TextView merchantAddress = (TextView)findViewById(R.id.merchantAddress);
 		merchantAddress.setText(merchantInfo.getAddress());
 		
+		Button mapButton = (Button) findViewById(R.id.mapButton);
+		mapButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Controller.displayMapScreen(instance);
+			}
+		});
+		
 		facebookButton = (FBLoginButton) findViewById(R.id.facebookButton);
 		facebookButton.setStyle(FBLoginButtonStyle.FBLoginButtonStyleWide);
 		facebookButton.setSession(fbSession);
 		fbSession.resume(this);
 	}
-	
+
 	private void checkPermission() {
 		String fql = "select publish_stream from permissions where uid == " + String.valueOf(fbSession.getUid());
         Map<String, String> params = Collections.singletonMap("query", fql);

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+	
+	<LinearLayout
+		android:id="@+id/twitterHeaderView"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_gravity="center_vertical|center_horizontal"
+		android:layout_marginTop="5px">
+		
+		<ImageView 
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/header" />
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal" 
+		android:paddingBottom="15px" 
+		android:paddingTop="15px" 
+		android:gravity="center_vertical|center_horizontal">
+		
+		<Button 
+			android:id="@+id/mapButton"
+			android:background="@drawable/leftbutton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Map"
+			android:textSize="17px" 
+			android:typeface="sans" 
+			android:textColor="@color/COLOR_WHITE"/>
+			
+		<Button 
+			android:id="@+id/directionsButton"
+			android:background="@drawable/rightbutton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Directions"
+			android:textSize="17px" 
+			android:typeface="sans" 
+			android:textColor="@color/COLOR_WHITE"/>
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:gravity="center_vertical|center_horizontal">
+		
+		<TextView 
+			android:id="@+id/addressTextView"
+			android:text="1021 Mornington Crescent, Seletar East Camp, Orientus Resort (S) 798659"
+			android:layout_marginRight="10px" 
+			android:layout_marginLeft="10px" 
+			android:textSize="17px" 
+			android:typeface="sans" 
+			android:textColor="@color/COLOR_WHITE" 
+			android:layout_height="50px"
+			android:gravity="center_horizontal" 
+			android:layout_width="fill_parent"/>
+	</LinearLayout>
+	
+</LinearLayout>

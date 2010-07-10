@@ -57,7 +57,7 @@ public class SingtelDining extends Activity {
 			}
 			finally {
 				finish();
-				startActivity(new Intent(instance, SingtelDiningMainScreen.class));
+				startActivity(new Intent(instance, SingtelDiningMainPage.class));
 				stop();
 			}
 		}
