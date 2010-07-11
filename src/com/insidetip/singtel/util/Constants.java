@@ -22,5 +22,5 @@ public interface Constants {
 	public static final String FACEBOOK_PROPERTIES = "\"properties\":{\"Powered By\":{\"text\":\"SingTel\",\"href\":\"http://www.singtel.com\"}}}";
 	
 	public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZhi5SfyLSW5kbDrnnNElk7slgjQnw";
-	public static final String KEY_MAP_RELEASE = "";
+	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZhZnXRi4SKnCeLgWI8xYg3i2XGUGg";
 }

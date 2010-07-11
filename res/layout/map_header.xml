@@ -2,11 +2,12 @@
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
+	android:layout_height="wrap_content"
 	android:orientation="vertical">
 	
+	<!-- Header -->
 	<LinearLayout
-		android:id="@+id/twitterHeaderView"
+		android:id="@+id/mapsHeaderView"
 		android:orientation="horizontal"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
@@ -19,13 +20,14 @@
 			android:src="@drawable/header" />
 	</LinearLayout>
 	
+	<!-- Buttons -->
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal" 
-		android:paddingBottom="15px" 
-		android:paddingTop="15px" 
-		android:gravity="center_vertical|center_horizontal">
+		android:paddingTop="10px" 
+		android:gravity="center_vertical|center_horizontal" 
+		android:paddingBottom="10px">
 		
 		<Button 
 			android:id="@+id/mapButton"
@@ -48,6 +50,7 @@
 			android:textColor="@color/COLOR_WHITE"/>
 	</LinearLayout>
 	
+	<!-- Address -->
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -66,5 +69,4 @@
 			android:gravity="center_horizontal" 
 			android:layout_width="fill_parent"/>
 	</LinearLayout>
-	
 </LinearLayout>

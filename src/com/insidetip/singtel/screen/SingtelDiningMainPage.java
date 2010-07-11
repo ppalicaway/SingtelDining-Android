@@ -50,14 +50,19 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	private void settingLayout() {
 		
-		Thread coords = new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				double latLong[] = Util.queryLatLong(instance);
-			}
-		});
-		coords.start();
+		try {
+			Thread coords = new Thread(new Runnable() {
+				
+				@Override
+				public void run() {
+					double latLong[] = Util.queryLatLong(instance);
+				}
+			});
+			coords.start();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);

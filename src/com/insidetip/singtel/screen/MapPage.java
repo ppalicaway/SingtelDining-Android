@@ -4,9 +4,11 @@ import android.content.Context;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.google.android.maps.MapActivity;
 import com.insidetip.singtel.map.GPSLocationListener;
+import com.insidetip.singtel.util.Util;
 
 public class MapPage extends MapActivity {
 	
@@ -35,6 +37,14 @@ public class MapPage extends MapActivity {
 		}
 		else if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 200, gpsLocationListener);
+		}
+		
+		TextView address = (TextView) findViewById(R.id.addressTextView);
+		try {
+			address.setText(DescriptionPage.merchantInfo.getAddress());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
