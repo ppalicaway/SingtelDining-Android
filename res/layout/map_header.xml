@@ -31,23 +31,21 @@
 		
 		<Button 
 			android:id="@+id/mapButton"
-			android:background="@drawable/leftbutton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Map"
 			android:textSize="17px" 
 			android:typeface="sans" 
-			android:textColor="@color/COLOR_WHITE"/>
+			android:textColor="@color/COLOR_WHITE" android:background="@drawable/blackleft_button"/>
 			
 		<Button 
 			android:id="@+id/directionsButton"
-			android:background="@drawable/rightbutton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Directions"
 			android:textSize="17px" 
 			android:typeface="sans" 
-			android:textColor="@color/COLOR_WHITE"/>
+			android:textColor="@color/COLOR_WHITE" android:background="@drawable/blackright_button"/>
 	</LinearLayout>
 	
 	<!-- Address -->

@@ -18,7 +18,7 @@ public class ARSphericalView extends View {
 	
 	public static Location deviceLocation;
 	public static float currentAltitude = 0;
-	protected Paint p = new Paint();
+	protected Paint paint = new Paint();
 
 	public ARSphericalView(Context context) {
 		super(context);

@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -28,6 +29,8 @@ import com.codecarpet.fbconnect.FBLoginButton.FBLoginButtonStyle;
 import com.codecarpet.fbconnect.FBRequest.FBRequestDelegate;
 import com.codecarpet.fbconnect.FBSession.FBSessionDelegate;
 import com.insidetip.singtel.adapter.Controller;
+import com.insidetip.singtel.info.BankOffer;
+import com.insidetip.singtel.info.MerchantDetails;
 import com.insidetip.singtel.info.MerchantInfo;
 import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
@@ -37,11 +40,15 @@ public class DescriptionPage extends SingtelDiningActivity {
 	public static DescriptionPage instance;
 	private static boolean isFlipped = true;
 	public static MerchantInfo merchantInfo;
+	private static MerchantDetails merchantDetails;
+	public static int catID;
 	
 	private FBSession fbSession;
 	private FBLoginButton facebookButton;
 	private final String GET_SESSION_PROXY = null;
 	private TextView offer;
+	private ProgressDialog progressDialog = null;
+	private Runnable queryThread;
 	
 	private static final int MESSAGE_PUBLISHED = 2;
 	
@@ -129,6 +136,76 @@ public class DescriptionPage extends SingtelDiningActivity {
 		facebookButton.setStyle(FBLoginButtonStyle.FBLoginButtonStyleWide);
 		facebookButton.setSession(fbSession);
 		fbSession.resume(this);
+		
+		queryThread = new Runnable() {
+			
+			@Override
+			public void run() {
+				getData();
+				//runOnUiThread(getMerchantDetails);
+			}
+		};
+	}
+
+	protected void getData() {
+		String result = "";
+		result = Util.getHttpData(Constants.RESTAURANT_DETAIL + merchantInfo.getId());
+		
+		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
+			//TODO
+		}
+		else {
+			result = Util.toJSONString(result);
+			merchantDetails = new MerchantDetails();
+			
+			try {
+				JSONObject jsonObject1 = new JSONObject(result);
+				JSONArray names = jsonObject1.names();
+				JSONArray valArray = jsonObject1.toJSONArray(names);
+				JSONObject jsonObject2 = valArray.getJSONObject(0);
+				
+				int id = Integer.parseInt(jsonObject2.getString("id"));
+				String image = jsonObject2.getString("img");
+				String thumbnail = jsonObject2.getString("thumb");
+				String title = jsonObject2.getString("title");
+				String type = jsonObject2.getString("type");
+				double rating = Double.parseDouble(jsonObject2.getString("rating"));
+				int reviews = Integer.parseInt(jsonObject2.getString("reviews"));
+				String address = jsonObject2.getString("address");
+				String phone = jsonObject2.getString("phone");
+				double latitude = Double.parseDouble(jsonObject2.getString("latitude"));
+				double longitude = Double.parseDouble(jsonObject2.getString("longitude"));
+				String description = jsonObject2.getString("description");
+				
+				merchantDetails.setId(id);
+				merchantDetails.setImage(image);
+				merchantDetails.setThumbnail(thumbnail);
+				merchantDetails.setTitle(title);
+				merchantDetails.setType(type);
+				merchantDetails.setRating(rating);
+				merchantDetails.setReviews(reviews);
+				merchantDetails.setAddress(address);
+				merchantDetails.setPhone(phone);
+				merchantDetails.setLatitude(latitude);
+				merchantDetails.setLongitude(longitude);
+				merchantDetails.setDescription(description);
+				
+				JSONArray bankInfo = jsonObject2.getJSONArray("offers");
+				
+				for(int i = 0; i < bankInfo.length(); i++) {
+					JSONObject jsonObject3 = bankInfo.getJSONObject(i);
+					String bankname = jsonObject3.getString("bank");
+					String card = jsonObject3.getString("card");
+					String offer = jsonObject3.getString("offer");
+					String tnc = jsonObject3.getString("tnc");
+					
+					merchantDetails.getBankOffers().add(new BankOffer(bankname, card, offer, tnc));
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	private void checkPermission() {

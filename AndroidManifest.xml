@@ -16,6 +16,7 @@
         <activity android:name="DescriptionPage" android:label="DescriptionPage" android:screenOrientation="portrait" />
         <activity android:name="SettingsPage" android:label="SettingsPage" android:screenOrientation="portrait" />
         <activity android:name="MapPage" android:label="MapPage" android:screenOrientation="portrait" />
+        <activity android:name="ARScreen" android:label="ARScreen" />
         
         <activity android:name="com.codecarpet.fbconnect.FBLoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:screenOrientation="portrait"/>
 		<activity android:name="com.codecarpet.fbconnect.FBPermissionActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:screenOrientation="portrait"/>

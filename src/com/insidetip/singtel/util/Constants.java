@@ -8,6 +8,7 @@ public interface Constants {
 	public static final String FACEBOOK_API_SECRETKEY = "f687d73dbc545562fbf8d3ee893a28c4";
 	
 	public static final String RESTAURANT_LINK = "http://uob.dc2go.net/singtel/get_restaurant_list.php";
+	public static final String RESTAURANT_DETAIL = "http://singtel.dc2go.net/singtel/get_detail.php?id=";
 	
 	public static final String ERROR_CODE_UNKNOW_HOST = "404";
 	public static final String ERROR_CODE_TIME_OUT = "408";
@@ -21,6 +22,8 @@ public interface Constants {
 	public static final String FACEBOOK_MEDIA = "\"media\":[{\"type\":\"image\",\"src\":\"";
 	public static final String FACEBOOK_PROPERTIES = "\"properties\":{\"Powered By\":{\"text\":\"SingTel\",\"href\":\"http://www.singtel.com\"}}}";
 	
-	public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZhi5SfyLSW5kbDrnnNElk7slgjQnw";
-	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZhZnXRi4SKnCeLgWI8xYg3i2XGUGg";
+	public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZh-5KqNtCjZdddrt5sJKMQZqMxZYQ";
+	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZg30kaIdQsjQytD7UqxyyWDZPyIlg";
+	
+	public static final String DEFAULT_SHARE_DATA = "DEFAULT_SHARE_DATA";
 }

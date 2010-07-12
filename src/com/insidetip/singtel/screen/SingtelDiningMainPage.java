@@ -58,7 +58,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					double latLong[] = Util.queryLatLong(instance);
 				}
 			});
-			coords.start();
+			//coords.start();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -172,6 +172,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		MerchantInfo mInfo = merchantList.get(position);
 		DescriptionPage.merchantInfo = mInfo;
+		DescriptionPage.catID = mInfo.getId();
 		Intent details = new Intent(instance, DescriptionPage.class);
 		startActivity(details);
 	}

@@ -195,6 +195,13 @@ public class MapLocationOverlay extends Overlay {
 				int TEXT_OFFSET_Y = 2;
 				Bitmap bm = BitmapFactory.decodeResource(SingtelDiningMainPage.instance.getResources(), R.drawable.bubble);
 				canvas.drawBitmap(bm, infoWindowOffsetX-34, infoWindowOffsetY-20, null);
+				
+				String title = selectedMapLocation.getTitle();
+				
+				if(title.length() > 20) {
+					title = title.substring(0, 20) + "...";
+				}
+				
 				canvas.drawText(selectedMapLocation.getTitle(), infoWindowOffsetX+TEXT_OFFSET_X, infoWindowOffsetY+TEXT_OFFSET_Y, getTextPaint());
     		}
     	}
