@@ -1,5 +1,6 @@
 package com.insidetip.singtel.screen;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import org.json.JSONArray;
@@ -9,20 +10,22 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.insidetip.singtel.adapter.Controller;
 import com.insidetip.singtel.info.MerchantInfo;
+import com.insidetip.singtel.map.GPSLocationListener;
 import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
 
@@ -33,6 +36,14 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private ListViewAdapter m_adapter;
 	private Runnable queryThread;
 	private ProgressDialog progressDialog = null;
+	LocationManager myLocationManager;
+	GPSLocationListener locationListener;
+	Location location;
+	
+	private static String URL = Constants.RESTAURANT_LOCATION_PAGE;
+	
+	private static double latitude;
+	private static double longitude;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,41 +75,44 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			e.printStackTrace();
 		}
 		
-		merchantList = new ArrayList<MerchantInfo>();
-		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
-		setListAdapter(m_adapter);
+		myLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+		locationListener = new GPSLocationListener();
 		
-		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		if(myLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			location = myLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		}
+		else if(myLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+			location = myLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+		}
 		
-		queryThread = new Runnable() {
-			
-			@Override
-			public void run() {
-				getData();
-				runOnUiThread(addToMerchantList);
-			}
-		};
+		latitude = location.getLatitude();
+		longitude = location.getLongitude();
 		
-		Thread thread = new Thread(null, queryThread, "queryThread");
-		thread.start();
+		Button locationButton = (Button)findViewById(R.id.locationButton);
+		locationButton.setOnClickListener(new MenuListener());
 		
-		Button mapButton = (Button) findViewById(R.id.mapButton);
-		mapButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Controller.displayMapScreen(instance);
-			}
-		});
+		Button restaurantButton = (Button)findViewById(R.id.restaurantButton);
+		restaurantButton.setOnClickListener(new MenuListener());
+		
+		Button cuisineButton = (Button)findViewById(R.id.cuisineButton);
+		cuisineButton.setOnClickListener(new MenuListener());
+		
+		Button favoriteButton = (Button)findViewById(R.id.favoriteButton);
+		favoriteButton.setOnClickListener(new MenuListener());
+		
+		Button searchButton = (Button)findViewById(R.id.searchButton);
+		searchButton.setOnClickListener(new MenuListener());
+		
+		reloadData();
 	}
 
 	protected void getData() {
 		String result = "";
 		
-		result = Util.getHttpData(Constants.RESTAURANT_LINK);
+		result = Util.getHttpData(URL);
 		
 		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
-			//TODO:
+			Util.showAlert(instance, "", "Internet Connection", "OK", false);
 		}
 		else {
 			result = Util.toJSONString(result);
@@ -129,6 +143,16 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						reviews = Integer.parseInt(jsonObject2.getString("Reviews"));
 						latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
 						longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
+						
+						System.out.println(id);
+						System.out.println(image);
+						System.out.println(restaurantName);
+						System.out.println(address);
+						System.out.println(rating);
+						System.out.println(reviews);
+						System.out.println(latitude);
+						System.out.println(longitude);
+						System.out.println("===========================");
 						
 						MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
 						merchantList.add(mInfo);
@@ -176,6 +200,56 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		Intent details = new Intent(instance, DescriptionPage.class);
 		startActivity(details);
 	}
+	
+	private void reloadData() {
+		merchantList = new ArrayList<MerchantInfo>();
+		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
+		setListAdapter(m_adapter);
+		
+		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		
+		queryThread = new Runnable() {
+			
+			@Override
+			public void run() {
+				getData();
+				runOnUiThread(addToMerchantList);
+			}
+		};
+		
+		Thread thread = new Thread(null, queryThread, "queryThread");
+		thread.start();
+	}
+	
+	private class MenuListener implements OnClickListener {
+
+		@Override
+		public void onClick(View v) {
+			switch(v.getId()) {
+				case R.id.settingsButton:
+					Intent settings = new Intent(instance, SettingsPage.class);
+					startActivity(settings);
+					break;
+				case R.id.locationButton:
+					SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PAGE;
+					reloadData();
+					break;
+				case R.id.restaurantButton:
+					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE;
+					reloadData();
+					break;
+				case R.id.cuisineButton:
+					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE;
+					reloadData();
+					break;
+				case R.id.favoriteButton:
+					break;
+				case R.id.searchButton:
+					break;
+			}
+		}
+		
+	}
 
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
 		private ArrayList<MerchantInfo> merchants;
@@ -196,6 +270,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			
 			final MerchantInfo merchant = merchants.get(position);
 			if(merchant != null) {
+				
+				TextView distance = (TextView)view.findViewById(R.id.distance);
+				DecimalFormat df = new DecimalFormat("#.##");
+				String distanceText = df.format(Util.distanceTo(latitude, longitude, merchant.getLatitude(), merchant.getLongitude()));
+				distance.setText(distanceText + " km");
+				
 				TextView merchantName = (TextView)view.findViewById(R.id.merchantName);
 				merchantName.setText(merchant.getRestaurantName());
 				
@@ -222,5 +302,24 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			
 			return view;
 		}
+	}
+	
+	@Override
+	protected void onResume() {
+		if(myLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			myLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 200, locationListener);
+			location = myLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+		}
+		else if(myLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+			myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 200, locationListener);
+			location = myLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+		}
+		super.onResume();
+	}
+	
+	@Override
+	protected void onPause() {
+		myLocationManager.removeUpdates(locationListener);
+		super.onPause();
 	}
 }

@@ -22,6 +22,9 @@ public class GPSLocationListener implements LocationListener {
 		latitude = location.getLatitude();
 		longitude = location.getLongitude();
 		
+		Util.latitude = latitude;
+		Util.longitude = longitude;
+		
 		if(MapLocationViewer.useCurrentGPS) {
 			DecimalFormat twoDForm = new DecimalFormat("#.####");
 			String latStr = Double.valueOf(twoDForm.format(latitude)).toString();

@@ -45,6 +45,9 @@ import android.view.Display;
 import android.view.WindowManager;
 
 public class Util {
+	
+	public static double latitude;
+	public static double longitude;
 
 	public static int getScreenWidth(Context c){
 		Display display = ((WindowManager)c.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay(); 

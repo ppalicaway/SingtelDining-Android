@@ -26,4 +26,8 @@ public interface Constants {
 	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZg30kaIdQsjQytD7UqxyyWDZPyIlg";
 	
 	public static final String DEFAULT_SHARE_DATA = "DEFAULT_SHARE_DATA";
+	
+	public static final String RESTAURANT_LOCATION_PAGE="http://singtel.dc2go.net/singtel/get_restaurant_by_location.php?latitude=1.336336&longitude=103.847678&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
+	public static final String RESTAURANT_RESTO_PAGE="http://singtel.dc2go.net/singtel/get_restaurant_list.php?resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
+	public static final String RESTAURANT_CUSINE_PAGE="http://singtel.dc2go.net/singtel/get_restaurant_by_cuisine_type.php?cuisineTypeID=3&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
 }
