@@ -41,7 +41,7 @@ public class MapPage extends MapActivity {
 		
 		TextView address = (TextView) findViewById(R.id.addressTextView);
 		try {
-			address.setText(DescriptionPage.merchantInfo.getAddress());
+			address.setText(DescriptionPage.merchantDetails.getAddress());
 		}
 		catch (Exception e) {
 			e.printStackTrace();

@@ -8,4 +8,5 @@
     <string name="not_responding">Network Host not responding.</string>
 	<string name="successful_twitter">Posted Successfully.</string>
 	<string name="retrieving">Retrieving Data...</string>
+	<string name="loading">Loading Data...</string>
 </resources>

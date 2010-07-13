@@ -74,7 +74,7 @@
 					<LinearLayout
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-						android:orientation="horizontal"
+						android:orientation="vertical"
 						android:layout_marginLeft="5px"
 						android:layout_marginRight="5px"
 						android:layout_marginTop="5px"
@@ -84,21 +84,48 @@
 							android:id="@+id/merchantName"
 							android:layout_width="wrap_content"
 							android:layout_height="wrap_content"
-							android:text="Cafe De Hong Kong"
+							android:text=""
 							android:textColor="@color/COLOR_SUBTEXT"
 							android:textStyle="bold"
 							android:textSize="17px"
 							android:typeface="sans" />
+							
+						<LinearLayout
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal">
+							
+							<TextView
+								android:id="@+id/merchantType"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text=""
+								android:textColor="@color/COLOR_SUBTEXT"
+								android:textStyle="italic"
+								android:textSize="10px"
+								android:typeface="sans" 
+								android:layout_marginRight="20px" />
+							
+							<TextView
+								android:id="@+id/merchantReviews"
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:text=""
+								android:textColor="@color/COLOR_BG"
+								android:textSize="10px"
+								android:typeface="sans" />
+						</LinearLayout>
 					</LinearLayout>
 			
 					<LinearLayout
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:orientation="vertical"
 						android:gravity="right|center_vertical"
-						android:layout_marginLeft="-65px"
+						android:layout_marginLeft="-75px"
 						android:layout_marginTop="5px"
 						android:layout_marginBottom="5px">
-				
+						
 						<RatingBar 
 							android:id="@+id/indicator_ratingbar"
 							android:layout_gravity="center_vertical"
@@ -107,7 +134,10 @@
 							android:layout_width="fill_parent"
 							android:numStars="5"
 							android:stepSize="0.5"
-							android:layout_height="wrap_content" />
+							android:layout_height="wrap_content"
+							android:layout_marginRight="5px" />
+						
+						
 					</LinearLayout>
 				</LinearLayout>
 		
@@ -123,19 +153,36 @@
 						android:id="@+id/merchantPic"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:layout_marginRight="30px"
+						android:layout_marginRight="15px"
 						android:src="@drawable/default_icon1" />
 				
-					<TextView 
-						android:id="@+id/offerTextView"
+					<LinearLayout
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-						android:textColor="@color/COLOR_BLACK"
-						android:gravity="center_vertical"
-						android:typeface="sans"
-						android:height="70px"
-						android:text="Citibank Offer:\n1 for 1 Lunch promo\nValid till jun 2010" />
+						android:orientation="vertical">
+						
+						<TextView 
+							android:id="@+id/offerTextView"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:textColor="@color/COLOR_BLACK"
+							android:typeface="sans"
+							android:height="105px"
+							android:text="" />
+							
+						<TextView 
+							android:id="@+id/termsTextView"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:textColor="@color/COLOR_DARKER_LIGHT_BLUE"
+							android:gravity="center_vertical|center_horizontal"
+							android:typeface="sans"
+							android:textStyle="bold"
+							android:textSize="14px"
+							android:height="20px"
+							android:text="T&amp;C" />
 				</LinearLayout>
+					</LinearLayout>
 			</LinearLayout>
 	
 			<!-- Card List -->
@@ -184,7 +231,21 @@
 					android:layout_marginRight="5px"
 					android:layout_marginTop="5px"
 					android:singleLine="true"
-					android:text="#01-01 Eastpac Building 586 Balestier Road Singapore" />
+					android:text="" />
+					
+				<TextView 
+					android:id="@+id/merchantPhone"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:typeface="sans"
+					android:textColor="@color/COLOR_BLACK"
+					android:textSize="14px"
+					android:ellipsize="end"
+					android:layout_marginLeft="5px"
+					android:layout_marginRight="5px"
+					android:layout_marginTop="5px"
+					android:singleLine="true"
+					android:text="" />
 			
 				<LinearLayout
 					android:layout_width="fill_parent"
@@ -273,8 +334,8 @@
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
 					android:textSize="14px"
-					android:height="100px"
-					android:text="Description not available." />
+					android:minHeight="100px"
+					android:text="" />
 			</LinearLayout>
 		</LinearLayout>
 	</ScrollView>

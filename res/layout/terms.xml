@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@drawable/bg"
+	android:gravity="center_horizontal">
+
+	<LinearLayout
+		android:id="@+id/mapsHeaderView"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_gravity="center_vertical|center_horizontal"
+		android:layout_marginTop="5px">
+		
+		<ImageView 
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/header" />
+	</LinearLayout>
+	
+	<ScrollView 
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:fadingEdge="none"
+		android:scrollbars="none">
+	
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:orientation="vertical"
+			android:gravity="center_horizontal">
+			
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:background="@drawable/grayroundededge"
+				android:layout_marginLeft="5px"
+				android:layout_marginRight="5px"
+				android:layout_marginTop="-1px">
+		
+				<TextView
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5px"
+					android:layout_marginRight="5px"
+					android:paddingTop="5px"
+					android:paddingBottom="5px"
+					android:textColor="@color/COLOR_BLACK"
+					android:typeface="sans"
+					android:textSize="17px"
+					android:textStyle="bold"
+					android:gravity="center_vertical|center_horizontal"
+					android:text="Terms and Conditions" />
+			</LinearLayout>
+	
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:background="@drawable/listbgrounded"
+				android:layout_marginLeft="5px"
+				android:layout_marginRight="5px"
+				android:gravity="center_horizontal">
+	
+				<TextView
+					android:id="@+id/tncTextView"
+					android:gravity="left|top"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5px"
+					android:layout_marginRight="5px"
+					android:paddingTop="5px"
+					android:paddingBottom="5px"
+					android:textColor="@color/COLOR_BLACK"
+					android:typeface="sans"
+					android:textSize="14px"
+					android:text="" />
+			</LinearLayout>	
+	
+			<Button 
+				android:id="@+id/termsPageOKButton"
+				android:layout_marginTop="5px"
+				android:layout_width="150px"
+				android:layout_height="wrap_content"
+				android:text="OK"
+				android:textSize="17px"
+				android:textStyle="bold"
+				android:textColor="@color/COLOR_BG"
+				android:typeface="sans" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

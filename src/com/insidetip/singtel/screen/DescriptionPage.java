@@ -40,7 +40,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 	public static DescriptionPage instance;
 	private static boolean isFlipped = true;
 	public static MerchantInfo merchantInfo;
-	private static MerchantDetails merchantDetails;
+	public static MerchantDetails merchantDetails;
 	public static int catID;
 	
 	private FBSession fbSession;
@@ -71,85 +71,106 @@ public class DescriptionPage extends SingtelDiningActivity {
 	}
 	
 	private void init() {
-		Button twitter = (Button)findViewById(R.id.twitterButton);
-		twitter.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent twitterPage = new Intent(instance, TwitterPage.class);
-				startActivity(twitterPage);
-			}
-		});
 		
-		ImageView creditCards = (ImageView)findViewById(R.id.creditCardImageView);
-		creditCards.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.hyperspace_out);
-				LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);
-				offer = (TextView)findViewById(R.id.offerTextView);
-				ll.startAnimation(animation);
-				if(isFlipped) {
-					offer.setText("Citibank Offer:\n1 for 1 Dinner promo\nValid till jun 2010");
-					isFlipped = false;
-				}
-				else {
-					offer.setText("Citibank Offer:\n1 for 1 Lunch promo\nValid till jun 2010");
-					isFlipped = true;
-				}
-			}
-		});
-		
-		TextView merchantName = (TextView)findViewById(R.id.merchantName);
-		merchantName.setText(merchantInfo.getRestaurantName());
-		
-		Bitmap bitmap;
-		ImageView merchantPic = (ImageView)findViewById(R.id.merchantPic);
-		if(!merchantInfo.getImage().equals(null) || !merchantInfo.getImage().equalsIgnoreCase("")) {
-			bitmap = Util.getBitmap(merchantInfo.getImage());
-			if(bitmap != null) {
-				bitmap = Util.resizeImage(bitmap, 90, 70);
-				merchantPic.setImageBitmap(bitmap);
-			}
-			else {
-				merchantPic.setImageResource(R.drawable.default_icon1);
-			}
-		}
-		else {
-			merchantPic.setImageResource(R.drawable.default_icon1);
-		}
-		
-		TextView merchantAddress = (TextView)findViewById(R.id.merchantAddress);
-		merchantAddress.setText(merchantInfo.getAddress());
-		
-		Button mapButton = (Button) findViewById(R.id.mapButton);
-		mapButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Controller.displayMapScreen(instance);
-			}
-		});
-		
-		facebookButton = (FBLoginButton) findViewById(R.id.facebookButton);
-		facebookButton.setStyle(FBLoginButtonStyle.FBLoginButtonStyleWide);
-		facebookButton.setSession(fbSession);
-		fbSession.resume(this);
+		progressDialog = ProgressDialog.show(this, "", getString(R.string.loading), true);
 		
 		queryThread = new Runnable() {
 			
 			@Override
 			public void run() {
 				getData();
-				//runOnUiThread(getMerchantDetails);
+				runOnUiThread(populateData);
 			}
 		};
+		
+		Thread thread = new Thread(null, queryThread, "queryThread");
+		thread.start();
+		
+		Button twitter = (Button)findViewById(R.id.twitterButton);
+		twitter.setOnClickListener(new ButtonEvents());
+				
+		Button mapButton = (Button) findViewById(R.id.mapButton);
+		mapButton.setOnClickListener(new ButtonEvents());
+		
+		TextView termsTextView = (TextView)findViewById(R.id.termsTextView);
+		termsTextView.setOnClickListener(new ButtonEvents());
+		
+		facebookButton = (FBLoginButton) findViewById(R.id.facebookButton);
+		facebookButton.setStyle(FBLoginButtonStyle.FBLoginButtonStyleWide);
+		facebookButton.setSession(fbSession);
+		fbSession.resume(this);
 	}
+	
+	private Runnable populateData = new Runnable() {
+
+		@Override
+		public void run() {
+			
+			offer = (TextView)findViewById(R.id.offerTextView);
+			offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
+			
+			TextView reviews = (TextView)findViewById(R.id.merchantReviews);
+			reviews.setText("Reviews: " + merchantDetails.getReviews());
+			
+			ImageView creditCards = (ImageView)findViewById(R.id.creditCardImageView);
+			creditCards.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.hyperspace_out);
+					LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);					
+					ll.startAnimation(animation);
+					if(isFlipped) {
+						offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
+						isFlipped = false;
+					}
+					else {
+						offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
+						isFlipped = true;
+					}
+				}
+			});
+			
+			TextView merchantName = (TextView)findViewById(R.id.merchantName);
+			merchantName.setText(merchantDetails.getTitle());
+			
+			TextView merchantType = (TextView)findViewById(R.id.merchantType);
+			merchantType.setText(merchantDetails.getType());
+			
+			Bitmap bitmap;
+			ImageView merchantPic = (ImageView)findViewById(R.id.merchantPic);
+			if(!merchantDetails.getImage().equals(null) || !merchantDetails.getImage().equalsIgnoreCase("")) {
+				bitmap = Util.getBitmap(merchantDetails.getImage());
+				if(bitmap != null) {
+					bitmap = Util.resizeImage(bitmap, 90, 70);
+					merchantPic.setImageBitmap(bitmap);
+				}
+				else {
+					merchantPic.setImageResource(R.drawable.default_icon1);
+				}
+			}
+			else {
+				merchantPic.setImageResource(R.drawable.default_icon1);
+			}
+			
+			TextView merchantAddress = (TextView)findViewById(R.id.merchantAddress);
+			merchantAddress.setText(merchantDetails.getAddress());
+			
+			TextView merchantPhone = (TextView)findViewById(R.id.merchantPhone);
+			merchantPhone.setText(merchantDetails.getPhone());
+			
+			TextView merchantDescription = (TextView)findViewById(R.id.descriptionTextView);
+			merchantDescription.setText(merchantDetails.getDescription());
+			
+			if(progressDialog.isShowing()) {
+				progressDialog.dismiss();
+			}
+		}		
+	};
 
 	protected void getData() {
 		String result = "";
-		result = Util.getHttpData(Constants.RESTAURANT_DETAIL + merchantInfo.getId());
+		result = Util.getHttpData(Constants.RESTAURANT_DETAIL + catID);
 		
 		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
 			//TODO
@@ -215,12 +236,12 @@ public class DescriptionPage extends SingtelDiningActivity {
 	}
 	
 	public void publishFeed() {
-		String nameMerchant = Constants.FACEBOOK_NAME + merchantInfo.getRestaurantName() + "\"";
+		String nameMerchant = Constants.FACEBOOK_NAME + merchantDetails.getTitle() + "\"";
 		String hrefMerchant = Constants.FACEBOOK_HREF + "http://www.singtel.com/\"";
-		String captionMerchant = Constants.FACEBOOK_CAPTION + merchantInfo.getAddress() + "\"";
+		String captionMerchant = Constants.FACEBOOK_CAPTION + merchantDetails.getAddress() + "\"";
 		String descriptionMerchant = Constants.FACEBOOK_DESCRIPTION + "\"";
-		String mediaMerchant = Constants.FACEBOOK_MEDIA + "" + merchantInfo.getImage() + "\"";
-		String hrefMedia = Constants.FACEBOOK_HREF + merchantInfo.getImage() +"\"";
+		String mediaMerchant = Constants.FACEBOOK_MEDIA + "" + merchantDetails.getImage() + "\"";
+		String hrefMedia = Constants.FACEBOOK_HREF + merchantDetails.getImage() +"\"";
 		String propertiesMerchant = Constants.FACEBOOK_PROPERTIES;
 		
 		Intent intent = new Intent(this, FBFeedActivity.class);
