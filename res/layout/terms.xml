@@ -78,7 +78,8 @@
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
 					android:textSize="14px"
-					android:text="" />
+					android:text=""
+					android:minHeight="300px" />
 			</LinearLayout>	
 	
 			<Button 

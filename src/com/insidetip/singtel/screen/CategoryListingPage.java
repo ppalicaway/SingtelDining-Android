@@ -142,6 +142,7 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 		SubCategoryListingPage.location = lInfo;
 		Intent subLocations = new Intent(instance, SubCategoryListingPage.class);
 		startActivity(subLocations);
+		instance.finish();
 	};
 	
 	private class ListViewAdapter extends ArrayAdapter<Location> {
@@ -169,5 +170,11 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 			
 			return view;
 		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		SingtelDiningMainPage.isFirst = true;
+		super.onDestroy();
 	}
 }

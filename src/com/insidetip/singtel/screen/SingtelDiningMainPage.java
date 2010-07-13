@@ -15,9 +15,9 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +27,6 @@ import android.widget.TextView;
 
 import com.insidetip.singtel.adapter.Controller;
 import com.insidetip.singtel.info.MerchantInfo;
-import com.insidetip.singtel.info.SubLocation;
 import com.insidetip.singtel.map.GPSLocationListener;
 import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
@@ -38,14 +37,16 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	public static ArrayList<MerchantInfo> merchantList;
 	private ListViewAdapter m_adapter;
 	private Runnable queryThread;
-	private ProgressDialog progressDialog = null;
+	public static ProgressDialog progressDialog = null;
 	private LocationManager myLocationManager;
 	private GPSLocationListener locationListener;
 	private Location location;
 	public static boolean isListing = true;
-	private static String URL = Constants.RESTAURANT_LOCATION_PAGE;
+	public static String URL = Constants.RESTAURANT_LOCATION_PAGE;
 	private static double latitude;
 	private static double longitude;
+	private EditText searchEditText;
+	public static boolean isFirst = true;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -108,98 +109,17 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		Button mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
 		
-		EditText searchEditText = (EditText)findViewById(R.id.searchEditText);
+		searchEditText = (EditText)findViewById(R.id.searchEditText);
 		searchEditText.setOnClickListener(new MenuListener());
+		
+		ListView listView = (ListView)findViewById(android.R.id.list);
+		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View view = layoutInflater.inflate(R.layout.loadmore, null);
+		listView.addFooterView(view);
 		
 		reloadData();
 	}
 
-	protected void getData() {
-		String result = "";
-		
-		result = Util.getHttpData(URL);
-		
-		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
-			Util.showAlert(instance, "", "Internet Connection", "OK", false);
-		}
-		else {
-			result = Util.toJSONString(result);
-			merchantList = new ArrayList<MerchantInfo>();
-			
-			try {
-				JSONObject jsonObject1 = new JSONObject(result);
-				JSONArray nameArray = jsonObject1.getJSONArray("data");
-				
-				try {
-					for(int i = 0; i < nameArray.length(); i++) {
-						JSONObject jsonObject2 = nameArray.getJSONObject(i);
-						
-						int id = 0;
-						String image = "";
-						String restaurantName = "";
-						String address = "";
-						float rating = 0;
-						int reviews = 0;
-						double latitude = 0;
-						double longitude = 0;
-						
-						id = Integer.parseInt(jsonObject2.getString("ID"));
-						image = jsonObject2.getString("Image");
-						restaurantName = jsonObject2.getString("RestaurantName");
-						address = jsonObject2.getString("Address");
-						rating = Float.parseFloat(jsonObject2.getString("Rating"));
-						reviews = Integer.parseInt(jsonObject2.getString("Reviews"));
-						latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
-						longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
-						
-						//System.out.println(id);
-						//System.out.println(image);
-						//System.out.println(restaurantName);
-						//System.out.println(address);
-						//System.out.println(rating);
-						//System.out.println(reviews);
-						//System.out.println(latitude);
-						//System.out.println(longitude);
-						//System.out.println("===========================");
-						
-						MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
-						merchantList.add(mInfo);
-					}
-				}
-				catch(Exception e) {
-					e.printStackTrace();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	private Runnable addToMerchantList = new Runnable() {
-		
-		@Override
-		public void run() {
-			if (merchantList != null && merchantList.size() > 0) {
-				m_adapter.notifyDataSetChanged();
-				for (int i = 0; i < merchantList.size(); i++) {
-					m_adapter.add(merchantList.get(i));
-				}
-			}
-			else {
-				//TODO:
-			}
-			
-			try {
-				if (progressDialog.isShowing()) {
-					progressDialog.dismiss();
-				}					
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	};
-	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		MerchantInfo mInfo = merchantList.get(position);
@@ -216,16 +136,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
 		
-		queryThread = new Runnable() {
-			
-			@Override
-			public void run() {
-				getData();
-				runOnUiThread(addToMerchantList);
-			}
-		};
-		
-		Thread thread = new Thread(null, queryThread, "queryThread");
+		Thread thread = new Thread(null, new QueryThread(), "QueryData");
 		thread.start();
 	}
 	
@@ -239,14 +150,17 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					startActivity(settings);
 					break;
 				case R.id.locationButton:
+					searchEditText.setText("Around Me");
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PAGE;
 					reloadData();
 					break;
 				case R.id.restaurantButton:
+					searchEditText.setText("");
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE;
 					reloadData();
 					break;
 				case R.id.cuisineButton:
+					searchEditText.setText("Chinese");
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE;
 					reloadData();
 					break;
@@ -262,10 +176,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					startActivity(category);
 					break;
 			}
-		}
-		
+		}		
 	}
-
+	
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
 		private ArrayList<MerchantInfo> merchants;
 		
@@ -319,6 +232,95 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		}
 	}
 	
+	private class QueryThread implements Runnable {
+
+		@Override
+		public void run() {
+			String result = "";
+			
+			result = Util.getHttpData(SingtelDiningMainPage.URL);
+			
+			if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
+				Util.showAlert(SingtelDiningMainPage.instance, "", "Internet Connection", "OK", false);
+				try {
+					if (progressDialog.isShowing()) {
+						progressDialog.dismiss();
+					}					
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			else {
+				result = Util.toJSONString(result);
+				SingtelDiningMainPage.merchantList = new ArrayList<MerchantInfo>();
+				
+				try {
+					JSONObject jsonObject1 = new JSONObject(result);
+					JSONArray nameArray = jsonObject1.getJSONArray("data");
+					
+					try {
+						for(int i = 0; i < nameArray.length(); i++) {
+							JSONObject jsonObject2 = nameArray.getJSONObject(i);
+							
+							int id = 0;
+							String image = "";
+							String restaurantName = "";
+							String address = "";
+							float rating = 0;
+							int reviews = 0;
+							double latitude = 0;
+							double longitude = 0;
+							
+							id = Integer.parseInt(jsonObject2.getString("ID"));
+							image = jsonObject2.getString("Image");
+							restaurantName = jsonObject2.getString("RestaurantName");
+							address = jsonObject2.getString("Address");
+							rating = Float.parseFloat(jsonObject2.getString("Rating"));
+							reviews = Integer.parseInt(jsonObject2.getString("Reviews"));
+							latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
+							longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
+							
+							MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
+							SingtelDiningMainPage.merchantList.add(mInfo);
+						}
+						runOnUiThread(new AddToMerchantList());
+					}
+					catch(Exception e) {
+						e.printStackTrace();
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}			
+		}
+	}
+	
+	private class AddToMerchantList implements Runnable {
+
+		@Override
+		public void run() {
+			if (merchantList != null && merchantList.size() > 0) {
+				m_adapter.notifyDataSetChanged();
+				for (int i = 0; i < merchantList.size(); i++) {
+					m_adapter.add(merchantList.get(i));
+				}
+			}
+			else {
+				//TODO:
+			}
+			try {
+				if (progressDialog.isShowing()) {
+					progressDialog.dismiss();
+				}					
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+	
 	@Override
 	protected void onResume() {
 		isListing = true;
@@ -330,12 +332,19 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 200, locationListener);
 			location = myLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		}
+		if(!isFirst) {
+			reloadData();
+			isFirst = true;
+		}
 		super.onResume();
 	}
+	
+	
 	
 	@Override
 	protected void onPause() {
 		isListing = false;
+		isFirst = false;
 		myLocationManager.removeUpdates(locationListener);
 		super.onPause();
 	}

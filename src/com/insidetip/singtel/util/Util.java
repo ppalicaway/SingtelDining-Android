@@ -174,7 +174,7 @@ public class Util {
 			bmImg = BitmapFactory.decodeStream(is);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
+		}
 		return bmImg;
 	}
 	
