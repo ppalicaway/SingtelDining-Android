@@ -51,11 +51,15 @@
 			android:layout_marginLeft="3px" />
 						
 		<EditText 
-			android:id="@+id/editText"
+			android:id="@+id/searchEditText"
 			android:layout_height="wrap_content" 
 			android:layout_width="165px" 
 			android:maxLines="1"
 			android:singleLine="true" 
+			android:editable="false"
+			android:gravity="center_horizontal|center_vertical"
+			android:text="Around Me"
+			android:textColor="@color/COLOR_BG"
 			android:background="@drawable/roundededittext"
 			android:layout_marginTop="2px"/>
 						

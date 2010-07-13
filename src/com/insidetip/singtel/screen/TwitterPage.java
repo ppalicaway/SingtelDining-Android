@@ -26,6 +26,7 @@ public class TwitterPage extends SingtelDiningActivity {
 		setContentView(R.layout.twitter);
 		
 		instance = this;
+		initActivity(instance);
 		
 		settingLayout();
 	}

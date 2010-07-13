@@ -20,11 +20,14 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.insidetip.singtel.adapter.Controller;
 import com.insidetip.singtel.info.MerchantInfo;
+import com.insidetip.singtel.info.SubLocation;
 import com.insidetip.singtel.map.GPSLocationListener;
 import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
@@ -36,12 +39,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private ListViewAdapter m_adapter;
 	private Runnable queryThread;
 	private ProgressDialog progressDialog = null;
-	LocationManager myLocationManager;
-	GPSLocationListener locationListener;
-	Location location;
-	
+	private LocationManager myLocationManager;
+	private GPSLocationListener locationListener;
+	private Location location;
+	public static boolean isListing = true;
 	private static String URL = Constants.RESTAURANT_LOCATION_PAGE;
-	
 	private static double latitude;
 	private static double longitude;
 	
@@ -103,6 +105,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		Button searchButton = (Button)findViewById(R.id.searchButton);
 		searchButton.setOnClickListener(new MenuListener());
 		
+		Button mapButton = (Button)findViewById(R.id.mapButton);
+		mapButton.setOnClickListener(new MenuListener());
+		
+		EditText searchEditText = (EditText)findViewById(R.id.searchEditText);
+		searchEditText.setOnClickListener(new MenuListener());
+		
 		reloadData();
 	}
 
@@ -144,15 +152,15 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
 						longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
 						
-						System.out.println(id);
-						System.out.println(image);
-						System.out.println(restaurantName);
-						System.out.println(address);
-						System.out.println(rating);
-						System.out.println(reviews);
-						System.out.println(latitude);
-						System.out.println(longitude);
-						System.out.println("===========================");
+						//System.out.println(id);
+						//System.out.println(image);
+						//System.out.println(restaurantName);
+						//System.out.println(address);
+						//System.out.println(rating);
+						//System.out.println(reviews);
+						//System.out.println(latitude);
+						//System.out.println(longitude);
+						//System.out.println("===========================");
 						
 						MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
 						merchantList.add(mInfo);
@@ -246,6 +254,13 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					break;
 				case R.id.searchButton:
 					break;
+				case R.id.mapButton:
+					Controller.displayMapScreen(instance);
+					break;
+				case R.id.searchEditText:
+					Intent category = new Intent(instance, CategoryListingPage.class);
+					startActivity(category);
+					break;
 			}
 		}
 		
@@ -285,19 +300,19 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				ImageView merchantPic = (ImageView)view.findViewById(R.id.merchantPic);
 				Bitmap bitmap;
 				
-				if(!merchant.getImage().equals(null) || !merchant.getImage().equalsIgnoreCase("")) {
-					bitmap = Util.getBitmap(merchant.getImage());
-					if(bitmap != null) {
-						bitmap = Util.resizeImage(bitmap, 55, 55);
-						merchantPic.setImageBitmap(bitmap);
-					}
-					else {
-						merchantPic.setImageResource(R.drawable.default_icon);
-					}
-				}
-				else {
+				//if(!merchant.getImage().equals(null) || !merchant.getImage().equalsIgnoreCase("")) {
+				//	bitmap = Util.getBitmap(merchant.getImage());
+				//	if(bitmap != null) {
+				//		bitmap = Util.resizeImage(bitmap, 55, 55);
+				//		merchantPic.setImageBitmap(bitmap);
+				//	}
+				//	else {
+				//		merchantPic.setImageResource(R.drawable.default_icon);
+				//	}
+				//}
+				//else {
 					merchantPic.setImageResource(R.drawable.default_icon);
-				}
+				//}
 			}
 			
 			return view;
@@ -306,6 +321,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	@Override
 	protected void onResume() {
+		isListing = true;
 		if(myLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
 			myLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 200, locationListener);
 			location = myLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -319,6 +335,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	@Override
 	protected void onPause() {
+		isListing = false;
 		myLocationManager.removeUpdates(locationListener);
 		super.onPause();
 	}
