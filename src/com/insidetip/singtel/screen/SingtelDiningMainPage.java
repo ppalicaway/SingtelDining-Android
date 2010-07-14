@@ -43,7 +43,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private GPSLocationListener locationListener;
 	private Location location;
 	public static boolean isListing = true;
-	public static String URL = Constants.RESTAURANT_LOCATION_PAGE;
+	public static String URL;
 	private static double latitude;
 	private static double longitude;
 	private EditText searchEditText;
@@ -57,6 +57,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	public static int page = 1;
 	public static int totalPage = 1;
 	public static int totalItems = 1;
+	private ListView listView;
+	private View view;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -93,9 +95,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			longitude = latLong[1];
 		}
 		
-		URL = URL + latitude +
-		      "&longitude=" + longitude +
-		      "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
+		System.out.println("nibalik");
+		URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
+	      "&longitude=" + longitude +
+	      "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=";
 		
 		Button locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
@@ -117,6 +120,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		searchEditText = (EditText)findViewById(R.id.searchEditText);
 		searchEditText.setOnClickListener(new MenuListener());
+		
+		listView = (ListView)findViewById(android.R.id.list);
+		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		view = layoutInflater.inflate(R.layout.loadmore, null);
+		listView.addFooterView(view);
 		
 		reloadData();
 	}
@@ -145,7 +153,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 		@Override
 		public void onClick(View v) {
-			totalItems = 0;
+			totalItems = 1;
 			totalPage = 1;
 			page = 1;
 			switch(v.getId()) {
@@ -163,7 +171,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					SingtelDiningMainPage.URL = 
 						Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 						"&longitude=" + Util.longitude +
-						"&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
+						"&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=";
 					reloadData();
 					break;
 				case R.id.restaurantButton:
@@ -283,7 +291,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		public void run() {
 			String result = "";
 			
-			result = Util.getHttpData(SingtelDiningMainPage.URL);
+			System.out.println("Testing::" + SingtelDiningMainPage.URL + page);
+			
+			result = Util.getHttpData(SingtelDiningMainPage.URL + page);
 			
 			if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
 				Util.showAlert(SingtelDiningMainPage.instance, "BestSGDeals", "Please make sure Internet connection is available.", "OK", false);
@@ -336,10 +346,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					}
 					
 					totalItems = jsonObject1.getInt("totalResults");
+					System.out.println("Petz::totalItems " + totalItems);
 					totalPage = totalItems / Constants.ITEMS_PER_PAGE;
 					if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
 						totalPage += 1;
 					}
+					System.out.println("Petz::totalPage " + totalPage);
 					
 					settingLoadMore();
 				} 
@@ -385,7 +397,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	@Override
 	protected void onResume() {
-		isListing = true;
 		if(myLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
 			myLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 200, locationListener);
 			location = myLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -398,15 +409,15 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	}
 	
 	public void settingLoadMore() {
-		ListView listView = (ListView)findViewById(android.R.id.list);
-		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = layoutInflater.inflate(R.layout.loadmore, null);
-		
-		if(totalItems > Constants.ITEMS_PER_PAGE) {
-			listView.addFooterView(view);
-		}
-		
 		Button loadMore = (Button)view.findViewById(R.id.loadMore);
+		
+		if(totalItems < Constants.ITEMS_PER_PAGE || page == totalPage) {
+			loadMore.setVisibility(Button.GONE);
+		}
+		else {
+			loadMore.setVisibility(Button.VISIBLE);
+		}
+				
 		loadMore.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -419,7 +430,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 	@Override
 	protected void onPause() {
-		isListing = false;
 		myLocationManager.removeUpdates(locationListener);
 		super.onPause();
 	}

@@ -25,6 +25,10 @@ public class SingtelDining extends Activity {
         setContentView(R.layout.splash);
         instance = this;
         
+        SingtelDiningMainPage.totalPage = 1;
+        SingtelDiningMainPage.page = 1;
+        SingtelDiningMainPage.totalItems = 1;
+        
         try {
         	ImageView splashImage = (ImageView)findViewById(R.id.splashImgView);
         	Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.splash);

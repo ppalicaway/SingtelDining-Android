@@ -144,14 +144,9 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 		Location lInfo = location.get(position);
 		SubCategoryListingPage.location = lInfo;
 		Intent subLocations = new Intent(instance, SubCategoryListingPage.class);
-		startActivityForResult(subLocations, SUBLOCATION_REQUEST);
-	};
-	
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		startActivity(subLocations);
 		instance.finish();
-		super.onActivityResult(requestCode, resultCode, data);
-	}
+	};
 	
 	private class ListViewAdapter extends ArrayAdapter<Location> {
 		private ArrayList<Location> location;
