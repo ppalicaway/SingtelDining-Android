@@ -27,6 +27,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.insidetip.singtel.adapter.Controller;
+import com.insidetip.singtel.db.DBManager;
 import com.insidetip.singtel.info.MerchantInfo;
 import com.insidetip.singtel.map.GPSLocationListener;
 import com.insidetip.singtel.util.Constants;
@@ -93,9 +94,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			double[] latLong = Util.queryLatLong(instance);
 			latitude = latLong[0];
 			longitude = latLong[1];
+			//latitude = 1.4415068;
+			//longitude = 103.7953423;
 		}
 		
-		System.out.println("nibalik");
 		URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
 	      "&longitude=" + longitude +
 	      "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=";

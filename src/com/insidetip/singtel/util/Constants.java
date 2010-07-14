@@ -38,4 +38,6 @@ public interface Constants {
 	public static final String RESTAURANT_SEARCH = "http://singtel.dc2go.net/singtel/search.php?keyword=";
 	
 	public static final int ITEMS_PER_PAGE = 20;
+	public static final String DB_NAME = "SINGTELDINING";
+	public static final String TABLE_MERCHANT = "MERCHANTINFO";
 }

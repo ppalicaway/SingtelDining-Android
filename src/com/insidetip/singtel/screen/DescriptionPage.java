@@ -29,6 +29,7 @@ import com.codecarpet.fbconnect.FBLoginButton.FBLoginButtonStyle;
 import com.codecarpet.fbconnect.FBRequest.FBRequestDelegate;
 import com.codecarpet.fbconnect.FBSession.FBSessionDelegate;
 import com.insidetip.singtel.adapter.Controller;
+import com.insidetip.singtel.db.DBManager;
 import com.insidetip.singtel.info.BankOffer;
 import com.insidetip.singtel.info.MerchantDetails;
 import com.insidetip.singtel.info.MerchantInfo;
@@ -102,6 +103,59 @@ public class DescriptionPage extends SingtelDiningActivity {
 		facebookButton.setStyle(FBLoginButtonStyle.FBLoginButtonStyleWide);
 		facebookButton.setSession(fbSession);
 		fbSession.resume(this);
+		
+		final Button addFave = (Button)findViewById(R.id.detailsAddFaveButton);
+		final Button removeFave = (Button)findViewById(R.id.detailsRemoveFaveButton);
+		
+		addFave.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				removeFave.setVisibility(Button.VISIBLE);
+				addFave.setVisibility(Button.GONE);
+				try {
+					DBManager dbMgr = new DBManager(DescriptionPage.instance, Constants.DB_NAME);
+					dbMgr.insertMerchant(DescriptionPage.merchantInfo);
+					dbMgr.close();
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		removeFave.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				removeFave.setVisibility(Button.GONE);
+				addFave.setVisibility(Button.VISIBLE);
+				try {
+					DBManager dbMgr = new DBManager(DescriptionPage.instance, Constants.DB_NAME);
+					dbMgr.deleteMerchant(DescriptionPage.merchantInfo);
+					dbMgr.close();
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		try {
+			DBManager dbMgr = new DBManager(instance, Constants.DB_NAME);
+			if(dbMgr.isMerchantExist(merchantInfo)) {
+				removeFave.setVisibility(Button.VISIBLE);
+				addFave.setVisibility(Button.GONE);
+			}
+			else {
+				removeFave.setVisibility(Button.GONE);
+				addFave.setVisibility(Button.VISIBLE);
+			}
+			dbMgr.close();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private Runnable populateData = new Runnable() {

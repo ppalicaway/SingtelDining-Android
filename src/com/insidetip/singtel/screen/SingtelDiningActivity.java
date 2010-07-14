@@ -1,6 +1,8 @@
 package com.insidetip.singtel.screen;
 
 import com.insidetip.singtel.adapter.Controller;
+import com.insidetip.singtel.db.DBManager;
+import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
 
 import android.app.Activity;
