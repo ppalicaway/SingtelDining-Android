@@ -29,6 +29,7 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 	public static ArrayList<SubLocation> subLocation;
 	private ListViewAdapter m_adapter;
 	private Runnable queryThread;
+	private final int SUBLOCATION_REQUEST = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -141,9 +142,14 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 		Location lInfo = location.get(position);
 		SubCategoryListingPage.location = lInfo;
 		Intent subLocations = new Intent(instance, SubCategoryListingPage.class);
-		startActivity(subLocations);
-		instance.finish();
+		startActivityForResult(subLocations, SUBLOCATION_REQUEST);
 	};
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		instance.finish();
+		super.onActivityResult(requestCode, resultCode, data);
+	}
 	
 	private class ListViewAdapter extends ArrayAdapter<Location> {
 		private ArrayList<Location> location;
@@ -174,7 +180,6 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 	
 	@Override
 	protected void onDestroy() {
-		SingtelDiningMainPage.isFirst = true;
 		super.onDestroy();
 	}
 }

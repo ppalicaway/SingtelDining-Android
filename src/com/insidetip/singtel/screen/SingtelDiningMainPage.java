@@ -46,7 +46,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private static double latitude;
 	private static double longitude;
 	private EditText searchEditText;
-	public static boolean isFirst = true;
+	private final int LOCATION_REQUEST = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -173,10 +173,16 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					break;
 				case R.id.searchEditText:
 					Intent category = new Intent(instance, CategoryListingPage.class);
-					startActivity(category);
+					startActivityForResult(category, LOCATION_REQUEST);
 					break;
 			}
 		}		
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		reloadData();
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
@@ -332,10 +338,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 200, locationListener);
 			location = myLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		}
-		if(!isFirst) {
-			reloadData();
-			isFirst = true;
-		}
 		super.onResume();
 	}
 	
@@ -344,7 +346,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	@Override
 	protected void onPause() {
 		isListing = false;
-		isFirst = false;
 		myLocationManager.removeUpdates(locationListener);
 		super.onPause();
 	}
