@@ -76,7 +76,6 @@ public class CuisineListingPage extends SingtelDiningListActivity {
 			try {
 				JSONObject jsonObject1 = new JSONObject(result);
 				JSONArray nameArray = jsonObject1.getJSONArray("data");
-				System.out.println("Petz::" + nameArray.length());
 				
 				
 				for(int i = 0; i < nameArray.length(); i++) {

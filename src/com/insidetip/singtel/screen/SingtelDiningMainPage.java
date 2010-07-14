@@ -197,6 +197,13 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadData();
 					break;
 				case R.id.favoriteButton:
+					isLocation = false;
+					isRestaurants = false;
+					isCuisines = false;
+					searchEditText.setText("Favourites");
+					searchEditText.setFocusableInTouchMode(false);
+					searchEditText.setFocusable(false);
+					reloadDataFromDB();
 					break;
 				case R.id.searchButton:
 					break;
@@ -227,6 +234,37 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
 	}
 	
+	public void reloadDataFromDB() {
+		merchantList = new ArrayList<MerchantInfo>();
+		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
+		setListAdapter(m_adapter);
+		
+		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		
+		Thread thread = new Thread(null, new QueryThreadFromDB(), "QueryDataFromDB");
+		thread.start();
+	}
+	
+	private class QueryThreadFromDB implements Runnable {
+
+		@Override
+		public void run() {
+			merchantList = new ArrayList<MerchantInfo>();
+			
+			try {
+				DBManager dbManager = new DBManager(instance, Constants.DB_NAME);
+				merchantList = dbManager.getMerchantList();
+				dbManager.close();
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			runOnUiThread(new AddToMerchantList());
+		}
+		
+	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		searchEditText.setText(searchText);
@@ -255,9 +293,19 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			if(merchant != null) {
 				
 				TextView distance = (TextView)view.findViewById(R.id.distance);
-				DecimalFormat df = new DecimalFormat("#.##");
-				String distanceText = df.format(Util.distanceTo(latitude, longitude, merchant.getLatitude(), merchant.getLongitude()));
-				distance.setText(distanceText + " km");
+				try {					
+					DecimalFormat df = new DecimalFormat("#.##");
+					String distanceText = df.format(Util.distanceTo(latitude, longitude, merchant.getLatitude(), merchant.getLongitude()));
+					distance.setText(distanceText + " km");
+					
+					if(merchant.getLatitude() == 0.0 && merchant.getLongitude() == 0.0) {
+						distance.setText("");
+					}
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+					distance.setText("");
+				}
 				
 				TextView merchantName = (TextView)view.findViewById(R.id.merchantName);
 				merchantName.setText(merchant.getRestaurantName());
@@ -348,12 +396,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					}
 					
 					totalItems = jsonObject1.getInt("totalResults");
-					System.out.println("Petz::totalItems " + totalItems);
 					totalPage = totalItems / Constants.ITEMS_PER_PAGE;
 					if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
 						totalPage += 1;
 					}
-					System.out.println("Petz::totalPage " + totalPage);
 					
 					settingLoadMore();
 				} 
