@@ -94,10 +94,10 @@ public class SubCategoryListingPage extends SingtelDiningListActivity {
 			SingtelDiningMainPage.URL = 
 				Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 				"&longitude=" + Util.longitude +
-				"&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
+				"&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
 		}
 		else {
-			SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
+			SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
 		}
 		SingtelDiningMainPage.searchText = location.getName() + " - " + subLocations.get(position).getName();
 		instance.finish();

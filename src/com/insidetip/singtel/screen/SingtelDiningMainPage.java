@@ -13,15 +13,12 @@ import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.text.Editable;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnKeyListener;
-import android.view.inputmethod.InputMethodManager;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,7 +54,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private boolean isLocation = true;
 	private boolean isRestaurants = false;
 	private boolean isCuisines = false;
-	private StringBuilder text = new StringBuilder();
+	public static int page = 1;
+	public static int totalPage = 1;
+	public static int totalItems = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,22 +71,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		settingLayout();
 	}
 	
-	
 	private void settingLayout() {
-		
-		try {
-			Thread coords = new Thread(new Runnable() {
-				
-				@Override
-				public void run() {
-					double latLong[] = Util.queryLatLong(instance);
-				}
-			});
-			//coords.start();
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
 		
 		myLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 		locationListener = new GPSLocationListener();
@@ -111,7 +95,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		URL = URL + latitude +
 		      "&longitude=" + longitude +
-		      "&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
+		      "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
 		
 		Button locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
@@ -133,11 +117,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		searchEditText = (EditText)findViewById(R.id.searchEditText);
 		searchEditText.setOnClickListener(new MenuListener());
-		
-		ListView listView = (ListView)findViewById(android.R.id.list);
-		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View view = layoutInflater.inflate(R.layout.loadmore, null);
-		listView.addFooterView(view);
 		
 		reloadData();
 	}
@@ -166,6 +145,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 		@Override
 		public void onClick(View v) {
+			totalItems = 0;
+			totalPage = 1;
+			page = 1;
 			switch(v.getId()) {
 				case R.id.settingsButton:
 					Intent settings = new Intent(instance, SettingsPage.class);
@@ -181,7 +163,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					SingtelDiningMainPage.URL = 
 						Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 						"&longitude=" + Util.longitude +
-						"&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
+						"&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
 					reloadData();
 					break;
 				case R.id.restaurantButton:
@@ -352,7 +334,16 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					catch(Exception e) {
 						e.printStackTrace();
 					}
-				} catch (Exception e) {
+					
+					totalItems = jsonObject1.getInt("totalResults");
+					totalPage = totalItems / Constants.ITEMS_PER_PAGE;
+					if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
+						totalPage += 1;
+					}
+					
+					settingLoadMore();
+				} 
+				catch (Exception e) {
 					try {
 						if (progressDialog.isShowing()) {
 							progressDialog.dismiss();
@@ -406,8 +397,26 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		super.onResume();
 	}
 	
-	
-	
+	public void settingLoadMore() {
+		ListView listView = (ListView)findViewById(android.R.id.list);
+		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View view = layoutInflater.inflate(R.layout.loadmore, null);
+		
+		if(totalItems > Constants.ITEMS_PER_PAGE) {
+			listView.addFooterView(view);
+		}
+		
+		Button loadMore = (Button)view.findViewById(R.id.loadMore);
+		loadMore.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				page++;
+				reloadData();
+			}
+		});
+	}
+
 	@Override
 	protected void onPause() {
 		isListing = false;

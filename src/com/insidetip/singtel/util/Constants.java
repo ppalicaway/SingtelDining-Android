@@ -22,8 +22,8 @@ public interface Constants {
 	public static final String FACEBOOK_MEDIA = "\"media\":[{\"type\":\"image\",\"src\":\"";
 	public static final String FACEBOOK_PROPERTIES = "\"properties\":{\"Powered By\":{\"text\":\"SingTel\",\"href\":\"http://www.singtel.com\"}}}";
 	
-	//public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZh-5KqNtCjZdddrt5sJKMQZqMxZYQ";
-	public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZhi5SfyLSW5kbDrnnNElk7slgjQnw";
+	public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZh-5KqNtCjZdddrt5sJKMQZqMxZYQ";
+	//public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZhi5SfyLSW5kbDrnnNElk7slgjQnw";
 	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZg30kaIdQsjQytD7UqxyyWDZPyIlg";
 	
 	public static final String DEFAULT_SHARE_DATA = "DEFAULT_SHARE_DATA";
@@ -36,4 +36,6 @@ public interface Constants {
 	public static final String RESTAURANT_CUISINE_TYPES = "http://singtel.dc2go.net/singtel/get_cuisine.php?a=b&bank=Citibank,DBS,OCBC,UOB";
 	public static final String RESTAURANT_CUISINE_LISTING = "http://singtel.dc2go.net/singtel/get_restaurant_by_cuisine_type.php?cuisineTypeID=";
 	public static final String RESTAURANT_SEARCH = "http://singtel.dc2go.net/singtel/search.php?keyword=";
+	
+	public static final int ITEMS_PER_PAGE = 20;
 }
