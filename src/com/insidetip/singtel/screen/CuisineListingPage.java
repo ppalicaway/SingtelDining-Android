@@ -16,23 +16,18 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.insidetip.singtel.info.Location;
-import com.insidetip.singtel.info.SubLocation;
+import com.insidetip.singtel.info.Cuisine;
 import com.insidetip.singtel.util.Constants;
 import com.insidetip.singtel.util.Util;
 
-public class CategoryListingPage extends SingtelDiningListActivity {
-
-	public static CategoryListingPage instance;
-	private ProgressDialog progressDialog = null;
-	public static ArrayList<Location> location;
-	public static ArrayList<SubLocation> subLocation;
+public class CuisineListingPage extends SingtelDiningListActivity {
+	
+	public static CuisineListingPage instance;
+	public static ArrayList<Cuisine> cuisines;
 	private ListViewAdapter m_adapter;
 	private Runnable queryThread;
-	private final int SUBLOCATION_REQUEST = 1;
-	
-	public static boolean isCuisine;
-	
+	private ProgressDialog progressDialog = null;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,8 +42,8 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 	}
 
 	private void init() {
-		location = new ArrayList<Location>();
-		m_adapter = new ListViewAdapter(instance, R.layout.category_list, location);
+		cuisines = new ArrayList<Cuisine>();
+		m_adapter = new ListViewAdapter(instance, R.layout.category_list, cuisines);
 		setListAdapter(m_adapter);
 		
 		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
@@ -69,45 +64,29 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 	protected void getData() {
 		String result = "";
 		
-		result = Util.getHttpData(Constants.RESTAURANT_LOCATION_LISTING);
+		result = Util.getHttpData(Constants.RESTAURANT_CUISINE_TYPES);
 		
 		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
 			Util.showAlert(instance, "BestSGDeals", "Please make sure Internet connection is available.", "OK", false);
 		}
 		else {
 			result = Util.toJSONString(result);
-			location = new ArrayList<Location>();
-			
-			Location temp = new Location(-100, "Around Me");
-			SubLocation tempSub = new SubLocation(-101, "All");
-			location.add(temp);
-			location.get(0).getSubLocation().add(tempSub);
+			cuisines = new ArrayList<Cuisine>();
 			
 			try {
 				JSONObject jsonObject1 = new JSONObject(result);
 				JSONArray nameArray = jsonObject1.getJSONArray("data");
+				System.out.println("Petz::" + nameArray.length());
+				
 				
 				for(int i = 0; i < nameArray.length(); i++) {
 					JSONObject jsonObject2 = nameArray.getJSONObject(i);
 					
-					int id = Integer.parseInt(jsonObject2.getString("id"));
-					String name = jsonObject2.getString("name");
+					int id = Integer.parseInt(jsonObject2.getString("ID"));
+					String name = jsonObject2.getString("CuisineType");
 					
-					Location locTemp = new Location(id, name);
-					location.add(locTemp);
-					
-					JSONArray subNameArray = jsonObject2.getJSONArray("sublocation");
-					
-					for(int j = 0; j < subNameArray.length(); j++) {
-						JSONObject jsonObject3 = subNameArray.getJSONObject(j);
-						
-						int subId = Integer.parseInt(jsonObject3.getString("id"));
-						String subName = jsonObject3.getString("name");
-						
-						SubLocation subLocTemp = new SubLocation(subId, subName);
-						
-						location.get(i+1).getSubLocation().add(subLocTemp);
-					}
+					Cuisine cuisineItem = new Cuisine(id, name);
+					cuisines.add(cuisineItem);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -116,13 +95,13 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 	}
 	
 	private Runnable addToMerchantList = new Runnable() {
-		
+
 		@Override
 		public void run() {
-			if (location != null && location.size() > 0) {
+			if (cuisines != null && cuisines.size() > 0) {
 				m_adapter.notifyDataSetChanged();
-				for (int i = 0; i < location.size(); i++) {
-					m_adapter.add(location.get(i));
+				for (int i = 0; i < cuisines.size(); i++) {
+					m_adapter.add(cuisines.get(i));
 				}
 			}
 			else {
@@ -137,14 +116,13 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 			catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
+		}		
 	};
 	
 	protected void onListItemClick(android.widget.ListView l, View v, int position, long id) {
-		Location lInfo = location.get(position);
-		SubCategoryListingPage.location = lInfo;
-		Intent subLocations = new Intent(instance, SubCategoryListingPage.class);
-		startActivityForResult(subLocations, SUBLOCATION_REQUEST);
+		SingtelDiningMainPage.URL = Constants.RESTAURANT_CUISINE_LISTING + cuisines.get(position).getId() + "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=1";
+		SingtelDiningMainPage.searchText = cuisines.get(position).getName();
+		instance.finish();
 	};
 	
 	@Override
@@ -153,12 +131,12 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
-	private class ListViewAdapter extends ArrayAdapter<Location> {
-		private ArrayList<Location> location;
+	private class ListViewAdapter extends ArrayAdapter<Cuisine> {
+		private ArrayList<Cuisine> cuisineItems;
 		
-		public ListViewAdapter(Context context, int resourceLayoutId, ArrayList<Location> location) {
-			super(context, resourceLayoutId, location);
-			this.location = location;
+		public ListViewAdapter(Context context, int resourceLayoutId, ArrayList<Cuisine> cuisineItems) {
+			super(context, resourceLayoutId, cuisineItems);
+			this.cuisineItems = cuisineItems;
 		}
 		
 		@Override
@@ -170,10 +148,10 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 				view = layoutInflater.inflate(R.layout.category_list, null);
 			}
 			
-			final Location loc = location.get(position);
-			if(loc != null) {
+			final Cuisine cuisineItem = cuisineItems.get(position);
+			if(cuisineItem != null) {
 				TextView categoryName = (TextView)view.findViewById(R.id.categoryName);
-				categoryName.setText(loc.getName());
+				categoryName.setText(cuisineItem.getName());
 			}
 			
 			return view;

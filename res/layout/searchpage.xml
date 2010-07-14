@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@drawable/bg">
+	
+	<LinearLayout
+		android:id="@+id/twitterHeaderView"
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:layout_gravity="center_vertical|center_horizontal"
+		android:layout_marginTop="5px">
+		
+		<ImageView 
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/header" />
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/roundededge"
+		android:orientation="vertical"
+		android:layout_marginLeft="5px"
+		android:layout_marginRight="5px" android:gravity="center_vertical|center_horizontal" android:paddingTop="20px" android:paddingBottom="20px" android:paddingLeft="5px" android:paddingRight="5px">
+		
+		<TextView 
+			android:id="@+id/searchKeyword"
+			android:layout_marginRight="10px" 
+			android:layout_marginLeft="10px" 
+			android:textSize="17px" 
+			android:typeface="sans" 
+			android:textColor="@color/COLOR_LIGHT_GRAY"
+			android:layout_height="wrap_content" 
+			android:layout_width="fill_parent" 
+			android:gravity="center_vertical|center_horizontal" 
+			android:padding="10px" 
+			android:text="Enter Search Keyword"/>
+				
+		<EditText 
+			android:id="@+id/searchKeywordEditText"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			android:lines="1" 
+			android:singleLine="true"
+			android:typeface="sans" 
+			android:gravity="center_horizontal" 
+			android:textColor="@color/COLOR_BG" 
+			android:layout_gravity="center_horizontal" 
+			android:layout_marginTop="10px" 
+			android:layout_marginBottom="10px" 
+			android:layout_marginLeft="10px" 
+			android:layout_marginRight="10px" 
+			android:background="@drawable/roundededittext"/>
+			
+		<Button
+			android:id="@+id/searchSubmitButton"
+			android:layout_height="wrap_content"
+			android:layout_width="fill_parent"
+			android:background="@drawable/roundededge"
+			android:text="Search"
+			android:textColor="@color/COLOR_LIGHTBLUE" 
+			android:typeface="sans" 
+			android:textSize="17px" 
+			android:textStyle="bold" 
+			android:padding="10px" 
+			android:layout_marginLeft="10px" 
+			android:layout_marginRight="10px"/>
+	</LinearLayout>
+</LinearLayout>

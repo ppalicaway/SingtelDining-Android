@@ -43,6 +43,7 @@ import android.telephony.TelephonyManager;
 import android.telephony.gsm.GsmCellLocation;
 import android.view.Display;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 public class Util {
 	
@@ -394,5 +395,10 @@ public class Util {
 	    	ex.printStackTrace();
 	    }
 	    return null;
+	}
+	
+	public static void showKeyboard(Context context){
+		InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.SHOW_IMPLICIT);
 	}
 }

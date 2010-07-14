@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.insidetip.singtel.info.Location;
 import com.insidetip.singtel.info.SubLocation;
 import com.insidetip.singtel.util.Constants;
+import com.insidetip.singtel.util.Util;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -89,7 +90,16 @@ public class SubCategoryListingPage extends SingtelDiningListActivity {
 	};
 	
 	protected void onListItemClick(android.widget.ListView l, View v, int position, long id) {
-		SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "8&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
+		if(subLocations.get(position).getId() == -101) {
+			SingtelDiningMainPage.URL = 
+				Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
+				"&longitude=" + Util.longitude +
+				"&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
+		}
+		else {
+			SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
+		}
+		SingtelDiningMainPage.searchText = location.getName() + " - " + subLocations.get(position).getName();
 		instance.finish();
 	};
 	

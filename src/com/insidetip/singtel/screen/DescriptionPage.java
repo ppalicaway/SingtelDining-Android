@@ -95,6 +95,9 @@ public class DescriptionPage extends SingtelDiningActivity {
 		TextView termsTextView = (TextView)findViewById(R.id.termsTextView);
 		termsTextView.setOnClickListener(new ButtonEvents());
 		
+		Button phoneButton = (Button)findViewById(R.id.phoneButton);
+		phoneButton.setOnClickListener(new ButtonEvents());
+		
 		facebookButton = (FBLoginButton) findViewById(R.id.facebookButton);
 		facebookButton.setStyle(FBLoginButtonStyle.FBLoginButtonStyleWide);
 		facebookButton.setSession(fbSession);

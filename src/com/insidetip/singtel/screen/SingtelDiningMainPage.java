@@ -13,9 +13,13 @@ import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
+import android.view.inputmethod.InputMethodManager;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -46,7 +50,14 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private static double latitude;
 	private static double longitude;
 	private EditText searchEditText;
+	public static String searchText = "";
 	private final int LOCATION_REQUEST = 1;
+	private final int CUISINE_REQUEST = 2;
+	private final int RESTAURANT_REQUEST = 3;
+	private boolean isLocation = true;
+	private boolean isRestaurants = false;
+	private boolean isCuisines = false;
+	private StringBuilder text = new StringBuilder();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +99,19 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			location = myLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		}
 		
-		latitude = location.getLatitude();
-		longitude = location.getLongitude();
+		try {
+			latitude = location.getLatitude();
+			longitude = location.getLongitude();
+		}
+		catch(Exception e) {
+			double[] latLong = Util.queryLatLong(instance);
+			latitude = latLong[0];
+			longitude = latLong[1];
+		}
+		
+		URL = URL + latitude +
+		      "&longitude=" + longitude +
+		      "&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
 		
 		Button locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
@@ -150,16 +172,34 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					startActivity(settings);
 					break;
 				case R.id.locationButton:
-					searchEditText.setText("Around Me");
-					SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PAGE;
+					searchEditText.setFocusableInTouchMode(false);
+					searchEditText.setFocusable(false);
+					isLocation = true;
+					isRestaurants = false;
+					isCuisines = false;
+					searchEditText.setText("Around Me - All");
+					SingtelDiningMainPage.URL = 
+						Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
+						"&longitude=" + Util.longitude +
+						"&pageNum=1&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB";
 					reloadData();
 					break;
 				case R.id.restaurantButton:
+					searchEditText.setFocusableInTouchMode(false);
+					searchEditText.setFocusable(false);
+					isLocation = false;
+					isRestaurants = true;
+					isCuisines = false;
 					searchEditText.setText("");
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE;
 					reloadData();
 					break;
 				case R.id.cuisineButton:
+					searchEditText.setFocusableInTouchMode(false);
+					searchEditText.setFocusable(false);
+					isLocation = false;
+					isRestaurants = false;
+					isCuisines = true;
 					searchEditText.setText("Chinese");
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE;
 					reloadData();
@@ -172,15 +212,32 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					Controller.displayMapScreen(instance);
 					break;
 				case R.id.searchEditText:
-					Intent category = new Intent(instance, CategoryListingPage.class);
-					startActivityForResult(category, LOCATION_REQUEST);
+					Intent category = null;
+					if(isLocation) {
+						category = new Intent(instance, CategoryListingPage.class);
+						startActivityForResult(category, LOCATION_REQUEST);
+					}
+					else if(isCuisines) {
+						category = new Intent(instance, CuisineListingPage.class);
+						startActivityForResult(category, CUISINE_REQUEST);
+					}
+					else if(isRestaurants) {
+						category = new Intent(instance, SearchPage.class);
+						startActivityForResult(category, RESTAURANT_REQUEST);
+					}
 					break;
 			}
 		}		
 	}
 	
+	public void disableKeyboard(){
+		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(searchEditText.getWindowToken(), 0);
+	}
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		searchEditText.setText(searchText);
 		reloadData();
 		super.onActivityResult(requestCode, resultCode, data);
 	}
@@ -247,7 +304,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			result = Util.getHttpData(SingtelDiningMainPage.URL);
 			
 			if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
-				Util.showAlert(SingtelDiningMainPage.instance, "", "Internet Connection", "OK", false);
+				Util.showAlert(SingtelDiningMainPage.instance, "BestSGDeals", "Please make sure Internet connection is available.", "OK", false);
 				try {
 					if (progressDialog.isShowing()) {
 						progressDialog.dismiss();
@@ -296,9 +353,17 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						e.printStackTrace();
 					}
 				} catch (Exception e) {
+					try {
+						if (progressDialog.isShowing()) {
+							progressDialog.dismiss();
+						}					
+					}
+					catch (Exception ex) {
+						ex.printStackTrace();
+					}
 					e.printStackTrace();
 				}
-			}			
+			}
 		}
 	}
 	
