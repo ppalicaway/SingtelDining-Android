@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -25,7 +26,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.insidetip.singtel.adapter.Controller;
@@ -56,6 +60,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private final int LOCATION_REQUEST = 1;
 	private final int CUISINE_REQUEST = 2;
 	private final int RESTAURANT_REQUEST = 3;
+	private final int BANK_REQUEST = 4;
 	private boolean isLocation = true;
 	private boolean isRestaurants = false;
 	private boolean isCuisines = false;
@@ -138,7 +143,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		editButton.setOnClickListener(new MenuListener());
 		
 		deleteTextView = (TextView)findViewById(R.id.deleteTextView);
+		CardListener cListener = new CardListener();
 		
+		Button settingsButton = (Button)findViewById(R.id.settingsButton);
+		settingsButton.setOnClickListener(new MenuListener());
+				
 		listView = (ListView)findViewById(android.R.id.list);
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		view = layoutInflater.inflate(R.layout.loadmore, null);
@@ -205,7 +214,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			switch(v.getId()) {
 				case R.id.settingsButton:
 					Intent settings = new Intent(instance, SettingsPage.class);
-					startActivity(settings);
+					startActivityForResult(settings, BANK_REQUEST);
 					break;
 				case R.id.locationButton:
 					isFavorite = false;
@@ -335,10 +344,26 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		searchEditText.setText(searchText);
+		if(requestCode == BANK_REQUEST) {
+			refreshBitmap();
+		}
 		reloadData();
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
+	private void refreshBitmap() {
+		CardListener cardListener = new CardListener();
+		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
+		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		for(int i = 0; i < SettingsPage.images.size(); i++) {
+			CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
+			view.setImageResource(SettingsPage.images.get(i).getId());
+			view.setImageInfo(SettingsPage.images.get(i));
+			view.setOnClickListener(cardListener);
+			tableRow.addView(view);
+		}
+	}
+
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
 		private ArrayList<MerchantInfo> merchants;
 		
@@ -545,6 +570,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 	@Override
 	protected void onPause() {
+		SettingsPage.images.clear();
 		myLocationManager.removeUpdates(locationListener);
 		super.onPause();
 	}
