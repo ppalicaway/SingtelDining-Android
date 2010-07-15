@@ -70,7 +70,7 @@
 			android:singleLine="true"
 			android:focusableInTouchMode="false"
 			android:gravity="center_horizontal|center_vertical"
-			android:text="Around Me"
+			android:text="Around Me - All"
 			android:textColor="@color/COLOR_BG"
 			android:background="@drawable/roundededittext"
 			android:layout_marginTop="2px"/>

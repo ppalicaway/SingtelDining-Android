@@ -14,5 +14,6 @@
 		android:typeface="sans"
 		android:textColor="@color/COLOR_DARKER_LIGHT_BLUE"
 		android:background="@drawable/roundededittext"
+		android:visibility="gone"
 		android:height="65px"/>
 </LinearLayout>

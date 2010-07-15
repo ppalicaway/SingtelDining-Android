@@ -94,7 +94,7 @@ public class MapLocationViewer extends LinearLayout {
 		for(int i = 0; i < merchantList.size(); i++) {
 			MerchantInfo merchantInfo = merchantList.get(i);
 			
-			MapLocationInfo mapLocationInfo = new MapLocationInfo(merchantInfo.getRestaurantName(), merchantInfo.getAddress(), merchantInfo.getLatitude(), merchantInfo.getLatitude(), R.drawable.pin_red, merchantInfo);
+			MapLocationInfo mapLocationInfo = new MapLocationInfo(merchantInfo.getRestaurantName(), merchantInfo.getAddress(), merchantInfo.getLatitude(), merchantInfo.getLongitude(), R.drawable.pin_red, merchantInfo);
 			mapLocations.add(mapLocationInfo);
 
 			paddingTop = padding;

@@ -75,6 +75,7 @@ public class MapLocationOverlay extends Overlay {
     
     private void nextScreen() {
 		DescriptionPage.merchantInfo = selectedMapLocation.getMerchantInfo();
+		DescriptionPage.catID = selectedMapLocation.getMerchantInfo().getId();
 		Intent intent = new Intent(context, DescriptionPage.class);
 	    ((Activity) context).startActivityForResult(intent, 0);
 	}
