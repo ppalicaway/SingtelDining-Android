@@ -33,6 +33,18 @@
 				android:layout_marginRight="39px"
 				android:layout_height="wrap_content"/>
 		</LinearLayout>
+		<Button 
+			android:id="@+id/editButton"
+			android:layout_width="wrap_content"
+			android:layout_height="34px"
+			android:text="Edit"
+			android:gravity="center_vertical|center_horizontal"
+			android:textColor="@color/COLOR_BG"
+			android:typeface="sans"
+			android:textStyle="bold"
+			android:layout_marginTop="5px"
+			android:layout_marginLeft="-52px"
+			android:visibility="gone"/>
 	</LinearLayout>
 	
 	<LinearLayout
@@ -53,7 +65,7 @@
 		<EditText 
 			android:id="@+id/searchEditText"
 			android:layout_height="wrap_content" 
-			android:layout_width="165px" 
+			android:layout_width="212px" 
 			android:maxLines="1"
 			android:singleLine="true"
 			android:focusableInTouchMode="false"
@@ -79,4 +91,16 @@
 			android:layout_marginLeft="3px"
 			android:layout_marginTop="1px"/>
 	</LinearLayout>
+	<TextView 
+		android:id="@+id/deleteTextView"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Please click on item to edit."
+		android:typeface="sans"
+		android:textColor="@color/COLOR_BLACK"
+		android:gravity="center_vertical|center_horizontal"
+		android:background="@color/COLOR_WHITE"
+		android:layout_marginLeft="5px"
+		android:layout_marginRight="5px" 
+		android:visibility="gone" />
 </LinearLayout>

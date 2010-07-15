@@ -6,8 +6,10 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.location.Location;
@@ -15,9 +17,9 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,6 +50,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private static double latitude;
 	private static double longitude;
 	private EditText searchEditText;
+	private Button editButton;
+	private TextView deleteTextView;
 	public static String searchText = "";
 	private final int LOCATION_REQUEST = 1;
 	private final int CUISINE_REQUEST = 2;
@@ -55,6 +59,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private boolean isLocation = true;
 	private boolean isRestaurants = false;
 	private boolean isCuisines = false;
+	private boolean isEdit = false;
+	private boolean isFavorite = false;
 	public static int page = 1;
 	public static int totalPage = 1;
 	public static int totalItems = 1;
@@ -116,12 +122,22 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		Button searchButton = (Button)findViewById(R.id.searchButton);
 		searchButton.setOnClickListener(new MenuListener());
+		searchButton.setVisibility(Button.GONE);
 		
 		Button mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
 		
+		Button arButton = (Button)findViewById(R.id.arButton);
+		arButton.setOnClickListener(new MenuListener());
+		arButton.setVisibility(Button.GONE);
+		
 		searchEditText = (EditText)findViewById(R.id.searchEditText);
 		searchEditText.setOnClickListener(new MenuListener());
+		
+		editButton = (Button)findViewById(R.id.editButton);
+		editButton.setOnClickListener(new MenuListener());
+		
+		deleteTextView = (TextView)findViewById(R.id.deleteTextView);
 		
 		listView = (ListView)findViewById(android.R.id.list);
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -134,10 +150,38 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		MerchantInfo mInfo = merchantList.get(position);
-		DescriptionPage.merchantInfo = mInfo;
-		DescriptionPage.catID = mInfo.getId();
-		Intent details = new Intent(instance, DescriptionPage.class);
-		startActivity(details);
+		if(!isEdit) {
+			DescriptionPage.merchantInfo = mInfo;
+			DescriptionPage.catID = mInfo.getId();
+			Intent details = new Intent(instance, DescriptionPage.class);
+			startActivity(details);
+		}
+		else {
+			new AlertDialog.Builder(instance)
+            .setTitle("BestSGDeals")
+            .setMessage("Are you sure you want to remove this item?")
+            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                	try {
+                		DBManager dbMgr = new DBManager(DescriptionPage.instance, Constants.DB_NAME);
+        				dbMgr.deleteMerchant(DescriptionPage.merchantInfo);
+        				dbMgr.close();
+        			}
+        			catch(Exception e) {
+        				e.printStackTrace();
+        			}
+        			finally {
+        				reloadDataFromDB();
+        			}
+                }
+            })
+            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                	
+                }
+            })
+            .create().show();
+		}
 	}
 	
 	private void reloadData() {
@@ -164,6 +208,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					startActivity(settings);
 					break;
 				case R.id.locationButton:
+					isFavorite = false;
+					isEdit = false;
+					deleteTextView.setVisibility(Button.GONE);
+					editButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
 					isLocation = true;
@@ -177,6 +225,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadData();
 					break;
 				case R.id.restaurantButton:
+					isFavorite = false;
+					isEdit = false;
+					deleteTextView.setVisibility(Button.GONE);
+					editButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
 					isLocation = false;
@@ -187,6 +239,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadData();
 					break;
 				case R.id.cuisineButton:
+					isEdit = false;
+					isFavorite = false;
+					deleteTextView.setVisibility(Button.GONE);
+					editButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
 					isLocation = false;
@@ -197,6 +253,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadData();
 					break;
 				case R.id.favoriteButton:
+					isFavorite = true;
+					isEdit = false;
+					deleteTextView.setVisibility(Button.GONE);
+					editButton.setVisibility(Button.VISIBLE);
 					isLocation = false;
 					isRestaurants = false;
 					isCuisines = false;
@@ -211,6 +271,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					Controller.displayMapScreen(instance);
 					break;
 				case R.id.searchEditText:
+					isFavorite = false;
+					isEdit = false;
+					deleteTextView.setVisibility(Button.GONE);
 					Intent category = null;
 					if(isLocation) {
 						category = new Intent(instance, CategoryListingPage.class);
@@ -224,6 +287,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						category = new Intent(instance, SearchPage.class);
 						startActivityForResult(category, RESTAURANT_REQUEST);
 					}
+					break;
+				case R.id.editButton:
+					isEdit = true;
+					deleteTextView.setVisibility(Button.VISIBLE);
 					break;
 			}
 		}		
@@ -459,7 +526,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	public void settingLoadMore() {
 		Button loadMore = (Button)view.findViewById(R.id.loadMore);
 		
-		if(totalItems < Constants.ITEMS_PER_PAGE || page == totalPage) {
+		if(totalItems < Constants.ITEMS_PER_PAGE || page == totalPage || isFavorite) {
 			loadMore.setVisibility(Button.GONE);
 		}
 		else {
