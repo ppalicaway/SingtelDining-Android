@@ -199,11 +199,11 @@ public class MapLocationOverlay extends Overlay {
 				
 				String title = selectedMapLocation.getTitle();
 				
-				if(title.length() > 20) {
-					title = title.substring(0, 20) + "...";
+				if(title.length() > 23) {
+					title = title.substring(0, 23) + "...";
 				}
 				
-				canvas.drawText(selectedMapLocation.getTitle(), infoWindowOffsetX+TEXT_OFFSET_X, infoWindowOffsetY+TEXT_OFFSET_Y, getTextPaint());
+				canvas.drawText(title, infoWindowOffsetX+TEXT_OFFSET_X, infoWindowOffsetY+TEXT_OFFSET_Y, getTextPaint());
     		}
     	}
     }
