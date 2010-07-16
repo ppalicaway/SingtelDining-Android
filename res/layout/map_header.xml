@@ -37,7 +37,7 @@
 			android:text="Map"
 			android:textSize="17px" 
 			android:typeface="sans" 
-			android:textColor="@color/COLOR_WHITE" android:background="@drawable/blackleft_button"/>
+			android:textColor="@color/COLOR_WHITE" android:background="@drawable/leftgray_button"/>
 			
 		<Button 
 			android:id="@+id/directionsButton"

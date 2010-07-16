@@ -69,6 +69,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	public static int totalItems = 1;
 	private ListView listView;
 	private View view;
+	private Button mapButton;
+	private Button refreshButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -127,9 +129,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		searchButton.setOnClickListener(new MenuListener());
 		searchButton.setVisibility(Button.GONE);
 		
-		Button mapButton = (Button)findViewById(R.id.mapButton);
+		mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
 		
+		refreshButton = (Button)findViewById(R.id.refreshButton);
+				
 		Button arButton = (Button)findViewById(R.id.arButton);
 		arButton.setOnClickListener(new MenuListener());
 		arButton.setVisibility(Button.GONE);
@@ -142,9 +146,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		deleteTextView = (TextView)findViewById(R.id.deleteTextView);
 		SingtelCardListener cListener = new SingtelCardListener();
-		
-		//Button settingsButton = (Button)findViewById(R.id.settingsButton);
-		//settingsButton.setOnClickListener(new MenuListener());
 		
 		Button settingsCardButton = (Button)findViewById(R.id.settingsCard);
 		settingsCardButton.setOnClickListener(new MenuListener());
@@ -169,7 +170,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		}
 		else {
 			new AlertDialog.Builder(instance)
-            .setTitle("BestSGDeals")
+            .setTitle("ILoveDeals")
             .setMessage("Are you sure you want to remove this item?")
             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
@@ -228,6 +229,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			page = 1;
 			HorizontalScrollView hsView = (HorizontalScrollView)findViewById(R.id.scrollView);
 			hsView.setVisibility(HorizontalScrollView.VISIBLE);
+			ImageView myFave = (ImageView)findViewById(R.id.myFaveImage);
+			myFave.setVisibility(ImageView.GONE);
+			
 			switch(v.getId()) {
 				case R.id.settingsCard:
 					Intent settings = new Intent(instance, SettingsPage.class);
@@ -244,6 +248,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = false;
 					searchEditText.setText("Around Me - All");
+					refreshButton.setVisibility(Button.VISIBLE);
+					searchEditText.setVisibility(EditText.VISIBLE);
+					mapButton.setVisibility(Button.VISIBLE);
+					myFave.setVisibility(ImageView.GONE);
 					SingtelDiningMainPage.URL = 
 						Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 						"&longitude=" + Util.longitude +
@@ -261,6 +269,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = true;
 					isCuisines = false;
 					searchEditText.setText("");
+					refreshButton.setVisibility(Button.VISIBLE);
+					searchEditText.setVisibility(EditText.VISIBLE);
+					mapButton.setVisibility(Button.VISIBLE);
+					myFave.setVisibility(ImageView.GONE);
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
 					reloadDataWithoutBitmap();
 					break;
@@ -275,6 +287,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = true;
 					searchEditText.setText("Chinese");
+					refreshButton.setVisibility(Button.VISIBLE);
+					searchEditText.setVisibility(EditText.VISIBLE);
+					mapButton.setVisibility(Button.VISIBLE);
+					myFave.setVisibility(ImageView.GONE);
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
 					reloadDataWithoutBitmap();
 					break;
@@ -286,10 +302,14 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isLocation = false;
 					isRestaurants = false;
 					isCuisines = false;
-					searchEditText.setText("Favourites");
+					//searchEditText.setText("Favourites");
 					hsView.setVisibility(HorizontalScrollView.GONE);
-					searchEditText.setFocusableInTouchMode(false);
-					searchEditText.setFocusable(false);
+					refreshButton.setVisibility(Button.GONE);
+					searchEditText.setVisibility(EditText.GONE);
+					mapButton.setVisibility(Button.GONE);
+					myFave.setVisibility(ImageView.VISIBLE);
+					//searchEditText.setFocusableInTouchMode(false);
+					//searchEditText.setFocusable(false);
 					reloadDataFromDB();
 					break;
 				case R.id.searchButton:
