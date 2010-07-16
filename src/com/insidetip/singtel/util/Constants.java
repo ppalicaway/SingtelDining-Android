@@ -32,7 +32,7 @@ public interface Constants {
 	
 	public static final String RESTAURANT_LOCATION_PAGE="http://singtel.dc2go.net/singtel/get_restaurant_by_location.php?latitude=";
 	public static final String RESTAURANT_RESTO_PAGE="http://singtel.dc2go.net/singtel/get_restaurant_list.php?resultsPerPage=20";
-	public static final String RESTAURANT_CUSINE_PAGE="http://singtel.dc2go.net/singtel/get_restaurant_by_cuisine_type.php?cuisineTypeID=3&resultsPerPage=20";
+	public static final String RESTAURANT_CUSINE_PAGE="http://singtel.dc2go.net/singtel/get_restaurant_by_cuisine_type.php?cuisineTypeID=2&resultsPerPage=20";
 	public static final String RESTAURANT_LOCATION_LISTING = "http://singtel.dc2go.net/singtel/get_location.php?a=b";
 	public static final String RESTAURANT_LOCATION_PLACES = "http://singtel.dc2go.net/singtel/get_restaurant_by_sub_location.php?id=";
 	public static final String RESTAURANT_CUISINE_TYPES = "http://singtel.dc2go.net/singtel/get_cuisine.php?a=b";

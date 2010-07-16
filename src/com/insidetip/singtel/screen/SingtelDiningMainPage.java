@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -71,6 +72,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private View view;
 	private Button mapButton;
 	private Button refreshButton;
+	private Button favoriteButton;
+	private Button cuisineButton;
+	private Button restaurantButton;
+	private Button locationButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,16 +118,17 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	      "&longitude=" + longitude +
 	      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 		
-		Button locationButton = (Button)findViewById(R.id.locationButton);
+		locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
+		locationButton.setBackgroundResource(R.drawable.location_hover);
 		
-		Button restaurantButton = (Button)findViewById(R.id.restaurantButton);
+		restaurantButton = (Button)findViewById(R.id.restaurantButton);
 		restaurantButton.setOnClickListener(new MenuListener());
 		
-		Button cuisineButton = (Button)findViewById(R.id.cuisineButton);
+		cuisineButton = (Button)findViewById(R.id.cuisineButton);
 		cuisineButton.setOnClickListener(new MenuListener());
 		
-		Button favoriteButton = (Button)findViewById(R.id.favoriteButton);
+		favoriteButton = (Button)findViewById(R.id.favoriteButton);
 		favoriteButton.setOnClickListener(new MenuListener());
 		
 		Button searchButton = (Button)findViewById(R.id.searchButton);
@@ -227,8 +233,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			totalItems = 1;
 			totalPage = 1;
 			page = 1;
-			HorizontalScrollView hsView = (HorizontalScrollView)findViewById(R.id.scrollView);
-			hsView.setVisibility(HorizontalScrollView.VISIBLE);
+			LinearLayout cardLayoutView = (LinearLayout)findViewById(R.id.cardLayoutView);
+			cardLayoutView.setVisibility(LinearLayout.VISIBLE);
 			ImageView myFave = (ImageView)findViewById(R.id.myFaveImage);
 			myFave.setVisibility(ImageView.GONE);
 			
@@ -238,6 +244,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					startActivityForResult(settings, BANK_REQUEST);
 					break;
 				case R.id.locationButton:
+					locationButton.setBackgroundResource(R.drawable.location_hover);
+					restaurantButton.setBackgroundResource(R.drawable.restaurants);
+					cuisineButton.setBackgroundResource(R.drawable.cuisines);
+					favoriteButton.setBackgroundResource(R.drawable.favorites);
 					isFavorite = false;
 					isEdit = false;
 					deleteTextView.setVisibility(Button.GONE);
@@ -259,6 +269,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadDataWithoutBitmap();
 					break;
 				case R.id.restaurantButton:
+					locationButton.setBackgroundResource(R.drawable.location);
+					restaurantButton.setBackgroundResource(R.drawable.restaurants_hover);
+					cuisineButton.setBackgroundResource(R.drawable.cuisines);
+					favoriteButton.setBackgroundResource(R.drawable.favorites);
 					isFavorite = false;
 					isEdit = false;
 					deleteTextView.setVisibility(Button.GONE);
@@ -277,6 +291,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadDataWithoutBitmap();
 					break;
 				case R.id.cuisineButton:
+					locationButton.setBackgroundResource(R.drawable.location);
+					restaurantButton.setBackgroundResource(R.drawable.restaurants);
+					cuisineButton.setBackgroundResource(R.drawable.cuisines_hover);
+					favoriteButton.setBackgroundResource(R.drawable.favorites);
 					isEdit = false;
 					isFavorite = false;
 					deleteTextView.setVisibility(Button.GONE);
@@ -286,7 +304,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isLocation = false;
 					isRestaurants = false;
 					isCuisines = true;
-					searchEditText.setText("Chinese");
+					searchEditText.setText("Asian");
 					refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
@@ -295,6 +313,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadDataWithoutBitmap();
 					break;
 				case R.id.favoriteButton:
+					locationButton.setBackgroundResource(R.drawable.location);
+					restaurantButton.setBackgroundResource(R.drawable.restaurants);
+					cuisineButton.setBackgroundResource(R.drawable.cuisines);
+					favoriteButton.setBackgroundResource(R.drawable.favorites_hover);
 					isFavorite = true;
 					isEdit = false;
 					deleteTextView.setVisibility(Button.GONE);
@@ -302,7 +324,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isLocation = false;
 					isRestaurants = false;
 					isCuisines = false;
-					hsView.setVisibility(HorizontalScrollView.GONE);
+					cardLayoutView.setVisibility(LinearLayout.GONE);
 					refreshButton.setVisibility(Button.GONE);
 					searchEditText.setVisibility(EditText.GONE);
 					mapButton.setVisibility(Button.GONE);
