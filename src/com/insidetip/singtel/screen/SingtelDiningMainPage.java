@@ -71,7 +71,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private ListView listView;
 	private View view;
 	private Button mapButton;
-	private Button refreshButton;
+	//private Button refreshButton;
 	private Button favoriteButton;
 	private Button cuisineButton;
 	private Button restaurantButton;
@@ -138,7 +138,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
 		
-		refreshButton = (Button)findViewById(R.id.refreshButton);
+		//refreshButton = (Button)findViewById(R.id.refreshButton);
 				
 		Button arButton = (Button)findViewById(R.id.arButton);
 		arButton.setOnClickListener(new MenuListener());
@@ -257,7 +257,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = false;
 					searchEditText.setText("Around Me - All");
-					refreshButton.setVisibility(Button.VISIBLE);
+					//refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
@@ -281,7 +281,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = true;
 					isCuisines = false;
 					searchEditText.setText("Tap to search");
-					refreshButton.setVisibility(Button.VISIBLE);
+					//refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
@@ -302,7 +302,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = true;
 					searchEditText.setText("Asian");
-					refreshButton.setVisibility(Button.VISIBLE);
+					//refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
@@ -321,7 +321,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = false;
 					cardLayoutView.setVisibility(LinearLayout.GONE);
-					refreshButton.setVisibility(Button.GONE);
+					//refreshButton.setVisibility(Button.GONE);
 					searchEditText.setVisibility(EditText.GONE);
 					mapButton.setVisibility(Button.GONE);
 					myFave.setVisibility(ImageView.VISIBLE);
