@@ -243,7 +243,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = true;
 					isCuisines = false;
 					searchEditText.setText("");
-					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE;
+					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
 					reloadData();
 					break;
 				case R.id.cuisineButton:
@@ -257,7 +257,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = true;
 					searchEditText.setText("Chinese");
-					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE;
+					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
 					reloadData();
 					break;
 				case R.id.favoriteButton:

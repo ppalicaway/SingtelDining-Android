@@ -69,7 +69,7 @@ public class CategoryListingPage extends SingtelDiningListActivity {
 	protected void getData() {
 		String result = "";
 		
-		result = Util.getHttpData(Constants.RESTAURANT_LOCATION_LISTING);
+		result = Util.getHttpData(Constants.RESTAURANT_LOCATION_LISTING + SettingsPage.bankQuery);
 		
 		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
 			Util.showAlert(instance, "BestSGDeals", "Please make sure Internet connection is available.", "OK", false);
