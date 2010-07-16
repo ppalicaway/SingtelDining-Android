@@ -606,6 +606,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		super.onPause();
 	}
 	
+	@Override
+	protected void onDestroy() {
+		formNewExitQuery();
+		super.onDestroy();
+	}
+	
 	private class SingtelCardListener implements OnClickListener {
 		
 		@Override
@@ -657,6 +663,33 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		locURL = locURL.replaceAll(locQuery, query);
 		
 		URL = locURL;
+		SettingsPage.bankQuery = query;
+	}
+	
+	public void formNewExitQuery() {
+		
+		ArrayList<String> newQuery = new ArrayList<String>();
+		
+		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
+		int childrenCount = tableRow.getChildCount();
+		
+		for(int i = 0; i < childrenCount; i++) {
+			CustomImageView civ = (CustomImageView) tableRow.getChildAt(i);
+			String name = civ.getImageInfo().getBankName();
+			if(!newQuery.contains(name)) {
+				newQuery.add(name);
+			}
+		}
+		
+		String query = "&bank=";
+		for(int j = 0; j < newQuery.size(); j++) {
+			query += newQuery.get(j) + ",";
+		}
+		
+		if(query.charAt(query.length()-1) == ',') {
+			query = query.substring(0, query.length()-1);
+		}
+		
 		SettingsPage.bankQuery = query;
 	}
 }
