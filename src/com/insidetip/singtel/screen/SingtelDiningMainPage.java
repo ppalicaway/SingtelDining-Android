@@ -24,6 +24,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TableRow;
@@ -193,6 +194,18 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	private void reloadData() {
 		refreshBitmap();
+		
+		merchantList = new ArrayList<MerchantInfo>();
+		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
+		setListAdapter(m_adapter);
+		
+		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		
+		Thread thread = new Thread(null, new QueryThread(), "QueryData");
+		thread.start();
+	}
+	
+	private void reloadDataWithoutBitmap() {
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
@@ -210,6 +223,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			totalItems = 1;
 			totalPage = 1;
 			page = 1;
+			HorizontalScrollView hsView = (HorizontalScrollView)findViewById(R.id.scrollView);
+			hsView.setVisibility(HorizontalScrollView.VISIBLE);
 			switch(v.getId()) {
 				case R.id.settingsButton:
 					Intent settings = new Intent(instance, SettingsPage.class);
@@ -230,7 +245,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 						"&longitude=" + Util.longitude +
 						"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
-					reloadData();
+					reloadDataWithoutBitmap();
 					break;
 				case R.id.restaurantButton:
 					isFavorite = false;
@@ -244,7 +259,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isCuisines = false;
 					searchEditText.setText("");
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
-					reloadData();
+					reloadDataWithoutBitmap();
 					break;
 				case R.id.cuisineButton:
 					isEdit = false;
@@ -258,7 +273,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isCuisines = true;
 					searchEditText.setText("Chinese");
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
-					reloadData();
+					reloadDataWithoutBitmap();
 					break;
 				case R.id.favoriteButton:
 					isFavorite = true;
@@ -269,6 +284,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = false;
 					searchEditText.setText("Favourites");
+					hsView.setVisibility(HorizontalScrollView.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
 					reloadDataFromDB();
@@ -348,8 +364,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
 		      "&longitude=" + longitude +
 		      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+			reloadData();
 		}
-		reloadData();
+		else {
+			reloadDataWithoutBitmap();
+		}
+		
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
@@ -447,7 +467,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		public void run() {
 			String result = "";
 			
-			System.out.println("Petz::" + SettingsPage.bankQuery);
 			result = Util.getHttpData(SingtelDiningMainPage.URL + page);
 			
 			if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
@@ -601,6 +620,43 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				civ.setImageResource(civ.getImageInfo().getId());
 				civ.setIsPressed(false);
 			}
+			
+			formNewQuery();
+			reloadDataWithoutBitmap();
 		}
+	}
+
+	public void formNewQuery() {
+		
+		ArrayList<String> newQuery = new ArrayList<String>();
+		
+		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
+		int childrenCount = tableRow.getChildCount();
+		
+		for(int i = 0; i < childrenCount; i++) {
+			CustomImageView civ = (CustomImageView) tableRow.getChildAt(i);
+			if(!civ.getIsPressed()) {
+				String name = civ.getImageInfo().getBankName();
+				if(!newQuery.contains(name)) {
+					newQuery.add(name);
+				}
+			}
+		}
+		
+		String query = "&bank=";
+		for(int j = 0; j < newQuery.size(); j++) {
+			query += newQuery.get(j) + ",";
+		}
+		
+		if(query.charAt(query.length()-1) == ',') {
+			query = query.substring(0, query.length()-1);
+		}
+		
+		String locQuery = SettingsPage.bankQuery;
+		String locURL = URL;
+		locURL = locURL.replaceAll(locQuery, query);
+		
+		URL = locURL;
+		SettingsPage.bankQuery = query;
 	}
 }
