@@ -95,8 +95,7 @@
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:textSize="15px"
-						android:textStyle="bold"
-						android:background="@drawable/leftbutton"/>
+						android:textStyle="bold" android:background="@drawable/button_left_hover"/>
 					
 					<Button 
 						android:id="@+id/myCreditCards"

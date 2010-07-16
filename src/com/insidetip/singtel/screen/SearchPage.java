@@ -37,8 +37,10 @@ public class SearchPage extends SingtelDiningActivity {
 			
 			@Override
 			public void onClick(View v) {
+				String searchText = keyword.getText().toString();
+				searchText = searchText.replaceAll(" ", "%20");
 				SingtelDiningMainPage.searchText = keyword.getText().toString();
-				SingtelDiningMainPage.URL = Constants.RESTAURANT_SEARCH + keyword.getText().toString() + SettingsPage.bankQuery + "&pageNum=";
+				SingtelDiningMainPage.URL = Constants.RESTAURANT_SEARCH + searchText + SettingsPage.bankQuery + "&pageNum=";
 				instance.finish();
 			}
 		});

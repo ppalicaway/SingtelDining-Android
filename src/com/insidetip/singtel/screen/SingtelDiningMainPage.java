@@ -268,7 +268,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isLocation = false;
 					isRestaurants = true;
 					isCuisines = false;
-					searchEditText.setText("");
+					searchEditText.setText("Tap to search");
 					refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
@@ -302,14 +302,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isLocation = false;
 					isRestaurants = false;
 					isCuisines = false;
-					//searchEditText.setText("Favourites");
 					hsView.setVisibility(HorizontalScrollView.GONE);
 					refreshButton.setVisibility(Button.GONE);
 					searchEditText.setVisibility(EditText.GONE);
 					mapButton.setVisibility(Button.GONE);
 					myFave.setVisibility(ImageView.VISIBLE);
-					//searchEditText.setFocusableInTouchMode(false);
-					//searchEditText.setFocusable(false);
 					reloadDataFromDB();
 					break;
 				case R.id.searchButton:
