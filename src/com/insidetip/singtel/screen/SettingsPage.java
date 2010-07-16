@@ -2,12 +2,14 @@ package com.insidetip.singtel.screen;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 
 import com.insidetip.singtel.info.ImageInfo;
 
@@ -97,6 +99,16 @@ public class SettingsPage extends SingtelDiningActivity {
 	}
 
 	private void settinglayout() {
+		
+		Button infoButton = (Button)findViewById(R.id.infoButton);
+		infoButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent webView = new Intent(instance, WebScreen.class);
+				startActivity(webView);
+			}
+		});
 		
 		CheckBox cbClearPlatinumVisa = (CheckBox)findViewById(R.id.clearplatinumvisa);
 		cbClearPlatinumVisa.setOnClickListener(new CheckListener());

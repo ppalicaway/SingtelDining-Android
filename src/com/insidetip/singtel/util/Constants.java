@@ -43,6 +43,8 @@ public interface Constants {
 	public static final String DB_NAME = "SINGTELDINING";
 	public static final String TABLE_MERCHANT = "MERCHANTINFO";
 	
+	public static final String SITE_TNC = "http://www.appzone.singtel.com/singtel/content_tAndC.do";
+	
 	public static final int CB_CLEAR_PLATINUM_VISA = 0;
 	public static final int CB_CLEAR_PLATINUM_VISA_LABEL = 1;
 	public static final int CB_DIVIDEND_PLATINUM = 2;

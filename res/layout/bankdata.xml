@@ -1,814 +1,967 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <TableLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content">
-		
-	<TableRow
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		android:gravity="center_vertical|center_horizontal">
-	
-		<LinearLayout
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical">
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal"
-				android:gravity="center">
-				
-				<LinearLayout
+ 	android:layout_width="fill_parent"
+ 	android:layout_height="wrap_content">
+  
+ 	<TableRow
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:orientation="vertical"
+  		android:gravity="center_vertical|center_horizontal">
+ 
+  		<LinearLayout
+   			android:layout_width="fill_parent"
+   			android:layout_height="wrap_content"
+   			android:orientation="vertical">
+   		
+   			<!-- Citibank -->
+   			<LinearLayout
+   				android:id="@+id/citibankGroup"
+   				android:layout_width="fill_parent"
+   				android:layout_height="wrap_content"
+   				android:orientation="vertical">
+   				
+   				<LinearLayout
 					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:gravity="center"
-					android:layout_gravity="left">
-					
-					<TextView
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal">
+				    
+				    <TextView
+						android:id="@+id/merchantReviews"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_WHITE"
-						android:text="Citibank Clear Platinum Visa"/>
+						android:text="Citibank"
+						android:textColor="@color/COLOR_BLACK"
+						android:textStyle="bold"
+						android:textSize="20px"
+						android:typeface="sans" />
 				</LinearLayout>
-			
+   
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_gravity="right"
-					android:layout_marginLeft="-20px">
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
 					
 					<CheckBox
 						android:id="@+id/clearplatinumvisa"
 						android:checked="true"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
+						android:layout_marginLeft="10px"
 						android:button="@drawable/checkbox"/>
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Citibank Clear Platinum Visa" />				
 				</LinearLayout>
-			</LinearLayout>
 			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="Citibank Dividend Platinum" />
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/dividendplatinum"
+						android:checked="true"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginLeft="10px"
+						android:button="@drawable/checkbox" />
 			
-				<CheckBox
-					android:id="@+id/dividendplatinum"
-					android:checked="true"
-					android:layout_width="wrap_content"
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Citibank Dividend Platinum" />
+				</LinearLayout>
+		
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/paragonmastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
 			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Citibank Paragon MasterCard" />
+				</LinearLayout>
 			
-				<TextView
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="Citibank Paragon MasterCard" />
+					android:orientation="horizontal"
+					android:background="@drawable/table_row">
 			
-				<CheckBox
-					android:id="@+id/paragonmastercard"
-					android:checked="true"
-					android:layout_width="wrap_content"
+					<CheckBox
+						android:id="@+id/paragonvisa"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Citibank Paragon Visa" />
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
+					android:orientation="horizontal"
+					android:background="@drawable/table_row">
 			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
+					<CheckBox
+						android:id="@+id/premieremilesvisa"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
 			
-				<TextView
-					android:layout_width="wrap_content"
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Citibank PremiereMiles Visa" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="Citibank Paragon Visa" />
+					android:orientation="horizontal"
+					android:background="@drawable/table_row">
 			
-				<CheckBox
-					android:id="@+id/paragonvisa"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
+					<CheckBox
+						android:id="@+id/smrtcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
 			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="Citibank PremiereMiles Visa" />
-			
-				<CheckBox
-					android:id="@+id/premieremilesvisa"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="Citibank SMRT Card" />
-			
-				<CheckBox
-					android:id="@+id/smrtcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Citibank SMRT Card" />			
+				</LinearLayout>
 			</LinearLayout>
 			
 			<!-- DBS -->
 			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
+   				android:id="@+id/dbsGroup"
+   				android:layout_width="fill_parent"
+   				android:layout_height="wrap_content"
+   				android:orientation="vertical">
+   				
+   				<LinearLayout
+					android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal">
+				    
+				    <TextView
+						android:id="@+id/merchantReviews"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="DBS"
+						android:textColor="@color/COLOR_BLACK"
+						android:textStyle="bold"
+						android:textSize="20px"
+						android:typeface="sans" />
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="DBS Black American Express" />
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/blackamericanexpress"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+						
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="DBS Black American Express" />
+				</LinearLayout>
 			
-				<CheckBox
-					android:id="@+id/blackamericanexpress"
-					android:checked="true"
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/livefreshplatinum"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="DBS Live Fresh Platinum" />
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="DBS Live Fresh Platinum" />
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/dbsplatinummastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="DBS Platinum MasterCard" />			
+				</LinearLayout>
+   			</LinearLayout>
 			
-				<CheckBox
-					android:id="@+id/livefreshplatinum"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="DBS Platinum MasterCard" />
-			
-				<CheckBox
-					android:id="@+id/dbsplatinummastercard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
 			
 			<!-- OCBC -->
 			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
+   				android:id="@+id/ocbcGroup"
+   				android:layout_width="fill_parent"
+   				android:layout_height="wrap_content"
+   				android:orientation="vertical">
+   				
+   				<LinearLayout
+					android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal">
+				    
+				    <TextView
+						android:id="@+id/merchantReviews"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="OCBC"
+						android:textColor="@color/COLOR_BLACK"
+						android:textStyle="bold"
+						android:textSize="20px"
+						android:typeface="sans" />
+				</LinearLayout>
 			
-				<TextView
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Arts Platinum Card" />
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/artsplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Arts Platinum Card" />			
+				</LinearLayout>
 			
-				<CheckBox
-					android:id="@+id/artsplatinumcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/bestdenkiplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Best Denki Platinum Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/classicvisacard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Classic Visa Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/debitcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Debit Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/fairpriceplusvisacard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC FairPricePlus Visa Card" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/goldmastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Gold MasterCard" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/ikeafriendsvisacard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Ikea Friends Visa Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/ntuvisaclassiccard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC NTU Visa Classic Card" />			
+				
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/ntuvisagoldcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC NTU Visa Gold Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/platinummastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Platinum MasterCard" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/robinsonsplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Robinsons Platinum Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+			
+					<CheckBox
+						android:id="@+id/smudebitcards"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC SMU Debit Cards" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/smuplatinummastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC SMU Platinum MasterCard" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/titaniummastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Titanium MasterCard" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/uplusvisacard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC U Plus Visa Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uplusplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC UPlus Platinum Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/yesdebitcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC Yes Debit Card" />			
+				</LinearLayout>   				
+   			</LinearLayout>
 			
 			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
+   				android:id="@+id/uobGroup"
+   				android:layout_width="fill_parent"
+   				android:layout_height="wrap_content"
+   				android:orientation="vertical">
+   				
+   				<LinearLayout
+					android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:orientation="horizontal">
+				    
+				    <TextView
+						android:id="@+id/merchantReviews"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="UOB"
+						android:textColor="@color/COLOR_BLACK"
+						android:textStyle="bold"
+						android:textSize="20px"
+						android:typeface="sans" />
+				</LinearLayout>
 			
-				<TextView
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Best Denki Platinum Card" />
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/directvisacard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Direct Visa Card" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/ladyscard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Lady's Card" />			
+				</LinearLayout>
 			
-				<CheckBox
-					android:id="@+id/bestdenkiplatinumcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
+				<LinearLayout
+					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/mastercardclassiccard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB MasterCard Classic Card" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/mastercardgoldcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB MasterCard Gold Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/onecard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB One Card" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+			
+					<CheckBox
+						android:id="@+id/preferredworld"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Preferred World" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+			
+					<CheckBox
+						android:id="@+id/prvivisaamerican"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+						
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB PRVI Visa American" />			
+				</LinearLayout>
+			
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+			
+					<CheckBox
+						android:id="@+id/visaclassiccard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Visa Classic Card" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+			
+					<CheckBox
+						android:id="@+id/visagoldcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Visa Gold Card" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/visainfinitecard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Visa Infinite Card" />			
+				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/visasignaturecard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Visa Signature Card" />			
+				</LinearLayout>
 			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Classic Visa Card" />
-			
-				<CheckBox
-					android:id="@+id/classicvisacard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Debit Card" />
-			
-				<CheckBox
-					android:id="@+id/debitcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC FairPricePlus Visa Card" />
-			
-				<CheckBox
-					android:id="@+id/fairpriceplusvisacard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Gold MasterCard" />
-			
-				<CheckBox
-					android:id="@+id/goldmastercard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Ikea Friends Visa Card" />
-			
-				<CheckBox
-					android:id="@+id/ikeafriendsvisacard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC NTU Visa Classic Card" />
-			
-				<CheckBox
-					android:id="@+id/ntuvisaclassiccard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC NTU Visa Gold Card" />
-			
-				<CheckBox
-					android:id="@+id/ntuvisagoldcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Platinum MasterCard" />
-			
-				<CheckBox
-					android:id="@+id/platinummastercard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Robinsons Platinum Card" />
-			
-				<CheckBox
-					android:id="@+id/robinsonsplatinumcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC SMU Debit Cards" />
-			
-				<CheckBox
-					android:id="@+id/smudebitcards"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC SMU Platinum MasterCard" />
-			
-				<CheckBox
-					android:id="@+id/smuplatinummastercard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Titanium MasterCard" />
-			
-				<CheckBox
-					android:id="@+id/titaniummastercard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC U Plus Visa Card" />
-			
-				<CheckBox
-					android:id="@+id/uplusvisacard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC UPlus Platinum Card" />
-			
-				<CheckBox
-					android:id="@+id/uplusplatinumcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="OCBC Yes Debit Card" />
-			
-				<CheckBox
-					android:id="@+id/yesdebitcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<!-- UOB -->
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB Direct Visa Card" />
-			
-				<CheckBox
-					android:id="@+id/directvisacard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB Lady's Card" />
-			
-				<CheckBox
-					android:id="@+id/ladyscard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB MasterCard Classic Card" />
-			
-				<CheckBox
-					android:id="@+id/mastercardclassiccard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB MasterCard Gold Card" />
-			
-				<CheckBox
-					android:id="@+id/mastercardgoldcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB One Card" />
-			
-				<CheckBox
-					android:id="@+id/onecard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB Preferred World" />
-			
-				<CheckBox
-					android:id="@+id/preferredworld"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB PRVI Visa American" />
-			
-				<CheckBox
-					android:id="@+id/prvivisaamerican"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB Visa Classic Card" />
-			
-				<CheckBox
-					android:id="@+id/visaclassiccard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB Visa Gold Card" />
-			
-				<CheckBox
-					android:id="@+id/visagoldcard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB Visa Infinite Card" />
-			
-				<CheckBox
-					android:id="@+id/visainfinitecard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-			
-			<LinearLayout
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-			
-				<TextView
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="15px"
-					android:typeface="sans"
-					android:textColor="@color/COLOR_WHITE"
-					android:text="UOB Visa Signature Card" />
-			
-				<CheckBox
-					android:id="@+id/visasignaturecard"
-					android:checked="true"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:button="@drawable/checkbox" />
-			</LinearLayout>
-		</LinearLayout>
+  		</LinearLayout>
 	</TableRow>
 </TableLayout>

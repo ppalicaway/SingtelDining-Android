@@ -21,6 +21,7 @@
         <activity android:name="SubCategoryListingPage" android:label="SubCategoryListingPage" android:screenOrientation="portrait" />
         <activity android:name="CuisineListingPage" android:label="CuisineListingPage" android:screenOrientation="portrait" />
         <activity android:name="SearchPage" android:label="SearchPage" android:screenOrientation="portrait" />
+        <activity android:name="WebScreen" android:label="WebScreen" android:screenOrientation="portrait" />
         <activity android:name="ARScreen" android:label="ARScreen" />
         
         <activity android:name="com.codecarpet.fbconnect.FBLoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:screenOrientation="portrait"/>
