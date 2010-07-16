@@ -35,7 +35,7 @@ public class SearchPage extends SingtelDiningActivity {
 			@Override
 			public void onClick(View v) {
 				SingtelDiningMainPage.searchText = keyword.getText().toString();
-				SingtelDiningMainPage.URL = Constants.RESTAURANT_SEARCH + keyword.getText().toString() + "&bank=Citibank,OCBC,UOB,DBS&pageNum=";
+				SingtelDiningMainPage.URL = Constants.RESTAURANT_SEARCH + keyword.getText().toString() + SettingsPage.bankQuery + "&pageNum=";
 				instance.finish();
 			}
 		});		

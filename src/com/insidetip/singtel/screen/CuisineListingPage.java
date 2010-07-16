@@ -120,7 +120,7 @@ public class CuisineListingPage extends SingtelDiningListActivity {
 	
 	protected void onListItemClick(android.widget.ListView l, View v, int position, long id) {
 		SingtelDiningMainPage.URL = 
-			Constants.RESTAURANT_CUISINE_LISTING + cuisines.get(position).getId() + "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=";
+			Constants.RESTAURANT_CUISINE_LISTING + cuisines.get(position).getId() + "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 		SingtelDiningMainPage.searchText = cuisines.get(position).getName();
 		instance.finish();
 	};

@@ -5,6 +5,7 @@ public class ImageInfo {
 	private int idLabel;
 	private int id;
 	private String bankName;
+	private int index;
 	
 	public ImageInfo(int idLabel, int id, String bankName) {
 		this.idLabel = idLabel;

@@ -58,7 +58,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 	
 	private static final int MESSAGE_PUBLISHED = 2;
 	
-	private static ArrayList<String> banks = new ArrayList<String>();
+	public static ArrayList<String> banks = new ArrayList<String>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -243,6 +243,8 @@ public class DescriptionPage extends SingtelDiningActivity {
 			
 			TextView merchantDescription = (TextView)findViewById(R.id.descriptionTextView);
 			merchantDescription.setText(merchantDetails.getDescription());
+			
+			TermsPage.termsAndCondition = merchantDetails.getBankOffers().get(0).getTnc();
 			
 			for(int i = 0; i < merchantDetails.getBankOffers().size(); i++) {
 				String bank = merchantDetails.getBankOffers().get(i).getBank();
@@ -432,12 +434,28 @@ public class DescriptionPage extends SingtelDiningActivity {
 			LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);					
 			ll.startAnimation(animation);
 			offer.setText(getOffer(civ.getImageInfo().getBankName()));
-		}		
+			int bankIndex = getMerchantBankIndex(civ.getImageInfo().getBankName());
+			TermsPage.termsAndCondition = merchantDetails.getBankOffers().get(bankIndex).getTnc();
+		}
 	}
 	
 	@Override
 	protected void onPause() {
-		banks.clear();
 		super.onPause();
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+
+	public int getMerchantBankIndex(String bankName) {
+		int index = 0;
+		for(int i = 0; i < banks.size(); i++) {
+			if(banks.get(i).equalsIgnoreCase(bankName)) {
+				index = i;
+			}
+		}
+		return index;
 	}
 }

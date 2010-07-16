@@ -26,7 +26,6 @@ public class SingtelDiningActivity extends Activity {
 		public void onClick(View v) {
 			switch(v.getId()) {
 				case R.id.termsTextView:
-					TermsPage.termsAndCondition = DescriptionPage.merchantDetails.getBankOffers().get(0).getTnc();
 					Intent termsPage = new Intent(DescriptionPage.instance, TermsPage.class);
 					startActivity(termsPage);
 					break;

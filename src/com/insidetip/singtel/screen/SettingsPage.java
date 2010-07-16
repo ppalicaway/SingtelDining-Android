@@ -16,7 +16,7 @@ public class SettingsPage extends SingtelDiningActivity {
 	public static SettingsPage instance;
 	
 	public static ArrayList<ImageInfo> images = new ArrayList<ImageInfo>();
-	public static String bankQuery = "Citibank,DBS,OCBC,UOB";
+	public static String bankQuery = "&bank=Citibank,DBS,OCBC,UOB";
 	private static ArrayList<ImageInfo> defaultAll = new ArrayList<ImageInfo>();
 	
 	private final static String CITIBANK = "Citibank";
@@ -88,6 +88,7 @@ public class SettingsPage extends SingtelDiningActivity {
 			
 			@Override
 			public void onClick(View v) {
+				getQuery();
 				instance.finish();
 			}
 		});
@@ -185,11 +186,9 @@ public class SettingsPage extends SingtelDiningActivity {
 				iInfo = new ImageInfo(R.drawable.citibank_clear_platinum_visa_label, R.drawable.citibank_clear_platinum_visa, CITIBANK);
 				if(((CheckBox)v).isChecked()) {
 					images.add(iInfo);
-					System.out.println("Not Remove");
 				}
 				else {
-					System.out.println("Remove");
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.citibank_clear_platinum_visa_label);
 				}
 				break;
 			case R.id.dividendplatinum:
@@ -198,7 +197,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.citibank_dividend_platinum_mastercard_label);
 				}
 				break;
 			case R.id.paragonmastercard:
@@ -207,7 +206,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.citibank_paragon_mastercard_label);
 				}
 				break;
 			case R.id.paragonvisa:
@@ -216,7 +215,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.citibank_paragon_visa_label);
 				}
 				break;
 			case R.id.premieremilesvisa:
@@ -225,7 +224,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.citibank_premiermiles_visa_signature_label);
 				}
 				break;
 			case R.id.smrtcard:
@@ -234,7 +233,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.citibank_smrt_card_label);
 				}
 				break;
 			case R.id.blackamericanexpress:
@@ -243,7 +242,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.dbs_black_american_express_card_label);
 				}
 				break;
 			case R.id.livefreshplatinum:
@@ -252,7 +251,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.dbs_live_fresh_platinum_card_label);
 				}
 				break;
 			case R.id.dbsplatinummastercard:
@@ -261,7 +260,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.dbs_platinum_mastercard_label);
 				}
 				break;
 			case R.id.artsplatinumcard:
@@ -270,7 +269,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_arts_platinum_card_label);
 				}
 				break;
 			case R.id.bestdenkiplatinumcard:
@@ -279,7 +278,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_best_denki_platinum_card_label);
 				}
 				break;
 			case R.id.classicvisacard:
@@ -288,7 +287,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_classic_visa_card_label);
 				}
 				break;
 			case R.id.debitcard:
@@ -297,7 +296,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_debit_card_label);
 				}
 				break;
 			case R.id.fairpriceplusvisacard:
@@ -306,7 +305,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_fairpriceplus_visa_card_label);
 				}
 				break;
 			case R.id.goldmastercard:
@@ -315,7 +314,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_gold_mastercard_label);
 				}
 				break;
 			case R.id.ikeafriendsvisacard:
@@ -324,7 +323,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_ikea_friends_visacard_label);
 				}
 				break;
 			case R.id.ntuvisaclassiccard:
@@ -333,7 +332,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_ntu_visa_classic_card_label);
 				}
 				break;
 			case R.id.ntuvisagoldcard:
@@ -342,7 +341,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_ntu_visa_gold_card_label);
 				}
 				break;
 			case R.id.platinummastercard:
@@ -351,7 +350,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_platinum_mastercard_label);
 				}
 				break;
 			case R.id.robinsonsplatinumcard:
@@ -360,7 +359,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_robinsons_platinum_card_label);
 				}
 				break;
 			case R.id.smudebitcards:
@@ -369,7 +368,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_smu_debit_cards_label);
 				}
 				break;
 			case R.id.smuplatinummastercard:
@@ -378,7 +377,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_smu_platinum_mastercard_label);
 				}
 				break;
 			case R.id.titaniummastercard:
@@ -387,7 +386,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_titanium_mastercard_label);
 				}
 				break;
 			case R.id.uplusvisacard:
@@ -396,7 +395,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_uplus_visa_card_label);
 				}
 				break;
 			case R.id.uplusplatinumcard:
@@ -405,7 +404,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_uplus_platinum_card_label);
 				}
 				break;
 			case R.id.yesdebitcard:
@@ -414,7 +413,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.ocbc_yes_debit_card_label);
 				}
 				break;
 			case R.id.directvisacard:
@@ -423,7 +422,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_direct_visa_card_label);
 				}
 				break;
 			case R.id.ladyscard:
@@ -432,7 +431,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_ladys_card_label);
 				}
 				break;
 			case R.id.mastercardclassiccard:
@@ -441,7 +440,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_mastercard_classic_card_label);
 				}
 				break;
 			case R.id.mastercardgoldcard:
@@ -450,7 +449,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_mastercard_gold_card_label);
 				}
 				break;
 			case R.id.onecard:
@@ -459,7 +458,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_one_card_label);
 				}
 				break;
 			case R.id.preferredworld:
@@ -468,7 +467,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_preferred_world_mastercard_label);
 				}
 				break;
 			case R.id.prvivisaamerican:
@@ -477,7 +476,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_prvi_visa_american_express_card_label);
 				}
 				break;
 			case R.id.visaclassiccard:
@@ -486,7 +485,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_visa_classic_card_label);
 				}
 				break;
 			case R.id.visagoldcard:
@@ -495,7 +494,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_visa_gold_card_label);
 				}
 				break;
 			case R.id.visainfinitecard:
@@ -504,7 +503,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_visa_infinite_card_label);
 				}
 				break;
 			case R.id.visasignaturecard:
@@ -513,7 +512,7 @@ public class SettingsPage extends SingtelDiningActivity {
 					images.add(iInfo);
 				}
 				else {
-					images.remove(iInfo);
+					deleteObjectByIdLabel(R.drawable.uob_visa_signature_card_label);
 				}
 				break;				
 			}
@@ -601,5 +600,36 @@ public class SettingsPage extends SingtelDiningActivity {
 			images = defaultAll;
 		}
 		return defaultAll;
+	}
+	
+	public static void getQuery() {
+		
+		ArrayList<String> bank = new ArrayList<String>();
+		for(int i = 0; i < images.size(); i++) {
+			String bankName = images.get(i).getBankName();
+			if(!bank.contains(bankName)) {
+				bank.add(bankName);
+			}
+		}
+		
+		String bankQ = "";
+		for(int j = 0; j < bank.size(); j++) {
+			bankQ += bank.get(j) + ",";
+		}
+		
+		if(bankQ.charAt(bankQ.length()-1) == ',') {
+			bankQ = bankQ.substring(0, bankQ.length()-1);
+		}
+		
+		bankQuery = "&bank=" + bankQ;
+	}
+	
+	private void deleteObjectByIdLabel(int IdLabel) {
+		for(int i = 0; i < images.size(); i++) {
+			if(images.get(i).getIdLabel() == IdLabel) {
+				images.remove(i);
+				break;
+			}
+		}
 	}
 }

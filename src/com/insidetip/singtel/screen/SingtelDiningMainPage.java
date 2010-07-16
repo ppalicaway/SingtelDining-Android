@@ -12,23 +12,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Rect;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -111,7 +108,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
 	      "&longitude=" + longitude +
-	      "&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=";
+	      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 		
 		Button locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
@@ -143,7 +140,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		editButton.setOnClickListener(new MenuListener());
 		
 		deleteTextView = (TextView)findViewById(R.id.deleteTextView);
-		CardListener cListener = new CardListener();
+		SingtelCardListener cListener = new SingtelCardListener();
 		
 		Button settingsButton = (Button)findViewById(R.id.settingsButton);
 		settingsButton.setOnClickListener(new MenuListener());
@@ -162,6 +159,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		if(!isEdit) {
 			DescriptionPage.merchantInfo = mInfo;
 			DescriptionPage.catID = mInfo.getId();
+			DescriptionPage.banks.clear();
 			Intent details = new Intent(instance, DescriptionPage.class);
 			startActivity(details);
 		}
@@ -231,7 +229,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					SingtelDiningMainPage.URL = 
 						Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 						"&longitude=" + Util.longitude +
-						"&resultsPerPage=20&bank=Citibank,DBS,OCBC,UOB&pageNum=";
+						"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 					reloadData();
 					break;
 				case R.id.restaurantButton:
@@ -345,17 +343,22 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		searchEditText.setText(searchText);
+		System.out.println(SettingsPage.bankQuery);
+		if(requestCode == BANK_REQUEST) {
+			URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
+		      "&longitude=" + longitude +
+		      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+		}
 		reloadData();
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
 	private void refreshBitmap() {
-		CardListener cardListener = new CardListener();
+		SingtelCardListener cardListener = new SingtelCardListener();
 		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
 		tableRow.removeAllViews();
 		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		if(!SettingsPage.images.isEmpty()) {
-			System.out.println("Empty kuno");
 			for(int i = 0; i < SettingsPage.images.size(); i++) {
 				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
 				view.setImageResource(SettingsPage.images.get(i).getId());
@@ -444,8 +447,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		public void run() {
 			String result = "";
 			
-			System.out.println("Testing::" + SingtelDiningMainPage.URL + page);
-			
+			System.out.println("Petz::" + SettingsPage.bankQuery);
 			result = Util.getHttpData(SingtelDiningMainPage.URL + page);
 			
 			if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
@@ -583,5 +585,22 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	protected void onPause() {
 		myLocationManager.removeUpdates(locationListener);
 		super.onPause();
+	}
+	
+	private class SingtelCardListener implements OnClickListener {
+		
+		@Override
+		public void onClick(View v) {
+			CustomImageView civ = (CustomImageView)v;
+			
+			if(!civ.getIsPressed()) {
+				civ.setImageResource(civ.getImageInfo().getIdLabel());
+				civ.setIsPressed(true);
+			}
+			else {
+				civ.setImageResource(civ.getImageInfo().getId());
+				civ.setIsPressed(false);
+			}
+		}
 	}
 }
