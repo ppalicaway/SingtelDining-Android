@@ -9,14 +9,6 @@
 		android:layout_width="fill_parent" 
 		android:orientation="horizontal" 
 		android:layout_height="wrap_content">
-	
-		<!-- <Button 
-			android:id="@+id/settingsButton"
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:background="@drawable/buttonsetting"
-			android:layout_marginTop="5px" 
-			android:layout_marginLeft="5px" />  -->
 			
 		<LinearLayout
 			android:layout_width="fill_parent"
@@ -99,7 +91,7 @@
 			android:layout_marginTop="1px"/>
 	</LinearLayout>
 	
-	<TextView 
+	<!-- <TextView 
 		android:id="@+id/deleteTextView"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -110,5 +102,5 @@
 		android:background="@color/COLOR_WHITE"
 		android:layout_marginLeft="5px"
 		android:layout_marginRight="5px" 
-		android:visibility="gone" />
+		android:visibility="gone" /> -->
 </LinearLayout>

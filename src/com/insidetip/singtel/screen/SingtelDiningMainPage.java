@@ -54,7 +54,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private static double longitude;
 	private EditText searchEditText;
 	private Button editButton;
-	private TextView deleteTextView;
+	//private TextView deleteTextView;
 	public static String searchText = "";
 	private final int LOCATION_REQUEST = 1;
 	private final int CUISINE_REQUEST = 2;
@@ -150,7 +150,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		editButton = (Button)findViewById(R.id.editButton);
 		editButton.setOnClickListener(new MenuListener());
 		
-		deleteTextView = (TextView)findViewById(R.id.deleteTextView);
+		//deleteTextView = (TextView)findViewById(R.id.deleteTextView);
 		SingtelCardListener cListener = new SingtelCardListener();
 		
 		Button settingsCardButton = (Button)findViewById(R.id.settingsCard);
@@ -250,7 +250,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					favoriteButton.setBackgroundResource(R.drawable.favorites);
 					isFavorite = false;
 					isEdit = false;
-					deleteTextView.setVisibility(Button.GONE);
 					editButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
@@ -275,7 +274,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					favoriteButton.setBackgroundResource(R.drawable.favorites);
 					isFavorite = false;
 					isEdit = false;
-					deleteTextView.setVisibility(Button.GONE);
 					editButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
@@ -297,7 +295,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					favoriteButton.setBackgroundResource(R.drawable.favorites);
 					isEdit = false;
 					isFavorite = false;
-					deleteTextView.setVisibility(Button.GONE);
 					editButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
@@ -319,7 +316,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					favoriteButton.setBackgroundResource(R.drawable.favorites_hover);
 					isFavorite = true;
 					isEdit = false;
-					deleteTextView.setVisibility(Button.GONE);
 					editButton.setVisibility(Button.VISIBLE);
 					isLocation = false;
 					isRestaurants = false;
@@ -329,6 +325,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					searchEditText.setVisibility(EditText.GONE);
 					mapButton.setVisibility(Button.GONE);
 					myFave.setVisibility(ImageView.VISIBLE);
+					Button loadMore = (Button)findViewById(R.id.loadMore);
+					loadMore.setVisibility(Button.GONE);
 					reloadDataFromDB();
 					break;
 				case R.id.searchButton:
@@ -339,7 +337,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				case R.id.searchEditText:
 					isFavorite = false;
 					isEdit = false;
-					deleteTextView.setVisibility(Button.GONE);
 					Intent category = null;
 					if(isLocation) {
 						category = new Intent(instance, CategoryListingPage.class);
@@ -356,7 +353,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					break;
 				case R.id.editButton:
 					isEdit = true;
-					deleteTextView.setVisibility(Button.VISIBLE);
+					myFave.setVisibility(ImageView.VISIBLE);
+					cardLayoutView.setVisibility(LinearLayout.GONE);
+					Util.showAlert(instance, "ILoveDeals", "Please tap on item to edit.", "OK", false);
 					break;
 			}
 		}		
