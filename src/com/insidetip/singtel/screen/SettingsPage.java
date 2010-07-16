@@ -25,6 +25,47 @@ public class SettingsPage extends SingtelDiningActivity {
 	private final static String DBS = "DBS";
 	private final static String OCBC = "OCBC";
 	private final static String UOB = "UOB";
+	
+	private CheckBox cbClearPlatinumVisa;
+	private CheckBox cbDividendPlatinum;
+	private CheckBox cbParagonMasterCard;
+	private CheckBox cbParagonVisa;
+	private CheckBox cbPremiereMilesVisa;
+	private CheckBox cbSMRTCard;
+
+	private CheckBox dbsBlackAmericanExpress;
+	private CheckBox dbsLiveFreshPlatinum;
+	private CheckBox dbsPlatinumMasterCard;
+
+	private CheckBox ocbcArtsPlatinumCard;
+	private CheckBox ocbcBestDenkiPlatinumCard;
+	private CheckBox ocbcClassicVisaCard;
+	private CheckBox ocbcDebitCard;
+	private CheckBox ocbcFairPricePlusVisaCard;
+	private CheckBox ocbcGoldMasterCard;
+	private CheckBox ocbcIkeaFriendsVisaCard;
+	private CheckBox ocbcNTUVisaClassicCard;
+	private CheckBox ocbcNTUVisaGoldCard;
+	private CheckBox ocbcPlatinumMasterCard;
+	private CheckBox ocbcRobinsonsPlatinumCard;
+	private CheckBox ocbcSMUDebitCard;
+	private CheckBox ocbcSMUPlatinumMasterCard;
+	private CheckBox ocbcTitaniumMasterCard;
+	private CheckBox ocbcUPlusVisaCard;
+	private CheckBox ocbcUPlusPlatinumCard;
+	private CheckBox ocbcYesDebitCard;
+
+	private CheckBox uobDirectVisaCard;
+	private CheckBox uobLadysCard;
+	private CheckBox uobMasterCardClassicCard;
+	private CheckBox uobMasterCardGoldCard;
+	private CheckBox uobOneCard;
+	private CheckBox uobPreferredWorldCard;
+	private CheckBox uobPRVIVisaAmericanCard;
+	private CheckBox uobVisaClassicCard;
+	private CheckBox uobVisaGoldCard;
+	private CheckBox uobVisaInfiniteCard;
+	private CheckBox uobVisaSignatureCard;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,84 +151,150 @@ public class SettingsPage extends SingtelDiningActivity {
 			}
 		});
 		
-		CheckBox cbClearPlatinumVisa = (CheckBox)findViewById(R.id.clearplatinumvisa);
+		final Button allCreditCards = (Button)findViewById(R.id.allCreditCards);
+		final Button myCreditCards = (Button)findViewById(R.id.myCreditCards);
+		
+		allCreditCards.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				myCreditCards.setBackgroundResource(R.drawable.button_right);
+				allCreditCards.setBackgroundResource(R.drawable.button_left_hover);
+				checkAll();
+			}
+		});
+		
+		myCreditCards.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				myCreditCards.setBackgroundResource(R.drawable.button_right_hover);
+				allCreditCards.setBackgroundResource(R.drawable.button_left);
+			}
+		});
+		
+		cbClearPlatinumVisa = (CheckBox)findViewById(R.id.clearplatinumvisa);
 		cbClearPlatinumVisa.setOnClickListener(new CheckListener());
-		CheckBox cbDividendPlatinum = (CheckBox)findViewById(R.id.dividendplatinum);
+		cbDividendPlatinum = (CheckBox)findViewById(R.id.dividendplatinum);
 		cbDividendPlatinum.setOnClickListener(new CheckListener());
-		CheckBox cbParagonMasterCard = (CheckBox)findViewById(R.id.paragonmastercard);
+		cbParagonMasterCard = (CheckBox)findViewById(R.id.paragonmastercard);
 		cbParagonMasterCard.setOnClickListener(new CheckListener());
-		CheckBox cbParagonVisa = (CheckBox)findViewById(R.id.paragonvisa);
+		cbParagonVisa = (CheckBox)findViewById(R.id.paragonvisa);
 		cbParagonVisa.setOnClickListener(new CheckListener());
-		CheckBox cbPremiereMilesVisa = (CheckBox)findViewById(R.id.premieremilesvisa);
+		cbPremiereMilesVisa = (CheckBox)findViewById(R.id.premieremilesvisa);
 		cbPremiereMilesVisa.setOnClickListener(new CheckListener());
-		CheckBox cbSMRTCard = (CheckBox)findViewById(R.id.smrtcard);
+		cbSMRTCard = (CheckBox)findViewById(R.id.smrtcard);
 		cbSMRTCard.setOnClickListener(new CheckListener());
 		
-		CheckBox dbsBlackAmericanExpress = (CheckBox)findViewById(R.id.blackamericanexpress);
+		dbsBlackAmericanExpress = (CheckBox)findViewById(R.id.blackamericanexpress);
 		dbsBlackAmericanExpress.setOnClickListener(new CheckListener());
-		CheckBox dbsLiveFreshPlatinum = (CheckBox)findViewById(R.id.livefreshplatinum);
+		dbsLiveFreshPlatinum = (CheckBox)findViewById(R.id.livefreshplatinum);
 		dbsLiveFreshPlatinum.setOnClickListener(new CheckListener());
-		CheckBox dbsPlatinumMasterCard = (CheckBox)findViewById(R.id.dbsplatinummastercard);
+		dbsPlatinumMasterCard = (CheckBox)findViewById(R.id.dbsplatinummastercard);
 		dbsPlatinumMasterCard.setOnClickListener(new CheckListener());
 		
-		CheckBox ocbcArtsPlatinumCard = (CheckBox)findViewById(R.id.artsplatinumcard);
+		ocbcArtsPlatinumCard = (CheckBox)findViewById(R.id.artsplatinumcard);
 		ocbcArtsPlatinumCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcBestDenkiPlatinumCard = (CheckBox)findViewById(R.id.bestdenkiplatinumcard);
+		ocbcBestDenkiPlatinumCard = (CheckBox)findViewById(R.id.bestdenkiplatinumcard);
 		ocbcBestDenkiPlatinumCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcClassicVisaCard = (CheckBox)findViewById(R.id.classicvisacard);
+		ocbcClassicVisaCard = (CheckBox)findViewById(R.id.classicvisacard);
 		ocbcClassicVisaCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcDebitCard = (CheckBox)findViewById(R.id.debitcard);
+		ocbcDebitCard = (CheckBox)findViewById(R.id.debitcard);
 		ocbcDebitCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcFairPricePlusVisaCard = (CheckBox)findViewById(R.id.fairpriceplusvisacard);
+		ocbcFairPricePlusVisaCard = (CheckBox)findViewById(R.id.fairpriceplusvisacard);
 		ocbcFairPricePlusVisaCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcGoldMasterCard = (CheckBox)findViewById(R.id.goldmastercard);
+		ocbcGoldMasterCard = (CheckBox)findViewById(R.id.goldmastercard);
 		ocbcGoldMasterCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcIkeaFriendsVisaCard = (CheckBox)findViewById(R.id.ikeafriendsvisacard);
+		ocbcIkeaFriendsVisaCard = (CheckBox)findViewById(R.id.ikeafriendsvisacard);
 		ocbcIkeaFriendsVisaCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcNTUVisaClassicCard = (CheckBox)findViewById(R.id.ntuvisaclassiccard);
+		ocbcNTUVisaClassicCard = (CheckBox)findViewById(R.id.ntuvisaclassiccard);
 		ocbcNTUVisaClassicCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcNTUVisaGoldCard = (CheckBox)findViewById(R.id.ntuvisagoldcard);
+		ocbcNTUVisaGoldCard = (CheckBox)findViewById(R.id.ntuvisagoldcard);
 		ocbcNTUVisaGoldCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcPlatinumMasterCard = (CheckBox)findViewById(R.id.platinummastercard);
+		ocbcPlatinumMasterCard = (CheckBox)findViewById(R.id.platinummastercard);
 		ocbcPlatinumMasterCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcRobinsonsPlatinumCard = (CheckBox)findViewById(R.id.robinsonsplatinumcard);
+		ocbcRobinsonsPlatinumCard = (CheckBox)findViewById(R.id.robinsonsplatinumcard);
 		ocbcRobinsonsPlatinumCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcSMUDebitCard = (CheckBox)findViewById(R.id.smudebitcards);
+		ocbcSMUDebitCard = (CheckBox)findViewById(R.id.smudebitcards);
 		ocbcSMUDebitCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcSMUPlatinumMasterCard = (CheckBox)findViewById(R.id.smuplatinummastercard);
+		ocbcSMUPlatinumMasterCard = (CheckBox)findViewById(R.id.smuplatinummastercard);
 		ocbcSMUPlatinumMasterCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcTitaniumMasterCard = (CheckBox)findViewById(R.id.titaniummastercard);
+		ocbcTitaniumMasterCard = (CheckBox)findViewById(R.id.titaniummastercard);
 		ocbcTitaniumMasterCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcUPlusVisaCard = (CheckBox)findViewById(R.id.uplusvisacard);
+		ocbcUPlusVisaCard = (CheckBox)findViewById(R.id.uplusvisacard);
 		ocbcUPlusVisaCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcUPlusPlatinumCard = (CheckBox)findViewById(R.id.uplusplatinumcard);
+		ocbcUPlusPlatinumCard = (CheckBox)findViewById(R.id.uplusplatinumcard);
 		ocbcUPlusPlatinumCard.setOnClickListener(new CheckListener());
-		CheckBox ocbcYesDebitCard = (CheckBox)findViewById(R.id.yesdebitcard);
+		ocbcYesDebitCard = (CheckBox)findViewById(R.id.yesdebitcard);
 		ocbcYesDebitCard.setOnClickListener(new CheckListener());
-		CheckBox uobDirectVisaCard = (CheckBox)findViewById(R.id.directvisacard);
+		
+		uobDirectVisaCard = (CheckBox)findViewById(R.id.directvisacard);
 		uobDirectVisaCard.setOnClickListener(new CheckListener());
-		CheckBox uobLadysCard = (CheckBox)findViewById(R.id.ladyscard);
+		uobLadysCard = (CheckBox)findViewById(R.id.ladyscard);
 		uobLadysCard.setOnClickListener(new CheckListener());
-		CheckBox uobMasterCardClassicCard = (CheckBox)findViewById(R.id.mastercardclassiccard);
+		uobMasterCardClassicCard = (CheckBox)findViewById(R.id.mastercardclassiccard);
 		uobMasterCardClassicCard.setOnClickListener(new CheckListener());
-		CheckBox uobMasterCardGoldCard = (CheckBox)findViewById(R.id.mastercardgoldcard);
+		uobMasterCardGoldCard = (CheckBox)findViewById(R.id.mastercardgoldcard);
 		uobMasterCardGoldCard.setOnClickListener(new CheckListener());
-		CheckBox uobOneCard = (CheckBox)findViewById(R.id.onecard);
+		uobOneCard = (CheckBox)findViewById(R.id.onecard);
 		uobOneCard.setOnClickListener(new CheckListener());
-		CheckBox uobPreferredWorldCard = (CheckBox)findViewById(R.id.preferredworld);
+		uobPreferredWorldCard = (CheckBox)findViewById(R.id.preferredworld);
 		uobPreferredWorldCard.setOnClickListener(new CheckListener());
-		CheckBox uobPRVIVisaAmericanCard = (CheckBox)findViewById(R.id.prvivisaamerican);
+		uobPRVIVisaAmericanCard = (CheckBox)findViewById(R.id.prvivisaamerican);
 		uobPRVIVisaAmericanCard.setOnClickListener(new CheckListener());
-		CheckBox uobVisaClassicCard = (CheckBox)findViewById(R.id.visaclassiccard);
+		uobVisaClassicCard = (CheckBox)findViewById(R.id.visaclassiccard);
 		uobVisaClassicCard.setOnClickListener(new CheckListener());
-		CheckBox uobVisaGoldCard = (CheckBox)findViewById(R.id.visagoldcard);
+		uobVisaGoldCard = (CheckBox)findViewById(R.id.visagoldcard);
 		uobVisaGoldCard.setOnClickListener(new CheckListener());
-		CheckBox uobVisaInfiniteCard = (CheckBox)findViewById(R.id.visainfinitecard);
+		uobVisaInfiniteCard = (CheckBox)findViewById(R.id.visainfinitecard);
 		uobVisaInfiniteCard.setOnClickListener(new CheckListener());
-		CheckBox uobVisaSignatureCard = (CheckBox)findViewById(R.id.visasignaturecard);
+		uobVisaSignatureCard = (CheckBox)findViewById(R.id.visasignaturecard);
 		uobVisaSignatureCard.setOnClickListener(new CheckListener());
 	}
 	
+	protected void checkAll() {
+		cbClearPlatinumVisa.setChecked(true);
+		cbDividendPlatinum.setChecked(true);
+		cbParagonMasterCard.setChecked(true);
+		cbParagonVisa.setChecked(true);
+		cbPremiereMilesVisa.setChecked(true);
+		cbSMRTCard.setChecked(true);
+
+		dbsBlackAmericanExpress.setChecked(true);
+		dbsLiveFreshPlatinum.setChecked(true);
+		dbsPlatinumMasterCard.setChecked(true);
+
+		ocbcArtsPlatinumCard.setChecked(true);
+		ocbcBestDenkiPlatinumCard.setChecked(true);
+		ocbcClassicVisaCard.setChecked(true);
+		ocbcDebitCard.setChecked(true);
+		ocbcFairPricePlusVisaCard.setChecked(true);
+		ocbcGoldMasterCard.setChecked(true);
+		ocbcIkeaFriendsVisaCard.setChecked(true);
+		ocbcNTUVisaClassicCard.setChecked(true);
+		ocbcNTUVisaGoldCard.setChecked(true);
+		ocbcPlatinumMasterCard.setChecked(true);
+		ocbcRobinsonsPlatinumCard.setChecked(true);
+		ocbcSMUDebitCard.setChecked(true);
+		ocbcSMUPlatinumMasterCard.setChecked(true);
+		ocbcTitaniumMasterCard.setChecked(true);
+		ocbcUPlusVisaCard.setChecked(true);
+		ocbcUPlusPlatinumCard.setChecked(true);
+		ocbcYesDebitCard.setChecked(true);
+
+		uobDirectVisaCard.setChecked(true);
+		uobLadysCard.setChecked(true);
+		uobMasterCardClassicCard.setChecked(true);
+		uobMasterCardGoldCard.setChecked(true);
+		uobOneCard.setChecked(true);
+		uobPreferredWorldCard.setChecked(true);
+		uobPRVIVisaAmericanCard.setChecked(true);
+		uobVisaClassicCard.setChecked(true);
+		uobVisaGoldCard.setChecked(true);
+		uobVisaInfiniteCard.setChecked(true);
+		uobVisaSignatureCard.setChecked(true);
+	}
+
 	private class CheckListener implements OnClickListener {
 
 		@Override

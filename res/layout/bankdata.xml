@@ -20,7 +20,7 @@
    				android:id="@+id/citibankGroup"
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
-   				android:orientation="vertical">
+   				android:orientation="vertical" android:layout_marginBottom="10px">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -182,7 +182,7 @@
    				android:id="@+id/dbsGroup"
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
-   				android:orientation="vertical">
+   				android:orientation="vertical" android:layout_marginBottom="10px">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -276,7 +276,7 @@
    				android:id="@+id/ocbcGroup"
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
-   				android:orientation="vertical">
+   				android:orientation="vertical" android:layout_marginBottom="10px">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -691,7 +691,7 @@
    				android:id="@+id/uobGroup"
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
-   				android:orientation="vertical">
+   				android:orientation="vertical" android:layout_marginBottom="10px">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
