@@ -191,38 +191,57 @@
 			</LinearLayout>
 	
 			<!-- Card List -->
-			<HorizontalScrollView
-				xmlns:android="http://schemas.android.com/apk/res/android"
-    			android:layout_width="fill_parent"
-    			android:layout_height="wrap_content"
-    			android:scrollbars="none"
-    			android:background="@drawable/roundededge"
-    			android:layout_marginRight="5px"
-       			android:foregroundGravity="center_vertical|center_horizontal" 
-       			android:clipChildren="true" 
-       			android:fadingEdge="none" 
-       			android:clipToPadding="true" 
-       			android:layout_marginLeft="5px" 
-       			android:paddingLeft="5px" 
-       			android:paddingRight="5px" 
-       			android:layout_marginTop="5px" 
-       			android:layout_marginBottom="5px">
-       	
-       			<TableLayout
-					android:id="@+id/table"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:paddingTop="5px"
-					android:paddingBottom="5px">
-		
-					<TableRow
-						android:id="@+id/tableRow"
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/roundededge"
+				android:layout_marginRight="5px"
+				android:layout_marginLeft="5px" 
+				android:paddingLeft="5px"
+				android:paddingRight="5px"
+				android:layout_marginTop="5px" 
+				android:layout_marginBottom="5px"
+				android:orientation="horizontal">
+				
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="fill_parent"
+					android:background="@drawable/scroll_left" />
+					
+				<HorizontalScrollView
+					xmlns:android="http://schemas.android.com/apk/res/android"
+					android:id="@+id/scrollView"
+    				android:layout_width="fill_parent"
+    				android:layout_height="wrap_content"
+    				android:scrollbars="none"
+       				android:foregroundGravity="center_vertical|center_horizontal" 
+       				android:clipChildren="true" 
+       				android:fadingEdge="none" 
+       				android:clipToPadding="true" 
+       				android:paddingRight="15px">
+       				
+       				<TableLayout
+						android:id="@+id/table"
+						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-						android:layout_width="wrap_content">
-					</TableRow>
-				</TableLayout>
-			</HorizontalScrollView>
-	
+						android:paddingTop="5px"
+						android:paddingBottom="5px">
+		
+						<TableRow
+							android:id="@+id/tableRow"
+							android:layout_height="wrap_content"
+							android:layout_width="wrap_content">
+						</TableRow>
+					</TableLayout>
+       			</HorizontalScrollView>
+       			
+       			<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="fill_parent"
+					android:layout_marginLeft="-15px"
+					android:background="@drawable/scroll_right" />
+			</LinearLayout>
+			
 			<!-- Address and Buttons -->
 			<LinearLayout
 				android:layout_width="fill_parent"

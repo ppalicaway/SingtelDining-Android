@@ -26,7 +26,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -57,7 +56,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private static double longitude;
 	private EditText searchEditText;
 	private Button editButton;
-	//private TextView deleteTextView;
 	public static String searchText = "";
 	private final int LOCATION_REQUEST = 1;
 	private final int CUISINE_REQUEST = 2;
@@ -74,7 +72,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private ListView listView;
 	private View view;
 	private Button mapButton;
-	//private Button refreshButton;
 	private Button favoriteButton;
 	private Button cuisineButton;
 	private Button restaurantButton;
@@ -141,8 +138,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
 		
-		//refreshButton = (Button)findViewById(R.id.refreshButton);
-				
 		Button arButton = (Button)findViewById(R.id.arButton);
 		arButton.setOnClickListener(new MenuListener());
 		arButton.setVisibility(Button.GONE);
@@ -153,7 +148,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		editButton = (Button)findViewById(R.id.editButton);
 		editButton.setOnClickListener(new MenuListener());
 		
-		//deleteTextView = (TextView)findViewById(R.id.deleteTextView);
 		SingtelCardListener cListener = new SingtelCardListener();
 		
 		Button settingsCardButton = (Button)findViewById(R.id.settingsCard);
@@ -169,7 +163,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		MerchantInfo mInfo = merchantList.get(position);
+		final MerchantInfo mInfo = merchantList.get(position);
 		if(!isEdit) {
 			DescriptionPage.merchantInfo = mInfo;
 			DescriptionPage.catID = mInfo.getId();
@@ -185,7 +179,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
                 public void onClick(DialogInterface dialog, int whichButton) {
                 	try {
                 		DBManager dbMgr = new DBManager(DescriptionPage.instance, Constants.DB_NAME);
-        				dbMgr.deleteMerchant(DescriptionPage.merchantInfo);
+        				dbMgr.deleteMerchant(mInfo);
         				dbMgr.close();
         			}
         			catch(Exception e) {
@@ -260,7 +254,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = false;
 					searchEditText.setText("Around Me - All");
-					//refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
@@ -284,7 +277,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = true;
 					isCuisines = false;
 					searchEditText.setText("Tap to search");
-					//refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
@@ -305,7 +297,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = true;
 					searchEditText.setText("Asian");
-					//refreshButton.setVisibility(Button.VISIBLE);
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
@@ -324,7 +315,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = false;
 					cardLayoutView.setVisibility(LinearLayout.GONE);
-					//refreshButton.setVisibility(Button.GONE);
 					searchEditText.setVisibility(EditText.GONE);
 					mapButton.setVisibility(Button.GONE);
 					myFave.setVisibility(ImageView.VISIBLE);

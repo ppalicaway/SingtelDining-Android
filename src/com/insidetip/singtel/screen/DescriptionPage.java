@@ -100,9 +100,6 @@ public class DescriptionPage extends SingtelDiningActivity {
 		Button mapButton = (Button) findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new ButtonEvents());
 		
-		//TextView termsTextView = (TextView)findViewById(R.id.termsTextView);
-		//termsTextView.setOnClickListener(new ButtonEvents());
-		
 		Button infoButton = (Button)findViewById(R.id.infoButton);
 		infoButton.setOnClickListener(new ButtonEvents());
 		
@@ -195,28 +192,6 @@ public class DescriptionPage extends SingtelDiningActivity {
 			
 			offer = (TextView)findViewById(R.id.offerTextView);
 			offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
-			
-			//TextView reviews = (TextView)findViewById(R.id.merchantReviews);
-			//reviews.setText("Reviews: " + merchantDetails.getReviews());
-			
-			/*ImageView creditCards = (ImageView)findViewById(R.id.creditCardImageView);
-			creditCards.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.hyperspace_out);
-					LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);					
-					ll.startAnimation(animation);
-					if(isFlipped) {
-						offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
-						isFlipped = false;
-					}
-					else {
-						offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
-						isFlipped = true;
-					}
-				}
-			});*/
 			
 			TextView merchantName = (TextView)findViewById(R.id.merchantName);
 			merchantName.setText(merchantDetails.getTitle());
@@ -332,11 +307,11 @@ public class DescriptionPage extends SingtelDiningActivity {
 	}
 	
 	public void publishFeed() {
-		String nameMerchant = Constants.FACEBOOK_NAME + merchantDetails.getTitle() + "\"";
-		String hrefMerchant = Constants.FACEBOOK_HREF + "http://www.singtel.com/\"";
-		String captionMerchant = Constants.FACEBOOK_CAPTION + merchantDetails.getAddress() + "\"";
+		String nameMerchant = Constants.FACEBOOK_NAME + "ILoveDeals" + "\"";
+		String hrefMerchant = Constants.FACEBOOK_HREF + "http://www.singtel.com/ilovedeals/\"";
+		String captionMerchant = Constants.FACEBOOK_CAPTION + "Search for ILoveDeals on Apple appstore or Android Market." + "\"";
 		String descriptionMerchant = Constants.FACEBOOK_DESCRIPTION + "\"";
-		String mediaMerchant = Constants.FACEBOOK_MEDIA + "" + merchantDetails.getImage() + "\"";
+		String mediaMerchant = Constants.FACEBOOK_MEDIA + "" + "http://singtel.dc2go.net/singtel/images/icon.png" + "\"";
 		String hrefMedia = Constants.FACEBOOK_HREF + merchantDetails.getImage() +"\"";
 		String propertiesMerchant = Constants.FACEBOOK_PROPERTIES;
 		
