@@ -19,7 +19,7 @@
 		android:padding="5px"
 		android:layout_marginBottom="5px">
 		
-		<com.insidetip.singtel.map.MapLocationViewer
+		<com.singtel.ilovedeals.map.MapLocationViewer
 			android:id="@+id/mapLocationViewer" 
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content" />
