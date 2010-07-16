@@ -23,19 +23,49 @@
        	android:layout_marginTop="5px" 
        	android:layout_marginBottom="5px">
        	
-       	<TableLayout
+       	<LinearLayout
+       		android:layout_width="fill_parent"
+       		android:layout_height="wrap_content"
+       		android:orientation="horizontal">
+       		
+       		<Button
+       			android:layout_marginTop="5px"
+				android:layout_marginBottom="5px"
+       			android:id="@+id/settingsCard"
+				android:background="@drawable/configurecards"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+				
+			<TableLayout
+				android:id="@+id/table"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:paddingTop="5px"
+				android:paddingBottom="5px"
+				android:orientation="horizontal">
+			
+				<TableRow
+					android:id="@+id/tableRow"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content">
+				</TableRow>
+			</TableLayout>
+       	</LinearLayout>
+       	
+       	<!-- <TableLayout
 			android:id="@+id/table"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:paddingTop="5px"
-			android:paddingBottom="5px">
-		
+			android:paddingBottom="5px"
+			android:orientation="horizontal">
+			
 			<TableRow
 				android:id="@+id/tableRow"
 				android:layout_height="wrap_content"
 				android:layout_width="wrap_content">
 			</TableRow>
-		</TableLayout>
+		</TableLayout> -->
 		
 		<!-- <com.insidetip.singtel.screen.CustomImageView
 			android:id="@+id/cell"

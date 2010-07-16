@@ -143,8 +143,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		deleteTextView = (TextView)findViewById(R.id.deleteTextView);
 		SingtelCardListener cListener = new SingtelCardListener();
 		
-		Button settingsButton = (Button)findViewById(R.id.settingsButton);
-		settingsButton.setOnClickListener(new MenuListener());
+		//Button settingsButton = (Button)findViewById(R.id.settingsButton);
+		//settingsButton.setOnClickListener(new MenuListener());
+		
+		Button settingsCardButton = (Button)findViewById(R.id.settingsCard);
+		settingsCardButton.setOnClickListener(new MenuListener());
 				
 		listView = (ListView)findViewById(android.R.id.list);
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -226,7 +229,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			HorizontalScrollView hsView = (HorizontalScrollView)findViewById(R.id.scrollView);
 			hsView.setVisibility(HorizontalScrollView.VISIBLE);
 			switch(v.getId()) {
-				case R.id.settingsButton:
+				case R.id.settingsCard:
 					Intent settings = new Intent(instance, SettingsPage.class);
 					startActivityForResult(settings, BANK_REQUEST);
 					break;
