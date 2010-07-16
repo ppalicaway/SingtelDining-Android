@@ -25,7 +25,7 @@ public interface Constants {
 	
 	//public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZh-5KqNtCjZdddrt5sJKMQZqMxZYQ";
 	//public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZhi5SfyLSW5kbDrnnNElk7slgjQnw";
-	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZg30kaIdQsjQytD7UqxyyWDZPyIlg";
+	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZiFrQEZtK56_fQa6dmBIXOBDxaAvQ";
 	
 	public static final String DEFAULT_SHARE_DATA = "DEFAULT_SHARE_DATA";
 	

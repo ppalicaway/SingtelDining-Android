@@ -189,7 +189,9 @@ public class DescriptionPage extends SingtelDiningActivity {
 		public void run() {
 			
 			offer = (TextView)findViewById(R.id.offerTextView);
-			offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
+			String offerText = merchantDetails.getBankOffers().get(0).getBank() + " Offer:\n";
+			offerText += merchantDetails.getBankOffers().get(0).getOffer();
+			offer.setText(offerText);
 			
 			TextView merchantName = (TextView)findViewById(R.id.merchantName);
 			merchantName.setText(merchantDetails.getTitle());
@@ -397,9 +399,11 @@ public class DescriptionPage extends SingtelDiningActivity {
 		String offer = "";
 		for(int i = 0; i < merchantDetails.getBankOffers().size(); i++) {
 			if(bankName.equalsIgnoreCase(merchantDetails.getBankOffers().get(i).getBank())) {
-				offer = merchantDetails.getBankOffers().get(i).getOffer();
+				offer = merchantDetails.getBankOffers().get(i).getBank() + " Offer:\n";
+				offer += merchantDetails.getBankOffers().get(i).getOffer();
 			}
 		}
+		System.out.println("Petz::"+offer);
 		return offer;
 	}
 	

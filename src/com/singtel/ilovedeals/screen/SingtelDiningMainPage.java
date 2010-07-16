@@ -574,19 +574,25 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 							MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
 							SingtelDiningMainPage.merchantList.add(mInfo);
 						}
+						
+						totalItems = jsonObject1.getInt("totalResults");
+						totalPage = totalItems / Constants.ITEMS_PER_PAGE;
+						if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
+							totalPage += 1;
+						}						
 						runOnUiThread(new AddToMerchantList());
 					}
 					catch(Exception e) {
 						e.printStackTrace();
 					}
 					
-					totalItems = jsonObject1.getInt("totalResults");
-					totalPage = totalItems / Constants.ITEMS_PER_PAGE;
-					if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
-						totalPage += 1;
-					}
+					///totalItems = jsonObject1.getInt("totalResults");
+					//totalPage = totalItems / Constants.ITEMS_PER_PAGE;
+					//if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
+					//	totalPage += 1;
+					//}
 					
-					settingLoadMore();
+					//settingLoadMore();
 				} 
 				catch (Exception e) {
 					try {
@@ -624,6 +630,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			catch (Exception e) {
 				e.printStackTrace();
 			}
+			settingLoadMore();
 		}
 		
 	}
@@ -643,6 +650,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	}
 	
 	public void settingLoadMore() {
+		TableRow tableRow = (TableRow) findViewById(R.id.tableRow);
+		
 		Button loadMore = (Button)view.findViewById(R.id.loadMore);
 		
 		if(totalItems < Constants.ITEMS_PER_PAGE || page == totalPage || isFavorite) {
