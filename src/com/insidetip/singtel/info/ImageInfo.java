@@ -6,11 +6,13 @@ public class ImageInfo {
 	private int id;
 	private String bankName;
 	private int index;
+	private boolean checked;
 	
-	public ImageInfo(int idLabel, int id, String bankName) {
+	public ImageInfo(int idLabel, int id, String bankName, boolean checked) {
 		this.idLabel = idLabel;
 		this.id = id;
 		this.bankName = bankName;
+		this.checked = checked;
 	}
 	
 	public void setIdLabel(int source) {
@@ -35,5 +37,13 @@ public class ImageInfo {
 
 	public String getBankName() {
 		return bankName;
+	}
+
+	public void setChecked(boolean checked) {
+		this.checked = checked;
+	}
+
+	public boolean isChecked() {
+		return checked;
 	}
 }

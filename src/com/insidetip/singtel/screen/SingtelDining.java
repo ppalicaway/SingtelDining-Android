@@ -5,6 +5,7 @@ import com.insidetip.singtel.util.Util;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -61,7 +62,18 @@ public class SingtelDining extends Activity {
 			}
 			finally {
 				finish();
-				startActivity(new Intent(instance, SingtelDiningMainPage.class));
+				SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+				boolean isFirstTime = shared.getBoolean("isFirstTime", true);
+				SharedPreferences.Editor edit = shared.edit();
+				
+				if(isFirstTime) {
+					edit.putBoolean("isFirstTime", false);
+					edit.commit();
+					startActivity(new Intent(instance, SettingsPage.class));
+				}
+				else {
+					startActivity(new Intent(instance, SingtelDiningMainPage.class));
+				}
 				stop();
 			}
 		}

@@ -2,6 +2,7 @@ package com.insidetip.singtel.screen;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -11,6 +12,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationManager;
@@ -33,6 +35,7 @@ import android.widget.TextView;
 
 import com.insidetip.singtel.adapter.Controller;
 import com.insidetip.singtel.db.DBManager;
+import com.insidetip.singtel.info.ImageInfo;
 import com.insidetip.singtel.info.MerchantInfo;
 import com.insidetip.singtel.map.GPSLocationListener;
 import com.insidetip.singtel.util.Constants;
@@ -400,7 +403,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		searchEditText.setText(searchText);
-		System.out.println(SettingsPage.bankQuery);
 		if(requestCode == BANK_REQUEST) {
 			URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
 		      "&longitude=" + longitude +
@@ -415,7 +417,35 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	}
 	
 	private void refreshBitmap() {
-		SingtelCardListener cardListener = new SingtelCardListener();
+		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+		String pref = shared.getString("cardPref", "");
+		ArrayList<ImageInfo> imageArray = new ArrayList<ImageInfo>();
+		if(!pref.equalsIgnoreCase("")) {
+			pref = pref.substring(0, pref.length()-1);
+			StringTokenizer stringTkn = new StringTokenizer(pref, ",");
+			int size = stringTkn.countTokens();
+			for (int x = 0; x < size; x++) {
+				imageArray.add(Controller.getCorrespondingImage(stringTkn.nextToken()));
+			}
+			
+			SingtelCardListener cardListener = new SingtelCardListener();
+			TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
+			LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			tableRow.removeAllViews();
+			if(!imageArray.isEmpty()) {
+				for(int i = 0; i < SettingsPage.images.size(); i++) {
+					CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
+					view.setImageResource(SettingsPage.images.get(i).getId());
+					view.setImageInfo(SettingsPage.images.get(i));
+					view.setOnClickListener(cardListener);
+					tableRow.addView(view);
+				}
+			}
+		}
+		
+		
+		
+		/*SingtelCardListener cardListener = new SingtelCardListener();
 		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
 		tableRow.removeAllViews();
 		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -436,7 +466,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				view.setOnClickListener(cardListener);
 				tableRow.addView(view);
 			}
-		}
+		}*/
 	}
 
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {

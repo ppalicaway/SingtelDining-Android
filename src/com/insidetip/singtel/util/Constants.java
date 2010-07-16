@@ -1,6 +1,5 @@
 package com.insidetip.singtel.util;
 
-import com.insidetip.singtel.screen.SettingsPage;
 
 public interface Constants {
 
@@ -121,4 +120,42 @@ public interface Constants {
 	public static final int UOB_VISA_SIGNATURE_CARD = 70;
 	public static final int UOB_VISA_SIGNATURE_CARD_LABEL = 71;
 	
+	//=============
+	public static final int CBCLEARPLATINUMVISA = 1;
+	public static final int CBDIVIDENDPLATINUM = 2;
+	public static final int CBPARAGONMASTERCARD = 3;
+	public static final int CBPARAGONVISA = 4;
+	public static final int CBPREMIEREMILESVISA = 5;
+	public static final int CBSMRTCARD = 6;
+	public static final int DBSBLACKAMERICANEXPRESS = 7;
+	public static final int DBSLIVEFRESHPLATINUM = 8;
+	public static final int DBSPLATINUMMASTERCARD = 9;
+	public static final int OCBCARTSPLATINUMCARD = 10;
+	public static final int OCBCBESTDENKIPLATINUMCARD = 11;
+	public static final int OCBCCLASSICVISACARD = 12;
+	public static final int OCBCDEBITCARD = 13;
+	public static final int OCBCFAIRPRICEPLUSVISACARD = 14;
+	public static final int OCBCGOLDMASTERCARD = 15;
+	public static final int OCBCIKEAFRIENDSVISACARD = 16;
+	public static final int OCBCNTUVISACLASSICCARD = 17;
+	public static final int OCBCNTUVISAGOLDCARD = 18;
+	public static final int OCBCPLATINUMMASTERCARD = 19;
+	public static final int OCBCROBINSONSPLATINUMCARD = 20;
+	public static final int OCBCSMUDEBITCARD = 21;
+	public static final int OCBCSMUPLATINUMMASTERCARD = 22;
+	public static final int OCBCTITANIUMMASTERCARD = 23;
+	public static final int OCBCUPLUSVISACARD = 24;
+	public static final int OCBCUPLUSPLATINUMCARD = 25;
+	public static final int OCBCYESDEBITCARD = 26;
+	public static final int UOBDIRECTVISACARD = 27;
+	public static final int UOBLADYSCARD = 28;
+	public static final int UOBMASTERCARDCLASSICCARD = 29;
+	public static final int UOBMASTERCARDGOLDCARD = 30;
+	public static final int UOBONECARD = 31;
+	public static final int UOBPREFERREDWORLDCARD = 32;
+	public static final int UOBPRVIVISAAMERICANCARD = 33;
+	public static final int UOBVISACLASSICCARD =34;
+	public static final int UOBVISAGOLDCARD = 35;
+	public static final int UOBVISAINFINITECARD = 36;
+	public static final int UOBVISASIGNATURECARD = 37;
 }
