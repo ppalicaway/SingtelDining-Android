@@ -131,6 +131,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 				catch(Exception e) {
 					e.printStackTrace();
 				}
+				Util.showAlert(instance, "ILoveDeals", "Successfully added to Favourites.", "OK", false);
 			}
 		});
 		
@@ -148,6 +149,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 				catch(Exception e) {
 					e.printStackTrace();
 				}
+				Util.showAlert(instance, "ILoveDeals", "Successfully removed from Favourites.", "OK", false);
 			}
 		});
 		

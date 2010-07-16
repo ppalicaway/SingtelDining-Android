@@ -1,6 +1,7 @@
 package com.insidetip.singtel.screen;
 
 import com.insidetip.singtel.util.Constants;
+import com.insidetip.singtel.util.Util;
 
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,8 @@ public class SearchPage extends SingtelDiningActivity {
 	private void init() {
 		final EditText keyword = (EditText)findViewById(R.id.searchKeywordEditText);
 		
+		Util.showKeyboard(instance);
+		
 		Button search = (Button)findViewById(R.id.searchSubmitButton);
 		search.setOnClickListener(new OnClickListener() {
 			
@@ -38,6 +41,6 @@ public class SearchPage extends SingtelDiningActivity {
 				SingtelDiningMainPage.URL = Constants.RESTAURANT_SEARCH + keyword.getText().toString() + SettingsPage.bankQuery + "&pageNum=";
 				instance.finish();
 			}
-		});		
+		});
 	}
 }

@@ -54,14 +54,11 @@
 			android:layout_marginTop="10px" 
 			android:layout_marginBottom="10px" 
 			android:layout_marginLeft="10px" 
-			android:layout_marginRight="10px" 
-			android:background="@drawable/roundededittext"/>
+			android:layout_marginRight="10px"/>
 			
 		<Button
 			android:id="@+id/searchSubmitButton"
 			android:layout_height="wrap_content"
-			android:layout_width="fill_parent"
-			android:background="@drawable/roundededge"
 			android:text="Search"
 			android:textColor="@color/COLOR_LIGHTBLUE" 
 			android:typeface="sans" 
@@ -69,6 +66,6 @@
 			android:textStyle="bold" 
 			android:padding="10px" 
 			android:layout_marginLeft="10px" 
-			android:layout_marginRight="10px"/>
+			android:layout_marginRight="10px" android:background="@drawable/button_blank" android:layout_width="130px"/>
 	</LinearLayout>
 </LinearLayout>
