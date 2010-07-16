@@ -106,14 +106,14 @@
 								android:typeface="sans" 
 								android:layout_marginRight="20px" />
 							
-							<TextView
+							<!-- <TextView
 								android:id="@+id/merchantReviews"
 								android:layout_width="wrap_content"
 								android:layout_height="wrap_content"
 								android:text=""
 								android:textColor="@color/COLOR_BG"
 								android:textSize="10px"
-								android:typeface="sans" />
+								android:typeface="sans" />  -->
 						</LinearLayout>
 					</LinearLayout>
 			
@@ -122,11 +122,11 @@
 						android:layout_height="wrap_content"
 						android:orientation="vertical"
 						android:gravity="right|center_vertical"
-						android:layout_marginLeft="-75px"
-						android:layout_marginTop="5px"
+						android:layout_marginLeft="-35px"
+						android:layout_marginTop="3px"
 						android:layout_marginBottom="5px">
 						
-						<RatingBar 
+						<!-- <RatingBar 
 							android:id="@+id/indicator_ratingbar"
 							android:layout_gravity="center_vertical"
 							style="?android:attr/ratingBarStyleSmall"
@@ -135,9 +135,14 @@
 							android:numStars="5"
 							android:stepSize="0.5"
 							android:layout_height="wrap_content"
-							android:layout_marginRight="5px" />
-						
-						
+							android:layout_marginRight="5px" /> -->
+							
+						<Button 
+							android:id="@+id/infoButton"
+							android:background="@drawable/info"
+							android:layout_width="fill_parent"
+							android:layout_height="wrap_content"
+							android:gravity="center_vertical|center_horizontal" />
 					</LinearLayout>
 				</LinearLayout>
 		
@@ -167,10 +172,10 @@
 							android:layout_height="wrap_content"
 							android:textColor="@color/COLOR_BLACK"
 							android:typeface="sans"
-							android:height="105px"
+							android:minHeight="75px"
 							android:text="" />
 							
-						<TextView 
+						<!-- <TextView 
 							android:id="@+id/termsTextView"
 							android:layout_width="fill_parent"
 							android:layout_height="wrap_content"
@@ -180,7 +185,7 @@
 							android:textStyle="bold"
 							android:textSize="14px"
 							android:height="20px"
-							android:text="T&amp;C" />
+							android:text="T&amp;C" /> -->
 				</LinearLayout>
 					</LinearLayout>
 			</LinearLayout>

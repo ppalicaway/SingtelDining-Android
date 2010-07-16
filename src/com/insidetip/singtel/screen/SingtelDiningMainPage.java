@@ -470,7 +470,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			result = Util.getHttpData(SingtelDiningMainPage.URL + page);
 			
 			if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
-				Util.showAlert(SingtelDiningMainPage.instance, "BestSGDeals", "Please make sure Internet connection is available.", "OK", false);
+				Util.showAlert(SingtelDiningMainPage.instance, "ILoveDeals", "Please make sure Internet connection is available.", "OK", false);
 				try {
 					if (progressDialog.isShowing()) {
 						progressDialog.dismiss();
@@ -569,6 +569,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	@Override
 	protected void onResume() {
+		isListing = true;
 		if(myLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
 			myLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 200, locationListener);
 			location = myLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);

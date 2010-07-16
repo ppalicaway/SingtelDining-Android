@@ -67,7 +67,7 @@ public class CuisineListingPage extends SingtelDiningListActivity {
 		result = Util.getHttpData(Constants.RESTAURANT_CUISINE_TYPES + SettingsPage.bankQuery);
 		
 		if(result == null || result.equalsIgnoreCase("408") || result.equalsIgnoreCase("404")) {
-			Util.showAlert(instance, "BestSGDeals", "Please make sure Internet connection is available.", "OK", false);
+			Util.showAlert(instance, "ILoveDeals", "Please make sure Internet connection is available.", "OK", false);
 		}
 		else {
 			result = Util.toJSONString(result);

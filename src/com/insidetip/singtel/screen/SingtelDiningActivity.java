@@ -25,7 +25,7 @@ public class SingtelDiningActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			switch(v.getId()) {
-				case R.id.termsTextView:
+				case R.id.infoButton:
 					Intent termsPage = new Intent(DescriptionPage.instance, TermsPage.class);
 					startActivity(termsPage);
 					break;

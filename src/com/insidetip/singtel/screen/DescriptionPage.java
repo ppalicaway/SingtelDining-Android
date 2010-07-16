@@ -100,8 +100,11 @@ public class DescriptionPage extends SingtelDiningActivity {
 		Button mapButton = (Button) findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new ButtonEvents());
 		
-		TextView termsTextView = (TextView)findViewById(R.id.termsTextView);
-		termsTextView.setOnClickListener(new ButtonEvents());
+		//TextView termsTextView = (TextView)findViewById(R.id.termsTextView);
+		//termsTextView.setOnClickListener(new ButtonEvents());
+		
+		Button infoButton = (Button)findViewById(R.id.infoButton);
+		infoButton.setOnClickListener(new ButtonEvents());
 		
 		Button phoneButton = (Button)findViewById(R.id.phoneButton);
 		phoneButton.setOnClickListener(new ButtonEvents());
@@ -191,8 +194,8 @@ public class DescriptionPage extends SingtelDiningActivity {
 			offer = (TextView)findViewById(R.id.offerTextView);
 			offer.setText(merchantDetails.getBankOffers().get(0).getOffer());
 			
-			TextView reviews = (TextView)findViewById(R.id.merchantReviews);
-			reviews.setText("Reviews: " + merchantDetails.getReviews());
+			//TextView reviews = (TextView)findViewById(R.id.merchantReviews);
+			//reviews.setText("Reviews: " + merchantDetails.getReviews());
 			
 			/*ImageView creditCards = (ImageView)findViewById(R.id.creditCardImageView);
 			creditCards.setOnClickListener(new OnClickListener() {
@@ -446,6 +449,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 	
 	@Override
 	protected void onResume() {
+		SingtelDiningMainPage.isListing = false;
 		super.onResume();
 	}
 

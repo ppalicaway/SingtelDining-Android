@@ -103,12 +103,12 @@ public class ARScreen extends SingtelDiningActivity {
         }
         
         if(ipAddress == null) {
-        	Util.showAlert(instance, "BestSGDeals", "Please make sure Internet connection is available.", getString(R.string.ok), true);
+        	Util.showAlert(instance, "ILoveDeals", "Please make sure Internet connection is available.", getString(R.string.ok), true);
 			return;
         }
         
         if(myLocation == null) {
-        	Util.showAlert(instance, "BestSGDeals", "Please enable your GPS or Network Service.", getString(R.string.ok), true);
+        	Util.showAlert(instance, "ILoveDeals", "Please enable your GPS or Network Service.", getString(R.string.ok), true);
 			return;
         }
         
