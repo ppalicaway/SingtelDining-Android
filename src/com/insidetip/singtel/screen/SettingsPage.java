@@ -9,7 +9,7 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.insidetip.singtel.info.ImageInfo;
 
@@ -66,6 +66,17 @@ public class SettingsPage extends SingtelDiningActivity {
 	private CheckBox uobVisaGoldCard;
 	private CheckBox uobVisaInfiniteCard;
 	private CheckBox uobVisaSignatureCard;
+	
+	private LinearLayout citiGroup;
+	private LinearLayout dbsGroup;
+	private LinearLayout ocbcGroup;
+	private LinearLayout uobGroup;
+	private Button citibank;
+	private Button dbs;
+	private Button ocbc;
+	private Button uob;
+	private Button allCreditCards;
+	private Button myCreditCards;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,10 +88,14 @@ public class SettingsPage extends SingtelDiningActivity {
 		instance = this;
 		initActivity(instance);
 		
-		final Button citibank = (Button)findViewById(R.id.citibankButton);
-		final Button dbs = (Button)findViewById(R.id.dbsButton);
-		final Button ocbc = (Button)findViewById(R.id.ocbcButton);
-		final Button uob = (Button)findViewById(R.id.uobButton);
+		citibank = (Button)findViewById(R.id.citibankButton);
+		dbs = (Button)findViewById(R.id.dbsButton);
+		ocbc = (Button)findViewById(R.id.ocbcButton);
+		uob = (Button)findViewById(R.id.uobButton);
+		citiGroup = (LinearLayout)findViewById(R.id.citibankGroup);
+		dbsGroup = (LinearLayout)findViewById(R.id.dbsGroup);
+		ocbcGroup = (LinearLayout)findViewById(R.id.ocbcGroup);
+		uobGroup = (LinearLayout)findViewById(R.id.uobGroup);
 		
 		citibank.setOnClickListener(new OnClickListener() {
 			
@@ -90,6 +105,10 @@ public class SettingsPage extends SingtelDiningActivity {
 				dbs.setBackgroundResource(R.drawable.dbs);
 				ocbc.setBackgroundResource(R.drawable.ocbc);
 				uob.setBackgroundResource(R.drawable.uob);
+				citiGroup.setVisibility(LinearLayout.VISIBLE);
+				dbsGroup.setVisibility(LinearLayout.GONE);
+				ocbcGroup.setVisibility(LinearLayout.GONE);
+				uobGroup.setVisibility(LinearLayout.GONE);
 			}
 		});
 		
@@ -101,6 +120,10 @@ public class SettingsPage extends SingtelDiningActivity {
 				dbs.setBackgroundResource(R.drawable.dbs_hover);
 				ocbc.setBackgroundResource(R.drawable.ocbc);
 				uob.setBackgroundResource(R.drawable.uob);
+				citiGroup.setVisibility(LinearLayout.GONE);
+				dbsGroup.setVisibility(LinearLayout.VISIBLE);
+				ocbcGroup.setVisibility(LinearLayout.GONE);
+				uobGroup.setVisibility(LinearLayout.GONE);
 			}
 		});
 		
@@ -112,6 +135,10 @@ public class SettingsPage extends SingtelDiningActivity {
 				dbs.setBackgroundResource(R.drawable.dbs);
 				ocbc.setBackgroundResource(R.drawable.ocbc_hover);
 				uob.setBackgroundResource(R.drawable.uob);
+				citiGroup.setVisibility(LinearLayout.GONE);
+				dbsGroup.setVisibility(LinearLayout.GONE);
+				ocbcGroup.setVisibility(LinearLayout.VISIBLE);
+				uobGroup.setVisibility(LinearLayout.GONE);
 			}
 		});
 		
@@ -123,6 +150,10 @@ public class SettingsPage extends SingtelDiningActivity {
 				dbs.setBackgroundResource(R.drawable.dbs);
 				ocbc.setBackgroundResource(R.drawable.ocbc);
 				uob.setBackgroundResource(R.drawable.uob_hover);
+				citiGroup.setVisibility(LinearLayout.GONE);
+				dbsGroup.setVisibility(LinearLayout.GONE);
+				ocbcGroup.setVisibility(LinearLayout.GONE);
+				uobGroup.setVisibility(LinearLayout.VISIBLE);
 			}
 		});
 		
@@ -151,8 +182,8 @@ public class SettingsPage extends SingtelDiningActivity {
 			}
 		});
 		
-		final Button allCreditCards = (Button)findViewById(R.id.allCreditCards);
-		final Button myCreditCards = (Button)findViewById(R.id.myCreditCards);
+		allCreditCards = (Button)findViewById(R.id.allCreditCards);
+		myCreditCards = (Button)findViewById(R.id.myCreditCards);
 		
 		allCreditCards.setOnClickListener(new OnClickListener() {
 			
@@ -160,6 +191,10 @@ public class SettingsPage extends SingtelDiningActivity {
 			public void onClick(View v) {
 				myCreditCards.setBackgroundResource(R.drawable.button_right);
 				allCreditCards.setBackgroundResource(R.drawable.button_left_hover);
+				citiGroup.setVisibility(LinearLayout.VISIBLE);
+				dbsGroup.setVisibility(LinearLayout.VISIBLE);
+				ocbcGroup.setVisibility(LinearLayout.VISIBLE);
+				uobGroup.setVisibility(LinearLayout.VISIBLE);
 				checkAll();
 			}
 		});
@@ -170,6 +205,11 @@ public class SettingsPage extends SingtelDiningActivity {
 			public void onClick(View v) {
 				myCreditCards.setBackgroundResource(R.drawable.button_right_hover);
 				allCreditCards.setBackgroundResource(R.drawable.button_left);
+				citiGroup.setVisibility(LinearLayout.VISIBLE);
+				dbsGroup.setVisibility(LinearLayout.VISIBLE);
+				ocbcGroup.setVisibility(LinearLayout.VISIBLE);
+				uobGroup.setVisibility(LinearLayout.VISIBLE);
+				uncheckAll();
 			}
 		});
 		
@@ -294,11 +334,56 @@ public class SettingsPage extends SingtelDiningActivity {
 		uobVisaInfiniteCard.setChecked(true);
 		uobVisaSignatureCard.setChecked(true);
 	}
+	
+	protected void uncheckAll() {
+		cbClearPlatinumVisa.setChecked(false);
+		cbDividendPlatinum.setChecked(false);
+		cbParagonMasterCard.setChecked(false);
+		cbParagonVisa.setChecked(false);
+		cbPremiereMilesVisa.setChecked(false);
+		cbSMRTCard.setChecked(false);
+
+		dbsBlackAmericanExpress.setChecked(false);
+		dbsLiveFreshPlatinum.setChecked(false);
+		dbsPlatinumMasterCard.setChecked(false);
+
+		ocbcArtsPlatinumCard.setChecked(false);
+		ocbcBestDenkiPlatinumCard.setChecked(false);
+		ocbcClassicVisaCard.setChecked(false);
+		ocbcDebitCard.setChecked(false);
+		ocbcFairPricePlusVisaCard.setChecked(false);
+		ocbcGoldMasterCard.setChecked(false);
+		ocbcIkeaFriendsVisaCard.setChecked(false);
+		ocbcNTUVisaClassicCard.setChecked(false);
+		ocbcNTUVisaGoldCard.setChecked(false);
+		ocbcPlatinumMasterCard.setChecked(false);
+		ocbcRobinsonsPlatinumCard.setChecked(false);
+		ocbcSMUDebitCard.setChecked(false);
+		ocbcSMUPlatinumMasterCard.setChecked(false);
+		ocbcTitaniumMasterCard.setChecked(false);
+		ocbcUPlusVisaCard.setChecked(false);
+		ocbcUPlusPlatinumCard.setChecked(false);
+		ocbcYesDebitCard.setChecked(false);
+
+		uobDirectVisaCard.setChecked(false);
+		uobLadysCard.setChecked(false);
+		uobMasterCardClassicCard.setChecked(false);
+		uobMasterCardGoldCard.setChecked(false);
+		uobOneCard.setChecked(false);
+		uobPreferredWorldCard.setChecked(false);
+		uobPRVIVisaAmericanCard.setChecked(false);
+		uobVisaClassicCard.setChecked(false);
+		uobVisaGoldCard.setChecked(false);
+		uobVisaInfiniteCard.setChecked(false);
+		uobVisaSignatureCard.setChecked(false);
+	}
 
 	private class CheckListener implements OnClickListener {
 
 		@Override
 		public void onClick(View v) {
+			myCreditCards.setBackgroundResource(R.drawable.button_right_hover);
+			allCreditCards.setBackgroundResource(R.drawable.button_left);
 			ImageInfo iInfo;
 			switch(v.getId()) {
 			case R.id.clearplatinumvisa:
