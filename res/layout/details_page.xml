@@ -187,7 +187,8 @@
 	
 			<!-- Card List -->
 			<HorizontalScrollView
-				android:layout_width="fill_parent"
+				xmlns:android="http://schemas.android.com/apk/res/android"
+    			android:layout_width="fill_parent"
     			android:layout_height="wrap_content"
     			android:scrollbars="none"
     			android:background="@drawable/roundededge"
@@ -201,13 +202,20 @@
        			android:paddingRight="5px" 
        			android:layout_marginTop="5px" 
        			android:layout_marginBottom="5px">
-        			
-    			<ImageView 
-    				android:id="@+id/creditCardImageView"
-       				android:src="@drawable/cc_image"
-    	   			android:layout_width="wrap_content"
-		       		android:layout_height="wrap_content" 
-       				android:padding="5px"/>
+       	
+       			<TableLayout
+					android:id="@+id/table"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:paddingTop="5px"
+					android:paddingBottom="5px">
+		
+					<TableRow
+						android:id="@+id/tableRow"
+						android:layout_height="wrap_content"
+						android:layout_width="wrap_content">
+					</TableRow>
+				</TableLayout>
 			</HorizontalScrollView>
 	
 			<!-- Address and Buttons -->

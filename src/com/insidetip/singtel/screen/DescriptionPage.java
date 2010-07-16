@@ -1,5 +1,6 @@
 package com.insidetip.singtel.screen;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
@@ -8,17 +9,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.codecarpet.fbconnect.FBFeedActivity;
@@ -52,6 +57,8 @@ public class DescriptionPage extends SingtelDiningActivity {
 	private Runnable queryThread;
 	
 	private static final int MESSAGE_PUBLISHED = 2;
+	
+	private static ArrayList<String> banks = new ArrayList<String>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -158,6 +165,24 @@ public class DescriptionPage extends SingtelDiningActivity {
 		}
 	}
 	
+	private void reloadCardImage() {
+		InnerCardListener cardListener = new InnerCardListener();
+		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
+		tableRow.removeAllViews();
+		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		for(int i = 0; i < banks.size(); i++) {
+			for(int j = 0; j < SettingsPage.images.size(); j++) {
+				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
+				if(SettingsPage.images.get(j).getBankName().equalsIgnoreCase(banks.get(i))) {
+					view.setImageResource(SettingsPage.images.get(j).getId());
+					view.setImageInfo(SettingsPage.images.get(j));
+					view.setOnClickListener(cardListener);
+					tableRow.addView(view);
+				}
+			}
+		}
+	}
+
 	private Runnable populateData = new Runnable() {
 
 		@Override
@@ -169,7 +194,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 			TextView reviews = (TextView)findViewById(R.id.merchantReviews);
 			reviews.setText("Reviews: " + merchantDetails.getReviews());
 			
-			ImageView creditCards = (ImageView)findViewById(R.id.creditCardImageView);
+			/*ImageView creditCards = (ImageView)findViewById(R.id.creditCardImageView);
 			creditCards.setOnClickListener(new OnClickListener() {
 				
 				@Override
@@ -186,7 +211,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 						isFlipped = true;
 					}
 				}
-			});
+			});*/
 			
 			TextView merchantName = (TextView)findViewById(R.id.merchantName);
 			merchantName.setText(merchantDetails.getTitle());
@@ -218,6 +243,13 @@ public class DescriptionPage extends SingtelDiningActivity {
 			
 			TextView merchantDescription = (TextView)findViewById(R.id.descriptionTextView);
 			merchantDescription.setText(merchantDetails.getDescription());
+			
+			for(int i = 0; i < merchantDetails.getBankOffers().size(); i++) {
+				String bank = merchantDetails.getBankOffers().get(i).getBank();
+				banks.add(bank);
+			}
+			
+			reloadCardImage();
 			
 			if(progressDialog.isShowing()) {
 				progressDialog.dismiss();
@@ -379,5 +411,33 @@ public class DescriptionPage extends SingtelDiningActivity {
 		public void requestDidFailWithError(FBRequest request, Throwable error) {
 			super.requestDidFailWithError(request, error);
 		}
+	}
+	
+	private String getOffer(String bankName) {
+		String offer = "";
+		for(int i = 0; i < merchantDetails.getBankOffers().size(); i++) {
+			if(bankName.equalsIgnoreCase(merchantDetails.getBankOffers().get(i).getBank())) {
+				offer = merchantDetails.getBankOffers().get(i).getOffer();
+			}
+		}
+		return offer;
+	}
+	
+	private class InnerCardListener implements OnClickListener {
+
+		@Override
+		public void onClick(View v) {
+			CustomImageView civ = (CustomImageView)v;
+			Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.hyperspace_out);
+			LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);					
+			ll.startAnimation(animation);
+			offer.setText(getOffer(civ.getImageInfo().getBankName()));
+		}		
+	}
+	
+	@Override
+	protected void onPause() {
+		banks.clear();
+		super.onPause();
 	}
 }

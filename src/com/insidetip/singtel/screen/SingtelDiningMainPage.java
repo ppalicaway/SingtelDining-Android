@@ -194,6 +194,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	}
 	
 	private void reloadData() {
+		refreshBitmap();
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
@@ -344,9 +345,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		searchEditText.setText(searchText);
-		if(requestCode == BANK_REQUEST) {
-			refreshBitmap();
-		}
 		reloadData();
 		super.onActivityResult(requestCode, resultCode, data);
 	}
@@ -354,13 +352,26 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private void refreshBitmap() {
 		CardListener cardListener = new CardListener();
 		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
+		tableRow.removeAllViews();
 		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		for(int i = 0; i < SettingsPage.images.size(); i++) {
-			CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
-			view.setImageResource(SettingsPage.images.get(i).getId());
-			view.setImageInfo(SettingsPage.images.get(i));
-			view.setOnClickListener(cardListener);
-			tableRow.addView(view);
+		if(!SettingsPage.images.isEmpty()) {
+			System.out.println("Empty kuno");
+			for(int i = 0; i < SettingsPage.images.size(); i++) {
+				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
+				view.setImageResource(SettingsPage.images.get(i).getId());
+				view.setImageInfo(SettingsPage.images.get(i));
+				view.setOnClickListener(cardListener);
+				tableRow.addView(view);
+			}
+		}
+		else {
+			for(int i = 0; i < SettingsPage.getDefaultCards().size(); i++) {
+				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
+				view.setImageResource(SettingsPage.getDefaultCards().get(i).getId());
+				view.setImageInfo(SettingsPage.getDefaultCards().get(i));
+				view.setOnClickListener(cardListener);
+				tableRow.addView(view);
+			}
 		}
 	}
 
@@ -570,7 +581,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 	@Override
 	protected void onPause() {
-		SettingsPage.images.clear();
 		myLocationManager.removeUpdates(locationListener);
 		super.onPause();
 	}

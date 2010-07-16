@@ -4,10 +4,12 @@ public class ImageInfo {
 
 	private int idLabel;
 	private int id;
+	private String bankName;
 	
-	public ImageInfo(int idLabel, int id) {
+	public ImageInfo(int idLabel, int id, String bankName) {
 		this.idLabel = idLabel;
 		this.id = id;
+		this.bankName = bankName;
 	}
 	
 	public void setIdLabel(int source) {
@@ -24,5 +26,13 @@ public class ImageInfo {
 	
 	public int getId() {
 		return id;
+	}
+
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+
+	public String getBankName() {
+		return bankName;
 	}
 }
