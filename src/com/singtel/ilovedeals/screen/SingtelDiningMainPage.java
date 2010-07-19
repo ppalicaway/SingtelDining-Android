@@ -61,6 +61,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private final int CUISINE_REQUEST = 2;
 	private final int RESTAURANT_REQUEST = 3;
 	private final int BANK_REQUEST = 4;
+	private final int DESCRIPTION_REQUEST = 5;
 	private boolean isLocation = true;
 	private boolean isRestaurants = false;
 	private boolean isCuisines = false;
@@ -169,7 +170,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			DescriptionPage.catID = mInfo.getId();
 			DescriptionPage.banks.clear();
 			Intent details = new Intent(instance, DescriptionPage.class);
-			startActivity(details);
+			startActivityForResult(details, DESCRIPTION_REQUEST);
 		}
 		else {
 			new AlertDialog.Builder(instance)
@@ -399,6 +400,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 			reloadData();
 		}
+		else if(requestCode == DESCRIPTION_REQUEST) {
+			if(isFavorite) {
+				reloadDataFromDB();
+			}
+		}
 		else {
 			reloadDataWithoutBitmap();
 		}
@@ -432,31 +438,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				}
 			}
 		}
-		
-		
-		
-		/*SingtelCardListener cardListener = new SingtelCardListener();
-		TableRow tableRow = (TableRow)findViewById(R.id.tableRow);
-		tableRow.removeAllViews();
-		LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		if(!SettingsPage.images.isEmpty()) {
-			for(int i = 0; i < SettingsPage.images.size(); i++) {
-				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
-				view.setImageResource(SettingsPage.images.get(i).getId());
-				view.setImageInfo(SettingsPage.images.get(i));
-				view.setOnClickListener(cardListener);
-				tableRow.addView(view);
-			}
-		}
-		else {
-			for(int i = 0; i < SettingsPage.getDefaultCards().size(); i++) {
-				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
-				view.setImageResource(SettingsPage.getDefaultCards().get(i).getId());
-				view.setImageInfo(SettingsPage.getDefaultCards().get(i));
-				view.setOnClickListener(cardListener);
-				tableRow.addView(view);
-			}
-		}*/
 	}
 
 	private class ListViewAdapter extends ArrayAdapter<MerchantInfo> {
