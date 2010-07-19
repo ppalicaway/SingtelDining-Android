@@ -869,7 +869,6 @@ public class SettingsPage extends SingtelDiningActivity {
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.uob_visa_signature_card_label, R.drawable.uob_visa_signature_card, UOB, R.drawable.uob_visa_signature_card_nonticked);
 			defaultAll.add(iInfo);
-			images = defaultAll;
 		}
 		return defaultAll;
 	}

@@ -34,6 +34,7 @@ import com.codecarpet.fbconnect.FBRequest.FBRequestDelegate;
 import com.codecarpet.fbconnect.FBSession.FBSessionDelegate;
 import com.singtel.ilovedeals.db.DBManager;
 import com.singtel.ilovedeals.info.BankOffer;
+import com.singtel.ilovedeals.info.ImageInfo;
 import com.singtel.ilovedeals.info.MerchantDetails;
 import com.singtel.ilovedeals.info.MerchantInfo;
 import com.singtel.ilovedeals.util.Constants;
@@ -174,8 +175,22 @@ public class DescriptionPage extends SingtelDiningActivity {
 			for(int j = 0; j < SettingsPage.images.size(); j++) {
 				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
 				if(SettingsPage.images.get(j).getBankName().equalsIgnoreCase(banks.get(i))) {
-					view.setImageResource(SettingsPage.images.get(j).getId());
+					view.setImageResource(SettingsPage.images.get(j).getNonticked());
 					view.setImageInfo(SettingsPage.images.get(j));
+					view.setOnClickListener(cardListener);
+					tableRow.addView(view);
+				}
+			}
+		}
+		
+		ArrayList<ImageInfo> defaultImages = SettingsPage.getDefaultCards();
+		//GetImages
+		for(int k = 0; k < banks.size(); k++) {
+			for(int l = 0; l < defaultImages.size(); l++) {
+				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
+				if(defaultImages.get(l).getBankName().equalsIgnoreCase(banks.get(k))) {
+					view.setImageResource(defaultImages.get(l).getNonticked());
+					view.setImageInfo(defaultImages.get(l));
 					view.setOnClickListener(cardListener);
 					tableRow.addView(view);
 				}

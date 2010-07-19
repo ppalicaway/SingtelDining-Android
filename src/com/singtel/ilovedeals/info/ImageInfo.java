@@ -5,14 +5,14 @@ public class ImageInfo {
 	private int idLabel;
 	private int id;
 	private String bankName;
-	private int index;
 	private int nonticked;
+	private boolean selected = false;
 	
 	public ImageInfo(int idLabel, int id, String bankName, int nonticked) {
 		this.idLabel = idLabel;
 		this.id = id;
 		this.bankName = bankName;
-		this.nonticked = nonticked;
+		this.setNonticked(nonticked);
 	}
 	
 	public void setIdLabel(int source) {
@@ -37,5 +37,21 @@ public class ImageInfo {
 
 	public String getBankName() {
 		return bankName;
+	}
+
+	public void setNonticked(int nonticked) {
+		this.nonticked = nonticked;
+	}
+
+	public int getNonticked() {
+		return nonticked;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
+
+	public boolean isSelected() {
+		return selected;
 	}
 }
