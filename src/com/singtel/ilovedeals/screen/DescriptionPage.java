@@ -183,14 +183,12 @@ public class DescriptionPage extends SingtelDiningActivity {
 			}
 		}
 		
-		ArrayList<ImageInfo> defaultImages = SettingsPage.getDefaultCards();
-		//GetImages
 		for(int k = 0; k < banks.size(); k++) {
-			for(int l = 0; l < defaultImages.size(); l++) {
+			for(int l = 0; l < SettingsPage.untickedImages.size(); l++) {
 				CustomImageView view = (CustomImageView) inflater.inflate(R.layout.row_cell, null);
-				if(defaultImages.get(l).getBankName().equalsIgnoreCase(banks.get(k))) {
-					view.setImageResource(defaultImages.get(l).getNonticked());
-					view.setImageInfo(defaultImages.get(l));
+				if(SettingsPage.untickedImages.get(l).getBankName().equalsIgnoreCase(banks.get(k))) {
+					view.setImageResource(SettingsPage.untickedImages.get(l).getNonticked());
+					view.setImageInfo(SettingsPage.untickedImages.get(l));
 					view.setOnClickListener(cardListener);
 					tableRow.addView(view);
 				}
