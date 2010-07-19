@@ -244,6 +244,23 @@ public class DescriptionPage extends SingtelDiningActivity {
 				banks.add(bank);
 			}
 			
+			LinearLayout branchGroup = (LinearLayout)findViewById(R.id.branchGroup);
+			Button branchButton = (Button)findViewById(R.id.branchButton);
+			final TextView branchesText = (TextView)findViewById(R.id.branchesText);
+			branchesText.setText(merchantDetails.getBranches());
+			
+			if(merchantDetails.getBranches().equalsIgnoreCase("")) {
+				branchGroup.setVisibility(LinearLayout.GONE);
+			}
+			
+			branchButton.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					branchesText.setVisibility(TextView.VISIBLE);
+				}
+			});
+			
 			reloadCardImage();
 			
 			if(progressDialog.isShowing()) {
@@ -305,6 +322,18 @@ public class DescriptionPage extends SingtelDiningActivity {
 					String tnc = jsonObject3.getString("tnc");
 					
 					merchantDetails.getBankOffers().add(new BankOffer(bankname, card, offer, tnc));
+				}
+				
+				String branch = "";
+				try {
+					JSONArray branches = jsonObject2.getJSONArray("branches");
+					for(int a = 0; a < branches.length(); a++) {
+						branch += "- " + branches.getString(a) + "\n";
+					}
+					merchantDetails.setBranches(branch);
+				}
+				catch(Exception e) {
+					e.printStackTrace();
 				}
 			}
 			catch(Exception e) {

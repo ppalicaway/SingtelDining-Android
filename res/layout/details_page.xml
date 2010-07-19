@@ -262,7 +262,6 @@
 					android:layout_marginLeft="5px"
 					android:layout_marginRight="5px"
 					android:layout_marginTop="5px"
-					android:singleLine="true"
 					android:text="" />
 					
 				<TextView 
@@ -321,6 +320,33 @@
 						android:layout_marginLeft="5px" 
 						android:layout_marginBottom="5px" 
 						android:layout_marginTop="5px"/>				
+				</LinearLayout>
+				
+				<LinearLayout
+					android:id="@+id/branchGroup"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:layout_marginLeft="5px"
+					android:layout_marginRight="5px"
+					android:layout_marginTop="5px"
+					android:layout_marginBottom="5px" >
+					
+					<Button 
+						android:id="@+id/branchButton" 
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:background="@drawable/branches_icon" />
+						
+					<TextView 
+						android:id="@+id/branchesText"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_BLACK"
+						android:textSize="12px"
+						android:layout_marginTop="5px"
+						android:visibility="gone"/>
 				</LinearLayout>
 			</LinearLayout>
 	

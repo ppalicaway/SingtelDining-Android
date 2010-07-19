@@ -16,6 +16,7 @@ public class MerchantDetails {
 	private double latitude;
 	private double longitude;
 	private String description;
+	private String branches = "";
 	private ArrayList<BankOffer> bankOffers = new ArrayList<BankOffer>();
 	
 	public void setId(int id) {
@@ -120,5 +121,13 @@ public class MerchantDetails {
 
 	public ArrayList<BankOffer> getBankOffers() {
 		return bankOffers;
+	}
+
+	public void setBranches(String branches) {
+		this.branches = branches;
+	}
+
+	public String getBranches() {
+		return branches;
 	}
 }
