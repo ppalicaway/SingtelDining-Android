@@ -583,6 +583,15 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						runOnUiThread(new AddToMerchantList());
 					}
 					catch(Exception e) {
+						try {
+							if (progressDialog.isShowing()) {
+								progressDialog.dismiss();
+							}					
+						}
+						catch (Exception ex) {
+							ex.printStackTrace();
+						}
+						Util.showAlert(SingtelDiningMainPage.instance, "ILoveDeals", "No deals found.", "OK", false);
 						e.printStackTrace();
 					}
 					
@@ -603,6 +612,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					catch (Exception ex) {
 						ex.printStackTrace();
 					}
+					Util.showAlert(SingtelDiningMainPage.instance, "ILoveDeals", "No deals found.", "OK", false);
 					e.printStackTrace();
 				}
 			}
@@ -620,7 +630,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				}
 			}
 			else {
-				//TODO:
+				
 			}
 			try {
 				if (progressDialog.isShowing()) {

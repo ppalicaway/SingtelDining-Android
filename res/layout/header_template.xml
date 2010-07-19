@@ -28,14 +28,10 @@
 		<Button 
 			android:id="@+id/editButton"
 			android:layout_width="wrap_content"
-			android:layout_height="34px"
-			android:text="Edit"
-			android:gravity="center_vertical|center_horizontal"
-			android:textColor="@color/COLOR_BG"
-			android:typeface="sans"
-			android:textStyle="bold"
-			android:layout_marginTop="5px"
-			android:layout_marginLeft="-52px"
+			android:layout_height="wrap_content"
+			android:background="@drawable/button_edit"
+			android:layout_marginTop="7px"
+			android:layout_marginLeft="-62px"
 			android:visibility="gone"/>
 	</LinearLayout>
 	
