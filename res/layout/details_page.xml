@@ -82,12 +82,12 @@
 			
 						<TextView
 							android:id="@+id/merchantName"
-							android:layout_width="wrap_content"
+							android:layout_width="250px"
 							android:layout_height="wrap_content"
 							android:text=""
 							android:textColor="@color/COLOR_SUBTEXT"
 							android:textStyle="bold"
-							android:textSize="17px"
+							android:textSize="16px"
 							android:typeface="sans" />
 							
 						<LinearLayout
@@ -343,7 +343,7 @@
 					android:paddingBottom="5px"
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
-					android:textSize="17px"
+					android:textSize="16px"
 					android:text="Description" />
 			</LinearLayout>
 	

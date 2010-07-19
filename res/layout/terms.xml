@@ -51,7 +51,7 @@
 					android:paddingBottom="5px"
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
-					android:textSize="17px"
+					android:textSize="16px"
 					android:textStyle="bold"
 					android:gravity="center_vertical|center_horizontal"
 					android:text="Terms and Conditions" />
@@ -88,7 +88,7 @@
 				android:layout_width="150px"
 				android:layout_height="wrap_content"
 				android:text="OK"
-				android:textSize="17px"
+				android:textSize="16px"
 				android:textStyle="bold"
 				android:textColor="@color/COLOR_BG"
 				android:typeface="sans" />

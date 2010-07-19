@@ -35,7 +35,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Map"
-			android:textSize="17px" 
+			android:textSize="16px" 
 			android:typeface="sans" 
 			android:textColor="@color/COLOR_WHITE" android:background="@drawable/leftgray_button"/>
 			
@@ -44,7 +44,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Directions"
-			android:textSize="17px" 
+			android:textSize="16px" 
 			android:typeface="sans" 
 			android:textColor="@color/COLOR_WHITE" android:background="@drawable/blackright_button"/>
 	</LinearLayout>
@@ -61,7 +61,7 @@
 			android:text="1021 Mornington Crescent, Seletar East Camp, Orientus Resort (S) 798659"
 			android:layout_marginRight="10px" 
 			android:layout_marginLeft="10px" 
-			android:textSize="17px" 
+			android:textSize="16px" 
 			android:typeface="sans" 
 			android:textColor="@color/COLOR_WHITE" 
 			android:layout_height="50px"

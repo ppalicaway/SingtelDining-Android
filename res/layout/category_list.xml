@@ -6,7 +6,7 @@
 	android:layout_height="wrap_content"
 	android:orientation="horizontal"
 	android:layout_marginRight="1px"
-	android:background="@drawable/list_bg"
+	android:background="@drawable/list_bg1"
 	android:gravity="center_vertical|center_horizontal">
 	
 	<TextView 
@@ -16,7 +16,7 @@
 		android:layout_marginRight="25px"
 		android:layout_marginLeft="25px"
 		android:text="Woodlands"
-		android:textSize="17px"
+		android:textSize="16px"
 		android:typeface="sans"
 		android:textColor="@color/COLOR_BLACK"
 		android:textStyle="bold" />
