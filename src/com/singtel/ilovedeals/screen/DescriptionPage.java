@@ -445,7 +445,6 @@ public class DescriptionPage extends SingtelDiningActivity {
 				offer += merchantDetails.getBankOffers().get(i).getOffer();
 			}
 		}
-		System.out.println("Petz::"+offer);
 		return offer;
 	}
 	
