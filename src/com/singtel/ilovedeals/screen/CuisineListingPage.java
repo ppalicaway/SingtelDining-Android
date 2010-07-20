@@ -8,6 +8,7 @@ import org.json.JSONObject;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,9 +120,17 @@ public class CuisineListingPage extends SingtelDiningListActivity {
 	};
 	
 	protected void onListItemClick(android.widget.ListView l, View v, int position, long id) {
+		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+		SharedPreferences.Editor edit = shared.edit();
+		
 		SingtelDiningMainPage.URL = 
 			Constants.RESTAURANT_CUISINE_LISTING + cuisines.get(position).getId() + "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 		SingtelDiningMainPage.searchText = cuisines.get(position).getName();
+		
+		edit.putString("cuisineLastPicked", cuisines.get(position).getName());
+		edit.putString("cuisineLastURLQuery", Constants.RESTAURANT_CUISINE_LISTING + cuisines.get(position).getId() + "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=");
+		edit.commit();
+		
 		instance.finish();
 	};
 	

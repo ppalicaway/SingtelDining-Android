@@ -116,9 +116,14 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			//longitude = 103.7953423;
 		}
 		
-		URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
-	      "&longitude=" + longitude +
-	      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+		URL = shared.getString("locationLastURLQuery", "");
+		
+		if(URL.equalsIgnoreCase("")) {
+			URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
+		      "&longitude=" + longitude +
+		      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+		}
 		
 		locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
@@ -146,6 +151,14 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		searchEditText = (EditText)findViewById(R.id.searchEditText);
 		searchEditText.setOnClickListener(new MenuListener());
+		
+		searchText = shared.getString("locationLastQueryPlace", "");
+		
+		if(searchText.equalsIgnoreCase("")) {
+			searchText = "Around Me - All";
+		}
+		
+		searchEditText.setText(searchText);
 		
 		editButton = (Button)findViewById(R.id.editButton);
 		editButton.setOnClickListener(new MenuListener());
@@ -239,6 +252,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			cardLayoutView.setVisibility(LinearLayout.VISIBLE);
 			ImageView myFave = (ImageView)findViewById(R.id.myFaveImage);
 			myFave.setVisibility(ImageView.GONE);
+			SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
 			
 			switch(v.getId()) {
 				case R.id.settingsCard:
@@ -259,14 +273,27 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isLocation = true;
 					isRestaurants = false;
 					isCuisines = false;
-					searchEditText.setText("Around Me - All");
+					
+					searchText = shared.getString("locationLastQueryPlace", "");
+					if(searchText.equalsIgnoreCase("")) {
+						searchText = "Around Me - All";
+					}
+					
+					searchEditText.setText(searchText);
 					searchEditText.setVisibility(EditText.VISIBLE);
+					
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
-					SingtelDiningMainPage.URL = 
-						Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
-						"&longitude=" + Util.longitude +
-						"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+					
+					URL = shared.getString("locationLastURLQuery", "");
+					
+					if(URL.equalsIgnoreCase("")) {
+						SingtelDiningMainPage.URL = 
+							Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
+							"&longitude=" + Util.longitude +
+							"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+					}
+					
 					reloadDataWithoutBitmap();
 					break;
 				case R.id.restaurantButton:
@@ -299,16 +326,30 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isFavorite = false;
 					editButton.setVisibility(Button.GONE);
 					doneButton.setVisibility(Button.GONE);
+					
+					searchText = shared.getString("cuisineLastPicked", "");
+					
+					if(searchText.equalsIgnoreCase("")) {
+						searchText = "Asian";
+					}
+					
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
+					searchEditText.setText(searchText);
+					
 					isLocation = false;
 					isRestaurants = false;
 					isCuisines = true;
-					searchEditText.setText("Asian");
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
-					SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
+					
+					URL = shared.getString("cuisineLastURLQuery", "");
+					
+					if(URL.equalsIgnoreCase("")) {
+						SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
+					}
+					
 					reloadDataWithoutBitmap();
 					break;
 				case R.id.favoriteButton:

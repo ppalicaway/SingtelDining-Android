@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,6 +101,11 @@ public class SubCategoryListingPage extends SingtelDiningListActivity {
 			SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 		}
 		SingtelDiningMainPage.searchText = location.getName() + " - " + subLocations.get(position).getName();
+		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+		SharedPreferences.Editor edit = shared.edit();
+		edit.putString("locationLastQueryPlace", location.getName() + " - " + subLocations.get(position).getName());
+		edit.putString("locationLastURLQuery", Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=");
+		edit.commit();
 		instance.finish();
 	};
 	
