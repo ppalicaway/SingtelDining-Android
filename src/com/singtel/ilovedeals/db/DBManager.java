@@ -19,6 +19,7 @@ public class DBManager {
 	private final String TB_MERCHANTID = "MerchantId";
 	private final String TB_MERCHANTNAME = "MerchantName";
 	private final String TB_MERCHANTADDRESS = "MerchantAddress";
+	private final String TB_MERCHANTIMAGE = "MerchantImage";
 
 	public DBManager(Context context, String dbName) {
 		this.context = context;
@@ -50,7 +51,8 @@ public class DBManager {
 					      TB_MERCHANTAUTOID + "	 	INTEGER PRIMARY KEY, " +
 					      TB_MERCHANTID + "  		INTEGER, " +
 					      TB_MERCHANTNAME + "  		VARCHAR(255), " +
-					      TB_MERCHANTADDRESS + "	VARCHAR(255)  " +					      
+					      TB_MERCHANTADDRESS + "	VARCHAR(255), " +
+					      TB_MERCHANTIMAGE + " 		VARCHAR(255)  " +
 			 			  " );");
 		}catch(Exception ex){
 			ex.printStackTrace();
@@ -70,11 +72,13 @@ public class DBManager {
 			myDB.execSQL("INSERT INTO " 
 					+ Constants.TABLE_MERCHANT + 
 					" (" + TB_MERCHANTID + ", " + TB_MERCHANTNAME +
-					", " + TB_MERCHANTADDRESS + ")"  + 
+					", " + TB_MERCHANTADDRESS + 
+					", " + TB_MERCHANTIMAGE + ")"  + 
                     " VALUES (	" +
                     	  "'" + merchant.getId() + "', " +
                     	  "'" + merchant.getRestaurantName() + "', " +
-                    	  "'" + merchant.getAddress() + "'" +
+                    	  "'" + merchant.getAddress() + "', " +
+                    	  "'" + merchant.getImage() + "'" +
                     " );");
 		}catch(Exception ex){
 			ex.printStackTrace();
@@ -105,6 +109,7 @@ public class DBManager {
 					int merchantId = c.getInt(c.getColumnIndex(TB_MERCHANTID));
 					String merchantName = c.getString(c.getColumnIndex(TB_MERCHANTNAME));
 					String merchantAddress = c.getString(c.getColumnIndex(TB_MERCHANTADDRESS));
+					String merchantImage = c.getString(c.getColumnIndex(TB_MERCHANTIMAGE));
 														
 					if(result == null) {
 						result = new ArrayList<MerchantInfo>();
@@ -114,6 +119,7 @@ public class DBManager {
 					mInfo.setId(merchantId);
 					mInfo.setRestaurantName(merchantName);
 					mInfo.setAddress(merchantAddress);
+					mInfo.setImage(merchantImage);
 					
 					result.add(mInfo);
 				} while (c.moveToNext());
