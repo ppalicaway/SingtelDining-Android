@@ -254,7 +254,7 @@ public class ARLayout extends View implements LocationListener, SensorEventListe
 		int xOffset = 90;
 		int yOffset = 40;
 		int xValue = 0;
-		int maxRow = 4;
+		int maxRow = 5;
 		
 		while(e.hasMoreElements()) {
 			try {

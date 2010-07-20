@@ -13,6 +13,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -33,7 +34,7 @@ public class ARScreen extends SingtelDiningActivity {
 	private CustomCameraView cv;
 	public static volatile Context ctx;
 	private static ARLayout ar;
-	private SeekBarLayout seekLayout;
+	//private SeekBarLayout seekLayout;
     private LocationManager curLocation;
     public static Location myLocation;
     private Location location;
@@ -79,8 +80,8 @@ public class ARScreen extends SingtelDiningActivity {
         rl.addView(cv,width, height);
         ar.debug = true;
         rl.addView(ar, width, height);
-        seekLayout = new SeekBarLayout(this);
-        rl.addView(seekLayout, width, height);
+        //seekLayout = new SeekBarLayout(this);
+        //rl.addView(seekLayout, width, height);
         setContentView(rl);
         
         curLocation = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
