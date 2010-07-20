@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import com.singtel.ilovedeals.info.MerchantInfo;
 import com.singtel.ilovedeals.screen.ARScreen;
+import com.singtel.ilovedeals.screen.SettingsPage;
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
 
@@ -19,7 +20,9 @@ public class GetJSON implements Runnable {
 	public void run() {
 		String result = "";
 		
-		result = Util.getHttpData(Constants.RESTAURANT_LINK);
+		result = Util.getHttpData(Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
+			      "&longitude=" + Util.longitude +
+			      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=1");
 		result = Util.toJSONString(result);
 		
 		ARScreen.merchantList = new ArrayList<MerchantInfo>();

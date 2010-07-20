@@ -12,6 +12,7 @@ import android.graphics.Paint.Style;
 
 import com.singtel.ilovedeals.info.MerchantInfo;
 import com.singtel.ilovedeals.screen.R;
+import com.singtel.ilovedeals.util.Util;
 
 public class FourSqareVenue extends ARSphericalView {
 	
@@ -28,14 +29,14 @@ public class FourSqareVenue extends ARSphericalView {
 		super(context);
 		this.context = context;
 		inclination = 0;
-		bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.icon_ar);
+		bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.ar_bg);
 		bitmapW = bitmap.getWidth();
 		bitmapH = bitmap.getHeight();
 		
-		fontTop = FontDefault(12, Color.rgb(158, 157, 152), true);
-		fontMiddle = FontDefault(10, Color.rgb(169, 166, 149), false);
-		fontBottom = FontDefault(10, Color.WHITE, false);
-		fontDistance = FontDefault(12, Color.WHITE, false);
+		fontTop = FontDefault(12, Color.BLACK, true);
+		fontMiddle = FontDefault(10, Color.BLACK, false);
+		fontBottom = FontDefault(10, Color.BLACK, false);
+		fontDistance = FontDefault(12, Color.BLACK, false);
 	}
 	
 	@Override
@@ -55,7 +56,8 @@ public class FourSqareVenue extends ARSphericalView {
 				name = name.substring(0, 17) + "...";
 			}
 			
-			String dist = Double.toString(1.1);
+			double distDouble = Util.distanceTo(Util.latitude, Util.longitude, merchantInfo.getLatitude(), merchantInfo.getLongitude());
+			String dist = Double.toString(distDouble);
 			
 			int contentWidth = ARLayout.contentWidth;
 			int contentHeight = ARLayout.contentHeight;
@@ -64,8 +66,8 @@ public class FourSqareVenue extends ARSphericalView {
 			int start_y = getTop() - contentHeight / 2;
 			infoWindowRect.offset(start_x, start_y);
 			
-			canvas.drawRoundRect(infoWindowRect, 5, 5, getInnerPaint());
-			canvas.drawRoundRect(infoWindowRect, 5, 5, getBorderPaint());
+			//canvas.drawRoundRect(infoWindowRect, 5, 5, getInnerPaint());
+			//canvas.drawRoundRect(infoWindowRect, 5, 5, getBorderPaint());
 			
 			int offset_x = 10;
 			int offset_y = 25;
@@ -83,7 +85,7 @@ public class FourSqareVenue extends ARSphericalView {
 			canvas.drawText(" km", (x - 15), y + 10 , fontDistance);
 			
 			y += 20;
-			String promoText = "1 for 1 Lunch Promo Valid till 30 jun 2010";
+			String promoText = merchantInfo.getAddress();
 			
 			if(promoText.length() > 20) {
 				promoText = promoText.substring(0, 20) + "...";

@@ -138,9 +138,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		favoriteButton = (Button)findViewById(R.id.favoriteButton);
 		favoriteButton.setOnClickListener(new MenuListener());
 		
-		Button searchButton = (Button)findViewById(R.id.searchButton);
+		Button searchButton = (Button)findViewById(R.id.augmentedButton);
 		searchButton.setOnClickListener(new MenuListener());
-		searchButton.setVisibility(Button.GONE);
+		//searchButton.setVisibility(Button.GONE);
 		
 		mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
@@ -378,7 +378,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					loadMore.setVisibility(Button.GONE);
 					reloadDataFromDB();
 					break;
-				case R.id.searchButton:
+				case R.id.augmentedButton:
+					if(ARScreen.instance != null) {
+						ARScreen.instance.finish();
+					}
+					Intent ar = new Intent(instance, ARScreen.class);
+					startActivity(ar);
 					break;
 				case R.id.mapButton:
 					Controller.displayMapScreen(instance);

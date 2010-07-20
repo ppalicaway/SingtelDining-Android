@@ -348,6 +348,7 @@ public class ARLayout extends View implements LocationListener, SensorEventListe
 						
 						if(hitTestRecr.contains(event.getX(), event.getY())) {
 							DescriptionPage.merchantInfo = fv.merchantInfo;
+							DescriptionPage.catID = fv.merchantInfo.getId();
 							Intent intent = new Intent(context, DescriptionPage.class);
 							ARScreen.instance.startActivityForResult(intent, 0);
 							ARScreen.instance.setResult(ARScreen.RESULT_OK);
