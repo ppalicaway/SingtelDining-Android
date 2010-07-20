@@ -1,5 +1,6 @@
 package com.singtel.ilovedeals.screen;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -37,10 +38,19 @@ public class SearchPage extends SingtelDiningActivity {
 			
 			@Override
 			public void onClick(View v) {
+				SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+				SharedPreferences.Editor edit = shared.edit();
+				
 				String searchText = keyword.getText().toString();
 				searchText = searchText.replaceAll(" ", "%20");
+				
 				SingtelDiningMainPage.searchText = keyword.getText().toString();
 				SingtelDiningMainPage.URL = Constants.RESTAURANT_SEARCH + searchText + SettingsPage.bankQuery + "&pageNum=";
+				
+				edit.putString("searchKeyword", keyword.getText().toString());
+				edit.putString("searchURL", Constants.RESTAURANT_SEARCH + searchText + SettingsPage.bankQuery + "&pageNum=");
+				edit.commit();
+				
 				instance.finish();
 			}
 		});

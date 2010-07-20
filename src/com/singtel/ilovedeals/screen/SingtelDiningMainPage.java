@@ -63,11 +63,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private final int RESTAURANT_REQUEST = 3;
 	private final int BANK_REQUEST = 4;
 	private final int DESCRIPTION_REQUEST = 5;
-	private boolean isLocation = true;
-	private boolean isRestaurants = false;
-	private boolean isCuisines = false;
+	private static boolean isLocation = true;
+	private static boolean isRestaurants = false;
+	private static boolean isCuisines = false;
 	private boolean isEdit = false;
-	private boolean isFavorite = false;
+	private static boolean isFavorite = false;
 	public static int page = 1;
 	public static int totalPage = 1;
 	public static int totalItems = 1;
@@ -315,6 +315,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
+					
+					SharedPreferences.Editor edit = shared.edit();
+					edit.putString("searchKeyword", "Tap to search");
+					edit.putString("searchURL", Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=");
+					edit.commit();
+					
 					reloadDataWithoutBitmap();
 					break;
 				case R.id.cuisineButton:
@@ -451,17 +457,96 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
 		searchEditText.setText(searchText);
 		if(requestCode == BANK_REQUEST) {
-			URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
-		      "&longitude=" + longitude +
-		      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
-			reloadData();
+			if(isLocation) {
+				locationButton.setBackgroundResource(R.drawable.location_hover);
+				restaurantButton.setBackgroundResource(R.drawable.restaurants);
+				cuisineButton.setBackgroundResource(R.drawable.cuisines);
+				favoriteButton.setBackgroundResource(R.drawable.favorites);
+				URL = shared.getString("locationLastURLQuery", "");
+				searchText = shared.getString("locationLastQueryPlace", "");
+				
+				if(URL.equalsIgnoreCase("")) {
+					URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
+				     	"&longitude=" + longitude +
+				     	"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+				}
+				if(searchText.equalsIgnoreCase("")) {
+					searchText = "Around Me - All";
+				}
+				reloadData();
+			}
+			else if(isRestaurants) {
+				locationButton.setBackgroundResource(R.drawable.location);
+				restaurantButton.setBackgroundResource(R.drawable.restaurants_hover);
+				cuisineButton.setBackgroundResource(R.drawable.cuisines);
+				favoriteButton.setBackgroundResource(R.drawable.favorites);
+				
+				URL = shared.getString("searchURL", "");
+				searchText = shared.getString("searchKeyword", "");
+				
+				if(URL.equalsIgnoreCase("")) {
+					URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
+				}
+				
+				if(searchText.equalsIgnoreCase("")) {
+					searchText = "Tap to search";
+				}
+				searchEditText.setText(searchText);
+				reloadData();
+			}
+			else if(isCuisines) {
+				locationButton.setBackgroundResource(R.drawable.location);
+				restaurantButton.setBackgroundResource(R.drawable.restaurants);
+				cuisineButton.setBackgroundResource(R.drawable.cuisines_hover);
+				favoriteButton.setBackgroundResource(R.drawable.favorites);
+				URL = shared.getString("cuisineLastURLQuery", "");
+				searchText = shared.getString("cuisineLastPicked", "");
+				
+				if(URL.equalsIgnoreCase("")) {
+					URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
+				}
+				
+				if(searchText.equalsIgnoreCase("")) {
+					searchText = "Asian";
+				}
+				
+				reloadData();
+			}
 		}
 		else if(requestCode == DESCRIPTION_REQUEST) {
 			if(isFavorite) {
 				reloadDataFromDB();
 			}
+			else if(isRestaurants) {
+				URL = shared.getString("searchURL", "");
+				searchText = shared.getString("searchKeyword", "");
+				
+				if(URL.equalsIgnoreCase("")) {
+					URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
+				}
+				
+				if(searchText.equalsIgnoreCase("")) {
+					searchText = "Tap to search";
+				}
+				searchEditText.setText(searchText);
+			}
+		}
+		else if(requestCode == RESTAURANT_REQUEST) {
+			URL = shared.getString("searchURL", "");
+			searchText = shared.getString("searchKeyword", "");
+			
+			if(URL.equalsIgnoreCase("")) {
+				URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
+			}
+			
+			if(searchText.equalsIgnoreCase("")) {
+				searchText = "Tap to search";
+			}
+			searchEditText.setText(searchText);
+			reloadData();
 		}
 		else {
 			reloadDataWithoutBitmap();
