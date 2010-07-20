@@ -56,6 +56,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private static double longitude;
 	private EditText searchEditText;
 	private Button editButton;
+	private Button doneButton;
 	public static String searchText = "";
 	private final int LOCATION_REQUEST = 1;
 	private final int CUISINE_REQUEST = 2;
@@ -148,6 +149,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		editButton = (Button)findViewById(R.id.editButton);
 		editButton.setOnClickListener(new MenuListener());
+		
+		doneButton = (Button)findViewById(R.id.doneButton);
+		doneButton.setOnClickListener(new MenuListener());
 		
 		SingtelCardListener cListener = new SingtelCardListener();
 		
@@ -249,6 +253,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isFavorite = false;
 					isEdit = false;
 					editButton.setVisibility(Button.GONE);
+					doneButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
 					isLocation = true;
@@ -272,6 +277,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isFavorite = false;
 					isEdit = false;
 					editButton.setVisibility(Button.GONE);
+					doneButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
 					isLocation = false;
@@ -292,6 +298,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isEdit = false;
 					isFavorite = false;
 					editButton.setVisibility(Button.GONE);
+					doneButton.setVisibility(Button.GONE);
 					searchEditText.setFocusableInTouchMode(false);
 					searchEditText.setFocusable(false);
 					isLocation = false;
@@ -312,6 +319,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isFavorite = true;
 					isEdit = false;
 					editButton.setVisibility(Button.VISIBLE);
+					doneButton.setVisibility(Button.GONE);
 					isLocation = false;
 					isRestaurants = false;
 					isCuisines = false;
@@ -347,9 +355,18 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					break;
 				case R.id.editButton:
 					isEdit = true;
+					editButton.setVisibility(Button.GONE);
+					doneButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.VISIBLE);
 					cardLayoutView.setVisibility(LinearLayout.GONE);
 					Util.showAlert(instance, "ILoveDeals", "Please tap on item to edit.", "OK", false);
+					break;
+				case R.id.doneButton:
+					isEdit = false;
+					editButton.setVisibility(Button.VISIBLE);
+					doneButton.setVisibility(Button.GONE);
+					myFave.setVisibility(ImageView.VISIBLE);
+					cardLayoutView.setVisibility(LinearLayout.GONE);
 					break;
 			}
 		}		

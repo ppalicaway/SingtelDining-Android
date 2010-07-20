@@ -33,6 +33,15 @@
 			android:layout_marginTop="7px"
 			android:layout_marginLeft="-62px"
 			android:visibility="gone"/>
+		
+		<Button 
+			android:id="@+id/doneButton"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/button_done"
+			android:layout_marginTop="7px"
+			android:layout_marginLeft="-62px"
+			android:visibility="gone"/>
 	</LinearLayout>
 	
 	<LinearLayout
