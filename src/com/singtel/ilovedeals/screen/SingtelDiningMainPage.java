@@ -78,6 +78,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private Button cuisineButton;
 	private Button restaurantButton;
 	private Button locationButton;
+	private ImageView arrowDown;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -138,8 +139,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		favoriteButton = (Button)findViewById(R.id.favoriteButton);
 		favoriteButton.setOnClickListener(new MenuListener());
 		
-		Button searchButton = (Button)findViewById(R.id.augmentedButton);
-		searchButton.setOnClickListener(new MenuListener());
+		Button augmentedButton = (Button)findViewById(R.id.augmentedButton);
+		augmentedButton.setOnClickListener(new MenuListener());
 		//searchButton.setVisibility(Button.GONE);
 		
 		mapButton = (Button)findViewById(R.id.mapButton);
@@ -165,6 +166,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		doneButton = (Button)findViewById(R.id.doneButton);
 		doneButton.setOnClickListener(new MenuListener());
+		
+		arrowDown = (ImageView)findViewById(R.id.arrowdown);
 		
 		SingtelCardListener cListener = new SingtelCardListener();
 		
@@ -264,6 +267,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					restaurantButton.setBackgroundResource(R.drawable.restaurants);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines);
 					favoriteButton.setBackgroundResource(R.drawable.favorites);
+					arrowDown.setVisibility(ImageView.VISIBLE);
 					isFavorite = false;
 					isEdit = false;
 					editButton.setVisibility(Button.GONE);
@@ -301,6 +305,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					restaurantButton.setBackgroundResource(R.drawable.restaurants_hover);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines);
 					favoriteButton.setBackgroundResource(R.drawable.favorites);
+					arrowDown.setVisibility(ImageView.GONE);
 					isFavorite = false;
 					isEdit = false;
 					editButton.setVisibility(Button.GONE);
@@ -328,6 +333,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					restaurantButton.setBackgroundResource(R.drawable.restaurants);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines_hover);
 					favoriteButton.setBackgroundResource(R.drawable.favorites);
+					arrowDown.setVisibility(ImageView.VISIBLE);
 					isEdit = false;
 					isFavorite = false;
 					editButton.setVisibility(Button.GONE);
@@ -363,6 +369,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					restaurantButton.setBackgroundResource(R.drawable.restaurants);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines);
 					favoriteButton.setBackgroundResource(R.drawable.favorites_hover);
+					arrowDown.setVisibility(ImageView.GONE);
 					isFavorite = true;
 					isEdit = false;
 					editButton.setVisibility(Button.VISIBLE);
@@ -818,6 +825,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	@Override
 	protected void onDestroy() {
+		isLocation = true;
+		isRestaurants = false;
+		isCuisines = false;
 		formNewExitQuery();
 		super.onDestroy();
 	}

@@ -78,6 +78,14 @@
 			android:text="Around Me - All"
 			android:textColor="@color/COLOR_BG"
 			android:background="@drawable/roundededittext"/>
+		
+		<ImageView 
+			android:id="@+id/arrowdown"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/arrowdown"
+			android:layout_marginLeft="-26px"
+			android:paddingRight="5px"/>
 						
 		<Button 
 			android:id="@+id/mapButton"
