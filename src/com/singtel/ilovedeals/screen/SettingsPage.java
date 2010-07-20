@@ -61,6 +61,7 @@ public class SettingsPage extends SingtelDiningActivity {
 	private CheckBox ocbcUPlusPlatinumCard;
 	private CheckBox ocbcYesDebitCard;
 
+	private CheckBox uobSingtelPlatinumCard;
 	private CheckBox uobDirectVisaCard;
 	private CheckBox uobLadysCard;
 	private CheckBox uobMasterCardClassicCard;
@@ -507,6 +508,18 @@ public class SettingsPage extends SingtelDiningActivity {
 			iInfo = new ImageInfo(R.drawable.ocbc_yes_debit_card_label, R.drawable.ocbc_yes_debit_card, OCBC, R.drawable.ocbc_yes_debit_card_nonticked);
 			untickedImages.add(iInfo);
 		}
+		
+		// 38th
+		if(uobSingtelPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uob_singtel_platinum_card_label, R.drawable.uob_singtel_platinum_card, UOB, R.drawable.uob_singtel_platinum_card_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "38,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.uob_singtel_platinum_card_label, R.drawable.uob_singtel_platinum_card, UOB, R.drawable.uob_singtel_platinum_card_nonticked);
+			untickedImages.add(iInfo);
+		}
 
 		// 27th
 		if(uobDirectVisaCard.isChecked()){
@@ -753,6 +766,8 @@ public class SettingsPage extends SingtelDiningActivity {
 		ocbcYesDebitCard = (CheckBox)findViewById(R.id.yesdebitcard);
 		ocbcYesDebitCard.setOnClickListener(new CheckListener());
 		
+		uobSingtelPlatinumCard = (CheckBox)findViewById(R.id.singtelplatinumcard);
+		uobSingtelPlatinumCard.setOnClickListener(new CheckListener());
 		uobDirectVisaCard = (CheckBox)findViewById(R.id.directvisacard);
 		uobDirectVisaCard.setOnClickListener(new CheckListener());
 		uobLadysCard = (CheckBox)findViewById(R.id.ladyscard);
@@ -879,6 +894,9 @@ public class SettingsPage extends SingtelDiningActivity {
 		case Constants.OCBCYESDEBITCARD:
 			ocbcYesDebitCard.setChecked(true);
 			break;
+		case Constants.UOBSINGTELPLATINUMCARD:
+			uobSingtelPlatinumCard.setChecked(true);
+			break;
 		case Constants.UOBDIRECTVISACARD:
 			uobDirectVisaCard.setChecked(true);
 			break;
@@ -945,6 +963,7 @@ public class SettingsPage extends SingtelDiningActivity {
 		ocbcUPlusPlatinumCard.setChecked(true);
 		ocbcYesDebitCard.setChecked(true);
 
+		uobSingtelPlatinumCard.setChecked(true);
 		uobDirectVisaCard.setChecked(true);
 		uobLadysCard.setChecked(true);
 		uobMasterCardClassicCard.setChecked(true);
@@ -988,6 +1007,7 @@ public class SettingsPage extends SingtelDiningActivity {
 		ocbcUPlusPlatinumCard.setChecked(false);
 		ocbcYesDebitCard.setChecked(false);
 
+		uobSingtelPlatinumCard.setChecked(false);
 		uobDirectVisaCard.setChecked(false);
 		uobLadysCard.setChecked(false);
 		uobMasterCardClassicCard.setChecked(false);

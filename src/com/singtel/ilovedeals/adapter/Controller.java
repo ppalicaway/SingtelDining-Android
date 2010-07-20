@@ -368,6 +368,10 @@ public class Controller {
 				iInfo = new ImageInfo(R.drawable.ocbc_yes_debit_card_label, R.drawable.ocbc_yes_debit_card, OCBC, R.drawable.ocbc_yes_debit_card_nonticked);
 				iInfo.setSelected(true);
 				break;
+			case Constants.UOBSINGTELPLATINUMCARD:
+				iInfo = new ImageInfo(R.drawable.uob_singtel_platinum_card_label, R.drawable.uob_singtel_platinum_card, UOB, R.drawable.uob_singtel_platinum_card_nonticked);
+				iInfo.setSelected(true);
+				break;
 			case Constants.UOBDIRECTVISACARD:
 				iInfo = new ImageInfo(R.drawable.uob_direct_visa_card_label, R.drawable.uob_direct_visa_card, UOB, R.drawable.uob_direct_visa_card_nonticked);
 				iInfo.setSelected(true);

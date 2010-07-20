@@ -158,4 +158,5 @@ public interface Constants {
 	public static final int UOBVISAGOLDCARD = 35;
 	public static final int UOBVISAINFINITECARD = 36;
 	public static final int UOBVISASIGNATURECARD = 37;
+	public static final int UOBSINGTELPLATINUMCARD = 38;
 }

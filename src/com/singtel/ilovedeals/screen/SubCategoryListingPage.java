@@ -95,7 +95,7 @@ public class SubCategoryListingPage extends SingtelDiningListActivity {
 			SingtelDiningMainPage.URL = 
 				Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 				"&longitude=" + Util.longitude +
-				"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=" + SingtelDiningMainPage.page;
+				"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 		}
 		else {
 			SingtelDiningMainPage.URL = Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
@@ -104,7 +104,7 @@ public class SubCategoryListingPage extends SingtelDiningListActivity {
 		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
 		SharedPreferences.Editor edit = shared.edit();
 		edit.putString("locationLastQueryPlace", location.getName() + " - " + subLocations.get(position).getName());
-		edit.putString("locationLastURLQuery", Constants.RESTAURANT_LOCATION_PLACES + subLocations.get(position).getId() + "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=");
+		edit.putString("locationLastURLQuery", SingtelDiningMainPage.URL);
 		edit.commit();
 		instance.finish();
 	};

@@ -708,6 +708,29 @@
 						android:textSize="20px"
 						android:typeface="sans" />
 				</LinearLayout>
+				
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/singtelplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="15px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Singtel Platinum Card" />			
+				</LinearLayout>
 			
 				<LinearLayout
 					android:layout_width="fill_parent"
