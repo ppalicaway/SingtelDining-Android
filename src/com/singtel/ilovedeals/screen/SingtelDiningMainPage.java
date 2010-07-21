@@ -113,6 +113,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			double[] latLong = Util.queryLatLong(instance);
 			latitude = latLong[0];
 			longitude = latLong[1];
+			Util.latitude = latitude;
+			Util.longitude = longitude;
 			//latitude = 1.4415068;
 			//longitude = 103.7953423;
 		}
@@ -177,6 +179,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		view = layoutInflater.inflate(R.layout.backnext, null);
 		listView.addHeaderView(view);
+		listView.addFooterView(view);
 		
 		reloadData();
 	}
