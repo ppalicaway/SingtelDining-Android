@@ -70,6 +70,14 @@ public class GetJSON implements Runnable {
 			}
 		}
 		catch(Exception e) {
+			try {
+				if (ARScreen.progressDialog.isShowing()) {
+					ARScreen.progressDialog.dismiss();
+				}					
+			}
+			catch (Exception ex) {
+				ex.printStackTrace();
+			}
 			e.printStackTrace();
 		}
 	}

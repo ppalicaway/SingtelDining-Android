@@ -357,6 +357,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
 					
+					
 					URL = shared.getString("cuisineLastURLQuery", "");
 					
 					if(URL.equalsIgnoreCase("")) {
@@ -731,14 +732,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						Util.showAlert(SingtelDiningMainPage.instance, "ILoveDeals", "No deals found.", "OK", false);
 						e.printStackTrace();
 					}
-					
-					///totalItems = jsonObject1.getInt("totalResults");
-					//totalPage = totalItems / Constants.ITEMS_PER_PAGE;
-					//if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
-					//	totalPage += 1;
-					//}
-					
-					//settingLoadMore();
 				} 
 				catch (Exception e) {
 					try {
