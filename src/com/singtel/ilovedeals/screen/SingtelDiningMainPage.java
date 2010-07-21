@@ -178,7 +178,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		listView = (ListView)findViewById(android.R.id.list);
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		view = layoutInflater.inflate(R.layout.backnext, null);
-		listView.addHeaderView(view);
 		listView.addFooterView(view);
 		
 		reloadData();

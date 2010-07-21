@@ -23,9 +23,10 @@ public interface Constants {
 	public static final String FACEBOOK_MEDIA = "\"media\":[{\"type\":\"image\",\"src\":\"";
 	public static final String FACEBOOK_PROPERTIES = "\"properties\":{\"Powered By\":{\"text\":\"SingTel\",\"href\":\"http://www.singtel.com\"}}}";
 	
-	//public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZh-5KqNtCjZdddrt5sJKMQZqMxZYQ";
-	//public static final String KEY_MAP_DEBUG = "0o_1qZVZbZZhi5SfyLSW5kbDrnnNElk7slgjQnw";
+	//ILoveDeals
 	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZiFrQEZtK56_fQa6dmBIXOBDxaAvQ";
+	//ILoveDeals2
+	//public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZj6uRF_p6MuNHxmyCUks9ZpA5UZ-w";
 	
 	public static final String DEFAULT_SHARE_DATA = "DEFAULT_SHARE_DATA";
 	
