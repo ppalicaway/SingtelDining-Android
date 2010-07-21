@@ -42,7 +42,12 @@ public class SingtelDining extends Activity {
         	e.printStackTrace();
         }
         
-        splashThread.start();
+        if(!Util.getNetworkProvider(instance).equalsIgnoreCase("SingTel")) {
+        	Util.showAlert(instance, "ILoveDeals", "This service is available only on a Singtel mobile network and at selected Wireless@SG hotspots.", "OK", true);
+        }
+        else {
+        	splashThread.start();
+        }
     }
     
     private Thread splashThread = new Thread() {
