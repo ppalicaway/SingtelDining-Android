@@ -2,7 +2,11 @@ package com.singtel.ilovedeals.screen;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Vector;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,7 +17,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Display;
-import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -21,10 +24,9 @@ import android.widget.FrameLayout;
 import com.singtel.ilovedeals.ar.ARLayout;
 import com.singtel.ilovedeals.ar.CustomCameraView;
 import com.singtel.ilovedeals.ar.FourSqareVenue;
-import com.singtel.ilovedeals.ar.GetJSON;
 import com.singtel.ilovedeals.ar.ReturnRes;
-import com.singtel.ilovedeals.ar.SeekBarLayout;
 import com.singtel.ilovedeals.info.MerchantInfo;
+import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
 
 
@@ -124,7 +126,7 @@ public class ARScreen extends SingtelDiningActivity {
 		}
 		else {
 			progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
-			Thread thread = new Thread(null, new GetJSON(), "initR");
+			Thread thread = new Thread(null, new InsideGetJSON(), "initR");
 			thread.start();
 		}
 	}
@@ -218,5 +220,96 @@ public class ARScreen extends SingtelDiningActivity {
 		cv.closeCamera();
 		ar.close();
 		super.onPause();
+	}
+	
+	private class InsideGetJSON implements Runnable {
+
+		private HashMap<String, String> merchantHash;
+		
+		@Override
+		public void run() {
+			String result = "";
+			
+			result = Util.getHttpData(Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
+				      "&longitude=" + Util.longitude +
+				      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=1");
+			result = Util.toJSONString(result);
+			
+			ARScreen.merchantList = new ArrayList<MerchantInfo>();
+			merchantHash = new HashMap<String, String>();
+			
+			try {
+				JSONObject jsonObject1 = new JSONObject(result);
+				JSONArray nameArray = jsonObject1.getJSONArray("data");
+				
+				try {
+					for(int i = 0; i < nameArray.length(); i++) {
+						JSONObject jsonObject2 = nameArray.getJSONObject(i);
+						
+						int id = 0;
+						String image = "";
+						String restaurantName = "";
+						String address = "";
+						float rating = 0;
+						int reviews = 0;
+						double latitude = 0;
+						double longitude = 0;
+						
+						id = Integer.parseInt(jsonObject2.getString("ID"));
+						image = jsonObject2.getString("Image");
+						restaurantName = jsonObject2.getString("RestaurantName");
+						address = jsonObject2.getString("Address");
+						rating = Float.parseFloat(jsonObject2.getString("Rating"));
+						reviews = Integer.parseInt(jsonObject2.getString("Reviews"));
+						latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
+						longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
+						
+						MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
+						
+						if(!merchantHash.containsKey(id)) {
+							merchantHash.put(Integer.toString(id), Integer.toString(id));
+							ARScreen.merchantList.add(mInfo);
+						}
+					}
+					
+					runOnUiThread(new InsideReturnRes());
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+			catch(Exception e) {
+				try {
+					if (ARScreen.progressDialog.isShowing()) {
+						ARScreen.progressDialog.dismiss();
+					}					
+				}
+				catch (Exception ex) {
+					ex.printStackTrace();
+				}
+				e.printStackTrace();
+			}
+		}		
+	}
+	
+	private class InsideReturnRes implements Runnable {
+
+		@Override
+		public void run() {
+			if (ARScreen.merchantList != null && ARScreen.merchantList.size() > 0) {
+				ARScreen.addMerchant();
+			}
+			else {
+				Util.showAlert(ARScreen.instance, "", 
+						"",
+						ARScreen.instance.getResources().getString(R.string.ok), true);
+			}
+			try {
+				if (ARScreen.progressDialog.isShowing())
+					ARScreen.progressDialog.dismiss();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }
