@@ -141,7 +141,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		Button augmentedButton = (Button)findViewById(R.id.augmentedButton);
 		augmentedButton.setOnClickListener(new MenuListener());
-		//searchButton.setVisibility(Button.GONE);
 		
 		mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
@@ -176,15 +175,15 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				
 		listView = (ListView)findViewById(android.R.id.list);
 		LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		view = layoutInflater.inflate(R.layout.loadmore, null);
-		listView.addFooterView(view);
+		view = layoutInflater.inflate(R.layout.backnext, null);
+		listView.addHeaderView(view);
 		
 		reloadData();
 	}
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		final MerchantInfo mInfo = merchantList.get(position);
+		final MerchantInfo mInfo = merchantList.get(position-1);
 		if(!isEdit) {
 			DescriptionPage.merchantInfo = mInfo;
 			DescriptionPage.catID = mInfo.getId();
@@ -234,7 +233,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	}
 	
 	private void reloadDataWithoutBitmap() {
-		settingLoadMore();
+		settingNextBackButton();
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
@@ -249,9 +248,6 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 		@Override
 		public void onClick(View v) {
-			totalItems = 1;
-			totalPage = 1;
-			page = 1;
 			LinearLayout cardLayoutView = (LinearLayout)findViewById(R.id.cardLayoutView);
 			cardLayoutView.setVisibility(LinearLayout.VISIBLE);
 			ImageView myFave = (ImageView)findViewById(R.id.myFaveImage);
@@ -260,10 +256,16 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			
 			switch(v.getId()) {
 				case R.id.settingsCard:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					Intent settings = new Intent(instance, SettingsPage.class);
 					startActivityForResult(settings, BANK_REQUEST);
 					break;
 				case R.id.locationButton:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					locationButton.setBackgroundResource(R.drawable.location_hover);
 					restaurantButton.setBackgroundResource(R.drawable.restaurants);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines);
@@ -307,6 +309,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					}
 					break;
 				case R.id.restaurantButton:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					locationButton.setBackgroundResource(R.drawable.location);
 					restaurantButton.setBackgroundResource(R.drawable.restaurants_hover);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines);
@@ -335,6 +340,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadDataWithoutBitmap();
 					break;
 				case R.id.cuisineButton:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					locationButton.setBackgroundResource(R.drawable.location);
 					restaurantButton.setBackgroundResource(R.drawable.restaurants);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines_hover);
@@ -377,6 +385,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					
 					break;
 				case R.id.favoriteButton:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					locationButton.setBackgroundResource(R.drawable.location);
 					restaurantButton.setBackgroundResource(R.drawable.restaurants);
 					cuisineButton.setBackgroundResource(R.drawable.cuisines);
@@ -393,8 +404,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					searchEditText.setVisibility(EditText.GONE);
 					mapButton.setVisibility(Button.GONE);
 					myFave.setVisibility(ImageView.VISIBLE);
-					Button loadMore = (Button)findViewById(R.id.loadMore);
-					loadMore.setVisibility(Button.GONE);
+					Button backButton = (Button)findViewById(R.id.backButton);
+					Button nextButton = (Button)findViewById(R.id.nextButton);
+					backButton.setVisibility(Button.GONE);
+					nextButton.setVisibility(Button.GONE);
 					reloadDataFromDB();
 					break;
 				case R.id.augmentedButton:
@@ -408,6 +421,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					Controller.displayMapScreen(instance);
 					break;
 				case R.id.searchEditText:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					isFavorite = false;
 					isEdit = false;
 					Intent category = null;
@@ -425,6 +441,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					}
 					break;
 				case R.id.editButton:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					isEdit = true;
 					editButton.setVisibility(Button.GONE);
 					doneButton.setVisibility(Button.VISIBLE);
@@ -433,6 +452,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					Util.showAlert(instance, "ILoveDeals", "Please tap on item to edit.", "OK", false);
 					break;
 				case R.id.doneButton:
+					totalItems = 1;
+					totalPage = 1;
+					page = 1;
 					isEdit = false;
 					editButton.setVisibility(Button.VISIBLE);
 					doneButton.setVisibility(Button.GONE);
@@ -727,7 +749,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						totalPage = totalItems / Constants.ITEMS_PER_PAGE;
 						if (totalItems % Constants.ITEMS_PER_PAGE != 0) {
 							totalPage += 1;
-						}						
+						}
+						
 						runOnUiThread(new AddToMerchantList());
 					}
 					catch(Exception e) {
@@ -780,7 +803,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			catch (Exception e) {
 				e.printStackTrace();
 			}
-			settingLoadMore();
+			settingNextBackButton();
 		}
 		
 	}
@@ -799,26 +822,47 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		super.onResume();
 	}
 	
-	public void settingLoadMore() {
+	private void settingNextBackButton() {
 		TableRow tableRow = (TableRow) findViewById(R.id.tableRow);
+		Button backButton = (Button)view.findViewById(R.id.backButton);
+		Button nextButton = (Button)view.findViewById(R.id.nextButton);
 		
-		Button loadMore = (Button)view.findViewById(R.id.loadMore);
-		
-		if(totalItems < Constants.ITEMS_PER_PAGE || page == totalPage || isFavorite) {
-			loadMore.setVisibility(Button.GONE);
-		}
-		else {
-			loadMore.setVisibility(Button.VISIBLE);
-		}
-				
-		loadMore.setOnClickListener(new OnClickListener() {
-			
-			@Override
+		backButton.setOnClickListener(new OnClickListener() {			
 			public void onClick(View v) {
-				page++;
-				reloadData();
+				if(page <= totalPage){
+					page--;	
+					reloadData();
+				}
 			}
 		});
+		
+		nextButton.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if(page < totalPage){
+					page++;
+					reloadData();
+				}
+			}
+		});
+		
+		System.out.println(page + " " + totalPage);
+		
+		if(totalPage == 1){
+			backButton.setVisibility(Button.GONE);
+			nextButton.setVisibility(Button.GONE);
+		}
+		if(page == 1 && totalPage > 1){
+			nextButton.setVisibility(Button.VISIBLE);
+			backButton.setVisibility(Button.INVISIBLE);
+		}
+		if(page == totalPage && totalPage > 1){
+			backButton.setVisibility(Button.VISIBLE);
+			nextButton.setVisibility(Button.INVISIBLE);
+		}
+		if(page > 1 && page < totalPage){
+			backButton.setVisibility(Button.VISIBLE);
+			nextButton.setVisibility(Button.VISIBLE);
+		}
 	}
 
 	@Override
