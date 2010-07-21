@@ -1127,8 +1127,13 @@ public class SettingsPage extends SingtelDiningActivity {
 			bankQ += bank.get(j) + ",";
 		}
 		
-		if(bankQ.charAt(bankQ.length()-1) == ',') {
-			bankQ = bankQ.substring(0, bankQ.length()-1);
+		try {
+			if(bankQ.charAt(bankQ.length()-1) == ',') {
+				bankQ = bankQ.substring(0, bankQ.length()-1);
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
 		}
 		
 		bankQuery = "&bank=" + bankQ;
