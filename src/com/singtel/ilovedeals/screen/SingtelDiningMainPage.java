@@ -234,6 +234,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	}
 	
 	private void reloadDataWithoutBitmap() {
+		settingLoadMore();
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
@@ -837,6 +838,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		@Override
 		public void onClick(View v) {
 			CustomImageView civ = (CustomImageView)v;
+			
+			page = 1;
+			totalPage = 1;
+			totalItems = 1;
 			
 			if(!civ.getIsPressed()) {
 				civ.setImageResource(civ.getImageInfo().getIdLabel());
