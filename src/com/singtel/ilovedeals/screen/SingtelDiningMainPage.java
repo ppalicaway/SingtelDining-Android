@@ -290,16 +290,21 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
 					
-					URL = shared.getString("locationLastURLQuery", "");
-					
-					if(URL.equalsIgnoreCase("")) {
-						SingtelDiningMainPage.URL = 
-							Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
-							"&longitude=" + Util.longitude +
-							"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+					if(!SettingsPage.bankQuery.equalsIgnoreCase("&bank=")) {
+						URL = shared.getString("locationLastURLQuery", "");
+						
+						if(URL.equalsIgnoreCase("")) {
+							SingtelDiningMainPage.URL = 
+								Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
+								"&longitude=" + Util.longitude +
+								"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
+						}
+						
+						reloadDataWithoutBitmap();
 					}
-					
-					reloadDataWithoutBitmap();
+					else {
+						Util.showAlert(SingtelDiningMainPage.instance, "ILoveDeals", "No deals found.", "OK", false);
+					}
 					break;
 				case R.id.restaurantButton:
 					locationButton.setBackgroundResource(R.drawable.location);
@@ -357,14 +362,19 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					mapButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
 					
-					
-					URL = shared.getString("cuisineLastURLQuery", "");
-					
-					if(URL.equalsIgnoreCase("")) {
-						SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
+					if(!SettingsPage.bankQuery.equalsIgnoreCase("&bank=")) {
+						URL = shared.getString("cuisineLastURLQuery", "");
+						
+						if(URL.equalsIgnoreCase("")) {
+							SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
+						}
+						
+						reloadDataWithoutBitmap();
+					}
+					else {
+						Util.showAlert(SingtelDiningMainPage.instance, "ILoveDeals", "No deals found.", "OK", false);
 					}
 					
-					reloadDataWithoutBitmap();
 					break;
 				case R.id.favoriteButton:
 					locationButton.setBackgroundResource(R.drawable.location);
