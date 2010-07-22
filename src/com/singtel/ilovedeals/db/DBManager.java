@@ -71,6 +71,10 @@ public class DBManager {
 		try {
 			String merchantName = merchant.getRestaurantName();
 			merchantName = merchantName.replaceAll("'", "_");
+			
+			String merchantAddress = merchant.getAddress();
+			merchantAddress = merchantAddress.replaceAll("'", "_");
+			
 			myDB.execSQL("INSERT INTO " 
 					+ Constants.TABLE_MERCHANT + 
 					" (" + TB_MERCHANTID + ", " + TB_MERCHANTNAME +
@@ -79,7 +83,7 @@ public class DBManager {
                     " VALUES (	" +
                     	  "'" + merchant.getId() + "', " +
                     	  "'" + merchantName + "', " +
-                    	  "'" + merchant.getAddress() + "', " +
+                    	  "'" + merchantAddress + "', " +
                     	  "'" + merchant.getImage() + "'" +
                     " );");
 		}catch(Exception ex){
@@ -112,6 +116,7 @@ public class DBManager {
 					String merchantName = c.getString(c.getColumnIndex(TB_MERCHANTNAME));
 					merchantName = merchantName.replaceAll("_", "'");
 					String merchantAddress = c.getString(c.getColumnIndex(TB_MERCHANTADDRESS));
+					merchantAddress = merchantAddress.replaceAll("_", "'");
 					String merchantImage = c.getString(c.getColumnIndex(TB_MERCHANTIMAGE));
 																			
 					if(result == null) {
