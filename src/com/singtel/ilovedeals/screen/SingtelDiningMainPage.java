@@ -185,7 +185,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		final MerchantInfo mInfo = merchantList.get(position-1);
+		final MerchantInfo mInfo = merchantList.get(position);
 		if(!isEdit) {
 			DescriptionPage.merchantInfo = mInfo;
 			DescriptionPage.catID = mInfo.getId();
