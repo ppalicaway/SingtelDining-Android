@@ -113,20 +113,21 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			double[] latLong = Util.queryLatLong(instance);
 			latitude = latLong[0];
 			longitude = latLong[1];
-			Util.latitude = latitude;
-			Util.longitude = longitude;
 			//latitude = 1.4415068;
 			//longitude = 103.7953423;
 		}
 		
-		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
-		URL = shared.getString("locationLastURLQuery", "");
+		Util.latitude = latitude;
+		Util.longitude = longitude;
 		
-		if(URL.equalsIgnoreCase("")) {
+		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+		//URL = shared.getString("locationLastURLQuery", "");
+		
+		//if(URL.equalsIgnoreCase("")) {
 			URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
 		      "&longitude=" + longitude +
 		      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
-		}
+		//}
 		
 		locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
@@ -154,11 +155,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		searchEditText = (EditText)findViewById(R.id.searchEditText);
 		searchEditText.setOnClickListener(new MenuListener());
 		
-		searchText = shared.getString("locationLastQueryPlace", "");
+		//searchText = shared.getString("locationLastQueryPlace", "");
 		
-		if(searchText.equalsIgnoreCase("")) {
+		//if(searchText.equalsIgnoreCase("")) {
 			searchText = "Around Me - All";
-		}
+		//}
 		
 		searchEditText.setText(searchText);
 		
@@ -283,10 +284,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isRestaurants = false;
 					isCuisines = false;
 					
-					searchText = shared.getString("locationLastQueryPlace", "");
-					if(searchText.equalsIgnoreCase("")) {
+					//searchText = shared.getString("locationLastQueryPlace", "");
+					//if(searchText.equalsIgnoreCase("")) {
 						searchText = "Around Me - All";
-					}
+					//}
 					
 					searchEditText.setText(searchText);
 					searchEditText.setVisibility(EditText.VISIBLE);
@@ -295,14 +296,14 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					myFave.setVisibility(ImageView.GONE);
 					
 					if(!SettingsPage.bankQuery.equalsIgnoreCase("&bank=")) {
-						URL = shared.getString("locationLastURLQuery", "");
+						//URL = shared.getString("locationLastURLQuery", "");
 						
-						if(URL.equalsIgnoreCase("")) {
+						//if(URL.equalsIgnoreCase("")) {
 							SingtelDiningMainPage.URL = 
 								Constants.RESTAURANT_LOCATION_PAGE + Util.latitude +
 								"&longitude=" + Util.longitude +
 								"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
-						}
+						//}
 						
 						reloadDataWithoutBitmap();
 					}
@@ -513,17 +514,17 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				restaurantButton.setBackgroundResource(R.drawable.restaurants);
 				cuisineButton.setBackgroundResource(R.drawable.cuisines);
 				favoriteButton.setBackgroundResource(R.drawable.favorites);
-				URL = shared.getString("locationLastURLQuery", "");
-				searchText = shared.getString("locationLastQueryPlace", "");
+				//URL = shared.getString("locationLastURLQuery", "");
+				//searchText = shared.getString("locationLastQueryPlace", "");
 				
-				if(URL.equalsIgnoreCase("")) {
+				//if(URL.equalsIgnoreCase("")) {
 					URL = Constants.RESTAURANT_LOCATION_PAGE + latitude +
 				     	"&longitude=" + longitude +
 				     	"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
-				}
-				if(searchText.equalsIgnoreCase("")) {
+				//}
+				//if(searchText.equalsIgnoreCase("")) {
 					searchText = "Around Me - All";
-				}
+				//}
 				reloadData();
 			}
 			else if(isRestaurants) {
@@ -821,6 +822,20 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 			myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 200, locationListener);
 			location = myLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		}
+		
+		try {
+			latitude = location.getLatitude();
+			longitude = location.getLongitude();
+		}
+		catch(Exception e) {
+			double[] latLong = Util.queryLatLong(instance);
+			latitude = latLong[0];
+			longitude = latLong[1];
+		}
+		
+		Util.latitude = latitude;
+		Util.longitude = longitude;
+		
 		super.onResume();
 	}
 	
