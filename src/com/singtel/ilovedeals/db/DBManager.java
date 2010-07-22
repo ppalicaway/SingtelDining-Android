@@ -69,6 +69,8 @@ public class DBManager {
 	
 	public void insertMerchant(MerchantInfo merchant) {
 		try {
+			String merchantName = merchant.getRestaurantName();
+			merchantName = merchantName.replaceAll("'", "_");
 			myDB.execSQL("INSERT INTO " 
 					+ Constants.TABLE_MERCHANT + 
 					" (" + TB_MERCHANTID + ", " + TB_MERCHANTNAME +
@@ -76,7 +78,7 @@ public class DBManager {
 					", " + TB_MERCHANTIMAGE + ")"  + 
                     " VALUES (	" +
                     	  "'" + merchant.getId() + "', " +
-                    	  "'" + merchant.getRestaurantName() + "', " +
+                    	  "'" + merchantName + "', " +
                     	  "'" + merchant.getAddress() + "', " +
                     	  "'" + merchant.getImage() + "'" +
                     " );");
@@ -108,9 +110,10 @@ public class DBManager {
 				do {
 					int merchantId = c.getInt(c.getColumnIndex(TB_MERCHANTID));
 					String merchantName = c.getString(c.getColumnIndex(TB_MERCHANTNAME));
+					merchantName = merchantName.replaceAll("_", "'");
 					String merchantAddress = c.getString(c.getColumnIndex(TB_MERCHANTADDRESS));
 					String merchantImage = c.getString(c.getColumnIndex(TB_MERCHANTIMAGE));
-														
+																			
 					if(result == null) {
 						result = new ArrayList<MerchantInfo>();
 					}
