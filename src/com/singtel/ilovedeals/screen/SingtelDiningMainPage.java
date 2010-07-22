@@ -417,6 +417,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					reloadDataFromDB();
 					break;
 				case R.id.augmentedButton:
+					if(isFavorite) {
+						cardLayoutView.setVisibility(LinearLayout.GONE);
+						searchEditText.setVisibility(EditText.GONE);
+						mapButton.setVisibility(Button.GONE);
+						myFave.setVisibility(ImageView.VISIBLE);
+					}
 					if(ARScreen.instance != null) {
 						ARScreen.instance.finish();
 					}
