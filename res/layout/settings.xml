@@ -121,47 +121,66 @@
 			</LinearLayout>
 				
 			<!-- Credit Card Icons -->
-			<LinearLayout
-				android:orientation="horizontal"
+			<HorizontalScrollView
 				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:gravity="center_vertical|center_horizontal">
+    			android:layout_height="wrap_content"
+    			android:scrollbars="none"
+       			android:foregroundGravity="center_vertical|center_horizontal" 
+       			android:clipChildren="true" 
+       			android:fadingEdge="none" 
+       			android:clipToPadding="true" 
+       			android:paddingRight="15px">
+				
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal">
 					
-				<Button 
-					android:id="@+id/citibankButton"
-					android:layout_width="65px"
-					android:layout_height="64px"
-					android:layout_marginRight="5px"
-					android:layout_marginTop="5px"
-					android:layout_marginBottom="5px"
-					android:background="@drawable/citibank"/>
+					<Button 
+						android:id="@+id/citibankButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginRight="5px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/citibank"/>
 					
-				<Button 
-					android:id="@+id/dbsButton"
-					android:layout_width="65px"
-					android:layout_height="64px"
-					android:layout_marginRight="5px"
-					android:layout_marginTop="5px"
-					android:layout_marginBottom="5px"
-					android:background="@drawable/dbs"/>
+					<Button 
+						android:id="@+id/dbsButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginRight="5px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/dbs"/>
 					
-				<Button 
-					android:id="@+id/ocbcButton"
-					android:layout_width="65px"
-					android:layout_height="64px"
-					android:layout_marginRight="5px"
-					android:layout_marginTop="5px"
-					android:layout_marginBottom="5px"
-					android:background="@drawable/ocbc"/>
+					<Button 
+						android:id="@+id/ocbcButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginRight="5px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/ocbc"/>
 					
-				<Button 
-					android:id="@+id/uobButton"
-					android:layout_width="65px"
-					android:layout_height="64px"
-					android:layout_marginTop="5px"
-					android:layout_marginBottom="5px"
-					android:background="@drawable/uob"/>
-			</LinearLayout>
+					<Button 
+						android:id="@+id/posbButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/posb"/>
+					
+					<Button 
+						android:id="@+id/uobButton"
+						android:layout_width="65px"
+						android:layout_height="64px"
+						android:layout_marginTop="5px"
+						android:layout_marginBottom="5px"
+						android:background="@drawable/uob"/>
+				</LinearLayout>
+			</HorizontalScrollView>
 			
 			<LinearLayout
 				android:orientation="horizontal"

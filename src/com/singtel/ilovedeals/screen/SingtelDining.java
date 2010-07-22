@@ -43,12 +43,12 @@ public class SingtelDining extends Activity {
         }
         
         System.out.println("Network Provider: " + Util.getNetworkProvider(instance));
-        if(!Util.getNetworkProvider(instance).contains("SingTel")) {
-        	Util.showAlert(instance, "ILoveDeals", "This service is available only on a Singtel mobile network and at selected Wireless@SG hotspots.", "OK", true);
-        }
-        else {
+        //if(!Util.getNetworkProvider(instance).contains("SingTel")) {
+        //	Util.showAlert(instance, "ILoveDeals", "This service is available only on a Singtel mobile network and at selected Wireless@SG hotspots.", "OK", true);
+        //}
+        //else {
         	splashThread.start();
-        }
+        //}
     }
     
     private Thread splashThread = new Thread() {
