@@ -180,14 +180,25 @@ public class Util {
 	}
 	
 	public static String toJSONString(String result){
-		if(result.startsWith("("))
-			return result.substring(1);
-		if(!result.startsWith("{")){
-			int index = result.indexOf("{");
-			return result.substring(index);
-		}		
-		else
-			return result;
+		String returnText = "";
+		
+		try {
+			if(result.startsWith("("))
+				returnText = result.substring(1);
+		
+			if(!result.startsWith("{")){
+				int index = result.indexOf("{");
+				returnText = result.substring(index);
+			}		
+			else {
+				returnText = result;
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return returnText;
 	}
 	
 	public static void makeCall(Context context, String number) {

@@ -224,7 +224,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	
 	private void reloadData() {
 		refreshBitmap();
-		
+		settingNextBackButton();
 		merchantList = new ArrayList<MerchantInfo>();
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
