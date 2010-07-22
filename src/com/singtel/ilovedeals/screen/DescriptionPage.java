@@ -444,6 +444,10 @@ public class DescriptionPage extends SingtelDiningActivity {
 				offer = merchantDetails.getBankOffers().get(i).getBank() + " Offer:\n";
 				offer += merchantDetails.getBankOffers().get(i).getOffer();
 			}
+			else if(bankName.equalsIgnoreCase("POSB")) {
+				offer = bankName + " Offer:\n";
+				offer += merchantDetails.getBankOffers().get(i).getOffer();
+			}
 		}
 		return offer;
 	}
@@ -456,7 +460,13 @@ public class DescriptionPage extends SingtelDiningActivity {
 			Animation animation = AnimationUtils.loadAnimation(instance.getApplicationContext(), R.anim.hyperspace_out);
 			LinearLayout ll = (LinearLayout)findViewById(R.id.detailFlipper);					
 			ll.startAnimation(animation);
-			offer.setText(getOffer(civ.getImageInfo().getBankName()));
+			String bankName = civ.getImageInfo().getBankName();
+			if(civ.getImageInfo().getBankName().equalsIgnoreCase("DBS")) {
+				if(civ.getImageInfo().getId() == R.drawable.dbs_platinum_mastercard) {
+					bankName = "POSB";
+				}
+			}
+			offer.setText(getOffer(bankName));
 			int bankIndex = getMerchantBankIndex(civ.getImageInfo().getBankName());
 			TermsPage.termsAndCondition = merchantDetails.getBankOffers().get(bankIndex).getTnc();
 		}

@@ -77,10 +77,12 @@ public class SettingsPage extends SingtelDiningActivity {
 	private LinearLayout citiGroup;
 	private LinearLayout dbsGroup;
 	private LinearLayout ocbcGroup;
+	private LinearLayout posbGroup;
 	private LinearLayout uobGroup;
 	private Button citibank;
 	private Button dbs;
 	private Button ocbc;
+	private Button posb;
 	private Button uob;
 	private Button allCreditCards;
 	private Button myCreditCards;
@@ -99,10 +101,12 @@ public class SettingsPage extends SingtelDiningActivity {
 		citibank = (Button)findViewById(R.id.citibankButton);
 		dbs = (Button)findViewById(R.id.dbsButton);
 		ocbc = (Button)findViewById(R.id.ocbcButton);
+		posb = (Button)findViewById(R.id.posbButton);
 		uob = (Button)findViewById(R.id.uobButton);
 		citiGroup = (LinearLayout)findViewById(R.id.citibankGroup);
 		dbsGroup = (LinearLayout)findViewById(R.id.dbsGroup);
 		ocbcGroup = (LinearLayout)findViewById(R.id.ocbcGroup);
+		posbGroup = (LinearLayout)findViewById(R.id.posbGroup);
 		uobGroup = (LinearLayout)findViewById(R.id.uobGroup);
 		
 		citibank.setOnClickListener(new OnClickListener() {
@@ -112,10 +116,12 @@ public class SettingsPage extends SingtelDiningActivity {
 				citibank.setBackgroundResource(R.drawable.citibank_hover);
 				dbs.setBackgroundResource(R.drawable.dbs);
 				ocbc.setBackgroundResource(R.drawable.ocbc);
+				posb.setBackgroundResource(R.drawable.posb);
 				uob.setBackgroundResource(R.drawable.uob);
 				citiGroup.setVisibility(LinearLayout.VISIBLE);
 				dbsGroup.setVisibility(LinearLayout.GONE);
 				ocbcGroup.setVisibility(LinearLayout.GONE);
+				posbGroup.setVisibility(LinearLayout.GONE);
 				uobGroup.setVisibility(LinearLayout.GONE);
 			}
 		});
@@ -127,10 +133,12 @@ public class SettingsPage extends SingtelDiningActivity {
 				citibank.setBackgroundResource(R.drawable.citibank);
 				dbs.setBackgroundResource(R.drawable.dbs_hover);
 				ocbc.setBackgroundResource(R.drawable.ocbc);
+				posb.setBackgroundResource(R.drawable.posb);
 				uob.setBackgroundResource(R.drawable.uob);
 				citiGroup.setVisibility(LinearLayout.GONE);
 				dbsGroup.setVisibility(LinearLayout.VISIBLE);
 				ocbcGroup.setVisibility(LinearLayout.GONE);
+				posbGroup.setVisibility(LinearLayout.GONE);
 				uobGroup.setVisibility(LinearLayout.GONE);
 			}
 		});
@@ -142,10 +150,29 @@ public class SettingsPage extends SingtelDiningActivity {
 				citibank.setBackgroundResource(R.drawable.citibank);
 				dbs.setBackgroundResource(R.drawable.dbs);
 				ocbc.setBackgroundResource(R.drawable.ocbc_hover);
+				posb.setBackgroundResource(R.drawable.posb);
 				uob.setBackgroundResource(R.drawable.uob);
 				citiGroup.setVisibility(LinearLayout.GONE);
 				dbsGroup.setVisibility(LinearLayout.GONE);
 				ocbcGroup.setVisibility(LinearLayout.VISIBLE);
+				posbGroup.setVisibility(LinearLayout.GONE);
+				uobGroup.setVisibility(LinearLayout.GONE);
+			}
+		});
+		
+		posb.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				citibank.setBackgroundResource(R.drawable.citibank);
+				dbs.setBackgroundResource(R.drawable.dbs);
+				ocbc.setBackgroundResource(R.drawable.ocbc);
+				posb.setBackgroundResource(R.drawable.posb_hover);
+				uob.setBackgroundResource(R.drawable.uob);
+				citiGroup.setVisibility(LinearLayout.GONE);
+				dbsGroup.setVisibility(LinearLayout.GONE);
+				ocbcGroup.setVisibility(LinearLayout.GONE);
+				posbGroup.setVisibility(LinearLayout.VISIBLE);
 				uobGroup.setVisibility(LinearLayout.GONE);
 			}
 		});
@@ -157,10 +184,12 @@ public class SettingsPage extends SingtelDiningActivity {
 				citibank.setBackgroundResource(R.drawable.citibank);
 				dbs.setBackgroundResource(R.drawable.dbs);
 				ocbc.setBackgroundResource(R.drawable.ocbc);
+				posb.setBackgroundResource(R.drawable.posb);
 				uob.setBackgroundResource(R.drawable.uob_hover);
 				citiGroup.setVisibility(LinearLayout.GONE);
 				dbsGroup.setVisibility(LinearLayout.GONE);
 				ocbcGroup.setVisibility(LinearLayout.GONE);
+				posbGroup.setVisibility(LinearLayout.GONE);
 				uobGroup.setVisibility(LinearLayout.VISIBLE);
 			}
 		});
@@ -290,18 +319,6 @@ public class SettingsPage extends SingtelDiningActivity {
 		}
 		else {
 			iInfo = new ImageInfo(R.drawable.dbs_live_fresh_platinum_card_label, R.drawable.dbs_live_fresh_platinum_card, DBS, R.drawable.dbs_live_fresh_platinum_card_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 9th
-		if(dbsPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "9,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
@@ -509,6 +526,18 @@ public class SettingsPage extends SingtelDiningActivity {
 			untickedImages.add(iInfo);
 		}
 		
+		// 9th
+		if(dbsPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "9,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
 		// 38th
 		if(uobSingtelPlatinumCard.isChecked()){
 			iInfo = new ImageInfo(R.drawable.uob_singtel_platinum_card_label, R.drawable.uob_singtel_platinum_card, UOB, R.drawable.uob_singtel_platinum_card_nonticked);
@@ -686,6 +715,7 @@ public class SettingsPage extends SingtelDiningActivity {
 				citiGroup.setVisibility(LinearLayout.VISIBLE);
 				dbsGroup.setVisibility(LinearLayout.VISIBLE);
 				ocbcGroup.setVisibility(LinearLayout.VISIBLE);
+				posbGroup.setVisibility(LinearLayout.VISIBLE);
 				uobGroup.setVisibility(LinearLayout.VISIBLE);
 				checkAll();
 			}
@@ -700,6 +730,7 @@ public class SettingsPage extends SingtelDiningActivity {
 				citiGroup.setVisibility(LinearLayout.VISIBLE);
 				dbsGroup.setVisibility(LinearLayout.VISIBLE);
 				ocbcGroup.setVisibility(LinearLayout.VISIBLE);
+				posbGroup.setVisibility(LinearLayout.VISIBLE);
 				uobGroup.setVisibility(LinearLayout.VISIBLE);
 				if(cardPref.equalsIgnoreCase("")) {
 					uncheckAll();
@@ -728,8 +759,6 @@ public class SettingsPage extends SingtelDiningActivity {
 		dbsBlackAmericanExpress.setOnClickListener(new CheckListener());
 		dbsLiveFreshPlatinum = (CheckBox)findViewById(R.id.livefreshplatinum);
 		dbsLiveFreshPlatinum.setOnClickListener(new CheckListener());
-		dbsPlatinumMasterCard = (CheckBox)findViewById(R.id.dbsplatinummastercard);
-		dbsPlatinumMasterCard.setOnClickListener(new CheckListener());
 		
 		ocbcArtsPlatinumCard = (CheckBox)findViewById(R.id.artsplatinumcard);
 		ocbcArtsPlatinumCard.setOnClickListener(new CheckListener());
@@ -765,6 +794,9 @@ public class SettingsPage extends SingtelDiningActivity {
 		ocbcUPlusPlatinumCard.setOnClickListener(new CheckListener());
 		ocbcYesDebitCard = (CheckBox)findViewById(R.id.yesdebitcard);
 		ocbcYesDebitCard.setOnClickListener(new CheckListener());
+		
+		dbsPlatinumMasterCard = (CheckBox)findViewById(R.id.dbsplatinummastercard);
+		dbsPlatinumMasterCard.setOnClickListener(new CheckListener());
 		
 		uobSingtelPlatinumCard = (CheckBox)findViewById(R.id.singtelplatinumcard);
 		uobSingtelPlatinumCard.setOnClickListener(new CheckListener());
@@ -840,9 +872,6 @@ public class SettingsPage extends SingtelDiningActivity {
 		case Constants.DBSLIVEFRESHPLATINUM:
 			dbsLiveFreshPlatinum.setChecked(true);
 			break;
-		case Constants.DBSPLATINUMMASTERCARD:
-			dbsPlatinumMasterCard.setChecked(true);
-			break;
 		case Constants.OCBCARTSPLATINUMCARD:
 			ocbcArtsPlatinumCard.setChecked(true);
 			break;
@@ -893,6 +922,9 @@ public class SettingsPage extends SingtelDiningActivity {
 			break;
 		case Constants.OCBCYESDEBITCARD:
 			ocbcYesDebitCard.setChecked(true);
+			break;
+		case Constants.DBSPLATINUMMASTERCARD:
+			dbsPlatinumMasterCard.setChecked(true);
 			break;
 		case Constants.UOBSINGTELPLATINUMCARD:
 			uobSingtelPlatinumCard.setChecked(true);
@@ -987,7 +1019,6 @@ public class SettingsPage extends SingtelDiningActivity {
 
 		dbsBlackAmericanExpress.setChecked(false);
 		dbsLiveFreshPlatinum.setChecked(false);
-		dbsPlatinumMasterCard.setChecked(false);
 
 		ocbcArtsPlatinumCard.setChecked(false);
 		ocbcBestDenkiPlatinumCard.setChecked(false);
@@ -1007,6 +1038,8 @@ public class SettingsPage extends SingtelDiningActivity {
 		ocbcUPlusPlatinumCard.setChecked(false);
 		ocbcYesDebitCard.setChecked(false);
 
+		dbsPlatinumMasterCard.setChecked(false);
+		
 		uobSingtelPlatinumCard.setChecked(false);
 		uobDirectVisaCard.setChecked(false);
 		uobLadysCard.setChecked(false);
@@ -1050,8 +1083,6 @@ public class SettingsPage extends SingtelDiningActivity {
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.dbs_live_fresh_platinum_card_label, R.drawable.dbs_live_fresh_platinum_card, DBS, R.drawable.dbs_live_fresh_platinum_card_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
-			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.ocbc_arts_platinum_card_label, R.drawable.ocbc_arts_platinum_card, OCBC, R.drawable.ocbc_arts_platinum_card_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.ocbc_best_denki_platinum_card_label, R.drawable.ocbc_best_denki_platinum_card, OCBC, R.drawable.ocbc_best_denki_platinum_card_nonticked);
@@ -1085,6 +1116,8 @@ public class SettingsPage extends SingtelDiningActivity {
 			iInfo = new ImageInfo(R.drawable.ocbc_uplus_platinum_card_label, R.drawable.ocbc_uplus_platinum_card, OCBC, R.drawable.ocbc_uplus_platinum_card_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.ocbc_yes_debit_card_label, R.drawable.ocbc_yes_debit_card, OCBC, R.drawable.ocbc_yes_debit_card_nonticked);
+			defaultAll.add(iInfo);
+			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.uob_direct_visa_card_label, R.drawable.uob_direct_visa_card, UOB, R.drawable.uob_direct_visa_card_nonticked);
 			defaultAll.add(iInfo);

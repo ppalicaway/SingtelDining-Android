@@ -129,7 +129,8 @@
        			android:clipChildren="true" 
        			android:fadingEdge="none" 
        			android:clipToPadding="true" 
-       			android:paddingRight="15px">
+       			android:paddingRight="10px"
+       			android:paddingLeft="10px">
 				
 				<LinearLayout
 					android:orientation="horizontal"
@@ -168,6 +169,7 @@
 						android:id="@+id/posbButton"
 						android:layout_width="65px"
 						android:layout_height="64px"
+						android:layout_marginRight="5px"
 						android:layout_marginTop="5px"
 						android:layout_marginBottom="5px"
 						android:background="@drawable/posb"/>
