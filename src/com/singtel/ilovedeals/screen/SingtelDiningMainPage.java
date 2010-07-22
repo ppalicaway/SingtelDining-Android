@@ -379,6 +379,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						if(URL.equalsIgnoreCase("")) {
 							SingtelDiningMainPage.URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
 						}
+						else {
+							URL += SettingsPage.bankQuery + "&pageNum=";
+						}
 						
 						reloadDataWithoutBitmap();
 					}
@@ -556,6 +559,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				
 				if(URL.equalsIgnoreCase("")) {
 					URL = Constants.RESTAURANT_CUSINE_PAGE + SettingsPage.bankQuery + "&pageNum=";
+				}
+				else {
+					URL += SettingsPage.bankQuery + "&pageNum=";
 				}
 				
 				if(searchText.equalsIgnoreCase("")) {
