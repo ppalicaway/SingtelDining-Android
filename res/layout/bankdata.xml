@@ -55,7 +55,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank Clear Platinum Visa" />				
@@ -78,7 +78,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank Dividend Platinum" />
@@ -101,7 +101,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank Paragon MasterCard" />
@@ -124,7 +124,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank Paragon Visa" />
@@ -147,7 +147,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank PremiereMiles Visa" />			
@@ -170,7 +170,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank SMRT Card" />			
@@ -217,7 +217,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="DBS Credit/Debit Visa or MasterCard" />
@@ -240,7 +240,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="DBS American Express Cards" />
@@ -287,7 +287,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Arts Platinum Card" />			
@@ -310,7 +310,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Best Denki Platinum Card" />			
@@ -333,7 +333,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Classic Visa Card" />			
@@ -356,7 +356,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Debit Card" />			
@@ -379,7 +379,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC FairPricePlus Visa Card" />			
@@ -402,7 +402,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Gold MasterCard" />			
@@ -425,7 +425,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Ikea Friends Visa Card" />			
@@ -448,7 +448,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC NTU Visa Classic Card" />			
@@ -472,7 +472,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC NTU Visa Gold Card" />			
@@ -495,7 +495,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Platinum MasterCard" />			
@@ -518,7 +518,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Robinsons Platinum Card" />			
@@ -541,7 +541,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC SMU Debit Cards" />			
@@ -564,7 +564,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC SMU Platinum MasterCard" />			
@@ -587,7 +587,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Titanium MasterCard" />			
@@ -610,7 +610,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC U Plus Visa Card" />			
@@ -633,7 +633,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC UPlus Platinum Card" />			
@@ -656,7 +656,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Yes Debit Card" />			
@@ -704,7 +704,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="POSB Credit/Debit Cards" />			
@@ -735,6 +735,7 @@
 						android:typeface="sans" />
 				</LinearLayout>
 				
+				<!-- SingTel-UOB Visa Platinum Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -742,7 +743,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/singtelplatinumcard"
+						android:id="@+id/singteluobvisaplatinumcard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -752,12 +753,13 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Singtel Platinum Card" />			
+						android:text="SingTel-UOB Visa Platinum Card" />			
 				</LinearLayout>
 			
+				<!-- UOB PRVI American Express Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -765,7 +767,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/directvisacard"
+						android:id="@+id/uobprviamericanexpresscard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -775,12 +777,13 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Direct Visa Card" />			
+						android:text="UOB PRVI American Express Card" />			
 				</LinearLayout>
 				
+				<!-- UOB Visa Signature Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -788,7 +791,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/ladyscard"
+						android:id="@+id/uobvisasignaturecard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -798,58 +801,13 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Lady's Card" />			
-				</LinearLayout>
-			
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-					
-					<CheckBox
-						android:id="@+id/mastercardclassiccard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-				
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="15px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB MasterCard Classic Card" />			
-				</LinearLayout>
-				
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-				
-					<CheckBox
-						android:id="@+id/mastercardgoldcard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-				
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="15px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB MasterCard Gold Card" />			
+						android:text="UOB Visa Signature Card" />			
 				</LinearLayout>
 			
+				<!-- UOB One Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -857,7 +815,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/onecard"
+						android:id="@+id/uobonecard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -867,12 +825,61 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB One Card" />			
 				</LinearLayout>
+				
+				<!-- UOB Preferred Platinum Card Visa -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/uobpreferredplatinumcardvisa"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Preferred Platinum Card Visa" />			
+				</LinearLayout>
 			
+				<!-- UOB Preferred Platinum Card MasterCard -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uobpreferredplatinumcardmastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Preferred Platinum Card MasterCard" />			
+				</LinearLayout>
+				
+				<!-- UOB Lady's Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -880,7 +887,7 @@
 					android:orientation="horizontal">
 			
 					<CheckBox
-						android:id="@+id/preferredworld"
+						android:id="@+id/uobladyscard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -890,12 +897,13 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Preferred World" />			
+						android:text="UOB Lady's Card" />			
 				</LinearLayout>
 				
+				<!-- UOB Lady's Platinum Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -903,7 +911,7 @@
 					android:orientation="horizontal">
 			
 					<CheckBox
-						android:id="@+id/prvivisaamerican"
+						android:id="@+id/uobladysplatinumcard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -913,12 +921,13 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB PRVI Visa American" />			
+						android:text="UOB Lady's Platinum Card" />			
 				</LinearLayout>
-			
+				
+				<!-- UOB Lady's Solitaire Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -926,7 +935,7 @@
 					android:orientation="horizontal">
 			
 					<CheckBox
-						android:id="@+id/visaclassiccard"
+						android:id="@+id/uobladyssolitairecard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -936,12 +945,13 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Visa Classic Card" />			
+						android:text="UOB Lady's Solitaire Card" />			
 				</LinearLayout>
 				
+				<!-- UOB Visa Infinite Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -949,7 +959,7 @@
 					android:orientation="horizontal">
 			
 					<CheckBox
-						android:id="@+id/visagoldcard"
+						android:id="@+id/uobvisainfinitecard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -959,35 +969,37 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Visa Gold Card" />			
-				</LinearLayout>
-				
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-				
-					<CheckBox
-						android:id="@+id/visainfinitecard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-				
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Visa Infinite Card" />			
 				</LinearLayout>
 				
+				<!-- UOB Preferred World MasterCard -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/uobpreferredworldmastercard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+				
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Preferred World MasterCard" />			
+				</LinearLayout>
+				
+				<!-- UOB Visa Gold Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -995,7 +1007,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/visasignaturecard"
+						android:id="@+id/uobvisagoldcard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -1005,10 +1017,178 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="15px"
+						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Visa Signature Card" />			
+						android:text="UOB Visa Gold Card" />			
+				</LinearLayout>
+				
+				<!-- UOB Visa Classic Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uobvisaclassiccard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Visa Classic Card" />			
+				</LinearLayout>
+				
+				<!-- UOB MasterCard Gold Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uobmastercardgoldcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB MasterCard Gold Card" />			
+				</LinearLayout>
+				
+				<!-- UOB MasterCard Classic Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uobmastercardclassiccard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB MasterCard Classic Card" />			
+				</LinearLayout>
+				
+				<!-- Metro-UOB Platinum Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/metrouobplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Metro-UOB Platinum Card" />			
+				</LinearLayout>
+				
+				<!-- UOB-JCB Platinum Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uobjcbplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB-JCB Platinum Card" />			
+				</LinearLayout>
+				
+				<!-- UOB China Union Pay Platinum Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uobchinaunionpayplatinumcard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB China Union Pay Platinum Card" />			
+				</LinearLayout>
+				
+				<!-- UOB Direct Visa Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+					
+					<CheckBox
+						android:id="@+id/uobdirectvisacard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="UOB Direct Visa Card" />
 				</LinearLayout>
 			</LinearLayout>
   		</LinearLayout>
