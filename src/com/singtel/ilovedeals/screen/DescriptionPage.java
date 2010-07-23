@@ -446,7 +446,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 			}
 			else if(bankName.equalsIgnoreCase("POSB")) {
 				offer = bankName + " Offer:\n";
-				offer += merchantDetails.getBankOffers().get(i).getOffer();
+				offer += merchantDetails.getBankOffers().get(getMerchantBankIndex("DBS")).getOffer();
 			}
 		}
 		return offer;
