@@ -54,6 +54,7 @@ public class DescriptionPage extends SingtelDiningActivity {
 	private TextView offer;
 	private ProgressDialog progressDialog = null;
 	private Runnable queryThread;
+	private String offerFirst = "";
 	
 	private static final int MESSAGE_PUBLISHED = 2;
 	
@@ -194,17 +195,14 @@ public class DescriptionPage extends SingtelDiningActivity {
 				}
 			}
 		}
+		
+		offerFirst = ((CustomImageView)tableRow.getChildAt(0)).getImageInfo().getBankName();
 	}
 
 	private Runnable populateData = new Runnable() {
 
 		@Override
 		public void run() {
-			
-			offer = (TextView)findViewById(R.id.offerTextView);
-			String offerText = merchantDetails.getBankOffers().get(0).getBank() + " Offer:\n";
-			offerText += merchantDetails.getBankOffers().get(0).getOffer();
-			offer.setText(offerText);
 			
 			TextView merchantName = (TextView)findViewById(R.id.merchantName);
 			merchantName.setText(merchantDetails.getTitle());
@@ -237,8 +235,6 @@ public class DescriptionPage extends SingtelDiningActivity {
 			TextView merchantDescription = (TextView)findViewById(R.id.descriptionTextView);
 			merchantDescription.setText(merchantDetails.getDescription());
 			
-			TermsPage.termsAndCondition = merchantDetails.getBankOffers().get(0).getTnc();
-			
 			for(int i = 0; i < merchantDetails.getBankOffers().size(); i++) {
 				String bank = merchantDetails.getBankOffers().get(i).getBank();
 				banks.add(bank);
@@ -262,6 +258,13 @@ public class DescriptionPage extends SingtelDiningActivity {
 			});
 			
 			reloadCardImage();
+			
+			offer = (TextView)findViewById(R.id.offerTextView);
+			String offerText = merchantDetails.getBankOffers().get(getMerchantBankIndex(offerFirst)).getBank() + " Offer:\n";
+			offerText += merchantDetails.getBankOffers().get(getMerchantBankIndex(offerFirst)).getOffer();
+			offer.setText(offerText);
+			
+			TermsPage.termsAndCondition = merchantDetails.getBankOffers().get(getMerchantBankIndex(offerFirst)).getTnc();
 			
 			if(progressDialog.isShowing()) {
 				progressDialog.dismiss();
