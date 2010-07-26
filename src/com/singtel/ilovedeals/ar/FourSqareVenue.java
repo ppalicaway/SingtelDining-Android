@@ -56,8 +56,7 @@ public class FourSqareVenue extends ARSphericalView {
 				name = name.substring(0, 17) + "...";
 			}
 			
-			double distDouble = Util.distanceTo(Util.latitude, Util.longitude, merchantInfo.getLatitude(), merchantInfo.getLongitude());
-			String dist = Double.toString(distDouble);
+			String dist = merchantInfo.getDistance();
 			
 			int contentWidth = ARLayout.contentWidth;
 			int contentHeight = ARLayout.contentHeight;
@@ -76,7 +75,7 @@ public class FourSqareVenue extends ARSphericalView {
 			
 			canvas.drawBitmap(bitmap, x - 21, y - 24, null);			
 			canvas.drawText(name, x + 15, y - 3, fontTop);
-			
+		
 			if(dist.length() > 4) {
 				dist = dist.substring(0,4);
 			}

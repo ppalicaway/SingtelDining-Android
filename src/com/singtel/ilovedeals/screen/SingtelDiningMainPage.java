@@ -666,13 +666,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				
 				TextView distance = (TextView)view.findViewById(R.id.distance);
 				try {					
-					DecimalFormat df = new DecimalFormat("#.##");
-					String distanceText = df.format(Util.distanceTo(latitude, longitude, merchant.getLatitude(), merchant.getLongitude()));
-					distance.setText(distanceText + " km");
-					
-					if(merchant.getLatitude() == 0.0 && merchant.getLongitude() == 0.0) {
-						distance.setText("");
-					}
+					distance.setText(merchant.getDistance() + " km");
 				}
 				catch(Exception e) {
 					e.printStackTrace();
@@ -746,6 +740,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 							int reviews = 0;
 							double latitude = 0;
 							double longitude = 0;
+							String distance = "";
 							
 							id = Integer.parseInt(jsonObject2.getString("ID"));
 							image = jsonObject2.getString("Image");
@@ -755,8 +750,16 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 							reviews = Integer.parseInt(jsonObject2.getString("Reviews"));
 							latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
 							longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
+							try {
+								distance = jsonObject2.getString("Distance");
+							}
+							catch(Exception e) {
+								DecimalFormat df = new DecimalFormat("#.##");
+								distance = df.format(Util.distanceTo(Util.latitude, Util.longitude, latitude, longitude));
+							}							
 							
 							MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
+							mInfo.setDistance(distance);
 							SingtelDiningMainPage.merchantList.add(mInfo);
 						}
 						

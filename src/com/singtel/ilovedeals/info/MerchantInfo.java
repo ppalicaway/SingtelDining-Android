@@ -10,6 +10,7 @@ public class MerchantInfo {
 	private int reviews;
 	private double latitude;
 	private double longitude;
+	private String distance;
 	
 	public MerchantInfo() {
 		
@@ -88,5 +89,13 @@ public class MerchantInfo {
 
 	public double getLongitude() {
 		return longitude;
+	}
+
+	public void setDistance(String distance) {
+		this.distance = distance;
+	}
+
+	public String getDistance() {
+		return distance;
 	}
 }

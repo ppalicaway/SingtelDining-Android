@@ -254,6 +254,7 @@ public class ARScreen extends SingtelDiningActivity {
 						int reviews = 0;
 						double latitude = 0;
 						double longitude = 0;
+						String distance = "";
 						
 						id = Integer.parseInt(jsonObject2.getString("ID"));
 						image = jsonObject2.getString("Image");
@@ -263,8 +264,10 @@ public class ARScreen extends SingtelDiningActivity {
 						reviews = Integer.parseInt(jsonObject2.getString("Reviews"));
 						latitude = Double.parseDouble(jsonObject2.getString("Latitude"));
 						longitude = Double.parseDouble(jsonObject2.getString("Longitude"));
+						distance = jsonObject2.getString("Distance");
 						
 						MerchantInfo mInfo = new MerchantInfo(id, image, restaurantName, address, rating, reviews, latitude, longitude);
+						mInfo.setDistance(distance);
 						
 						if(!merchantHash.containsKey(id)) {
 							merchantHash.put(Integer.toString(id), Integer.toString(id));
