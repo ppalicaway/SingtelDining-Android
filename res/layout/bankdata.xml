@@ -59,7 +59,7 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="Citi Platinum VISA/MasterCard" />				
+						android:text="Citi Platinum VISA/MasterCard" />
 				</LinearLayout>
 				
 				<!-- Citi DIVIDEND Card -->
@@ -778,7 +778,7 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB PRVI American Express Card" />			
+						android:text="UOB PRVI American Express&#174; Card" />			
 				</LinearLayout>
 				
 				<!-- UOB Visa Signature Card -->
@@ -994,7 +994,7 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB Preferred World MasterCard" />			
+						android:text="UOB Preferred World MasterCard&#174;" />			
 				</LinearLayout>
 				
 				<!-- UOB Visa Gold Card -->
@@ -1066,7 +1066,7 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB MasterCard Gold Card" />			
+						android:text="UOB MasterCard&#174; Gold Card" />			
 				</LinearLayout>
 				
 				<!-- UOB MasterCard Classic Card -->
@@ -1090,7 +1090,7 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB MasterCard Classic Card" />			
+						android:text="UOB MasterCard&#174; Classic Card" />			
 				</LinearLayout>
 				
 				<!-- Metro-UOB Platinum Card -->
