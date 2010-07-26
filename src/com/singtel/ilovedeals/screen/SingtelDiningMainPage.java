@@ -666,7 +666,13 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				
 				TextView distance = (TextView)view.findViewById(R.id.distance);
 				try {					
-					distance.setText(merchant.getDistance() + " km");
+					String distanceText = merchant.getDistance();
+					if(!distanceText.equals(null)) {
+						distance.setText(distanceText + " km");
+					}
+					else {
+						distance.setText("");
+					}
 				}
 				catch(Exception e) {
 					e.printStackTrace();
