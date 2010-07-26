@@ -76,72 +76,52 @@ public class Controller {
 				iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.OCBCARTSPLATINUMCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_arts_platinum_card_label, R.drawable.ocbc_arts_platinum_card, OCBC, R.drawable.ocbc_arts_platinum_card_nonticked);
+			case Constants.OCBCARTSPLATINUMMASTERCARD:
+				iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.OCBCBESTDENKIPLATINUMCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_best_denki_platinum_card_label, R.drawable.ocbc_best_denki_platinum_card, OCBC, R.drawable.ocbc_best_denki_platinum_card_nonticked);
+			case Constants.BESTOCBCPLATINUMMASTERCARD:
+				iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.OCBCCLASSICVISACARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_classic_visa_card_label, R.drawable.ocbc_classic_visa_card, OCBC, R.drawable.ocbc_classic_visa_card_nonticked);
-				iInfo.setSelected(true);
-				break;
-			case Constants.OCBCDEBITCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_debit_card_label, R.drawable.ocbc_debit_card, OCBC, R.drawable.ocbc_debit_card_nonticked);
-				iInfo.setSelected(true);
-				break;
-			case Constants.OCBCFAIRPRICEPLUSVISACARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_fairpriceplus_visa_card_label, R.drawable.ocbc_fairpriceplus_visa_card, OCBC, R.drawable.ocbc_fairpriceplus_visa_card_nonticked);
-				iInfo.setSelected(true);
-				break;
-			case Constants.OCBCGOLDMASTERCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_gold_mastercard_label, R.drawable.ocbc_gold_mastercard, OCBC, R.drawable.ocbc_gold_mastercard_nonticked);
+			case Constants.FAIRPRICEPLUSCREDITDEBITCARDS:
+				iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.OCBCIKEAFRIENDSVISACARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_ikea_friends_visacard_label, R.drawable.ocbc_ikea_friends_visa_card, OCBC, R.drawable.ocbc_ikea_friends_visa_card_nonticked);
-				iInfo.setSelected(true);
-				break;
-			case Constants.OCBCNTUVISACLASSICCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_classic_card_label, R.drawable.ocbc_ntu_visa_classic_card, OCBC, R.drawable.ocbc_ntu_visa_classic_card_nonticked);
+				iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.OCBCNTUVISAGOLDCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_gold_card_label, R.drawable.ocbc_ntu_visa_gold_card, OCBC, R.drawable.ocbc_ntu_visa_gold_card_nonticked);
+				iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.OCBCPLATINUMMASTERCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_platinum_mastercard_label, R.drawable.ocbc_platinum_mastercard, OCBC, R.drawable.ocbc_platinum_mastercard_nonticked);
+				iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.OCBCROBINSONSPLATINUMCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_robinsons_platinum_card_label, R.drawable.ocbc_robinsons_platinum_card, OCBC, R.drawable.ocbc_robinsons_platinum_card_nonticked);
+			case Constants.OCBCROBINSONSVISAPLATINUMCARD:
+				iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.OCBCSMUDEBITCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_smu_debit_cards_label, R.drawable.ocbc_smu_debit_cards, OCBC, R.drawable.ocbc_smu_debit_cards_nonticked);
+				iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.OCBCSMUPLATINUMMASTERCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_smu_platinum_mastercard_label, R.drawable.ocbc_smu_platinum_mastercard, OCBC, R.drawable.ocbc_smu_platinum_mastercard_nonticked);
+				iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.OCBCTITANIUMMASTERCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_titanium_mastercard_label, R.drawable.ocbc_titanium_mastercard, OCBC, R.drawable.ocbc_titanium_mastercard_nonticked);
+				iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.OCBCUPLUSVISACARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_uplus_visa_card_label, R.drawable.ocbc_uplus_visa_card, OCBC, R.drawable.ocbc_uplus_visa_card_nonticked);
+			case Constants.UPLUSCREDITDEBITCARDS:
+				iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.OCBCUPLUSPLATINUMCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_uplus_platinum_card_label, R.drawable.ocbc_uplus_platinum_card, OCBC, R.drawable.ocbc_uplus_platinum_card_nonticked);
-				iInfo.setSelected(true);
-				break;
-			case Constants.OCBCYESDEBITCARD:
-				iInfo = new ImageInfo(R.drawable.ocbc_yes_debit_card_label, R.drawable.ocbc_yes_debit_card, OCBC, R.drawable.ocbc_yes_debit_card_nonticked);
+			case Constants.OCBCYESCARD:
+				iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.SINGTELUOBVISAPLATINUMCARD:

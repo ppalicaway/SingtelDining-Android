@@ -54,23 +54,19 @@ public interface Constants {
 	public static final int DBSBLACKAMERICANEXPRESS = 7;
 	public static final int DBSLIVEFRESHPLATINUM = 8;
 	public static final int DBSPLATINUMMASTERCARD = 9;
-	public static final int OCBCARTSPLATINUMCARD = 10;
-	public static final int OCBCBESTDENKIPLATINUMCARD = 11;
-	public static final int OCBCCLASSICVISACARD = 12;
-	public static final int OCBCDEBITCARD = 13;
-	public static final int OCBCFAIRPRICEPLUSVISACARD = 14;
-	public static final int OCBCGOLDMASTERCARD = 15;
-	public static final int OCBCIKEAFRIENDSVISACARD = 16;
-	public static final int OCBCNTUVISACLASSICCARD = 17;
-	public static final int OCBCNTUVISAGOLDCARD = 18;
-	public static final int OCBCPLATINUMMASTERCARD = 19;
-	public static final int OCBCROBINSONSPLATINUMCARD = 20;
-	public static final int OCBCSMUDEBITCARD = 21;
-	public static final int OCBCSMUPLATINUMMASTERCARD = 22;
-	public static final int OCBCTITANIUMMASTERCARD = 23;
-	public static final int OCBCUPLUSVISACARD = 24;
-	public static final int OCBCUPLUSPLATINUMCARD = 25;
-	public static final int OCBCYESDEBITCARD = 26;
+	
+	public static final int OCBCARTSPLATINUMMASTERCARD = 10;
+	public static final int BESTOCBCPLATINUMMASTERCARD = 11;
+	public static final int FAIRPRICEPLUSCREDITDEBITCARDS = 12;
+	public static final int OCBCIKEAFRIENDSVISACARD = 13;
+	public static final int OCBCNTUVISAGOLDCARD = 14;
+	public static final int OCBCPLATINUMMASTERCARD = 15;
+	public static final int OCBCROBINSONSVISAPLATINUMCARD = 16;
+	public static final int OCBCSMUDEBITCARD = 17;
+	public static final int OCBCSMUPLATINUMMASTERCARD = 18;
+	public static final int OCBCTITANIUMMASTERCARD = 19;
+	public static final int UPLUSCREDITDEBITCARDS = 20;
+	public static final int OCBCYESCARD = 21;
 	
 	public static final int SINGTELUOBVISAPLATINUMCARD = 27;
 	public static final int UOBPRVIAMERICANEXPRESSCARD = 28;

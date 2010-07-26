@@ -43,23 +43,18 @@ public class SettingsPage extends SingtelDiningActivity {
 	private CheckBox dbsLiveFreshPlatinum;
 	private CheckBox dbsPlatinumMasterCard;
 
-	private CheckBox ocbcArtsPlatinumCard;
-	private CheckBox ocbcBestDenkiPlatinumCard;
-	private CheckBox ocbcClassicVisaCard;
-	private CheckBox ocbcDebitCard;
-	private CheckBox ocbcFairPricePlusVisaCard;
-	private CheckBox ocbcGoldMasterCard;
-	private CheckBox ocbcIkeaFriendsVisaCard;
-	private CheckBox ocbcNTUVisaClassicCard;
+	private CheckBox ocbcArtsPlatinumMasterCard;
+	private CheckBox bestOCBCPlatinumMasterCard;
+	private CheckBox fairPricePlusCreditDebitCards;
+	private CheckBox ocbcIKEAFriedsVisaCard;
 	private CheckBox ocbcNTUVisaGoldCard;
 	private CheckBox ocbcPlatinumMasterCard;
-	private CheckBox ocbcRobinsonsPlatinumCard;
+	private CheckBox ocbcRobinsonsVisaPlatinumCard;
 	private CheckBox ocbcSMUDebitCard;
 	private CheckBox ocbcSMUPlatinumMasterCard;
 	private CheckBox ocbcTitaniumMasterCard;
-	private CheckBox ocbcUPlusVisaCard;
-	private CheckBox ocbcUPlusPlatinumCard;
-	private CheckBox ocbcYesDebitCard;
+	private CheckBox uPlusCreditDebitCards;
+	private CheckBox ocbcYesCard;
 
 	private CheckBox singtelUOBVisaPlatinumCard;
 	private CheckBox uobPRVIAmericanExpressCard;
@@ -330,206 +325,146 @@ public class SettingsPage extends SingtelDiningActivity {
 		}
 		
 		// 10th
-		if(ocbcArtsPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_arts_platinum_card_label, R.drawable.ocbc_arts_platinum_card, OCBC, R.drawable.ocbc_arts_platinum_card_nonticked);
+		if(ocbcArtsPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "10,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_arts_platinum_card_label, R.drawable.ocbc_arts_platinum_card, OCBC, R.drawable.ocbc_arts_platinum_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 11th
-		if(ocbcBestDenkiPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_best_denki_platinum_card_label, R.drawable.ocbc_best_denki_platinum_card, OCBC, R.drawable.ocbc_best_denki_platinum_card_nonticked);
+		if(bestOCBCPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "11,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_best_denki_platinum_card_label, R.drawable.ocbc_best_denki_platinum_card, OCBC, R.drawable.ocbc_best_denki_platinum_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 12th
-		if(ocbcClassicVisaCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_classic_visa_card_label, R.drawable.ocbc_classic_visa_card, OCBC, R.drawable.ocbc_classic_visa_card_nonticked);
+		if(fairPricePlusCreditDebitCards.isChecked()){
+			iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "12,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_classic_visa_card_label, R.drawable.ocbc_classic_visa_card, OCBC, R.drawable.ocbc_classic_visa_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 13th
-		if(ocbcDebitCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_debit_card_label, R.drawable.ocbc_debit_card, OCBC, R.drawable.ocbc_debit_card_nonticked);
+		if(ocbcIKEAFriedsVisaCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "13,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_debit_card_label, R.drawable.ocbc_debit_card, OCBC, R.drawable.ocbc_debit_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 14th
-		if(ocbcFairPricePlusVisaCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_fairpriceplus_visa_card_label, R.drawable.ocbc_fairpriceplus_visa_card, OCBC, R.drawable.ocbc_fairpriceplus_visa_card_nonticked);
+		if(ocbcNTUVisaGoldCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "14,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_fairpriceplus_visa_card_label, R.drawable.ocbc_fairpriceplus_visa_card, OCBC, R.drawable.ocbc_fairpriceplus_visa_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 15th
-		if(ocbcGoldMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_gold_mastercard_label, R.drawable.ocbc_gold_mastercard, OCBC, R.drawable.ocbc_gold_mastercard_nonticked);
+		if(ocbcPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "15,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_gold_mastercard_label, R.drawable.ocbc_gold_mastercard, OCBC, R.drawable.ocbc_gold_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 16th
-		if(ocbcIkeaFriendsVisaCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_ikea_friends_visacard_label, R.drawable.ocbc_ikea_friends_visa_card, OCBC, R.drawable.ocbc_ikea_friends_visa_card_nonticked);
+		if(ocbcRobinsonsVisaPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "16,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_ikea_friends_visacard_label, R.drawable.ocbc_ikea_friends_visa_card, OCBC, R.drawable.ocbc_ikea_friends_visa_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 17th
-		if(ocbcNTUVisaClassicCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_classic_card_label, R.drawable.ocbc_ntu_visa_classic_card, OCBC, R.drawable.ocbc_ntu_visa_classic_card_nonticked);
+		if(ocbcSMUDebitCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "17,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_classic_card_label, R.drawable.ocbc_ntu_visa_classic_card, OCBC, R.drawable.ocbc_ntu_visa_classic_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 18th
-		if(ocbcNTUVisaGoldCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_gold_card_label, R.drawable.ocbc_ntu_visa_gold_card, OCBC, R.drawable.ocbc_ntu_visa_gold_card_nonticked);
+		if(ocbcSMUPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "18,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_gold_card_label, R.drawable.ocbc_ntu_visa_gold_card, OCBC, R.drawable.ocbc_ntu_visa_gold_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 19th
-		if(ocbcPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_platinum_mastercard_label, R.drawable.ocbc_platinum_mastercard, OCBC, R.drawable.ocbc_platinum_mastercard_nonticked);
+		if(ocbcTitaniumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "19,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_platinum_mastercard_label, R.drawable.ocbc_platinum_mastercard, OCBC, R.drawable.ocbc_platinum_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 20th
-		if(ocbcRobinsonsPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_robinsons_platinum_card_label, R.drawable.ocbc_robinsons_platinum_card, OCBC, R.drawable.ocbc_robinsons_platinum_card_nonticked);
+		if(uPlusCreditDebitCards.isChecked()){
+			iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "20,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_robinsons_platinum_card_label, R.drawable.ocbc_robinsons_platinum_card, OCBC, R.drawable.ocbc_robinsons_platinum_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 21st
-		if(ocbcSMUDebitCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_smu_debit_cards_label, R.drawable.ocbc_smu_debit_cards, OCBC, R.drawable.ocbc_smu_debit_cards_nonticked);
+		if(ocbcYesCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "21,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_smu_debit_cards_label, R.drawable.ocbc_smu_debit_cards, OCBC, R.drawable.ocbc_smu_debit_cards_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 22nd
-		if(ocbcSMUPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_smu_platinum_mastercard_label, R.drawable.ocbc_smu_platinum_mastercard, OCBC, R.drawable.ocbc_smu_platinum_mastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "22,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_smu_platinum_mastercard_label, R.drawable.ocbc_smu_platinum_mastercard, OCBC, R.drawable.ocbc_smu_platinum_mastercard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 23rd
-		if(ocbcTitaniumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_titanium_mastercard_label, R.drawable.ocbc_titanium_mastercard, OCBC, R.drawable.ocbc_titanium_mastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "23,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_titanium_mastercard_label, R.drawable.ocbc_titanium_mastercard, OCBC, R.drawable.ocbc_titanium_mastercard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 24th
-		if(ocbcUPlusVisaCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_uplus_visa_card_label, R.drawable.ocbc_uplus_visa_card, OCBC, R.drawable.ocbc_uplus_visa_card_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "24,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_uplus_visa_card_label, R.drawable.ocbc_uplus_visa_card, OCBC, R.drawable.ocbc_uplus_visa_card_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 25th
-		if(ocbcUPlusPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_uplus_platinum_card_label, R.drawable.ocbc_uplus_platinum_card, OCBC, R.drawable.ocbc_uplus_platinum_card_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "25,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_uplus_platinum_card_label, R.drawable.ocbc_uplus_platinum_card, OCBC, R.drawable.ocbc_uplus_platinum_card_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 26th
-		if(ocbcYesDebitCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbc_yes_debit_card_label, R.drawable.ocbc_yes_debit_card, OCBC, R.drawable.ocbc_yes_debit_card_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "26,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbc_yes_debit_card_label, R.drawable.ocbc_yes_debit_card, OCBC, R.drawable.ocbc_yes_debit_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
@@ -861,40 +796,30 @@ public class SettingsPage extends SingtelDiningActivity {
 		dbsLiveFreshPlatinum = (CheckBox)findViewById(R.id.livefreshplatinum);
 		dbsLiveFreshPlatinum.setOnClickListener(new CheckListener());
 		
-		ocbcArtsPlatinumCard = (CheckBox)findViewById(R.id.artsplatinumcard);
-		ocbcArtsPlatinumCard.setOnClickListener(new CheckListener());
-		ocbcBestDenkiPlatinumCard = (CheckBox)findViewById(R.id.bestdenkiplatinumcard);
-		ocbcBestDenkiPlatinumCard.setOnClickListener(new CheckListener());
-		ocbcClassicVisaCard = (CheckBox)findViewById(R.id.classicvisacard);
-		ocbcClassicVisaCard.setOnClickListener(new CheckListener());
-		ocbcDebitCard = (CheckBox)findViewById(R.id.debitcard);
-		ocbcDebitCard.setOnClickListener(new CheckListener());
-		ocbcFairPricePlusVisaCard = (CheckBox)findViewById(R.id.fairpriceplusvisacard);
-		ocbcFairPricePlusVisaCard.setOnClickListener(new CheckListener());
-		ocbcGoldMasterCard = (CheckBox)findViewById(R.id.goldmastercard);
-		ocbcGoldMasterCard.setOnClickListener(new CheckListener());
-		ocbcIkeaFriendsVisaCard = (CheckBox)findViewById(R.id.ikeafriendsvisacard);
-		ocbcIkeaFriendsVisaCard.setOnClickListener(new CheckListener());
-		ocbcNTUVisaClassicCard = (CheckBox)findViewById(R.id.ntuvisaclassiccard);
-		ocbcNTUVisaClassicCard.setOnClickListener(new CheckListener());
-		ocbcNTUVisaGoldCard = (CheckBox)findViewById(R.id.ntuvisagoldcard);
+		ocbcArtsPlatinumMasterCard = (CheckBox)findViewById(R.id.ocbcartsplatinummastercard);
+		ocbcArtsPlatinumMasterCard.setOnClickListener(new CheckListener());
+		bestOCBCPlatinumMasterCard = (CheckBox)findViewById(R.id.bestocbcplatinummastercard);
+		bestOCBCPlatinumMasterCard.setOnClickListener(new CheckListener());
+		fairPricePlusCreditDebitCards = (CheckBox)findViewById(R.id.fairpricepluscreditdebitcards);
+		fairPricePlusCreditDebitCards.setOnClickListener(new CheckListener());
+		ocbcIKEAFriedsVisaCard = (CheckBox)findViewById(R.id.ocbcikeafriedsvisacard);
+		ocbcIKEAFriedsVisaCard.setOnClickListener(new CheckListener());
+		ocbcNTUVisaGoldCard = (CheckBox)findViewById(R.id.ocbcntuvisagoldcard);
 		ocbcNTUVisaGoldCard.setOnClickListener(new CheckListener());
-		ocbcPlatinumMasterCard = (CheckBox)findViewById(R.id.platinummastercard);
+		ocbcPlatinumMasterCard = (CheckBox)findViewById(R.id.ocbcplatinummastercard);
 		ocbcPlatinumMasterCard.setOnClickListener(new CheckListener());
-		ocbcRobinsonsPlatinumCard = (CheckBox)findViewById(R.id.robinsonsplatinumcard);
-		ocbcRobinsonsPlatinumCard.setOnClickListener(new CheckListener());
-		ocbcSMUDebitCard = (CheckBox)findViewById(R.id.smudebitcards);
+		ocbcRobinsonsVisaPlatinumCard = (CheckBox)findViewById(R.id.ocbcrobinsonsvisaplatinumcard);
+		ocbcRobinsonsVisaPlatinumCard.setOnClickListener(new CheckListener());
+		ocbcSMUDebitCard = (CheckBox)findViewById(R.id.ocbcsmudebitcard);
 		ocbcSMUDebitCard.setOnClickListener(new CheckListener());
-		ocbcSMUPlatinumMasterCard = (CheckBox)findViewById(R.id.smuplatinummastercard);
+		ocbcSMUPlatinumMasterCard = (CheckBox)findViewById(R.id.ocbcsmuplatinummastercard);
 		ocbcSMUPlatinumMasterCard.setOnClickListener(new CheckListener());
-		ocbcTitaniumMasterCard = (CheckBox)findViewById(R.id.titaniummastercard);
+		ocbcTitaniumMasterCard = (CheckBox)findViewById(R.id.ocbctitaniummastercard);
 		ocbcTitaniumMasterCard.setOnClickListener(new CheckListener());
-		ocbcUPlusVisaCard = (CheckBox)findViewById(R.id.uplusvisacard);
-		ocbcUPlusVisaCard.setOnClickListener(new CheckListener());
-		ocbcUPlusPlatinumCard = (CheckBox)findViewById(R.id.uplusplatinumcard);
-		ocbcUPlusPlatinumCard.setOnClickListener(new CheckListener());
-		ocbcYesDebitCard = (CheckBox)findViewById(R.id.yesdebitcard);
-		ocbcYesDebitCard.setOnClickListener(new CheckListener());
+		uPlusCreditDebitCards = (CheckBox)findViewById(R.id.upluscreditdebitcards);
+		uPlusCreditDebitCards.setOnClickListener(new CheckListener());
+		ocbcYesCard = (CheckBox)findViewById(R.id.ocbcyescard);
+		ocbcYesCard.setOnClickListener(new CheckListener());
 		
 		dbsPlatinumMasterCard = (CheckBox)findViewById(R.id.dbsplatinummastercard);
 		dbsPlatinumMasterCard.setOnClickListener(new CheckListener());
@@ -988,29 +913,17 @@ public class SettingsPage extends SingtelDiningActivity {
 		case Constants.DBSLIVEFRESHPLATINUM:
 			dbsLiveFreshPlatinum.setChecked(true);
 			break;
-		case Constants.OCBCARTSPLATINUMCARD:
-			ocbcArtsPlatinumCard.setChecked(true);
+		case Constants.OCBCARTSPLATINUMMASTERCARD:
+			ocbcArtsPlatinumMasterCard.setChecked(true);
 			break;
-		case Constants.OCBCBESTDENKIPLATINUMCARD:
-			ocbcBestDenkiPlatinumCard.setChecked(true);
+		case Constants.BESTOCBCPLATINUMMASTERCARD:
+			bestOCBCPlatinumMasterCard.setChecked(true);
 			break;
-		case Constants.OCBCCLASSICVISACARD:
-			ocbcClassicVisaCard.setChecked(true);
-			break;
-		case Constants.OCBCDEBITCARD:
-			ocbcDebitCard.setChecked(true);
-			break;
-		case Constants.OCBCFAIRPRICEPLUSVISACARD:
-			ocbcFairPricePlusVisaCard.setChecked(true);
-			break;
-		case Constants.OCBCGOLDMASTERCARD:
-			ocbcGoldMasterCard.setChecked(true);
+		case Constants.FAIRPRICEPLUSCREDITDEBITCARDS:
+			fairPricePlusCreditDebitCards.setChecked(true);
 			break;
 		case Constants.OCBCIKEAFRIENDSVISACARD:
-			ocbcIkeaFriendsVisaCard.setChecked(true);
-			break;
-		case Constants.OCBCNTUVISACLASSICCARD:
-			ocbcNTUVisaClassicCard.setChecked(true);
+			ocbcIKEAFriedsVisaCard.setChecked(true);
 			break;
 		case Constants.OCBCNTUVISAGOLDCARD:
 			ocbcNTUVisaGoldCard.setChecked(true);
@@ -1018,8 +931,8 @@ public class SettingsPage extends SingtelDiningActivity {
 		case Constants.OCBCPLATINUMMASTERCARD:
 			ocbcPlatinumMasterCard.setChecked(true);
 			break;
-		case Constants.OCBCROBINSONSPLATINUMCARD:
-			ocbcRobinsonsPlatinumCard.setChecked(true);
+		case Constants.OCBCROBINSONSVISAPLATINUMCARD:
+			ocbcRobinsonsVisaPlatinumCard.setChecked(true);
 			break;
 		case Constants.OCBCSMUDEBITCARD:
 			ocbcSMUDebitCard.setChecked(true);
@@ -1030,14 +943,11 @@ public class SettingsPage extends SingtelDiningActivity {
 		case Constants.OCBCTITANIUMMASTERCARD:
 			ocbcTitaniumMasterCard.setChecked(true);
 			break;
-		case Constants.OCBCUPLUSVISACARD:
-			ocbcUPlusVisaCard.setChecked(true);
+		case Constants.UPLUSCREDITDEBITCARDS:
+			uPlusCreditDebitCards.setChecked(true);
 			break;
-		case Constants.OCBCUPLUSPLATINUMCARD:
-			ocbcUPlusPlatinumCard.setChecked(true);
-			break;
-		case Constants.OCBCYESDEBITCARD:
-			ocbcYesDebitCard.setChecked(true);
+		case Constants.OCBCYESCARD:
+			ocbcYesCard.setChecked(true);
 			break;
 		case Constants.DBSPLATINUMMASTERCARD:
 			dbsPlatinumMasterCard.setChecked(true);
@@ -1114,23 +1024,18 @@ public class SettingsPage extends SingtelDiningActivity {
 		dbsLiveFreshPlatinum.setChecked(true);
 		dbsPlatinumMasterCard.setChecked(true);
 
-		ocbcArtsPlatinumCard.setChecked(true);
-		ocbcBestDenkiPlatinumCard.setChecked(true);
-		ocbcClassicVisaCard.setChecked(true);
-		ocbcDebitCard.setChecked(true);
-		ocbcFairPricePlusVisaCard.setChecked(true);
-		ocbcGoldMasterCard.setChecked(true);
-		ocbcIkeaFriendsVisaCard.setChecked(true);
-		ocbcNTUVisaClassicCard.setChecked(true);
+		ocbcArtsPlatinumMasterCard.setChecked(true);
+		bestOCBCPlatinumMasterCard.setChecked(true);
+		fairPricePlusCreditDebitCards.setChecked(true);
+		ocbcIKEAFriedsVisaCard.setChecked(true);
 		ocbcNTUVisaGoldCard.setChecked(true);
 		ocbcPlatinumMasterCard.setChecked(true);
-		ocbcRobinsonsPlatinumCard.setChecked(true);
+		ocbcRobinsonsVisaPlatinumCard.setChecked(true);
 		ocbcSMUDebitCard.setChecked(true);
 		ocbcSMUPlatinumMasterCard.setChecked(true);
 		ocbcTitaniumMasterCard.setChecked(true);
-		ocbcUPlusVisaCard.setChecked(true);
-		ocbcUPlusPlatinumCard.setChecked(true);
-		ocbcYesDebitCard.setChecked(true);
+		uPlusCreditDebitCards.setChecked(true);
+		ocbcYesCard.setChecked(true);
 
 		singtelUOBVisaPlatinumCard.setChecked(true);
 		uobPRVIAmericanExpressCard.setChecked(true);
@@ -1164,23 +1069,18 @@ public class SettingsPage extends SingtelDiningActivity {
 		dbsBlackAmericanExpress.setChecked(false);
 		dbsLiveFreshPlatinum.setChecked(false);
 
-		ocbcArtsPlatinumCard.setChecked(false);
-		ocbcBestDenkiPlatinumCard.setChecked(false);
-		ocbcClassicVisaCard.setChecked(false);
-		ocbcDebitCard.setChecked(false);
-		ocbcFairPricePlusVisaCard.setChecked(false);
-		ocbcGoldMasterCard.setChecked(false);
-		ocbcIkeaFriendsVisaCard.setChecked(false);
-		ocbcNTUVisaClassicCard.setChecked(false);
+		ocbcArtsPlatinumMasterCard.setChecked(false);
+		bestOCBCPlatinumMasterCard.setChecked(false);
+		fairPricePlusCreditDebitCards.setChecked(false);
+		ocbcIKEAFriedsVisaCard.setChecked(false);
 		ocbcNTUVisaGoldCard.setChecked(false);
 		ocbcPlatinumMasterCard.setChecked(false);
-		ocbcRobinsonsPlatinumCard.setChecked(false);
+		ocbcRobinsonsVisaPlatinumCard.setChecked(false);
 		ocbcSMUDebitCard.setChecked(false);
 		ocbcSMUPlatinumMasterCard.setChecked(false);
 		ocbcTitaniumMasterCard.setChecked(false);
-		ocbcUPlusVisaCard.setChecked(false);
-		ocbcUPlusPlatinumCard.setChecked(false);
-		ocbcYesDebitCard.setChecked(false);
+		uPlusCreditDebitCards.setChecked(false);
+		ocbcYesCard.setChecked(false);
 
 		dbsPlatinumMasterCard.setChecked(false);
 		
@@ -1234,44 +1134,33 @@ public class SettingsPage extends SingtelDiningActivity {
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.dbs_live_fresh_platinum_card_label, R.drawable.dbs_live_fresh_platinum_card, DBS, R.drawable.dbs_live_fresh_platinum_card_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_arts_platinum_card_label, R.drawable.ocbc_arts_platinum_card, OCBC, R.drawable.ocbc_arts_platinum_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_best_denki_platinum_card_label, R.drawable.ocbc_best_denki_platinum_card, OCBC, R.drawable.ocbc_best_denki_platinum_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_classic_visa_card_label, R.drawable.ocbc_classic_visa_card, OCBC, R.drawable.ocbc_classic_visa_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_debit_card_label, R.drawable.ocbc_debit_card, OCBC, R.drawable.ocbc_debit_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_fairpriceplus_visa_card_label, R.drawable.ocbc_fairpriceplus_visa_card, OCBC, R.drawable.ocbc_fairpriceplus_visa_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_gold_mastercard_label, R.drawable.ocbc_gold_mastercard, OCBC, R.drawable.ocbc_gold_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_ikea_friends_visacard_label, R.drawable.ocbc_ikea_friends_visa_card, OCBC, R.drawable.ocbc_ikea_friends_visa_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_classic_card_label, R.drawable.ocbc_ntu_visa_classic_card, OCBC, R.drawable.ocbc_ntu_visa_classic_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_ntu_visa_gold_card_label, R.drawable.ocbc_ntu_visa_gold_card, OCBC, R.drawable.ocbc_ntu_visa_gold_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_platinum_mastercard_label, R.drawable.ocbc_platinum_mastercard, OCBC, R.drawable.ocbc_platinum_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_robinsons_platinum_card_label, R.drawable.ocbc_robinsons_platinum_card, OCBC, R.drawable.ocbc_robinsons_platinum_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_smu_debit_cards_label, R.drawable.ocbc_smu_debit_cards, OCBC, R.drawable.ocbc_smu_debit_cards_nonticked);
-			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_smu_platinum_mastercard_label, R.drawable.ocbc_smu_platinum_mastercard, OCBC, R.drawable.ocbc_smu_platinum_mastercard_nonticked);
-			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_titanium_mastercard_label, R.drawable.ocbc_titanium_mastercard, OCBC, R.drawable.ocbc_titanium_mastercard_nonticked);
-			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_uplus_visa_card_label, R.drawable.ocbc_uplus_visa_card, OCBC, R.drawable.ocbc_uplus_visa_card_nonticked);
-			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_uplus_platinum_card_label, R.drawable.ocbc_uplus_platinum_card, OCBC, R.drawable.ocbc_uplus_platinum_card_nonticked);
-			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.ocbc_yes_debit_card_label, R.drawable.ocbc_yes_debit_card, OCBC, R.drawable.ocbc_yes_debit_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
 			defaultAll.add(iInfo);
 			
-			// -------------------
 			iInfo = new ImageInfo(R.drawable.singteluobvisaplatinumcard_label, R.drawable.singteluobvisaplatinumcard, UOB, R.drawable.singteluobvisaplatinumcard_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.uobprviamericanexpresscard_label, R.drawable.uobprviamericanexpresscard, UOB, R.drawable.uobprviamericanexpresscard_nonticked);

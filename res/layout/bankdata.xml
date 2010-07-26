@@ -270,6 +270,7 @@
 						android:typeface="sans" />
 				</LinearLayout>
 			
+				<!-- OCBC Arts Platinum MasterCard -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -277,7 +278,7 @@
 					android:orientation="horizontal">
 				
 					<CheckBox
-						android:id="@+id/artsplatinumcard"
+						android:id="@+id/ocbcartsplatinummastercard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -290,9 +291,10 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Arts Platinum Card" />			
+						android:text="OCBC Arts Platinum MasterCard" />			
 				</LinearLayout>
 			
+				<!-- Best-OCBC Platinum MasterCard -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -300,7 +302,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/bestdenkiplatinumcard"
+						android:id="@+id/bestocbcplatinummastercard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -313,9 +315,58 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Best Denki Platinum Card" />			
+						android:text="Best-OCBC Platinum MasterCard" />			
 				</LinearLayout>
 			
+				<!-- FairPrice Plus Credit/Debit Cards -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/fairpricepluscreditdebitcards"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="FairPrice Plus Credit/Debit Cards" />			
+				</LinearLayout>
+				
+				<!-- OCBC IKEA friends VISA Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:background="@drawable/table_row"
+					android:orientation="horizontal">
+				
+					<CheckBox
+						android:id="@+id/ocbcikeafriedsvisacard"
+						android:checked="true"
+						android:layout_marginLeft="10px"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12px"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="OCBC IKEA friends VISA Card" />			
+				</LinearLayout>
+			
+				<!-- OCBC NTU Visa Gold Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -323,146 +374,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/classicvisacard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-			
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Classic Visa Card" />			
-				</LinearLayout>
-			
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-					
-					<CheckBox
-						android:id="@+id/debitcard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-			
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Debit Card" />			
-				</LinearLayout>
-			
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-				
-					<CheckBox
-						android:id="@+id/fairpriceplusvisacard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-			
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC FairPricePlus Visa Card" />			
-				</LinearLayout>
-				
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-					
-					<CheckBox
-						android:id="@+id/goldmastercard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-			
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Gold MasterCard" />			
-				</LinearLayout>
-				
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-				
-					<CheckBox
-						android:id="@+id/ikeafriendsvisacard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-			
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Ikea Friends Visa Card" />			
-				</LinearLayout>
-			
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-				
-					<CheckBox
-						android:id="@+id/ntuvisaclassiccard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-			
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC NTU Visa Classic Card" />			
-				
-				</LinearLayout>
-			
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-					
-					<CheckBox
-						android:id="@+id/ntuvisagoldcard"
+						android:id="@+id/ocbcntuvisagoldcard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -478,6 +390,7 @@
 						android:text="OCBC NTU Visa Gold Card" />			
 				</LinearLayout>
 			
+				<!-- OCBC Platinum MasterCard -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -485,7 +398,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/platinummastercard"
+						android:id="@+id/ocbcplatinummastercard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -500,7 +413,8 @@
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Platinum MasterCard" />			
 				</LinearLayout>
-			
+				
+				<!-- OCBC Robinsons Visa Platinum Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -508,7 +422,7 @@
 					android:orientation="horizontal">
 				
 					<CheckBox
-						android:id="@+id/robinsonsplatinumcard"
+						android:id="@+id/ocbcrobinsonsvisaplatinumcard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -521,9 +435,10 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Robinsons Platinum Card" />			
+						android:text="OCBC Robinsons Visa Platinum Card" />			
 				</LinearLayout>
-			
+				
+				<!-- OCBC SMU Debit Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -531,7 +446,7 @@
 					android:orientation="horizontal">
 			
 					<CheckBox
-						android:id="@+id/smudebitcards"
+						android:id="@+id/ocbcsmudebitcard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -544,9 +459,10 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC SMU Debit Cards" />			
+						android:text="OCBC SMU Debit Card" />			
 				</LinearLayout>
 				
+				<!-- OCBC SMU Platinum MasterCard -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -554,7 +470,7 @@
 					android:orientation="horizontal">
 				
 					<CheckBox
-						android:id="@+id/smuplatinummastercard"
+						android:id="@+id/ocbcsmuplatinummastercard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -570,6 +486,7 @@
 						android:text="OCBC SMU Platinum MasterCard" />			
 				</LinearLayout>
 			
+				<!-- OCBC Titanium MasterCard -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -577,7 +494,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/titaniummastercard"
+						android:id="@+id/ocbctitaniummastercard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -593,6 +510,7 @@
 						android:text="OCBC Titanium MasterCard" />			
 				</LinearLayout>
 				
+				<!-- Uplus Credit/Debit Cards -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -600,7 +518,7 @@
 					android:orientation="horizontal">
 				
 					<CheckBox
-						android:id="@+id/uplusvisacard"
+						android:id="@+id/upluscreditdebitcards"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -613,9 +531,10 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC U Plus Visa Card" />			
+						android:text="Uplus Credit/Debit Cards" />			
 				</LinearLayout>
 			
+				<!-- OCBC YES! Card -->
 				<LinearLayout
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
@@ -623,30 +542,7 @@
 					android:orientation="horizontal">
 					
 					<CheckBox
-						android:id="@+id/uplusplatinumcard"
-						android:checked="true"
-						android:layout_marginLeft="10px"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-				
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12px"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC UPlus Platinum Card" />			
-				</LinearLayout>
-			
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:background="@drawable/table_row"
-					android:orientation="horizontal">
-					
-					<CheckBox
-						android:id="@+id/yesdebitcard"
+						android:id="@+id/ocbcyescard"
 						android:checked="true"
 						android:layout_marginLeft="10px"
 						android:layout_width="wrap_content"
@@ -659,7 +555,7 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="OCBC Yes Debit Card" />			
+						android:text="OCBC YES! Card" />			
 				</LinearLayout>   				
    			</LinearLayout>
 			
