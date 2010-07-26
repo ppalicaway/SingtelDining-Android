@@ -45,46 +45,57 @@ public interface Constants {
 	
 	public static final String SITE_TNC = "http://www.appzone.singtel.com/singtel/content_tAndC.do";
 	
-	public static final int CBCLEARPLATINUMVISA = 1;
-	public static final int CBDIVIDENDPLATINUM = 2;
-	public static final int CBPARAGONMASTERCARD = 3;
-	public static final int CBPARAGONVISA = 4;
-	public static final int CBPREMIEREMILESVISA = 5;
-	public static final int CBSMRTCARD = 6;
-	public static final int DBSBLACKAMERICANEXPRESS = 7;
-	public static final int DBSLIVEFRESHPLATINUM = 8;
-	public static final int DBSPLATINUMMASTERCARD = 9;
+	// Citibank Cards
+	public static final int CITIPLATINUMVISAMASTERCARD = 1;
+	public static final int CITIDIVIDENDCARD = 2;
+	public static final int CITICLEARPLATINUMCARD = 3;
+	public static final int CITISMRTPLATINUMVISACARD = 4;
+	public static final int CITITANGSPLATINUMVISACARD = 5;
+	public static final int CITIPARAGONPLATINUMMASTERCARD = 6;
+	public static final int CITIPREMIERMILESCARD = 7;
+	public static final int CITIBANKVISADEBITCARD = 8;
+	public static final int CITIBUSINESSCARD = 9;
+	public static final int CITIBANKBUSINESSGOLDCARD = 10;
 	
-	public static final int OCBCARTSPLATINUMMASTERCARD = 10;
-	public static final int BESTOCBCPLATINUMMASTERCARD = 11;
-	public static final int FAIRPRICEPLUSCREDITDEBITCARDS = 12;
-	public static final int OCBCIKEAFRIENDSVISACARD = 13;
-	public static final int OCBCNTUVISAGOLDCARD = 14;
-	public static final int OCBCPLATINUMMASTERCARD = 15;
-	public static final int OCBCROBINSONSVISAPLATINUMCARD = 16;
-	public static final int OCBCSMUDEBITCARD = 17;
-	public static final int OCBCSMUPLATINUMMASTERCARD = 18;
-	public static final int OCBCTITANIUMMASTERCARD = 19;
-	public static final int UPLUSCREDITDEBITCARDS = 20;
-	public static final int OCBCYESCARD = 21;
+	// DBS Cards
+	public static final int DBSBLACKAMERICANEXPRESS = 11;
+	public static final int DBSLIVEFRESHPLATINUM = 12;
 	
-	public static final int SINGTELUOBVISAPLATINUMCARD = 27;
-	public static final int UOBPRVIAMERICANEXPRESSCARD = 28;
-	public static final int UOBVISASIGNATURECARD = 29;
-	public static final int UOBONECARD = 30;
-	public static final int UOBPREFERREDPLATINUMCARDVISA = 31;
-	public static final int UOBPREFERREDPLATINUMCARDMASTERCARD = 32;
-	public static final int UOBLADYSCARD = 33;
-	public static final int UOBLADYSPLATINUMCARD = 34;
-	public static final int UOBLADYSSOLITAIRECARD = 35;
-	public static final int UOBVISAINFINITECARD = 36;
-	public static final int UOBPREFERREDWORLDMASTERCARD = 37;
-	public static final int UOBVISAGOLDCARD = 38;
-	public static final int UOBVISACLASSICCARD = 39;
-	public static final int UOBMASTERCARDGOLDCARD = 40;
-	public static final int UOBMASTERCARDCLASSICCARD = 41;
-	public static final int METROUOBPLATINUMCARD = 42;
-	public static final int UOBJCBPLATINUMCARD = 43;
-	public static final int UOBCHINAUNIONPAYPLATINUMCARD = 44;
-	public static final int UOBDIRECTVISACARD = 45;
+	// OCBC Cards
+	public static final int OCBCARTSPLATINUMMASTERCARD = 13;
+	public static final int BESTOCBCPLATINUMMASTERCARD = 14;
+	public static final int FAIRPRICEPLUSCREDITDEBITCARDS = 15;
+	public static final int OCBCIKEAFRIENDSVISACARD = 16;
+	public static final int OCBCNTUVISAGOLDCARD = 17;
+	public static final int OCBCPLATINUMMASTERCARD = 18;
+	public static final int OCBCROBINSONSVISAPLATINUMCARD = 19;
+	public static final int OCBCSMUDEBITCARD = 20;
+	public static final int OCBCSMUPLATINUMMASTERCARD = 21;
+	public static final int OCBCTITANIUMMASTERCARD = 22;
+	public static final int UPLUSCREDITDEBITCARDS = 23;
+	public static final int OCBCYESCARD = 24;
+	
+	// POSB Card
+	public static final int DBSPLATINUMMASTERCARD = 25;
+	
+	// UOB Cards
+	public static final int SINGTELUOBVISAPLATINUMCARD = 26;
+	public static final int UOBPRVIAMERICANEXPRESSCARD = 27;
+	public static final int UOBVISASIGNATURECARD = 28;
+	public static final int UOBONECARD = 29;
+	public static final int UOBPREFERREDPLATINUMCARDVISA = 30;
+	public static final int UOBPREFERREDPLATINUMCARDMASTERCARD = 31;
+	public static final int UOBLADYSCARD = 32;
+	public static final int UOBLADYSPLATINUMCARD = 33;
+	public static final int UOBLADYSSOLITAIRECARD = 34;
+	public static final int UOBVISAINFINITECARD = 35;
+	public static final int UOBPREFERREDWORLDMASTERCARD = 36;
+	public static final int UOBVISAGOLDCARD = 37;
+	public static final int UOBVISACLASSICCARD = 38;
+	public static final int UOBMASTERCARDGOLDCARD = 39;
+	public static final int UOBMASTERCARDCLASSICCARD = 40;
+	public static final int METROUOBPLATINUMCARD = 41;
+	public static final int UOBJCBPLATINUMCARD = 42;
+	public static final int UOBCHINAUNIONPAYPLATINUMCARD = 43;
+	public static final int UOBDIRECTVISACARD = 44;
 }

@@ -32,12 +32,16 @@ public class SettingsPage extends SingtelDiningActivity {
 	private final static String OCBC = "OCBC";
 	private final static String UOB = "UOB";
 	
-	private CheckBox cbClearPlatinumVisa;
-	private CheckBox cbDividendPlatinum;
-	private CheckBox cbParagonMasterCard;
-	private CheckBox cbParagonVisa;
-	private CheckBox cbPremiereMilesVisa;
-	private CheckBox cbSMRTCard;
+	private CheckBox citiPlatinumVisaMasterCard;
+	private CheckBox citiDividendCard;
+	private CheckBox citiClearPlatinumCard;
+	private CheckBox citiSMRTPlatinumVisaCard;
+	private CheckBox citiTangsPlatinumVisaCard;
+	private CheckBox citiParagonPlatinumMasterCard;
+	private CheckBox citiPremierMilesCard;
+	private CheckBox citibankVisaDebitCard;
+	private CheckBox citiBusinessCard;
+	private CheckBox citibankBusinessGoldCard;
 
 	private CheckBox dbsBlackAmericanExpress;
 	private CheckBox dbsLiveFreshPlatinum;
@@ -229,479 +233,527 @@ public class SettingsPage extends SingtelDiningActivity {
 		String preference = "";
 		
 		// 1st
-		if(cbClearPlatinumVisa.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citibank_clear_platinum_visa_label, R.drawable.citibank_clear_platinum_visa, CITIBANK, R.drawable.citibank_clear_platinum_visa_nonticked);
+		if(citiPlatinumVisaMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citiplatinumvisamastercard_label, R.drawable.citiplatinumvisamastercard, CITIBANK, R.drawable.citiplatinumvisamastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "1,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citibank_clear_platinum_visa_label, R.drawable.citibank_clear_platinum_visa, CITIBANK, R.drawable.citibank_clear_platinum_visa_nonticked);
+			iInfo = new ImageInfo(R.drawable.citiplatinumvisamastercard_label, R.drawable.citiplatinumvisamastercard, CITIBANK, R.drawable.citiplatinumvisamastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 2nd
-		if(cbDividendPlatinum.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citibank_dividend_platinum_mastercard_label, R.drawable.citibank_dividend_platinum_mastercard, CITIBANK, R.drawable.citibank_dividend_platinum_mastercard_nonticked);
+		if(citiDividendCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citidividendcard_label, R.drawable.citidividendcard, CITIBANK, R.drawable.citidividendcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "2,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citibank_dividend_platinum_mastercard_label, R.drawable.citibank_dividend_platinum_mastercard, CITIBANK, R.drawable.citibank_dividend_platinum_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citidividendcard_label, R.drawable.citidividendcard, CITIBANK, R.drawable.citidividendcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 3rd
-		if(cbParagonMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citibank_paragon_mastercard_label, R.drawable.citibank_paragon_mastercard, CITIBANK, R.drawable.citibank_paragon_mastercard_nonticked);
+		if(citiClearPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citiclearplatinumcard_label, R.drawable.citiclearplatinumcard, CITIBANK, R.drawable.citiclearplatinumcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "3,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citibank_paragon_mastercard_label, R.drawable.citibank_paragon_mastercard, CITIBANK, R.drawable.citibank_paragon_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citiclearplatinumcard_label, R.drawable.citiclearplatinumcard, CITIBANK, R.drawable.citiclearplatinumcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 4th
-		if(cbParagonVisa.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citibank_paragon_visa_label, R.drawable.citibank_paragon_visa, CITIBANK, R.drawable.citibank_paragon_visa_nonticked);
+		if(citiSMRTPlatinumVisaCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "4,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citibank_paragon_visa_label, R.drawable.citibank_paragon_visa, CITIBANK, R.drawable.citibank_paragon_visa_nonticked);
+			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 5th
-		if(cbPremiereMilesVisa.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citibank_premiermiles_visa_signature_label, R.drawable.citibank_premiermiles_visa_signature, CITIBANK, R.drawable.citibank_premiermiles_visa_signature_nonticked);
+		if(citiTangsPlatinumVisaCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "5,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citibank_premiermiles_visa_signature_label, R.drawable.citibank_premiermiles_visa_signature, CITIBANK, R.drawable.citibank_premiermiles_visa_signature_nonticked);
+			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 6th
-		if(cbSMRTCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citibank_smrt_card_label, R.drawable.citibank_smrt_card, CITIBANK, R.drawable.citibank_smrt_card_nonticked);
+		if(citiParagonPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "6,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citibank_smrt_card_label, R.drawable.citibank_smrt_card, CITIBANK, R.drawable.citibank_smrt_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
-
+		
 		// 7th
-		if(dbsBlackAmericanExpress.isChecked()){
-			iInfo = new ImageInfo(R.drawable.dbs_black_american_express_card_label, R.drawable.dbs_black_american_express_card, DBS, R.drawable.dbs_black_american_express_card_nonticked);
+		if(citiPremierMilesCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "7,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.dbs_black_american_express_card_label, R.drawable.dbs_black_american_express_card, DBS, R.drawable.dbs_black_american_express_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 8th
-		if(dbsLiveFreshPlatinum.isChecked()){
-			iInfo = new ImageInfo(R.drawable.dbs_live_fresh_platinum_card_label, R.drawable.dbs_live_fresh_platinum_card, DBS, R.drawable.dbs_live_fresh_platinum_card_nonticked);
+		if(citibankVisaDebitCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citibankvisadebitcard_label, R.drawable.citibankvisadebitcard, CITIBANK, R.drawable.citibankvisadebitcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "8,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.dbs_live_fresh_platinum_card_label, R.drawable.dbs_live_fresh_platinum_card, DBS, R.drawable.dbs_live_fresh_platinum_card_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 10th
-		if(ocbcArtsPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "10,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 11th
-		if(bestOCBCPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "11,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 12th
-		if(fairPricePlusCreditDebitCards.isChecked()){
-			iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "12,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 13th
-		if(ocbcIKEAFriedsVisaCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "13,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 14th
-		if(ocbcNTUVisaGoldCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "14,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 15th
-		if(ocbcPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "15,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 16th
-		if(ocbcRobinsonsVisaPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "16,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 17th
-		if(ocbcSMUDebitCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "17,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 18th
-		if(ocbcSMUPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "18,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 19th
-		if(ocbcTitaniumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "19,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 20th
-		if(uPlusCreditDebitCards.isChecked()){
-			iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "20,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 21st
-		if(ocbcYesCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "21,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citibankvisadebitcard_label, R.drawable.citibankvisadebitcard, CITIBANK, R.drawable.citibankvisadebitcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 9th
-		if(dbsPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
+		if(citiBusinessCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citibusinesscard_label, R.drawable.citibusinesscard, CITIBANK, R.drawable.citibusinesscard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "9,";
 		}
 		else {
+			iInfo = new ImageInfo(R.drawable.citibusinesscard_label, R.drawable.citibusinesscard, CITIBANK, R.drawable.citibusinesscard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 10th
+		if(citibankBusinessGoldCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citibankbusinessgoldcard_label, R.drawable.citibankbusinessgoldcard, CITIBANK, R.drawable.citibankbusinessgoldcard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "10,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.citibankbusinessgoldcard_label, R.drawable.citibankbusinessgoldcard, CITIBANK, R.drawable.citibankbusinessgoldcard_nonticked);
+			untickedImages.add(iInfo);
+		}
+
+		// 11th
+		if(dbsBlackAmericanExpress.isChecked()){
+			iInfo = new ImageInfo(R.drawable.dbs_black_american_express_card_label, R.drawable.dbs_black_american_express_card, DBS, R.drawable.dbs_black_american_express_card_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "11,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.dbs_black_american_express_card_label, R.drawable.dbs_black_american_express_card, DBS, R.drawable.dbs_black_american_express_card_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 12th
+		if(dbsLiveFreshPlatinum.isChecked()){
+			iInfo = new ImageInfo(R.drawable.dbs_live_fresh_platinum_card_label, R.drawable.dbs_live_fresh_platinum_card, DBS, R.drawable.dbs_live_fresh_platinum_card_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "12,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.dbs_live_fresh_platinum_card_label, R.drawable.dbs_live_fresh_platinum_card, DBS, R.drawable.dbs_live_fresh_platinum_card_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 13th
+		if(ocbcArtsPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "13,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcartsplatinummastercard_label, R.drawable.ocbcartsplatinummastercard, OCBC, R.drawable.ocbcartsplatinummastercard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 14th
+		if(bestOCBCPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "14,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.bestocbcplatinummastercard_label, R.drawable.bestocbcplatinummastercard, OCBC, R.drawable.bestocbcplatinummastercard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 15th
+		if(fairPricePlusCreditDebitCards.isChecked()){
+			iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "15,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.fairpricepluscreditdebitcards_label, R.drawable.fairpricepluscreditdebitcards, OCBC, R.drawable.fairpricepluscreditdebitcards_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 16th
+		if(ocbcIKEAFriedsVisaCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "16,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcikeafriedsvisacard_label, R.drawable.ocbcikeafriedsvisacard, OCBC, R.drawable.ocbcikeafriedsvisacard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 17th
+		if(ocbcNTUVisaGoldCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "17,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcntuvisagoldcard_label, R.drawable.ocbcntuvisagoldcard, OCBC, R.drawable.ocbcntuvisagoldcard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 18th
+		if(ocbcPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "18,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcplatinummastercard_label, R.drawable.ocbcplatinummastercard, OCBC, R.drawable.ocbcplatinummastercard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 19th
+		if(ocbcRobinsonsVisaPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "19,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcrobinsonsvisaplatinumcard_label, R.drawable.ocbcrobinsonsvisaplatinumcard, OCBC, R.drawable.ocbcrobinsonsvisaplatinumcard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 20th
+		if(ocbcSMUDebitCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "20,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcsmudebitcard_label, R.drawable.ocbcsmudebitcard, OCBC, R.drawable.ocbcsmudebitcard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 21st
+		if(ocbcSMUPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "21,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcsmuplatinummastercard_label, R.drawable.ocbcsmuplatinummastercard, OCBC, R.drawable.ocbcsmuplatinummastercard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 22nd
+		if(ocbcTitaniumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "22,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbctitaniummastercard_label, R.drawable.ocbctitaniummastercard, OCBC, R.drawable.ocbctitaniummastercard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 23rd
+		if(uPlusCreditDebitCards.isChecked()){
+			iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "23,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.upluscreditdebitcards_label, R.drawable.upluscreditdebitcards, OCBC, R.drawable.upluscreditdebitcards_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 24th
+		if(ocbcYesCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "24,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.ocbcyescard_label, R.drawable.ocbcyescard, OCBC, R.drawable.ocbcyescard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 25th
+		if(dbsPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "25,";
+		}
+		else {
 			iInfo = new ImageInfo(R.drawable.dbs_platinum_mastercard_label, R.drawable.dbs_platinum_mastercard, DBS, R.drawable.dbs_platinum_mastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
-		// 27th
+		// 26th
 		if(singtelUOBVisaPlatinumCard.isChecked()){
 			iInfo = new ImageInfo(R.drawable.singteluobvisaplatinumcard_label, R.drawable.singteluobvisaplatinumcard, UOB, R.drawable.singteluobvisaplatinumcard_nonticked);
 			images.add(iInfo);
 			count++;
-			preference += "27,";
+			preference += "26,";
 		}
 		else {
 			iInfo = new ImageInfo(R.drawable.singteluobvisaplatinumcard_label, R.drawable.singteluobvisaplatinumcard, UOB, R.drawable.singteluobvisaplatinumcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 
-		// 28th
+		// 27th
 		if(uobPRVIAmericanExpressCard.isChecked()){
 			iInfo = new ImageInfo(R.drawable.uobprviamericanexpresscard_label, R.drawable.uobprviamericanexpresscard, UOB, R.drawable.uobprviamericanexpresscard_nonticked);
+			images.add(iInfo);
+			count++;
+			preference += "27,";
+		}
+		else {
+			iInfo = new ImageInfo(R.drawable.uobprviamericanexpresscard_label, R.drawable.uobprviamericanexpresscard, UOB, R.drawable.uobprviamericanexpresscard_nonticked);
+			untickedImages.add(iInfo);
+		}
+		
+		// 28th
+		if(uobVisaSignatureCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobvisasignaturecard_label, R.drawable.uobvisasignaturecard, UOB, R.drawable.uobvisasignaturecard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "28,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobprviamericanexpresscard_label, R.drawable.uobprviamericanexpresscard, UOB, R.drawable.uobprviamericanexpresscard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobvisasignaturecard_label, R.drawable.uobvisasignaturecard, UOB, R.drawable.uobvisasignaturecard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 29th
-		if(uobVisaSignatureCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobvisasignaturecard_label, R.drawable.uobvisasignaturecard, UOB, R.drawable.uobvisasignaturecard_nonticked);
+		if(uobOneCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobonecard_label, R.drawable.uobonecard, UOB, R.drawable.uobonecard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "29,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobvisasignaturecard_label, R.drawable.uobvisasignaturecard, UOB, R.drawable.uobvisasignaturecard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobonecard_label, R.drawable.uobonecard, UOB, R.drawable.uobonecard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 30th
-		if(uobOneCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobonecard_label, R.drawable.uobonecard, UOB, R.drawable.uobonecard_nonticked);
+		if(uobPreferredPlatinumCardVisa.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardvisa_label, R.drawable.uobpreferredplatinumcardvisa, UOB, R.drawable.uobpreferredplatinumcardvisa_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "30,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobonecard_label, R.drawable.uobonecard, UOB, R.drawable.uobonecard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardvisa_label, R.drawable.uobpreferredplatinumcardvisa, UOB, R.drawable.uobpreferredplatinumcardvisa_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 31st
-		if(uobPreferredPlatinumCardVisa.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardvisa_label, R.drawable.uobpreferredplatinumcardvisa, UOB, R.drawable.uobpreferredplatinumcardvisa_nonticked);
+		if(uobPreferredPlatinumCardMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardmastercard_label, R.drawable.uobpreferredplatinumcardmastercard, UOB, R.drawable.uobpreferredplatinumcardmastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "31,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardvisa_label, R.drawable.uobpreferredplatinumcardvisa, UOB, R.drawable.uobpreferredplatinumcardvisa_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardmastercard_label, R.drawable.uobpreferredplatinumcardmastercard, UOB, R.drawable.uobpreferredplatinumcardmastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 32nd
-		if(uobPreferredPlatinumCardMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardmastercard_label, R.drawable.uobpreferredplatinumcardmastercard, UOB, R.drawable.uobpreferredplatinumcardmastercard_nonticked);
+		if(uobLadysCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobladyscard_label, R.drawable.uobladyscard, UOB, R.drawable.uobladyscard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "32,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobpreferredplatinumcardmastercard_label, R.drawable.uobpreferredplatinumcardmastercard, UOB, R.drawable.uobpreferredplatinumcardmastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobladyscard_label, R.drawable.uobladyscard, UOB, R.drawable.uobladyscard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 33rd
-		if(uobLadysCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobladyscard_label, R.drawable.uobladyscard, UOB, R.drawable.uobladyscard_nonticked);
+		if(uobLadysPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobladysplatinumcard_label, R.drawable.uobladysplatinumcard, UOB, R.drawable.uobladysplatinumcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "33,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobladyscard_label, R.drawable.uobladyscard, UOB, R.drawable.uobladyscard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobladysplatinumcard_label, R.drawable.uobladysplatinumcard, UOB, R.drawable.uobladysplatinumcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 34th
-		if(uobLadysPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobladysplatinumcard_label, R.drawable.uobladysplatinumcard, UOB, R.drawable.uobladysplatinumcard_nonticked);
+		if(uobLadysSolitaireCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobladyssolitairecard_label, R.drawable.uobladyssolitairecard, UOB, R.drawable.uobladyssolitairecard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "34,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobladysplatinumcard_label, R.drawable.uobladysplatinumcard, UOB, R.drawable.uobladysplatinumcard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobladyssolitairecard_label, R.drawable.uobladyssolitairecard, UOB, R.drawable.uobladyssolitairecard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 35th
-		if(uobLadysSolitaireCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobladyssolitairecard_label, R.drawable.uobladyssolitairecard, UOB, R.drawable.uobladyssolitairecard_nonticked);
+		if(uobVisaInfiniteCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobvisainfinitecard_label, R.drawable.uobvisainfinitecard, UOB, R.drawable.uobvisainfinitecard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "35,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobladyssolitairecard_label, R.drawable.uobladyssolitairecard, UOB, R.drawable.uobladyssolitairecard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobvisainfinitecard_label, R.drawable.uobvisainfinitecard, UOB, R.drawable.uobvisainfinitecard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 36th
-		if(uobVisaInfiniteCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobvisainfinitecard_label, R.drawable.uobvisainfinitecard, UOB, R.drawable.uobvisainfinitecard_nonticked);
+		if(uobPreferredWorldMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobpreferredworldmastercard_label, R.drawable.uobpreferredworldmastercard, UOB, R.drawable.uobpreferredworldmastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "36,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobvisainfinitecard_label, R.drawable.uobvisainfinitecard, UOB, R.drawable.uobvisainfinitecard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobpreferredworldmastercard_label, R.drawable.uobpreferredworldmastercard, UOB, R.drawable.uobpreferredworldmastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 37th
-		if(uobPreferredWorldMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobpreferredworldmastercard_label, R.drawable.uobpreferredworldmastercard, UOB, R.drawable.uobpreferredworldmastercard_nonticked);
+		if(uobVisaGoldCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobvisagoldcard_label, R.drawable.uobvisagoldcard, UOB, R.drawable.uobvisagoldcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "37,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobpreferredworldmastercard_label, R.drawable.uobpreferredworldmastercard, UOB, R.drawable.uobpreferredworldmastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobvisagoldcard_label, R.drawable.uobvisagoldcard, UOB, R.drawable.uobvisagoldcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 38th
-		if(uobVisaGoldCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobvisagoldcard_label, R.drawable.uobvisagoldcard, UOB, R.drawable.uobvisagoldcard_nonticked);
+		if(uobVisaClassicCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobvisaclassiccard_label, R.drawable.uobvisaclassiccard, UOB, R.drawable.uobvisaclassiccard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "38,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobvisagoldcard_label, R.drawable.uobvisagoldcard, UOB, R.drawable.uobvisagoldcard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobvisaclassiccard_label, R.drawable.uobvisaclassiccard, UOB, R.drawable.uobvisaclassiccard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 39th
-		if(uobVisaClassicCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobvisaclassiccard_label, R.drawable.uobvisaclassiccard, UOB, R.drawable.uobvisaclassiccard_nonticked);
+		if(uobMasterCardGoldCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobmastercardgoldcard_label, R.drawable.uobmastercardgoldcard, UOB, R.drawable.uobmastercardgoldcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "39,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobvisaclassiccard_label, R.drawable.uobvisaclassiccard, UOB, R.drawable.uobvisaclassiccard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobmastercardgoldcard_label, R.drawable.uobmastercardgoldcard, UOB, R.drawable.uobmastercardgoldcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 40th
-		if(uobMasterCardGoldCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobmastercardgoldcard_label, R.drawable.uobmastercardgoldcard, UOB, R.drawable.uobmastercardgoldcard_nonticked);
+		if(uobMasterCardClassicCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobmastercardclassiccard_label, R.drawable.uobmastercardclassiccard, UOB, R.drawable.uobmastercardclassiccard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "40,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobmastercardgoldcard_label, R.drawable.uobmastercardgoldcard, UOB, R.drawable.uobmastercardgoldcard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobmastercardclassiccard_label, R.drawable.uobmastercardclassiccard, UOB, R.drawable.uobmastercardclassiccard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 41st
-		if(uobMasterCardClassicCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobmastercardclassiccard_label, R.drawable.uobmastercardclassiccard, UOB, R.drawable.uobmastercardclassiccard_nonticked);
+		if(metroUOBPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.metrouobplatinumcard_label, R.drawable.metrouobplatinumcard, UOB, R.drawable.metrouobplatinumcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "41,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobmastercardclassiccard_label, R.drawable.uobmastercardclassiccard, UOB, R.drawable.uobmastercardclassiccard_nonticked);
+			iInfo = new ImageInfo(R.drawable.metrouobplatinumcard_label, R.drawable.metrouobplatinumcard, UOB, R.drawable.metrouobplatinumcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 42nd
-		if(metroUOBPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.metrouobplatinumcard_label, R.drawable.metrouobplatinumcard, UOB, R.drawable.metrouobplatinumcard_nonticked);
+		if(uobJCBPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobjcbplatinumcard_label, R.drawable.uobjcbplatinumcard, UOB, R.drawable.uobjcbplatinumcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "42,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.metrouobplatinumcard_label, R.drawable.metrouobplatinumcard, UOB, R.drawable.metrouobplatinumcard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobjcbplatinumcard_label, R.drawable.uobjcbplatinumcard, UOB, R.drawable.uobjcbplatinumcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 43rd
-		if(uobJCBPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobjcbplatinumcard_label, R.drawable.uobjcbplatinumcard, UOB, R.drawable.uobjcbplatinumcard_nonticked);
+		if(uobChinaUnionPayPlatinumCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.uobchinaunionpayplatinumcard_label, R.drawable.uobchinaunionpayplatinumcard, UOB, R.drawable.uobchinaunionpayplatinumcard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "43,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.uobjcbplatinumcard_label, R.drawable.uobjcbplatinumcard, UOB, R.drawable.uobjcbplatinumcard_nonticked);
+			iInfo = new ImageInfo(R.drawable.uobchinaunionpayplatinumcard_label, R.drawable.uobchinaunionpayplatinumcard, UOB, R.drawable.uobchinaunionpayplatinumcard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 44th
-		if(uobChinaUnionPayPlatinumCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.uobchinaunionpayplatinumcard_label, R.drawable.uobchinaunionpayplatinumcard, UOB, R.drawable.uobchinaunionpayplatinumcard_nonticked);
-			images.add(iInfo);
-			count++;
-			preference += "44,";
-		}
-		else {
-			iInfo = new ImageInfo(R.drawable.uobchinaunionpayplatinumcard_label, R.drawable.uobchinaunionpayplatinumcard, UOB, R.drawable.uobchinaunionpayplatinumcard_nonticked);
-			untickedImages.add(iInfo);
-		}
-		
-		// 45th
 		if(uobDirectVisaCard.isChecked()){
 			iInfo = new ImageInfo(R.drawable.uobdirectvisacard_label, R.drawable.uobdirectvisacard, UOB, R.drawable.uobdirectvisacard_nonticked);
 			images.add(iInfo);
 			count++;
-			preference += "45,";
+			preference += "44,";
 		}
 		else {
 			iInfo = new ImageInfo(R.drawable.uobdirectvisacard_label, R.drawable.uobdirectvisacard, UOB, R.drawable.uobdirectvisacard_nonticked);
@@ -778,18 +830,26 @@ public class SettingsPage extends SingtelDiningActivity {
 			}
 		});
 		
-		cbClearPlatinumVisa = (CheckBox)findViewById(R.id.clearplatinumvisa);
-		cbClearPlatinumVisa.setOnClickListener(new CheckListener());
-		cbDividendPlatinum = (CheckBox)findViewById(R.id.dividendplatinum);
-		cbDividendPlatinum.setOnClickListener(new CheckListener());
-		cbParagonMasterCard = (CheckBox)findViewById(R.id.paragonmastercard);
-		cbParagonMasterCard.setOnClickListener(new CheckListener());
-		cbParagonVisa = (CheckBox)findViewById(R.id.paragonvisa);
-		cbParagonVisa.setOnClickListener(new CheckListener());
-		cbPremiereMilesVisa = (CheckBox)findViewById(R.id.premieremilesvisa);
-		cbPremiereMilesVisa.setOnClickListener(new CheckListener());
-		cbSMRTCard = (CheckBox)findViewById(R.id.smrtcard);
-		cbSMRTCard.setOnClickListener(new CheckListener());
+		citiPlatinumVisaMasterCard = (CheckBox)findViewById(R.id.citiplatinumvisamastercard);
+		citiPlatinumVisaMasterCard.setOnClickListener(new CheckListener());
+		citiDividendCard = (CheckBox)findViewById(R.id.citidividendcard);
+		citiDividendCard.setOnClickListener(new CheckListener());
+		citiClearPlatinumCard = (CheckBox)findViewById(R.id.citiclearplatinumcard);
+		citiClearPlatinumCard.setOnClickListener(new CheckListener());
+		citiSMRTPlatinumVisaCard = (CheckBox)findViewById(R.id.citismrtplatinumvisacard);
+		citiSMRTPlatinumVisaCard.setOnClickListener(new CheckListener());
+		citiTangsPlatinumVisaCard = (CheckBox)findViewById(R.id.cititangsplatinumvisacard);
+		citiTangsPlatinumVisaCard.setOnClickListener(new CheckListener());
+		citiParagonPlatinumMasterCard = (CheckBox)findViewById(R.id.citiparagonplatinummastercard);
+		citiParagonPlatinumMasterCard.setOnClickListener(new CheckListener());
+		citiPremierMilesCard = (CheckBox)findViewById(R.id.citipremiermilescard);
+		citiPremierMilesCard.setOnClickListener(new CheckListener());
+		citibankVisaDebitCard = (CheckBox)findViewById(R.id.citibankvisadebitcard);
+		citibankVisaDebitCard.setOnClickListener(new CheckListener());
+		citiBusinessCard = (CheckBox)findViewById(R.id.citibusinesscard);
+		citiBusinessCard.setOnClickListener(new CheckListener());
+		citibankBusinessGoldCard = (CheckBox)findViewById(R.id.citibankbusinessgoldcard);
+		citibankBusinessGoldCard.setOnClickListener(new CheckListener());
 		
 		dbsBlackAmericanExpress = (CheckBox)findViewById(R.id.blackamericanexpress);
 		dbsBlackAmericanExpress.setOnClickListener(new CheckListener());
@@ -889,24 +949,36 @@ public class SettingsPage extends SingtelDiningActivity {
 	private void setCheckBox(String value) {
 		int id = Integer.parseInt(value);
 		switch(id) {
-		case Constants.CBCLEARPLATINUMVISA:
-			cbClearPlatinumVisa.setChecked(true);
+		case Constants.CITIPLATINUMVISAMASTERCARD:
+			citiPlatinumVisaMasterCard.setChecked(true);
 			break;
-		case Constants.CBDIVIDENDPLATINUM:
-			cbDividendPlatinum.setChecked(true);
+		case Constants.CITIDIVIDENDCARD:
+			citiDividendCard.setChecked(true);
 			break;
-		case Constants.CBPARAGONMASTERCARD:
-			cbParagonMasterCard.setChecked(true);
+		case Constants.CITICLEARPLATINUMCARD:
+			citiClearPlatinumCard.setChecked(true);
 			break;
-		case Constants.CBPARAGONVISA:
-			cbParagonVisa.setChecked(true);
+		case Constants.CITISMRTPLATINUMVISACARD:
+			citiSMRTPlatinumVisaCard.setChecked(true);
 			break;
-		case Constants.CBPREMIEREMILESVISA:
-			cbPremiereMilesVisa.setChecked(true);
+		case Constants.CITITANGSPLATINUMVISACARD:
+			citiTangsPlatinumVisaCard.setChecked(true);
 			break;
-		case Constants.CBSMRTCARD:
-			cbSMRTCard.setChecked(true);
+		case Constants.CITIPARAGONPLATINUMMASTERCARD:
+			citiParagonPlatinumMasterCard.setChecked(true);
 			break;
+		case Constants.CITIPREMIERMILESCARD:
+			citiPremierMilesCard.setChecked(true);
+			break;
+		case Constants.CITIBANKVISADEBITCARD:
+			citibankVisaDebitCard.setChecked(true);
+			break;
+		case Constants.CITIBUSINESSCARD:
+			citiBusinessCard.setChecked(true);
+			break;
+		case Constants.CITIBANKBUSINESSGOLDCARD:
+			citibankBusinessGoldCard.setChecked(true);
+			break;			
 		case Constants.DBSBLACKAMERICANEXPRESS:
 			dbsBlackAmericanExpress.setChecked(true);
 			break;
@@ -1013,12 +1085,16 @@ public class SettingsPage extends SingtelDiningActivity {
 	}
 
 	protected void checkAll() {
-		cbClearPlatinumVisa.setChecked(true);
-		cbDividendPlatinum.setChecked(true);
-		cbParagonMasterCard.setChecked(true);
-		cbParagonVisa.setChecked(true);
-		cbPremiereMilesVisa.setChecked(true);
-		cbSMRTCard.setChecked(true);
+		citiPlatinumVisaMasterCard.setChecked(true);
+		citiDividendCard.setChecked(true);
+		citiClearPlatinumCard.setChecked(true);
+		citiSMRTPlatinumVisaCard.setChecked(true);
+		citiTangsPlatinumVisaCard.setChecked(true);
+		citiParagonPlatinumMasterCard.setChecked(true);
+		citiPremierMilesCard.setChecked(true);
+		citibankVisaDebitCard.setChecked(true);
+		citiBusinessCard.setChecked(true);
+		citibankBusinessGoldCard.setChecked(true);
 
 		dbsBlackAmericanExpress.setChecked(true);
 		dbsLiveFreshPlatinum.setChecked(true);
@@ -1059,12 +1135,16 @@ public class SettingsPage extends SingtelDiningActivity {
 	}
 	
 	protected void uncheckAll() {
-		cbClearPlatinumVisa.setChecked(false);
-		cbDividendPlatinum.setChecked(false);
-		cbParagonMasterCard.setChecked(false);
-		cbParagonVisa.setChecked(false);
-		cbPremiereMilesVisa.setChecked(false);
-		cbSMRTCard.setChecked(false);
+		citiPlatinumVisaMasterCard.setChecked(false);
+		citiDividendCard.setChecked(false);
+		citiClearPlatinumCard.setChecked(false);
+		citiSMRTPlatinumVisaCard.setChecked(false);
+		citiTangsPlatinumVisaCard.setChecked(false);
+		citiParagonPlatinumMasterCard.setChecked(false);
+		citiPremierMilesCard.setChecked(false);
+		citibankVisaDebitCard.setChecked(false);
+		citiBusinessCard.setChecked(false);
+		citibankBusinessGoldCard.setChecked(false);
 
 		dbsBlackAmericanExpress.setChecked(false);
 		dbsLiveFreshPlatinum.setChecked(false);
@@ -1118,17 +1198,25 @@ public class SettingsPage extends SingtelDiningActivity {
 		if(defaultAll.isEmpty()) {
 			ImageInfo iInfo;
 			
-			iInfo = new ImageInfo(R.drawable.citibank_clear_platinum_visa_label, R.drawable.citibank_clear_platinum_visa, CITIBANK, R.drawable.citibank_clear_platinum_visa_nonticked);
+			iInfo = new ImageInfo(R.drawable.citiplatinumvisamastercard_label, R.drawable.citiplatinumvisamastercard, CITIBANK, R.drawable.citiplatinumvisamastercard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.citibank_dividend_platinum_mastercard_label, R.drawable.citibank_dividend_platinum_mastercard, CITIBANK, R.drawable.citibank_dividend_platinum_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citidividendcard_label, R.drawable.citidividendcard, CITIBANK, R.drawable.citidividendcard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.citibank_paragon_mastercard_label, R.drawable.citibank_paragon_mastercard, CITIBANK, R.drawable.citibank_paragon_mastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citiclearplatinumcard_label, R.drawable.citiclearplatinumcard, CITIBANK, R.drawable.citiclearplatinumcard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.citibank_paragon_visa_label, R.drawable.citibank_paragon_visa, CITIBANK, R.drawable.citibank_paragon_visa_nonticked);
+			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.citibank_premiermiles_visa_signature_label, R.drawable.citibank_premiermiles_visa_signature, CITIBANK, R.drawable.citibank_premiermiles_visa_signature_nonticked);
+			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
 			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.citibank_smrt_card_label, R.drawable.citibank_smrt_card, CITIBANK, R.drawable.citibank_smrt_card_nonticked);
+			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
+			defaultAll.add(iInfo);
+			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
+			defaultAll.add(iInfo);
+			iInfo = new ImageInfo(R.drawable.citibankvisadebitcard_label, R.drawable.citibankvisadebitcard, CITIBANK, R.drawable.citibankvisadebitcard_nonticked);
+			defaultAll.add(iInfo);
+			iInfo = new ImageInfo(R.drawable.citibusinesscard_label, R.drawable.citibusinesscard, CITIBANK, R.drawable.citibusinesscard_nonticked);
+			defaultAll.add(iInfo);
+			iInfo = new ImageInfo(R.drawable.citibankbusinessgoldcard_label, R.drawable.citibankbusinessgoldcard, CITIBANK, R.drawable.citibankbusinessgoldcard_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.dbs_black_american_express_card_label, R.drawable.dbs_black_american_express_card, DBS, R.drawable.dbs_black_american_express_card_nonticked);
 			defaultAll.add(iInfo);

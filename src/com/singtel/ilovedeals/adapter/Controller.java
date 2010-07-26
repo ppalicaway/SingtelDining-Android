@@ -40,28 +40,44 @@ public class Controller {
 		ImageInfo iInfo = null;
 		int id = Integer.parseInt(value);
 		switch(id) {
-			case Constants.CBCLEARPLATINUMVISA:
-				iInfo = new ImageInfo(R.drawable.citibank_clear_platinum_visa_label, R.drawable.citibank_clear_platinum_visa, CITIBANK, R.drawable.citibank_clear_platinum_visa_nonticked);
+			case Constants.CITIPLATINUMVISAMASTERCARD:
+				iInfo = new ImageInfo(R.drawable.citiplatinumvisamastercard_label, R.drawable.citiplatinumvisamastercard, CITIBANK, R.drawable.citiplatinumvisamastercard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.CBDIVIDENDPLATINUM:
-				iInfo = new ImageInfo(R.drawable.citibank_dividend_platinum_mastercard_label, R.drawable.citibank_dividend_platinum_mastercard, CITIBANK, R.drawable.citibank_dividend_platinum_mastercard_nonticked);
+			case Constants.CITIDIVIDENDCARD:
+				iInfo = new ImageInfo(R.drawable.citidividendcard_label, R.drawable.citidividendcard, CITIBANK, R.drawable.citidividendcard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.CBPARAGONMASTERCARD:
-				iInfo = new ImageInfo(R.drawable.citibank_paragon_mastercard_label, R.drawable.citibank_paragon_mastercard, CITIBANK, R.drawable.citibank_paragon_mastercard_nonticked);
+			case Constants.CITICLEARPLATINUMCARD:
+				iInfo = new ImageInfo(R.drawable.citiclearplatinumcard_label, R.drawable.citiclearplatinumcard, CITIBANK, R.drawable.citiclearplatinumcard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.CBPARAGONVISA:
-				iInfo = new ImageInfo(R.drawable.citibank_paragon_visa_label, R.drawable.citibank_paragon_visa, CITIBANK, R.drawable.citibank_paragon_visa_nonticked);
+			case Constants.CITISMRTPLATINUMVISACARD:
+				iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.CBPREMIEREMILESVISA:
-				iInfo = new ImageInfo(R.drawable.citibank_premiermiles_visa_signature_label, R.drawable.citibank_premiermiles_visa_signature, CITIBANK, R.drawable.citibank_premiermiles_visa_signature_nonticked);
+			case Constants.CITITANGSPLATINUMVISACARD:
+				iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
 				iInfo.setSelected(true);
 				break;
-			case Constants.CBSMRTCARD:
-				iInfo = new ImageInfo(R.drawable.citibank_smrt_card_label, R.drawable.citibank_smrt_card, CITIBANK, R.drawable.citibank_smrt_card_nonticked);
+			case Constants.CITIPARAGONPLATINUMMASTERCARD:
+				iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
+				iInfo.setSelected(true);
+				break;
+			case Constants.CITIPREMIERMILESCARD:
+				iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
+				iInfo.setSelected(true);
+				break;
+			case Constants.CITIBANKVISADEBITCARD:
+				iInfo = new ImageInfo(R.drawable.citibankvisadebitcard_label, R.drawable.citibankvisadebitcard, CITIBANK, R.drawable.citibankvisadebitcard_nonticked);
+				iInfo.setSelected(true);
+				break;
+			case Constants.CITIBUSINESSCARD:
+				iInfo = new ImageInfo(R.drawable.citibusinesscard_label, R.drawable.citibusinesscard, CITIBANK, R.drawable.citibusinesscard_nonticked);
+				iInfo.setSelected(true);
+				break;
+			case Constants.CITIBANKBUSINESSGOLDCARD:
+				iInfo = new ImageInfo(R.drawable.citibankbusinessgoldcard_label, R.drawable.citibankbusinessgoldcard, CITIBANK, R.drawable.citibankbusinessgoldcard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.DBSBLACKAMERICANEXPRESS:
