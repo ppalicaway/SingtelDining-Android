@@ -12,6 +12,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,9 +53,11 @@ public class DescriptionPage extends SingtelDiningActivity {
 	private FBLoginButton facebookButton;
 	private final String GET_SESSION_PROXY = null;
 	private TextView offer;
+	private ImageView merchantPic;
 	private ProgressDialog progressDialog = null;
 	private Runnable queryThread;
 	private String offerFirst = "";
+	private Bitmap bitmapDefault;
 	
 	private static final int MESSAGE_PUBLISHED = 2;
 	
@@ -210,22 +213,6 @@ public class DescriptionPage extends SingtelDiningActivity {
 			TextView merchantType = (TextView)findViewById(R.id.merchantType);
 			merchantType.setText(merchantDetails.getType());
 			
-			Bitmap bitmap;
-			ImageView merchantPic = (ImageView)findViewById(R.id.merchantPic);
-			if(!merchantDetails.getImage().equals(null) || !merchantDetails.getImage().equalsIgnoreCase("")) {
-				bitmap = Util.getBitmap(merchantDetails.getImage());
-				if(bitmap != null) {
-					bitmap = Util.resizeImage(bitmap, 90, 70);
-					merchantPic.setImageBitmap(bitmap);
-				}
-				else {
-					merchantPic.setImageResource(R.drawable.default_icon1);
-				}
-			}
-			else {
-				merchantPic.setImageResource(R.drawable.default_icon1);
-			}
-			
 			TextView merchantAddress = (TextView)findViewById(R.id.merchantAddress);
 			merchantAddress.setText(merchantDetails.getAddress());
 			
@@ -263,6 +250,28 @@ public class DescriptionPage extends SingtelDiningActivity {
 			String offerText = merchantDetails.getBankOffers().get(getMerchantBankIndex(offerFirst)).getBank() + " Offer:\n";
 			offerText += merchantDetails.getBankOffers().get(getMerchantBankIndex(offerFirst)).getOffer();
 			offer.setText(offerText);
+			
+			
+			merchantPic = (ImageView)findViewById(R.id.merchantPic);
+			if(!merchantDetails.getImage().equals(null) || !merchantDetails.getImage().equalsIgnoreCase("")) {
+				bitmapDefault = Util.getBitmap(merchantDetails.getImage());
+				if(bitmapDefault != null) {
+					bitmapDefault = Util.resizeImage(bitmapDefault, 90, 70);
+				}
+				else {
+					bitmapDefault = BitmapFactory.decodeResource(SingtelDiningMainPage.instance.getResources(), R.drawable.default_icon1);
+				}
+			}
+			else {
+				bitmapDefault = BitmapFactory.decodeResource(SingtelDiningMainPage.instance.getResources(), R.drawable.default_icon1);
+			}
+			
+			if(merchantDetails.getBankOffers().get(getMerchantBankIndex(offerFirst)).getBank().equalsIgnoreCase("Citibank")) {
+				merchantPic.setImageResource(R.drawable.gourmetpleasure);
+			}
+			else {
+				merchantPic.setImageBitmap(bitmapDefault);
+			}
 			
 			TermsPage.termsAndCondition = merchantDetails.getBankOffers().get(getMerchantBankIndex(offerFirst)).getTnc();
 			
@@ -470,6 +479,14 @@ public class DescriptionPage extends SingtelDiningActivity {
 				}
 			}
 			offer.setText(getOffer(bankName));
+			
+			if(civ.getImageInfo().getBankName().equalsIgnoreCase("Citibank")) {
+				merchantPic.setImageResource(R.drawable.gourmetpleasure);
+			}
+			else {
+				merchantPic.setImageBitmap(bitmapDefault);
+			}
+			
 			int bankIndex = getMerchantBankIndex(civ.getImageInfo().getBankName());
 			TermsPage.termsAndCondition = merchantDetails.getBankOffers().get(bankIndex).getTnc();
 		}
