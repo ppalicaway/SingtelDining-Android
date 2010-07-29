@@ -30,6 +30,7 @@ import com.google.android.maps.Projection;
 import com.singtel.ilovedeals.info.MerchantInfo;
 import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.util.Constants;
+import com.singtel.ilovedeals.util.Util;
 
 public class MapLocationViewer extends LinearLayout {
 
@@ -91,7 +92,9 @@ public class MapLocationViewer extends LinearLayout {
 	
 	public static void setMapLocations(ArrayList<MerchantInfo> merchantList, int padding, boolean gps) {
 		mapLocations = new ArrayList<MapLocationInfo>();
-		for(int i = 0; i < merchantList.size(); i++) {
+		int merchantListSize = merchantList.size();
+		
+		for(int i = 0; i < merchantListSize; i++) {
 			MerchantInfo merchantInfo = merchantList.get(i);
 			
 			MapLocationInfo mapLocationInfo = new MapLocationInfo(merchantInfo.getRestaurantName(), merchantInfo.getAddress(), merchantInfo.getLatitude(), merchantInfo.getLongitude(), R.drawable.pin_red, merchantInfo);
@@ -100,6 +103,10 @@ public class MapLocationViewer extends LinearLayout {
 			paddingTop = padding;
 			useCurrentGPS = gps;
 		}
+		
+		MerchantInfo myLocation = new MerchantInfo(-100, "", "You are Here", "", 0, 0, Util.latitude, Util.longitude);
+		MapLocationInfo mapLocationInfo = new MapLocationInfo(myLocation.getRestaurantName(), myLocation.getAddress(), myLocation.getLatitude(), myLocation.getLongitude(), R.drawable.pin_green, myLocation);
+		mapLocations.add(mapLocationInfo);
 	}
 	
 	public MapView getMapView() {
