@@ -51,6 +51,8 @@ public class SearchPage extends SingtelDiningActivity {
 				edit.putString("searchURL", Constants.RESTAURANT_SEARCH + searchText + SettingsPage.bankQuery + "&pageNum=");
 				edit.commit();
 				
+				Util.disableKeyboard(instance, keyword);
+				
 				instance.finish();
 			}
 		});

@@ -44,6 +44,7 @@ import android.telephony.gsm.GsmCellLocation;
 import android.view.Display;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 public class Util {
 	
@@ -411,5 +412,10 @@ public class Util {
 	public static void showKeyboard(Context context){
 		InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.SHOW_IMPLICIT);
+	}
+	
+	public static void disableKeyboard(Context context, EditText editText){
+		InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
 	}
 }

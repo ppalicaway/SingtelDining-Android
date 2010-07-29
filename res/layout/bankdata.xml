@@ -826,7 +826,7 @@
 						android:textSize="12px"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="UOB One Card" />			
+						android:text="UOB ONE Card" />			
 				</LinearLayout>
 				
 				<!-- UOB Preferred Platinum Card Visa -->
