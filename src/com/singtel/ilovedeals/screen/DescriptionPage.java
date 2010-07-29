@@ -321,7 +321,9 @@ public class DescriptionPage extends SingtelDiningActivity {
 				merchantDetails.setAddress(address);
 				merchantDetails.setPhone(phone);
 				merchantDetails.setLatitude(latitude);
+				merchantInfo.setLatitude(latitude);
 				merchantDetails.setLongitude(longitude);
+				merchantInfo.setLongitude(longitude);
 				merchantDetails.setDescription(description);
 				
 				JSONArray bankInfo = jsonObject2.getJSONArray("offers");
