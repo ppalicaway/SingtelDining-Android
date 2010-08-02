@@ -125,7 +125,12 @@ public class ARScreen extends SingtelDiningActivity {
 			t.start();
 		}
 		else {
-			progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+			try {
+				progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
 			Thread thread = new Thread(null, new InsideGetJSON(), "initR");
 			thread.start();
 		}

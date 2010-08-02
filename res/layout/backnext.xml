@@ -11,11 +11,11 @@
 		android:id="@+id/backButton"
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content" 
-		android:background="@drawable/back" android:layout_marginRight="75px"/>
+		android:background="@drawable/back" android:layout_marginRight="75dp"/>
 		
 	<Button 
 		android:id="@+id/nextButton"
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
-		android:background="@drawable/next" android:layout_marginLeft="75px"/>
+		android:background="@drawable/next" android:layout_marginLeft="75dp"/>
 </LinearLayout>

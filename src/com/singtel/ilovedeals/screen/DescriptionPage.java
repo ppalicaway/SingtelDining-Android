@@ -83,7 +83,12 @@ public class DescriptionPage extends SingtelDiningActivity {
 	
 	private void init() {
 		
-		progressDialog = ProgressDialog.show(this, "", getString(R.string.loading), true);
+		try {
+			progressDialog = ProgressDialog.show(this, "", getString(R.string.loading), true);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		queryThread = new Runnable() {
 			

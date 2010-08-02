@@ -23,7 +23,7 @@
 				android:layout_width="wrap_content" 
 				android:background="@drawable/header" 
 				android:gravity="center" 
-				android:layout_marginTop="5px"
+				android:layout_marginTop="5dp"
 				android:layout_height="wrap_content"/>
 		</LinearLayout>
 		
@@ -32,16 +32,16 @@
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:background="@drawable/favourites_add"
-			android:layout_marginTop="5px" 
-			android:layout_marginLeft="-47px" />
+			android:layout_marginTop="5dp" 
+			android:layout_marginLeft="-47dp" />
 		
 		<Button 
 			android:id="@+id/detailsRemoveFaveButton"
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:background="@drawable/favourites_remove"
-			android:layout_marginTop="5px" 
-			android:layout_marginLeft="-47px"
+			android:layout_marginTop="5dp" 
+			android:layout_marginLeft="-47dp"
 			android:visibility="gone" />
 	</LinearLayout>
 	
@@ -63,8 +63,8 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:background="@drawable/roundededge"
-				android:layout_marginLeft="5px"
-				android:layout_marginRight="5px">
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp">
 		
 				<LinearLayout
 					android:layout_width="fill_parent"
@@ -75,19 +75,19 @@
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
 						android:orientation="vertical"
-						android:layout_marginLeft="5px"
-						android:layout_marginRight="5px"
-						android:layout_marginTop="5px"
-						android:layout_marginBottom="5px">
+						android:layout_marginLeft="5dp"
+						android:layout_marginRight="5dp"
+						android:layout_marginTop="5dp"
+						android:layout_marginBottom="5dp">
 			
 						<TextView
 							android:id="@+id/merchantName"
-							android:layout_width="250px"
+							android:layout_width="250dp"
 							android:layout_height="wrap_content"
 							android:text=""
 							android:textColor="@color/COLOR_SUBTEXT"
 							android:textStyle="bold"
-							android:textSize="16px"
+							android:textSize="16dp"
 							android:typeface="sans" />
 							
 						<LinearLayout
@@ -102,9 +102,9 @@
 								android:text=""
 								android:textColor="@color/COLOR_SUBTEXT"
 								android:textStyle="italic"
-								android:textSize="10px"
+								android:textSize="10dp"
 								android:typeface="sans" 
-								android:layout_marginRight="20px" />
+								android:layout_marginRight="20dp" />
 							
 							<!-- <TextView
 								android:id="@+id/merchantReviews"
@@ -112,7 +112,7 @@
 								android:layout_height="wrap_content"
 								android:text=""
 								android:textColor="@color/COLOR_BG"
-								android:textSize="10px"
+								android:textSize="10dp"
 								android:typeface="sans" />  -->
 						</LinearLayout>
 					</LinearLayout>
@@ -122,20 +122,20 @@
 						android:layout_height="wrap_content"
 						android:orientation="vertical"
 						android:gravity="right|center_vertical"
-						android:layout_marginLeft="-35px"
-						android:layout_marginTop="3px"
-						android:layout_marginBottom="5px">
+						android:layout_marginLeft="-35dp"
+						android:layout_marginTop="3dp"
+						android:layout_marginBottom="5dp">
 						
 						<!-- <RatingBar 
 							android:id="@+id/indicator_ratingbar"
 							android:layout_gravity="center_vertical"
 							style="?android:attr/ratingBarStyleSmall"
-							android:paddingTop="7px"
+							android:paddingTop="7dp"
 							android:layout_width="fill_parent"
 							android:numStars="5"
 							android:stepSize="0.5"
 							android:layout_height="wrap_content"
-							android:layout_marginRight="5px" /> -->
+							android:layout_marginRight="5dp" /> -->
 							
 						<Button 
 							android:id="@+id/infoButton"
@@ -150,15 +150,15 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:orientation="horizontal"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:layout_marginBottom="5px">
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginBottom="5dp">
 			
 					<ImageView 
 						android:id="@+id/merchantPic"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:layout_marginRight="15px"
+						android:layout_marginRight="15dp"
 						android:src="@drawable/default_icon1" />
 				
 					<LinearLayout
@@ -172,7 +172,7 @@
 							android:layout_height="wrap_content"
 							android:textColor="@color/COLOR_BLACK"
 							android:typeface="sans"
-							android:minHeight="75px"
+							android:minHeight="75dp"
 							android:text="" />
 							
 						<!-- <TextView 
@@ -183,8 +183,8 @@
 							android:gravity="center_vertical|center_horizontal"
 							android:typeface="sans"
 							android:textStyle="bold"
-							android:textSize="14px"
-							android:height="20px"
+							android:textSize="14dp"
+							android:height="20dp"
 							android:text="T&amp;C" /> -->
 					</LinearLayout>
 				</LinearLayout>
@@ -195,12 +195,12 @@
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
 				android:background="@drawable/roundededge"
-				android:layout_marginRight="5px"
-				android:layout_marginLeft="5px" 
-				android:paddingLeft="5px"
-				android:paddingRight="5px"
-				android:layout_marginTop="5px" 
-				android:layout_marginBottom="5px"
+				android:layout_marginRight="5dp"
+				android:layout_marginLeft="5dp" 
+				android:paddingLeft="5dp"
+				android:paddingRight="5dp"
+				android:layout_marginTop="5dp" 
+				android:layout_marginBottom="5dp"
 				android:orientation="horizontal">
 				
 				<ImageView
@@ -218,14 +218,14 @@
        				android:clipChildren="true" 
        				android:fadingEdge="none" 
        				android:clipToPadding="true" 
-       				android:paddingRight="15px">
+       				android:paddingRight="15dp">
        				
        				<TableLayout
 						android:id="@+id/table"
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
-						android:paddingTop="5px"
-						android:paddingBottom="5px">
+						android:paddingTop="5dp"
+						android:paddingBottom="5dp">
 		
 						<TableRow
 							android:id="@+id/tableRow"
@@ -238,7 +238,7 @@
        			<ImageView
 					android:layout_width="wrap_content"
 					android:layout_height="fill_parent"
-					android:layout_marginLeft="-15px"
+					android:layout_marginLeft="-15dp"
 					android:background="@drawable/scroll_right" />
 			</LinearLayout>
 			
@@ -248,8 +248,8 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:background="@drawable/roundedtopedge"
-				android:layout_marginLeft="5px"
-				android:layout_marginRight="5px">
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp">
 		
 				<TextView 
 					android:id="@+id/merchantAddress"
@@ -257,11 +257,11 @@
 					android:layout_height="wrap_content"
 					android:typeface="sans"
 					android:textColor="@color/COLOR_BLACK"
-					android:textSize="14px"
+					android:textSize="14dp"
 					android:ellipsize="end"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:layout_marginTop="5px"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginTop="5dp"
 					android:text="" />
 					
 				<TextView 
@@ -270,11 +270,11 @@
 					android:layout_height="wrap_content"
 					android:typeface="sans"
 					android:textColor="@color/COLOR_BLACK"
-					android:textSize="14px"
+					android:textSize="14dp"
 					android:ellipsize="end"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:layout_marginTop="5px"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginTop="5dp"
 					android:singleLine="true"
 					android:text="" />
 			
@@ -289,37 +289,37 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:background="@drawable/phone_icon"
-						android:layout_marginBottom="5px" 
-						android:layout_marginRight="5px"
-						android:layout_marginTop="5px"/>
+						android:layout_marginBottom="5dp" 
+						android:layout_marginRight="5dp"
+						android:layout_marginTop="5dp"/>
 			
 					<Button
 						android:id="@+id/mapButton"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:background="@drawable/map_icon"
-						android:layout_marginLeft="5px" 
-						android:layout_marginBottom="5px" 
-						android:layout_marginRight="5px"
-						android:layout_marginTop="5px"/>
+						android:layout_marginLeft="5dp" 
+						android:layout_marginBottom="5dp" 
+						android:layout_marginRight="5dp"
+						android:layout_marginTop="5dp"/>
 			
 					<com.codecarpet.fbconnect.FBLoginButton
 						android:id="@+id/facebookButton"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:layout_marginLeft="5px" 
-						android:layout_marginBottom="5px" 
-						android:layout_marginRight="5px"
-						android:layout_marginTop="5px" />
+						android:layout_marginLeft="5dp" 
+						android:layout_marginBottom="5dp" 
+						android:layout_marginRight="5dp"
+						android:layout_marginTop="5dp" />
 				
 					<Button
 						android:id="@+id/twitterButton"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:background="@drawable/twitter_icon"
-						android:layout_marginLeft="5px" 
-						android:layout_marginBottom="5px" 
-						android:layout_marginTop="5px"/>				
+						android:layout_marginLeft="5dp" 
+						android:layout_marginBottom="5dp" 
+						android:layout_marginTop="5dp"/>				
 				</LinearLayout>
 				
 				<LinearLayout
@@ -327,10 +327,10 @@
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
 					android:orientation="vertical"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:layout_marginTop="5px"
-					android:layout_marginBottom="5px" >
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:layout_marginTop="5dp"
+					android:layout_marginBottom="5dp" >
 					
 					<Button 
 						android:id="@+id/branchButton" 
@@ -344,8 +344,8 @@
 						android:layout_height="wrap_content"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_BLACK"
-						android:textSize="12px"
-						android:layout_marginTop="5px"
+						android:textSize="12dp"
+						android:layout_marginTop="5dp"
 						android:visibility="gone"/>
 				</LinearLayout>
 			</LinearLayout>
@@ -356,20 +356,20 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:background="@color/COLOR_GRAY"
-				android:layout_marginLeft="5px"
-				android:layout_marginRight="5px"
-				android:layout_marginTop="-1px">
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp"
+				android:layout_marginTop="-1dp">
 		
 				<TextView
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:paddingTop="5px"
-					android:paddingBottom="5px"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
-					android:textSize="16px"
+					android:textSize="16dp"
 					android:text="Description" />
 			</LinearLayout>
 	
@@ -378,21 +378,21 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:background="@drawable/listbgrounded"
-				android:layout_marginLeft="5px"
-				android:layout_marginRight="5px">
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp">
 		
 				<TextView
 					android:id="@+id/descriptionTextView"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:paddingTop="5px"
-					android:paddingBottom="5px"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
-					android:textSize="14px"
-					android:minHeight="100px"
+					android:textSize="14dp"
+					android:minHeight="100dp"
 					android:text="" />
 			</LinearLayout>
 		</LinearLayout>

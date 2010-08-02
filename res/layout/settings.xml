@@ -17,7 +17,7 @@
 			android:background="@drawable/info_white"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="5px" />
+			android:layout_marginTop="5dp" />
 			
 		<LinearLayout
 			android:layout_width="fill_parent"
@@ -30,8 +30,8 @@
  				android:layout_width="wrap_content" 
  				android:background="@drawable/header" 
 				android:gravity="center" 
-				android:layout_marginTop="5px"
-				android:layout_marginLeft="-30px"
+				android:layout_marginTop="5dp"
+				android:layout_marginLeft="-30dp"
  				android:layout_height="wrap_content"/>
 		</LinearLayout>
 		
@@ -40,8 +40,8 @@
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:background="@drawable/button_done"
-			android:layout_marginTop="5px" 
-			android:layout_marginLeft="-62px" />
+			android:layout_marginTop="5dp" 
+			android:layout_marginLeft="-62dp" />
 	</LinearLayout>
 	
 	<LinearLayout
@@ -53,8 +53,8 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:background="@drawable/grayroundededge"
-			android:layout_marginLeft="5px"
-			android:layout_marginRight="5px">
+			android:layout_marginLeft="5dp"
+			android:layout_marginRight="5dp">
 				
 			<TextView
 				android:layout_width="fill_parent"
@@ -62,12 +62,12 @@
 				android:gravity="center_vertical|center_horizontal"
 				android:typeface="sans"
 				android:textStyle="bold"
-				android:textSize="16px"
+				android:textSize="16dp"
 				android:textColor="@color/COLOR_BLACK"
-				android:paddingTop="8px"
-				android:paddingBottom="8px"
-				android:layout_marginLeft="5px"
-				android:layout_marginRight="5px"					
+				android:paddingTop="8dp"
+				android:paddingBottom="8dp"
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp"					
 				android:text="Select Credit Cards">
 			</TextView>
 		</LinearLayout>
@@ -76,11 +76,11 @@
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:orientation="vertical"
-			android:layout_marginLeft="5px"
-			android:layout_marginRight="5px"
+			android:layout_marginLeft="5dp"
+			android:layout_marginRight="5dp"
 			android:background="@drawable/listbgrounded"
-			android:paddingBottom="5px"
-			android:layout_marginBottom="5px">
+			android:paddingBottom="5dp"
+			android:layout_marginBottom="5dp">
 	
 			<!-- Credit Card Buttons -->
 			<LinearLayout
@@ -94,13 +94,13 @@
 					android:text="All Credit Cards"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:paddingTop="7px"
-					android:paddingBottom="7px"
-					android:layout_marginTop="7px"
-					android:layout_marginBottom="7px"
+					android:paddingTop="7dp"
+					android:paddingBottom="7dp"
+					android:layout_marginTop="7dp"
+					android:layout_marginBottom="7dp"
 					android:typeface="sans"
 					android:textColor="@color/COLOR_SUBTEXT"
-					android:textSize="15px"
+					android:textSize="15dp"
 					android:textStyle="bold"
 					android:background="@drawable/button_left_hover"/>
 				
@@ -109,13 +109,13 @@
 					android:text="My Credit Cards"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:paddingTop="7px"
-					android:paddingBottom="7px"
-					android:layout_marginTop="7px"
-					android:layout_marginBottom="7px"
+					android:paddingTop="7dp"
+					android:paddingBottom="7dp"
+					android:layout_marginTop="7dp"
+					android:layout_marginBottom="7dp"
 					android:typeface="sans"
 					android:textColor="@color/COLOR_SUBTEXT"
-					android:textSize="15px"
+					android:textSize="15dp"
 					android:textStyle="bold"
 					android:background="@drawable/rightbutton"/>
 			</LinearLayout>
@@ -129,8 +129,8 @@
        			android:clipChildren="true" 
        			android:fadingEdge="none" 
        			android:clipToPadding="true" 
-       			android:paddingRight="0px"
-       			android:paddingLeft="0px">
+       			android:paddingRight="0dp"
+       			android:paddingLeft="0dp">
 				
 				<LinearLayout
 					android:orientation="horizontal"
@@ -140,46 +140,46 @@
 					
 					<Button 
 						android:id="@+id/citibankButton"
-						android:layout_width="60px"
-						android:layout_height="56px"
-						android:layout_marginRight="2px"
-						android:layout_marginTop="5px"
-						android:layout_marginBottom="5px"
+						android:layout_width="60dp"
+						android:layout_height="56dp"
+						android:layout_marginRight="2dp"
+						android:layout_marginTop="5dp"
+						android:layout_marginBottom="5dp"
 						android:background="@drawable/citibank"/>
 					
 					<Button 
 						android:id="@+id/dbsButton"
-						android:layout_width="60px"
-						android:layout_height="56px"
-						android:layout_marginRight="2px"
-						android:layout_marginTop="5px"
-						android:layout_marginBottom="5px"
+						android:layout_width="60dp"
+						android:layout_height="56dp"
+						android:layout_marginRight="2dp"
+						android:layout_marginTop="5dp"
+						android:layout_marginBottom="5dp"
 						android:background="@drawable/dbs"/>
 					
 					<Button 
 						android:id="@+id/ocbcButton"
-						android:layout_width="60px"
-						android:layout_height="56px"
-						android:layout_marginRight="2px"
-						android:layout_marginTop="5px"
-						android:layout_marginBottom="5px"
+						android:layout_width="60dp"
+						android:layout_height="56dp"
+						android:layout_marginRight="2dp"
+						android:layout_marginTop="5dp"
+						android:layout_marginBottom="5dp"
 						android:background="@drawable/ocbc"/>
 					
 					<Button 
 						android:id="@+id/posbButton"
-						android:layout_width="60px"
-						android:layout_height="56px"
-						android:layout_marginRight="2px"
-						android:layout_marginTop="5px"
-						android:layout_marginBottom="5px"
+						android:layout_width="60dp"
+						android:layout_height="56dp"
+						android:layout_marginRight="2dp"
+						android:layout_marginTop="5dp"
+						android:layout_marginBottom="5dp"
 						android:background="@drawable/posb"/>
 					
 					<Button 
 						android:id="@+id/uobButton"
-						android:layout_width="60px"
-						android:layout_height="56px"
-						android:layout_marginTop="5px"
-						android:layout_marginBottom="5px"
+						android:layout_width="60dp"
+						android:layout_height="56dp"
+						android:layout_marginTop="5dp"
+						android:layout_marginBottom="5dp"
 						android:background="@drawable/uob"/>
 				</LinearLayout>
 			</HorizontalScrollView>

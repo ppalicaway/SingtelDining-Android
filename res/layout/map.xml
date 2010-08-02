@@ -14,10 +14,10 @@
 		android:layout_height="wrap_content"
 		android:background="@drawable/roundededge"
 		android:orientation="vertical"
-		android:layout_marginLeft="5px"
-		android:layout_marginRight="5px"
-		android:padding="5px"
-		android:layout_marginBottom="5px">
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp"
+		android:padding="5dp"
+		android:layout_marginBottom="5dp">
 		
 		<com.singtel.ilovedeals.map.MapLocationViewer
 			android:id="@+id/mapLocationViewer" 

@@ -12,7 +12,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:layout_gravity="center_vertical|center_horizontal"
-		android:layout_marginTop="5px">
+		android:layout_marginTop="5dp">
 		
 		<ImageView 
 			android:layout_height="wrap_content"
@@ -26,16 +26,16 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal" 
-		android:paddingTop="10px" 
+		android:paddingTop="10dp" 
 		android:gravity="center_vertical|center_horizontal" 
-		android:paddingBottom="10px">
+		android:paddingBottom="10dp">
 		
 		<Button 
 			android:id="@+id/mapButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Map"
-			android:textSize="16px" 
+			android:textSize="16dp" 
 			android:typeface="sans" 
 			android:textColor="@color/COLOR_WHITE" android:background="@drawable/leftgray_button"/>
 			
@@ -44,7 +44,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="Directions"
-			android:textSize="16px" 
+			android:textSize="16dp" 
 			android:typeface="sans" 
 			android:textColor="@color/COLOR_WHITE" android:background="@drawable/blackright_button"/>
 	</LinearLayout>
@@ -59,12 +59,12 @@
 		<TextView 
 			android:id="@+id/addressTextView"
 			android:text="1021 Mornington Crescent, Seletar East Camp, Orientus Resort (S) 798659"
-			android:layout_marginRight="10px" 
-			android:layout_marginLeft="10px" 
-			android:textSize="16px" 
+			android:layout_marginRight="10dp" 
+			android:layout_marginLeft="10dp" 
+			android:textSize="16dp" 
 			android:typeface="sans" 
 			android:textColor="@color/COLOR_WHITE" 
-			android:layout_height="50px"
+			android:layout_height="50dp"
 			android:gravity="center_horizontal" 
 			android:layout_width="fill_parent"/>
 	</LinearLayout>

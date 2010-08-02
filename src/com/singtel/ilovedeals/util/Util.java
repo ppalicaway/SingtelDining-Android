@@ -28,6 +28,8 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
+import com.singtel.ilovedeals.screen.SingtelDining;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -417,5 +419,18 @@ public class Util {
 	public static void disableKeyboard(Context context, EditText editText){
 		InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+	}
+
+	public static String getSimProvider(Context context) {
+		String simProvider = null;
+		try {
+			TelephonyManager telephonyManager;
+			telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+			simProvider = telephonyManager.getSimOperatorName();
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		return simProvider;
 	}
 }

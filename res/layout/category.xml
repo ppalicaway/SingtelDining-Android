@@ -12,7 +12,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:layout_gravity="center_vertical|center_horizontal"
-		android:layout_marginTop="5px">
+		android:layout_marginTop="5dp">
 		
 		<ImageView 
 			android:layout_height="wrap_content"
@@ -25,20 +25,20 @@
 		android:layout_height="fill_parent"
 		android:background="@drawable/roundededge"
 		android:orientation="vertical"
-		android:layout_marginLeft="5px"
-		android:layout_marginRight="5px"
-		android:layout_marginBottom="5px">
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp"
+		android:layout_marginBottom="5dp">
 		
 		<LinearLayout
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal" 
-			android:paddingBottom="15px" 
-			android:paddingTop="15px">
+			android:paddingBottom="15dp" 
+			android:paddingTop="15dp">
 			
 			<ListView 
 				android:id="@+id/android:list"
-				android:padding="5px"
+				android:padding="5dp"
 				android:clipToPadding="true"
 				android:layout_width="fill_parent" 
 				android:layout_height="fill_parent"

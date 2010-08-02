@@ -21,7 +21,7 @@
  				android:layout_width="wrap_content" 
  				android:background="@drawable/header" 
 				android:gravity="center" 
-				android:layout_marginTop="5px" 
+				android:layout_marginTop="5dp" 
  				android:layout_height="wrap_content"/>
 		</LinearLayout>
 		
@@ -30,8 +30,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/button_edit"
-			android:layout_marginTop="7px"
-			android:layout_marginLeft="-62px"
+			android:layout_marginTop="7dp"
+			android:layout_marginLeft="-62dp"
 			android:visibility="gone"/>
 		
 		<Button 
@@ -39,8 +39,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/button_done"
-			android:layout_marginTop="7px"
-			android:layout_marginLeft="-62px"
+			android:layout_marginTop="7dp"
+			android:layout_marginLeft="-62dp"
 			android:visibility="gone"/>
 	</LinearLayout>
 	
@@ -50,15 +50,15 @@
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		android:background="@drawable/grayroundededge"
-		android:layout_marginLeft="5px"
-		android:layout_marginRight="5px">
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp">
 		
 		<ImageView 
 			android:id="@+id/myFaveImage"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/myfavorite"
-			android:layout_margin="8px"
+			android:layout_margin="8dp"
 			android:visibility="gone" />
 			
 		<!-- <Button 
@@ -70,7 +70,7 @@
 		<EditText 
 			android:id="@+id/searchEditText"
 			android:layout_height="wrap_content" 
-			android:layout_width="222px" 
+			android:layout_width="222dp" 
 			android:maxLines="1"
 			android:singleLine="true"
 			android:focusableInTouchMode="false"
@@ -84,24 +84,24 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:src="@drawable/arrowdown"
-			android:layout_marginLeft="-26px"
-			android:paddingRight="5px"/>
+			android:layout_marginLeft="-26dp"
+			android:paddingRight="5dp"/>
 						
 		<Button 
 			android:id="@+id/mapButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/seg_map"
-			android:layout_marginLeft="3px"
-			android:layout_marginTop="1px"/>
+			android:layout_marginLeft="3dp"
+			android:layout_marginTop="1dp"/>
 						
 		<Button 
 			android:id="@+id/arButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="@drawable/seg_ar" 
-			android:layout_marginLeft="3px"
-			android:layout_marginTop="1px"/>
+			android:layout_marginLeft="3dp"
+			android:layout_marginTop="1dp"/>
 	</LinearLayout>
 	
 	<!-- <TextView 
@@ -113,7 +113,7 @@
 		android:textColor="@color/COLOR_BLACK"
 		android:gravity="center_vertical|center_horizontal"
 		android:background="@color/COLOR_WHITE"
-		android:layout_marginLeft="5px"
-		android:layout_marginRight="5px" 
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp" 
 		android:visibility="gone" /> -->
 </LinearLayout>

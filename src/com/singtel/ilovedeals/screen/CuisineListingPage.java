@@ -47,7 +47,12 @@ public class CuisineListingPage extends SingtelDiningListActivity {
 		m_adapter = new ListViewAdapter(instance, R.layout.category_list, cuisines);
 		setListAdapter(m_adapter);
 		
-		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		try {
+			progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		queryThread = new Runnable() {
 			

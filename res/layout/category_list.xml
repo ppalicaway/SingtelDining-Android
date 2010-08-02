@@ -5,7 +5,7 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:orientation="horizontal"
-	android:layout_marginRight="1px"
+	android:layout_marginRight="1dp"
 	android:background="@drawable/list_bg1"
 	android:gravity="center_vertical|center_horizontal">
 	
@@ -13,10 +13,10 @@
 		android:id="@+id/categoryName"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginRight="25px"
-		android:layout_marginLeft="25px"
+		android:layout_marginRight="25dp"
+		android:layout_marginLeft="25dp"
 		android:text="Woodlands"
-		android:textSize="16px"
+		android:textSize="16dp"
 		android:typeface="sans"
 		android:textColor="@color/COLOR_BLACK"
 		android:textStyle="bold" />

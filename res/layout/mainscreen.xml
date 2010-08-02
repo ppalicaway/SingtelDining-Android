@@ -4,7 +4,7 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:background="@drawable/bg"
-	android:padding="0px">
+	android:padding="0dp">
 	
 	<!-- Header -->
 	<include 
@@ -35,19 +35,19 @@
 			android:orientation="vertical"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:layout_marginLeft="5px" 
-			android:layout_marginRight="5px" 
+			android:layout_marginLeft="5dp" 
+			android:layout_marginRight="5dp" 
 			android:background="@drawable/listbgrounded">
 			
 			<ListView 
 				android:id="@+id/android:list"
-				android:padding="5px"
+				android:padding="5dp"
 				android:clipToPadding="true"
 				android:layout_width="fill_parent" 
 				android:layout_height="fill_parent"
 				android:layout_gravity="center_horizontal"
 				android:divider="@drawable/list_line"
-				android:dividerHeight="1px"
+				android:dividerHeight="1dp"
 				android:fadingEdge="none"
 				android:scrollbars="none" />
 		</LinearLayout>

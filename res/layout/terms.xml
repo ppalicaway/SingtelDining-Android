@@ -13,7 +13,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:layout_gravity="center_vertical|center_horizontal"
-		android:layout_marginTop="5px">
+		android:layout_marginTop="5dp">
 		
 		<ImageView 
 			android:layout_height="wrap_content"
@@ -38,20 +38,20 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:background="@drawable/grayroundededge"
-				android:layout_marginLeft="5px"
-				android:layout_marginRight="5px"
-				android:layout_marginTop="-1px">
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp"
+				android:layout_marginTop="-1dp">
 		
 				<TextView
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:paddingTop="5px"
-					android:paddingBottom="5px"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
-					android:textSize="16px"
+					android:textSize="16dp"
 					android:textStyle="bold"
 					android:gravity="center_vertical|center_horizontal"
 					android:text="Terms and Conditions" />
@@ -62,8 +62,8 @@
 				android:layout_height="wrap_content"
 				android:orientation="vertical"
 				android:background="@drawable/listbgrounded"
-				android:layout_marginLeft="5px"
-				android:layout_marginRight="5px"
+				android:layout_marginLeft="5dp"
+				android:layout_marginRight="5dp"
 				android:gravity="center_horizontal">
 	
 				<TextView
@@ -71,24 +71,24 @@
 					android:gravity="left|top"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_marginLeft="5px"
-					android:layout_marginRight="5px"
-					android:paddingTop="5px"
-					android:paddingBottom="5px"
+					android:layout_marginLeft="5dp"
+					android:layout_marginRight="5dp"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
 					android:textColor="@color/COLOR_BLACK"
 					android:typeface="sans"
-					android:textSize="14px"
+					android:textSize="14dp"
 					android:text=""
-					android:minHeight="300px" />
+					android:minHeight="300dp" />
 			</LinearLayout>	
 	
 			<Button 
 				android:id="@+id/termsPageOKButton"
-				android:layout_marginTop="5px"
-				android:layout_width="150px"
+				android:layout_marginTop="5dp"
+				android:layout_width="150dp"
 				android:layout_height="wrap_content"
 				android:text="OK"
-				android:textSize="16px"
+				android:textSize="16dp"
 				android:textStyle="bold"
 				android:textColor="@color/COLOR_BG"
 				android:typeface="sans" />

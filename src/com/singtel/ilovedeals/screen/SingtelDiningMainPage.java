@@ -229,7 +229,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
 		
-		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		try {
+			progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		Thread thread = new Thread(null, new QueryThread(), "QueryData");
 		thread.start();
@@ -241,7 +246,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
 		
-		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		try {
+			progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		Thread thread = new Thread(null, new QueryThread(), "QueryData");
 		thread.start();
@@ -487,7 +497,12 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		m_adapter = new ListViewAdapter(instance, R.layout.merchant_list, merchantList);
 		setListAdapter(m_adapter);
 		
-		progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		try {
+			progressDialog = ProgressDialog.show(this, "", getString(R.string.retrieving), true);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		Thread thread = new Thread(null, new QueryThreadFromDB(), "QueryDataFromDB");
 		thread.start();

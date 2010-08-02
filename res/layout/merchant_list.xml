@@ -6,7 +6,7 @@
 	android:layout_height="wrap_content"
 	android:orientation="horizontal"
 	android:gravity="center_vertical"
-	android:layout_marginRight="1px"
+	android:layout_marginRight="1dp"
 	android:background="@drawable/list_bg">
 	
 	<ImageView 
@@ -14,7 +14,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:src="@drawable/default_icon" 
-		android:layout_marginRight="5px"/>
+		android:layout_marginRight="5dp"/>
 	
 	<LinearLayout
 		android:layout_width="fill_parent"
@@ -25,36 +25,36 @@
 			android:id="@+id/distance"
 			android:layout_height="wrap_content"
 			android:gravity="right|center_vertical" 
-			android:textSize="12px" 
+			android:textSize="12dp" 
 			android:textStyle="bold" 
 			android:typeface="sans"
 			android:textColor="@color/COLOR_BLACK"
-			android:text="1.1 km" android:layout_marginRight="18px" android:layout_width="fill_parent"/>
+			android:text="1.1 km" android:layout_marginRight="18dp" android:layout_width="fill_parent"/>
 		
 		<TextView
 			android:id="@+id/merchantName"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:gravity="left|center_vertical"
-			android:textSize="15px" 
+			android:textSize="15dp" 
 			android:textStyle="bold" 
 			android:typeface="sans"
 			android:textColor="@color/COLOR_BLACK"
 			android:text="Shaw Cinema" 
 			android:ellipsize="end" 
-			android:maxLines="2" android:layout_marginRight="18px"/>
+			android:maxLines="2" android:layout_marginRight="18dp"/>
 			
 		<TextView
 			android:id="@+id/merchantAddress"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:gravity="left|center_vertical"
-			android:textSize="10px" 
+			android:textSize="10dp" 
 			android:textStyle="bold" 
 			android:typeface="sans"
 			android:textColor="@color/COLOR_SUBTEXT"
 			android:text="360 Balistier Road, Shaw Plaza, #0..." 
 			android:ellipsize="end" 
-			android:layout_marginRight="18px" android:paddingBottom="5px"/>
+			android:layout_marginRight="18dp" android:paddingBottom="5dp"/>
 	</LinearLayout>
 </LinearLayout>

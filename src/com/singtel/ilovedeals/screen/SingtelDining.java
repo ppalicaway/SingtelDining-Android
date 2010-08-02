@@ -43,7 +43,8 @@ public class SingtelDining extends Activity {
         }
         
         System.out.println("Network Provider: " + Util.getNetworkProvider(instance));
-        if(!Util.getNetworkProvider(instance).contains("SingTel")) {
+        System.out.println("SIM Provider: " + Util.getSimProvider(instance));
+        if(!Util.getNetworkProvider(instance).contains("Sing") && !Util.getSimProvider(instance).contains("Sing")) {
         	Util.showAlert(instance, "ILoveDeals", "This service is available only on a Singtel mobile network and at selected Wireless@SG hotspots.", "OK", true);
         }
         else {

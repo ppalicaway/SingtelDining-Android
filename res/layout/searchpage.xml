@@ -12,7 +12,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:layout_gravity="center_vertical|center_horizontal"
-		android:layout_marginTop="5px">
+		android:layout_marginTop="5dp">
 		
 		<ImageView 
 			android:layout_height="wrap_content"
@@ -25,20 +25,20 @@
 		android:layout_height="wrap_content"
 		android:background="@drawable/roundededge"
 		android:orientation="vertical"
-		android:layout_marginLeft="5px"
-		android:layout_marginRight="5px" android:gravity="center_vertical|center_horizontal" android:paddingTop="20px" android:paddingBottom="20px" android:paddingLeft="5px" android:paddingRight="5px">
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp" android:gravity="center_vertical|center_horizontal" android:paddingTop="20dp" android:paddingBottom="20dp" android:paddingLeft="5dp" android:paddingRight="5dp">
 		
 		<TextView 
 			android:id="@+id/searchKeyword"
-			android:layout_marginRight="10px" 
-			android:layout_marginLeft="10px" 
-			android:textSize="16px" 
+			android:layout_marginRight="10dp" 
+			android:layout_marginLeft="10dp" 
+			android:textSize="16dp" 
 			android:typeface="sans" 
 			android:textColor="@color/COLOR_LIGHT_GRAY"
 			android:layout_height="wrap_content" 
 			android:layout_width="fill_parent" 
 			android:gravity="center_vertical|center_horizontal" 
-			android:padding="10px" 
+			android:padding="10dp" 
 			android:text="Enter Search Keyword"/>
 				
 		<EditText 
@@ -51,10 +51,10 @@
 			android:gravity="center_horizontal" 
 			android:textColor="@color/COLOR_BG" 
 			android:layout_gravity="center_horizontal" 
-			android:layout_marginTop="10px" 
-			android:layout_marginBottom="10px" 
-			android:layout_marginLeft="10px" 
-			android:layout_marginRight="10px"/>
+			android:layout_marginTop="10dp" 
+			android:layout_marginBottom="10dp" 
+			android:layout_marginLeft="10dp" 
+			android:layout_marginRight="10dp"/>
 			
 		<Button
 			android:id="@+id/searchSubmitButton"
@@ -62,10 +62,10 @@
 			android:text="Search"
 			android:textColor="@color/COLOR_LIGHTBLUE" 
 			android:typeface="sans" 
-			android:textSize="16px" 
+			android:textSize="16dp" 
 			android:textStyle="bold" 
-			android:padding="10px" 
-			android:layout_marginLeft="10px" 
-			android:layout_marginRight="10px" android:background="@drawable/button_blank" android:layout_width="130px"/>
+			android:padding="10dp" 
+			android:layout_marginLeft="10dp" 
+			android:layout_marginRight="10dp" android:background="@drawable/button_blank" android:layout_width="130dp"/>
 	</LinearLayout>
 </LinearLayout>

@@ -5,7 +5,7 @@
 	android:layout_height="fill_parent"
 	android:background="@drawable/bg"
 	android:orientation="vertical"
-	android:padding="0px">
+	android:padding="0dp">
 	
 	<LinearLayout
 		android:id="@+id/twitterHeaderView"
@@ -13,7 +13,7 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:layout_gravity="center_vertical|center_horizontal"
-		android:layout_marginTop="5px">
+		android:layout_marginTop="5dp">
 		
 		<ImageView 
 			android:layout_height="wrap_content"

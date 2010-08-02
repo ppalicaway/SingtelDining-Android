@@ -20,7 +20,7 @@
    				android:id="@+id/citibankGroup"
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
-   				android:orientation="vertical" android:layout_marginBottom="10px">
+   				android:orientation="vertical" android:layout_marginBottom="10dp">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -34,7 +34,7 @@
 						android:text="Citibank"
 						android:textColor="@color/COLOR_BLACK"
 						android:textStyle="bold"
-						android:textSize="20px"
+						android:textSize="20dp"
 						android:typeface="sans" />
 				</LinearLayout>
    				
@@ -50,13 +50,13 @@
 						android:checked="true"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:button="@drawable/checkbox"/>
 					
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi Platinum VISA/MasterCard" />
@@ -74,13 +74,13 @@
 						android:checked="true"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:button="@drawable/checkbox"/>
 					
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi DIVIDEND Card" />				
@@ -98,13 +98,13 @@
 						android:checked="true"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:button="@drawable/checkbox"/>
 					
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi Clear Platinum Card" />				
@@ -122,13 +122,13 @@
 						android:checked="true"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:button="@drawable/checkbox" />
 			
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi SMRT Platinum VISA Card" />
@@ -144,7 +144,7 @@
 					<CheckBox
 						android:id="@+id/cititangsplatinumvisacard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -152,7 +152,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi TANGS Platinum VISA Card" />
@@ -168,7 +168,7 @@
 					<CheckBox
 						android:id="@+id/citiparagonplatinummastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -176,7 +176,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi Paragon Platinum MasterCard" />
@@ -192,7 +192,7 @@
 					<CheckBox
 						android:id="@+id/citipremiermilescard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -200,7 +200,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi PremierMiles Card" />			
@@ -216,7 +216,7 @@
 					<CheckBox
 						android:id="@+id/citibankvisadebitcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -224,7 +224,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank Visa Debit Card" />			
@@ -240,7 +240,7 @@
 					<CheckBox
 						android:id="@+id/citibusinesscard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -248,7 +248,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="CitiBusiness Card" />			
@@ -264,7 +264,7 @@
 					<CheckBox
 						android:id="@+id/citibankbusinessgoldcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -272,7 +272,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citibank Business Gold Card" />			
@@ -284,7 +284,7 @@
    				android:id="@+id/dbsGroup"
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
-   				android:orientation="vertical" android:layout_marginBottom="10px">
+   				android:orientation="vertical" android:layout_marginBottom="10dp">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -298,7 +298,7 @@
 						android:text="DBS"
 						android:textColor="@color/COLOR_BLACK"
 						android:textStyle="bold"
-						android:textSize="20px"
+						android:textSize="20dp"
 						android:typeface="sans" />
 				</LinearLayout>
 				
@@ -311,7 +311,7 @@
 					<CheckBox
 						android:id="@+id/blackamericanexpress"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -319,7 +319,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="DBS Credit/Debit Visa or MasterCard" />
@@ -334,7 +334,7 @@
 					<CheckBox
 						android:id="@+id/livefreshplatinum"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -342,7 +342,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="DBS American Express Cards" />
@@ -354,7 +354,7 @@
    				android:id="@+id/ocbcGroup"
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
-   				android:orientation="vertical" android:layout_marginBottom="10px">
+   				android:orientation="vertical" android:layout_marginBottom="10dp">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -368,7 +368,7 @@
 						android:text="OCBC"
 						android:textColor="@color/COLOR_BLACK"
 						android:textStyle="bold"
-						android:textSize="20px"
+						android:textSize="20dp"
 						android:typeface="sans" />
 				</LinearLayout>
 			
@@ -382,7 +382,7 @@
 					<CheckBox
 						android:id="@+id/ocbcartsplatinummastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -390,7 +390,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Arts Platinum MasterCard" />			
@@ -406,7 +406,7 @@
 					<CheckBox
 						android:id="@+id/bestocbcplatinummastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -414,7 +414,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Best-OCBC Platinum MasterCard" />			
@@ -430,7 +430,7 @@
 					<CheckBox
 						android:id="@+id/fairpricepluscreditdebitcards"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -438,7 +438,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="FairPrice Plus Credit/Debit Cards" />			
@@ -454,7 +454,7 @@
 					<CheckBox
 						android:id="@+id/ocbcikeafriedsvisacard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -462,7 +462,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC IKEA friends VISA Card" />			
@@ -478,7 +478,7 @@
 					<CheckBox
 						android:id="@+id/ocbcntuvisagoldcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -486,7 +486,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC NTU Visa Gold Card" />			
@@ -502,7 +502,7 @@
 					<CheckBox
 						android:id="@+id/ocbcplatinummastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -510,7 +510,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Platinum MasterCard" />			
@@ -526,7 +526,7 @@
 					<CheckBox
 						android:id="@+id/ocbcrobinsonsvisaplatinumcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -534,7 +534,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Robinsons Visa Platinum Card" />			
@@ -550,7 +550,7 @@
 					<CheckBox
 						android:id="@+id/ocbcsmudebitcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -558,7 +558,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC SMU Debit Card" />			
@@ -574,7 +574,7 @@
 					<CheckBox
 						android:id="@+id/ocbcsmuplatinummastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -582,7 +582,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC SMU Platinum MasterCard" />			
@@ -598,7 +598,7 @@
 					<CheckBox
 						android:id="@+id/ocbctitaniummastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -606,7 +606,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC Titanium MasterCard" />			
@@ -622,7 +622,7 @@
 					<CheckBox
 						android:id="@+id/upluscreditdebitcards"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -630,7 +630,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Uplus Credit/Debit Cards" />			
@@ -646,7 +646,7 @@
 					<CheckBox
 						android:id="@+id/ocbcyescard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -654,7 +654,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="OCBC YES! Card" />			
@@ -667,7 +667,7 @@
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
    				android:orientation="vertical" 
-   				android:layout_marginBottom="10px">
+   				android:layout_marginBottom="10dp">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -681,7 +681,7 @@
 						android:text="POSB"
 						android:textColor="@color/COLOR_BLACK"
 						android:textStyle="bold"
-						android:textSize="20px"
+						android:textSize="20dp"
 						android:typeface="sans" />
 				</LinearLayout>
 				
@@ -694,7 +694,7 @@
 					<CheckBox
 						android:id="@+id/dbsplatinummastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -702,7 +702,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="POSB Credit/Debit Cards" />			
@@ -715,7 +715,7 @@
    				android:layout_width="fill_parent"
    				android:layout_height="wrap_content"
    				android:orientation="vertical" 
-   				android:layout_marginBottom="10px">
+   				android:layout_marginBottom="10dp">
    				
    				<LinearLayout
 					android:layout_width="fill_parent"
@@ -729,7 +729,7 @@
 						android:text="UOB"
 						android:textColor="@color/COLOR_BLACK"
 						android:textStyle="bold"
-						android:textSize="20px"
+						android:textSize="20dp"
 						android:typeface="sans" />
 				</LinearLayout>
 				
@@ -743,7 +743,7 @@
 					<CheckBox
 						android:id="@+id/singteluobvisaplatinumcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -751,7 +751,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="SingTel-UOB Visa Platinum Card" />			
@@ -767,7 +767,7 @@
 					<CheckBox
 						android:id="@+id/uobprviamericanexpresscard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -775,7 +775,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB PRVI American Express&#174; Card" />			
@@ -791,7 +791,7 @@
 					<CheckBox
 						android:id="@+id/uobvisasignaturecard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -799,7 +799,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Visa Signature Card" />			
@@ -815,7 +815,7 @@
 					<CheckBox
 						android:id="@+id/uobonecard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -823,7 +823,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB ONE Card" />			
@@ -839,7 +839,7 @@
 					<CheckBox
 						android:id="@+id/uobpreferredplatinumcardvisa"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -847,7 +847,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Preferred Platinum Card Visa" />			
@@ -863,7 +863,7 @@
 					<CheckBox
 						android:id="@+id/uobpreferredplatinumcardmastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -871,7 +871,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Preferred Platinum Card MasterCard" />			
@@ -887,7 +887,7 @@
 					<CheckBox
 						android:id="@+id/uobladyscard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -895,7 +895,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Lady's Card" />			
@@ -911,7 +911,7 @@
 					<CheckBox
 						android:id="@+id/uobladysplatinumcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -919,7 +919,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Lady's Platinum Card" />			
@@ -935,7 +935,7 @@
 					<CheckBox
 						android:id="@+id/uobladyssolitairecard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -943,7 +943,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Lady's Solitaire Card" />			
@@ -959,7 +959,7 @@
 					<CheckBox
 						android:id="@+id/uobvisainfinitecard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -967,7 +967,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Visa Infinite Card" />			
@@ -983,7 +983,7 @@
 					<CheckBox
 						android:id="@+id/uobpreferredworldmastercard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -991,7 +991,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Preferred World MasterCard&#174;" />			
@@ -1007,7 +1007,7 @@
 					<CheckBox
 						android:id="@+id/uobvisagoldcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1015,7 +1015,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Visa Gold Card" />			
@@ -1031,7 +1031,7 @@
 					<CheckBox
 						android:id="@+id/uobvisaclassiccard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1039,7 +1039,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Visa Classic Card" />			
@@ -1055,7 +1055,7 @@
 					<CheckBox
 						android:id="@+id/uobmastercardgoldcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1063,7 +1063,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB MasterCard&#174; Gold Card" />			
@@ -1079,7 +1079,7 @@
 					<CheckBox
 						android:id="@+id/uobmastercardclassiccard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1087,7 +1087,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB MasterCard&#174; Classic Card" />			
@@ -1103,7 +1103,7 @@
 					<CheckBox
 						android:id="@+id/metrouobplatinumcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1111,7 +1111,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Metro-UOB Platinum Card" />			
@@ -1127,7 +1127,7 @@
 					<CheckBox
 						android:id="@+id/uobjcbplatinumcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1135,7 +1135,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB-JCB Platinum Card" />			
@@ -1151,7 +1151,7 @@
 					<CheckBox
 						android:id="@+id/uobchinaunionpayplatinumcard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1159,7 +1159,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB China Union Pay Platinum Card" />			
@@ -1175,7 +1175,7 @@
 					<CheckBox
 						android:id="@+id/uobdirectvisacard"
 						android:checked="true"
-						android:layout_marginLeft="10px"
+						android:layout_marginLeft="10dp"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:button="@drawable/checkbox" />
@@ -1183,7 +1183,7 @@
 					<TextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:textSize="12px"
+						android:textSize="12dp"
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="UOB Direct Visa Card" />

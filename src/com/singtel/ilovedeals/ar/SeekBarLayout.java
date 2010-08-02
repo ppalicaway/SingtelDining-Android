@@ -88,7 +88,12 @@ public class SeekBarLayout extends FrameLayout implements OnSeekBarChangeListene
 		ARScreen.radius = (float) prog;
 		
 		if(!ARScreen.isMerchantList) {
-			ARScreen.progressDialog = ProgressDialog.show(context, "", context.getResources().getString(R.string.retrieving), true);
+			try {
+				ARScreen.progressDialog = ProgressDialog.show(context, "", context.getResources().getString(R.string.retrieving), true);
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
 			Thread t = new Thread(null, new GetJSON(), "initR");
 			t.start();
 		}
