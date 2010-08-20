@@ -135,6 +135,7 @@ public class CuisineListingPage extends SingtelDiningListActivity {
 		
 		edit.putString("cuisineLastPicked", cuisines.get(position).getName());
 		edit.putString("cuisineLastURLQuery", Constants.RESTAURANT_CUISINE_LISTING + cuisines.get(position).getId() + "&resultsPerPage=20");// + SettingsPage.bankQuery + "&pageNum=");
+		edit.putString("lastURLQuery", SingtelDiningMainPage.URL);
 		edit.commit();
 		
 		instance.finish();

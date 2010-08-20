@@ -111,6 +111,7 @@ public class SubCategoryListingPage extends SingtelDiningListActivity {
 		SharedPreferences.Editor edit = shared.edit();
 		edit.putString("locationLastQueryPlace", location.getName() + " - " + subLocations.get(position).getName());
 		edit.putString("locationLastURLQuery", SingtelDiningMainPage.URL);
+		edit.putString("lastURLQuery", SingtelDiningMainPage.URL);
 		edit.commit();
 		instance.finish();
 	};

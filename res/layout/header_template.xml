@@ -61,16 +61,16 @@
 			android:layout_margin="8dp"
 			android:visibility="gone" />
 			
-		<!-- <Button 
+		<Button 
 			android:id="@+id/refreshButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:background="@drawable/button_refresh"  /> -->
+			android:background="@drawable/button_refresh"  />
 						
 		<EditText 
 			android:id="@+id/searchEditText"
 			android:layout_height="wrap_content" 
-			android:layout_width="222dp" 
+			android:layout_width="217dp" 
 			android:maxLines="1"
 			android:singleLine="true"
 			android:focusableInTouchMode="false"

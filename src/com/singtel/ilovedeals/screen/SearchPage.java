@@ -50,6 +50,7 @@ public class SearchPage extends SingtelDiningActivity {
 				
 				edit.putString("searchKeyword", keyword.getText().toString());
 				edit.putString("searchURL", Constants.RESTAURANT_SEARCH + searchText + SettingsPage.bankQuery + "&pageNum=");
+				edit.putString("lastURLQuery", SingtelDiningMainPage.URL);
 				edit.commit();
 				
 				Util.disableKeyboard(instance, keyword);

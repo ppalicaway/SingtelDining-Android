@@ -79,6 +79,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 	private Button cuisineButton;
 	private Button restaurantButton;
 	private Button locationButton;
+	private Button refreshButton;
 	private ImageView arrowDown;
 	
 	@Override
@@ -122,6 +123,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		Util.longitude = longitude;
 		
 		SharedPreferences shared = getSharedPreferences(Constants.DEFAULT_SHARE_DATA, 0);
+		SharedPreferences.Editor edit = shared.edit();
 		//URL = shared.getString("locationLastURLQuery", "");
 		
 		//if(URL.equalsIgnoreCase("")) {
@@ -129,6 +131,9 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		      "&longitude=" + longitude +
 		      "&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 		//}
+			
+		edit.putString("lastURLQuery", URL);
+		edit.commit();
 		
 		locationButton = (Button)findViewById(R.id.locationButton);
 		locationButton.setOnClickListener(new MenuListener());
@@ -148,6 +153,8 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 		
 		mapButton = (Button)findViewById(R.id.mapButton);
 		mapButton.setOnClickListener(new MenuListener());
+		refreshButton = (Button)findViewById(R.id.refreshButton);
+		refreshButton.setOnClickListener(new MenuListener());
 		
 		Button arButton = (Button)findViewById(R.id.arButton);
 		arButton.setOnClickListener(new MenuListener());
@@ -304,6 +311,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					searchEditText.setVisibility(EditText.VISIBLE);
 					
 					mapButton.setVisibility(Button.VISIBLE);
+					refreshButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
 					
 					if(!SettingsPage.bankQuery.equalsIgnoreCase("&bank=")) {
@@ -315,6 +323,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 								"&longitude=" + Util.longitude +
 								"&resultsPerPage=20" + SettingsPage.bankQuery + "&pageNum=";
 						//}
+						
+						SharedPreferences.Editor edit = shared.edit();
+						edit.putString("lastURLQuery", URL);
+						edit.commit();
 						
 						reloadDataWithoutBitmap();
 					}
@@ -343,12 +355,14 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					searchEditText.setText("Tap to search");
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
+					refreshButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
 					SingtelDiningMainPage.URL = Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=";
 					
 					SharedPreferences.Editor edit = shared.edit();
 					edit.putString("searchKeyword", "Tap to search");
 					edit.putString("searchURL", Constants.RESTAURANT_RESTO_PAGE + SettingsPage.bankQuery + "&pageNum=");
+					edit.putString("lastURLQuery", URL);
 					edit.commit();
 					
 					reloadDataWithoutBitmap();
@@ -382,6 +396,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					isCuisines = true;
 					searchEditText.setVisibility(EditText.VISIBLE);
 					mapButton.setVisibility(Button.VISIBLE);
+					refreshButton.setVisibility(Button.VISIBLE);
 					myFave.setVisibility(ImageView.GONE);
 					
 					if(!SettingsPage.bankQuery.equalsIgnoreCase("&bank=")) {
@@ -393,6 +408,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						else {
 							URL += SettingsPage.bankQuery + "&pageNum=";
 						}
+						
+						SharedPreferences.Editor editor = shared.edit();
+						editor.putString("lastURLQuery", URL);
+						editor.commit();
 						
 						reloadDataWithoutBitmap();
 					}
@@ -420,6 +439,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					cardLayoutView.setVisibility(LinearLayout.GONE);
 					searchEditText.setVisibility(EditText.GONE);
 					mapButton.setVisibility(Button.GONE);
+					refreshButton.setVisibility(Button.GONE);
 					myFave.setVisibility(ImageView.VISIBLE);
 					Button backButton = (Button)findViewById(R.id.backButton);
 					Button nextButton = (Button)findViewById(R.id.nextButton);
@@ -432,6 +452,7 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 						cardLayoutView.setVisibility(LinearLayout.GONE);
 						searchEditText.setVisibility(EditText.GONE);
 						mapButton.setVisibility(Button.GONE);
+						refreshButton.setVisibility(Button.GONE);
 						myFave.setVisibility(ImageView.VISIBLE);
 					}
 					if(ARScreen.instance != null) {
@@ -442,6 +463,15 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 					break;
 				case R.id.mapButton:
 					Controller.displayMapScreen(instance);
+					break;
+				case R.id.refreshButton:
+					URL = shared.getString("lastURLQuery", "");
+					if(!isFavorite) {
+						reloadDataWithoutBitmap();
+					}
+					else {
+						reloadDataFromDB();
+					}
 					break;
 				case R.id.searchEditText:
 					totalItems = 1;
@@ -550,6 +580,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				//if(searchText.equalsIgnoreCase("")) {
 					searchText = "Around Me - All";
 				//}
+				
+				SharedPreferences.Editor edit = shared.edit();
+				edit.putString("lastURLQuery", URL);
+				edit.commit();
+				
 				reloadData();
 			}
 			else if(isRestaurants) {
@@ -568,7 +603,13 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				if(searchText.equalsIgnoreCase("")) {
 					searchText = "Tap to search";
 				}
+				
 				searchEditText.setText(searchText);
+				
+				SharedPreferences.Editor edit = shared.edit();
+				edit.putString("lastURLQuery", URL);
+				edit.commit();
+				
 				reloadData();
 			}
 			else if(isCuisines) {
@@ -589,6 +630,10 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				if(searchText.equalsIgnoreCase("")) {
 					searchText = "Asian";
 				}
+				
+				SharedPreferences.Editor edit = shared.edit();
+				edit.putString("lastURLQuery", URL);
+				edit.commit();
 				
 				reloadData();
 			}
@@ -623,6 +668,11 @@ public class SingtelDiningMainPage extends SingtelDiningListActivity {
 				searchText = "Tap to search";
 			}
 			searchEditText.setText(searchText);
+			
+			SharedPreferences.Editor edit = shared.edit();
+			edit.putString("lastURLQuery", URL);
+			edit.commit();
+			
 			reloadData();
 		}
 		else {
