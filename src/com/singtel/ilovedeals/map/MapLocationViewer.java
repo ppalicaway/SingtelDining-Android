@@ -28,9 +28,9 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Projection;
 import com.singtel.ilovedeals.info.MerchantInfo;
-import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class MapLocationViewer extends LinearLayout {
 

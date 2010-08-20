@@ -20,6 +20,7 @@ import com.singtel.ilovedeals.info.Location;
 import com.singtel.ilovedeals.info.SubLocation;
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class CategoryListingPage extends SingtelDiningListActivity {
 

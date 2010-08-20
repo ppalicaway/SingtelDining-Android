@@ -11,8 +11,8 @@ import android.graphics.Typeface;
 import android.graphics.Paint.Style;
 
 import com.singtel.ilovedeals.info.MerchantInfo;
-import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class FourSqareVenue extends ARSphericalView {
 	

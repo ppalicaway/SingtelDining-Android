@@ -28,6 +28,7 @@ import com.singtel.ilovedeals.ar.ReturnRes;
 import com.singtel.ilovedeals.info.MerchantInfo;
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 
 public class ARScreen extends SingtelDiningActivity {

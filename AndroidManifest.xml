@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.singtel.ilovedeals.screen"
-      android:versionCode="2"
-      android:versionName="2.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+<manifest 
+		xmlns:android="http://schemas.android.com/apk/res/android"
+      	package="com.singtel.ilovedeals.screen"
+      	android:versionCode="1"
+      	android:versionName="1.0">
+    
+    <application 
+    	android:icon="@drawable/icon" 
+    	android:label="@string/app_name">
+    	
     	<uses-library android:name="com.google.android.maps"></uses-library>
-        <activity android:name=".SingtelDining" android:label="@string/app_name" android:screenOrientation="portrait">
+        <activity 
+        	android:name=".SingtelDining" 
+        	android:label="@string/app_name"
+        	android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity android:name="SingtelDiningMainPage" android:label="SingtelDiningMainPage" android:screenOrientation="portrait" />
         <activity android:name="TwitterPage" android:label="TwitterPage" android:screenOrientation="portrait" />
         <activity android:name="DescriptionPage" android:label="DescriptionPage" android:screenOrientation="portrait" />
@@ -28,7 +37,8 @@
 		<activity android:name="com.codecarpet.fbconnect.FBPermissionActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:screenOrientation="portrait"/>
 		<activity android:name="com.codecarpet.fbconnect.FBFeedActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:screenOrientation="portrait"/>
     </application>
-    <uses-sdk android:minSdkVersion="3" />
+    
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="4" />
     <uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -39,4 +49,10 @@
 	<uses-permission android:name="android.permission.LOCATION" />
 	<uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<supports-screens
+		android:smallScreens="true"
+		android:normalScreens="true"
+		android:largeScreens="true"
+		android:anyDensity="false">
+	</supports-screens>
 </manifest> 

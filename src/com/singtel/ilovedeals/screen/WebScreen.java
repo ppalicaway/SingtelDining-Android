@@ -8,6 +8,7 @@ import android.webkit.WebViewClient;
 
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class WebScreen extends SingtelDiningActivity {
 

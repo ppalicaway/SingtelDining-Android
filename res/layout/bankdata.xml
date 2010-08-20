@@ -109,6 +109,30 @@
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi Clear Platinum Card" />				
 				</LinearLayout>
+				
+				<!-- Citi PremierMiles Card -->
+				<LinearLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:background="@drawable/table_row">
+			
+					<CheckBox
+						android:id="@+id/citipremiermilescard"
+						android:checked="true"
+						android:layout_marginLeft="10dp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:button="@drawable/checkbox" />
+			
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textSize="12dp"
+						android:typeface="sans"
+						android:textColor="@color/COLOR_SUBTEXT"
+						android:text="Citi PremierMiles Card" />			
+				</LinearLayout>
 			
 				<!-- Citi SMRT Platinum VISA Card -->
 				<LinearLayout
@@ -180,30 +204,6 @@
 						android:typeface="sans"
 						android:textColor="@color/COLOR_SUBTEXT"
 						android:text="Citi Paragon Platinum MasterCard" />
-				</LinearLayout>
-				
-				<!-- Citi PremierMiles Card -->
-				<LinearLayout
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:orientation="horizontal"
-					android:background="@drawable/table_row">
-			
-					<CheckBox
-						android:id="@+id/citipremiermilescard"
-						android:checked="true"
-						android:layout_marginLeft="10dp"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:button="@drawable/checkbox" />
-			
-					<TextView
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:textSize="12dp"
-						android:typeface="sans"
-						android:textColor="@color/COLOR_SUBTEXT"
-						android:text="Citi PremierMiles Card" />			
 				</LinearLayout>
 				
 				<!-- Citibank Visa Debit Card -->

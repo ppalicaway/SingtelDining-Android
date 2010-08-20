@@ -40,6 +40,7 @@ import com.singtel.ilovedeals.info.MerchantDetails;
 import com.singtel.ilovedeals.info.MerchantInfo;
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class DescriptionPage extends SingtelDiningActivity {
 
@@ -204,7 +205,18 @@ public class DescriptionPage extends SingtelDiningActivity {
 			}
 		}
 		
-		offerFirst = ((CustomImageView)tableRow.getChildAt(0)).getImageInfo().getBankName();
+		if(tableRow.getChildCount() > 0) {
+			try {
+				offerFirst = ((CustomImageView)tableRow.getChildAt(0)).getImageInfo().getBankName();
+			}
+			catch(Exception e) {
+				offerFirst = "";
+				e.printStackTrace();
+			}
+		}
+		else {
+			offerFirst = "";
+		}
 	}
 
 	private Runnable populateData = new Runnable() {

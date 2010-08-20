@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class SearchPage extends SingtelDiningActivity {
 

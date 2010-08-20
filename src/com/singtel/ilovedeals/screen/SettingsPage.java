@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import com.singtel.ilovedeals.info.ImageInfo;
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class SettingsPage extends SingtelDiningActivity {
 
@@ -35,10 +36,10 @@ public class SettingsPage extends SingtelDiningActivity {
 	private CheckBox citiPlatinumVisaMasterCard;
 	private CheckBox citiDividendCard;
 	private CheckBox citiClearPlatinumCard;
+	private CheckBox citiPremierMilesCard;
 	private CheckBox citiSMRTPlatinumVisaCard;
 	private CheckBox citiTangsPlatinumVisaCard;
 	private CheckBox citiParagonPlatinumMasterCard;
-	private CheckBox citiPremierMilesCard;
 	private CheckBox citibankVisaDebitCard;
 	private CheckBox citiBusinessCard;
 	private CheckBox citibankBusinessGoldCard;
@@ -269,50 +270,50 @@ public class SettingsPage extends SingtelDiningActivity {
 		}
 		
 		// 4th
-		if(citiSMRTPlatinumVisaCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
+		if(citiPremierMilesCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "4,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 5th
-		if(citiTangsPlatinumVisaCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
+		if(citiSMRTPlatinumVisaCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "5,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 6th
-		if(citiParagonPlatinumMasterCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
+		if(citiTangsPlatinumVisaCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "6,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
+			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
 		// 7th
-		if(citiPremierMilesCard.isChecked()){
-			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
+		if(citiParagonPlatinumMasterCard.isChecked()){
+			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
 			images.add(iInfo);
 			count++;
 			preference += "7,";
 		}
 		else {
-			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
+			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
 			untickedImages.add(iInfo);
 		}
 		
@@ -1204,13 +1205,13 @@ public class SettingsPage extends SingtelDiningActivity {
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.citiclearplatinumcard_label, R.drawable.citiclearplatinumcard, CITIBANK, R.drawable.citiclearplatinumcard_nonticked);
 			defaultAll.add(iInfo);
+			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
+			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.cititangsplatinumvisacard_label, R.drawable.cititangsplatinumvisacard, CITIBANK, R.drawable.cititangsplatinumvisacard_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
-			defaultAll.add(iInfo);
-			iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
 			defaultAll.add(iInfo);
 			iInfo = new ImageInfo(R.drawable.citibankvisadebitcard_label, R.drawable.citibankvisadebitcard, CITIBANK, R.drawable.citibankvisadebitcard_nonticked);
 			defaultAll.add(iInfo);

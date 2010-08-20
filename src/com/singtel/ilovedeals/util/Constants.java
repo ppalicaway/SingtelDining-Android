@@ -24,9 +24,9 @@ public interface Constants {
 	public static final String FACEBOOK_PROPERTIES = "\"properties\":{\"Powered By\":{\"text\":\"SingTel\",\"href\":\"http://www.singtel.com\"}}}";
 	
 	//ILoveDeals
-	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZiFrQEZtK56_fQa6dmBIXOBDxaAvQ";
+	//public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZiFrQEZtK56_fQa6dmBIXOBDxaAvQ";
 	//ILoveDeals2
-	//public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZj6uRF_p6MuNHxmyCUks9ZpA5UZ-w";
+	public static final String KEY_MAP_RELEASE = "0o_1qZVZbZZj6uRF_p6MuNHxmyCUks9ZpA5UZ-w";
 	
 	public static final String DEFAULT_SHARE_DATA = "DEFAULT_SHARE_DATA";
 	
@@ -49,10 +49,10 @@ public interface Constants {
 	public static final int CITIPLATINUMVISAMASTERCARD = 1;
 	public static final int CITIDIVIDENDCARD = 2;
 	public static final int CITICLEARPLATINUMCARD = 3;
-	public static final int CITISMRTPLATINUMVISACARD = 4;
-	public static final int CITITANGSPLATINUMVISACARD = 5;
-	public static final int CITIPARAGONPLATINUMMASTERCARD = 6;
-	public static final int CITIPREMIERMILESCARD = 7;
+	public static final int CITIPREMIERMILESCARD = 4;
+	public static final int CITISMRTPLATINUMVISACARD = 5;
+	public static final int CITITANGSPLATINUMVISACARD = 6;
+	public static final int CITIPARAGONPLATINUMMASTERCARD = 7;
 	public static final int CITIBANKVISADEBITCARD = 8;
 	public static final int CITIBUSINESSCARD = 9;
 	public static final int CITIBANKBUSINESSGOLDCARD = 10;

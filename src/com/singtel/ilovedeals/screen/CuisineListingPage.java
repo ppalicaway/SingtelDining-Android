@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.singtel.ilovedeals.info.Cuisine;
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class CuisineListingPage extends SingtelDiningListActivity {
 	

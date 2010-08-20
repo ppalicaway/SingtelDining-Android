@@ -1,8 +1,8 @@
 package com.singtel.ilovedeals.ar;
 
 import com.singtel.ilovedeals.screen.ARScreen;
-import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class ReturnRes implements Runnable {
 

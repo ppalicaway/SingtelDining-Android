@@ -16,8 +16,8 @@ import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.singtel.ilovedeals.screen.ARScreen;
-import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.util.Constants;
+import com.singtel.ilovedeals.screen.R;
 
 public class SeekBarLayout extends FrameLayout implements OnSeekBarChangeListener {
 

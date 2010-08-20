@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.google.android.maps.MapActivity;
 import com.singtel.ilovedeals.map.GPSLocationListener;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class MapPage extends MapActivity {
 	

@@ -10,9 +10,9 @@ import com.singtel.ilovedeals.info.MerchantInfo;
 import com.singtel.ilovedeals.map.MapLocationViewer;
 import com.singtel.ilovedeals.screen.DescriptionPage;
 import com.singtel.ilovedeals.screen.MapPage;
-import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.screen.SingtelDiningMainPage;
 import com.singtel.ilovedeals.util.Constants;
+import com.singtel.ilovedeals.screen.R;
 
 public class Controller {
 	
@@ -52,6 +52,10 @@ public class Controller {
 				iInfo = new ImageInfo(R.drawable.citiclearplatinumcard_label, R.drawable.citiclearplatinumcard, CITIBANK, R.drawable.citiclearplatinumcard_nonticked);
 				iInfo.setSelected(true);
 				break;
+			case Constants.CITIPREMIERMILESCARD:
+				iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
+				iInfo.setSelected(true);
+				break;
 			case Constants.CITISMRTPLATINUMVISACARD:
 				iInfo = new ImageInfo(R.drawable.citismrtplatinumvisacard_label, R.drawable.citismrtplatinumvisacard, CITIBANK, R.drawable.citismrtplatinumvisacard_nonticked);
 				iInfo.setSelected(true);
@@ -62,10 +66,6 @@ public class Controller {
 				break;
 			case Constants.CITIPARAGONPLATINUMMASTERCARD:
 				iInfo = new ImageInfo(R.drawable.citiparagonplatinummastercard_label, R.drawable.citiparagonplatinummastercard, CITIBANK, R.drawable.citiparagonplatinummastercard_nonticked);
-				iInfo.setSelected(true);
-				break;
-			case Constants.CITIPREMIERMILESCARD:
-				iInfo = new ImageInfo(R.drawable.citipremiermilescard_label, R.drawable.citipremiermilescard, CITIBANK, R.drawable.citipremiermilescard_nonticked);
 				iInfo.setSelected(true);
 				break;
 			case Constants.CITIBANKVISADEBITCARD:

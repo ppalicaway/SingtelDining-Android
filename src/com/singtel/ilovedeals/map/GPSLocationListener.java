@@ -8,9 +8,9 @@ import android.location.LocationListener;
 import android.os.Bundle;
 
 import com.google.android.maps.GeoPoint;
-import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.screen.SingtelDiningMainPage;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class GPSLocationListener implements LocationListener {
 	

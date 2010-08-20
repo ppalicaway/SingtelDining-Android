@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 
 import com.singtel.ilovedeals.adapter.Controller;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class SingtelDiningActivity extends Activity {
 

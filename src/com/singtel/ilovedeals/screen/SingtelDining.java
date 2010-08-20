@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.singtel.ilovedeals.util.Constants;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class SingtelDining extends Activity {
 	
@@ -44,12 +45,12 @@ public class SingtelDining extends Activity {
         
         System.out.println("Network Provider: " + Util.getNetworkProvider(instance));
         System.out.println("SIM Provider: " + Util.getSimProvider(instance));
-        if(!Util.getNetworkProvider(instance).contains("Sing") && !Util.getSimProvider(instance).contains("Sing")) {
-        	Util.showAlert(instance, "ILoveDeals", "This service is available only on a Singtel mobile network and at selected Wireless@SG hotspots.", "OK", true);
-        }
-        else {
+        //if(!Util.getNetworkProvider(instance).contains("Sing") && !Util.getSimProvider(instance).contains("Sing")) {
+        //	Util.showAlert(instance, "ILoveDeals", "This service is available only on a Singtel mobile network and at selected Wireless@SG hotspots.", "OK", true);
+        //}
+        //else {
         	splashThread.start();
-        }
+        //}
     }
     
     private Thread splashThread = new Thread() {

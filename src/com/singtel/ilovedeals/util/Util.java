@@ -28,8 +28,6 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-import com.singtel.ilovedeals.screen.SingtelDining;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;

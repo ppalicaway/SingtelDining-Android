@@ -22,9 +22,9 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.Projection;
 import com.singtel.ilovedeals.screen.DescriptionPage;
-import com.singtel.ilovedeals.screen.R;
 import com.singtel.ilovedeals.screen.SingtelDiningMainPage;
 import com.singtel.ilovedeals.util.Util;
+import com.singtel.ilovedeals.screen.R;
 
 public class MapLocationOverlay extends Overlay {
 
